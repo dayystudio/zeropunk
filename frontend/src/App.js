@@ -1444,6 +1444,62 @@ const App = () => {
     );
   };
 
+  const StatsSection = () => {
+    return (
+      <div className="section-container stats-section">
+        <div className="section-content">
+          <h2 className="section-title">SYSTEM STATISTICS</h2>
+          
+          <div className="stats-grid">
+            {gameStats && (
+              <>
+                <motion.div 
+                  className="stat-card"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <Users className="stat-icon" />
+                  <div className="stat-number">{gameStats.players_online}</div>
+                  <div className="stat-label">ACTIVE NEURAL LINKS</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="stat-card"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <Download className="stat-icon" />
+                  <div className="stat-number">{gameStats.beta_downloads}</div>
+                  <div className="stat-label">BETA DOWNLOADS</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="stat-card"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <Star className="stat-icon" />
+                  <div className="stat-number">{gameStats.wishlist_count}</div>
+                  <div className="stat-label">WISHLIST COUNT</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="stat-card"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <Activity className="stat-icon" />
+                  <div className="stat-value">{gameStats.rating}</div>
+                  <div className="stat-label">NEURAL RATING</div>
+                </motion.div>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const renderCurrentSection = () => {
     switch (currentSection) {
       case 'hero': return <HeroSection />;
