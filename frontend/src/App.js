@@ -219,6 +219,7 @@ const App = () => {
     const handleClickOutside = (event) => {
       if (menuOpen && !event.target.closest('.navigation-menu') && !event.target.closest('.hamburger-menu')) {
         setMenuOpen(false);
+        setLanguageMenuOpen(false);
       }
     };
 
