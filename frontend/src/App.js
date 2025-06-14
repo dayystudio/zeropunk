@@ -1105,16 +1105,12 @@ const App = () => {
             <div className="character-viewer-container">
               <div className="character-viewer">
                 <div className="viewer-canvas">
-                  {/* This will contain the React Three Fiber 3D scene */}
-                  <div className="placeholder-3d">
-                    <div className="character-silhouette">
-                      <UserCircle size={120} />
-                    </div>
-                    <div className="viewer-overlay">
-                      <span>3D Character Preview</span>
-                      <p>{characterConfig.gender} • {characterConfig.face.shape} face • {characterConfig.hair.style} hair</p>
-                    </div>
-                  </div>
+                  <Character3DViewer 
+                    characterConfig={characterConfig}
+                    onViewChange={(e) => {
+                      // Handle view changes if needed
+                    }}
+                  />
                 </div>
                 
                 {/* 3D Controls */}
