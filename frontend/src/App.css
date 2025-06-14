@@ -1528,10 +1528,19 @@ section {
 
 .section-container {
   min-height: calc(100vh - 70px);
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.section-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 /* Enhanced Alia Nox Preview Section */
