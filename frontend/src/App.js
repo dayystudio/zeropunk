@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Brain, Zap, Users, Download, Star, MessageCircle, Play, Eye, ChevronDown, AlertTriangle, Lock, Globe, Menu, X, Home, Info, BarChart3, Bot, Map, Gamepad2 } from 'lucide-react';
+import { Brain, Zap, Users, Download, Star, MessageCircle, Play, Eye, ChevronDown, AlertTriangle, Lock, Globe, Menu, X, Home, Info, BarChart3, Bot, Map, Gamepad2, Monitor, Cpu, HardDrive, Settings } from 'lucide-react';
 import './App.css';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -20,6 +20,79 @@ const App = () => {
   // Navigation state
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState('hero');
+
+  // PC Requirements state
+  const [pcConfig, setPcConfig] = useState({
+    gpu: '',
+    cpu: '',
+    ram: '',
+    resolution: '',
+    os: ''
+  });
+  const [pcAnalysis, setPcAnalysis] = useState(null);
+  const [showBenchmark, setShowBenchmark] = useState(false);
+
+  // Hardware Database
+  const hardwareDB = {
+    gpus: {
+      // High-End GPUs
+      'RTX 4090': { tier: 'ultra', score: 100, vram: 24 },
+      'RTX 4080': { tier: 'ultra', score: 85, vram: 16 },
+      'RTX 4070 Ti': { tier: 'high', score: 75, vram: 12 },
+      'RTX 4070': { tier: 'high', score: 68, vram: 12 },
+      'RTX 4060 Ti': { tier: 'high', score: 60, vram: 8 },
+      'RTX 4060': { tier: 'medium', score: 52, vram: 8 },
+      'RTX 3090': { tier: 'ultra', score: 82, vram: 24 },
+      'RTX 3080': { tier: 'high', score: 70, vram: 10 },
+      'RTX 3070': { tier: 'high', score: 62, vram: 8 },
+      'RTX 3060 Ti': { tier: 'medium', score: 55, vram: 8 },
+      'RTX 3060': { tier: 'medium', score: 48, vram: 8 },
+      'RTX 2080 Ti': { tier: 'high', score: 65, vram: 11 },
+      'RTX 2070': { tier: 'medium', score: 50, vram: 8 },
+      'RTX 2060': { tier: 'medium', score: 42, vram: 6 },
+      
+      // AMD GPUs
+      'RX 7900 XTX': { tier: 'ultra', score: 88, vram: 24 },
+      'RX 7900 XT': { tier: 'high', score: 78, vram: 20 },
+      'RX 7800 XT': { tier: 'high', score: 65, vram: 16 },
+      'RX 6900 XT': { tier: 'high', score: 72, vram: 16 },
+      'RX 6800 XT': { tier: 'high', score: 68, vram: 16 },
+      'RX 6700 XT': { tier: 'medium', score: 56, vram: 12 },
+      'RX 6600 XT': { tier: 'medium', score: 45, vram: 8 },
+      
+      // Lower-end/Older
+      'GTX 1660 Ti': { tier: 'low', score: 35, vram: 6 },
+      'GTX 1650': { tier: 'low', score: 25, vram: 4 },
+      'Intel UHD': { tier: 'incompatible', score: 5, vram: 1 },
+      'Intel Iris': { tier: 'low', score: 15, vram: 2 }
+    },
+    cpus: {
+      // Intel CPUs
+      'i9-13900K': { tier: 'ultra', score: 100, cores: 24 },
+      'i7-13700K': { tier: 'high', score: 85, cores: 16 },
+      'i5-13600K': { tier: 'high', score: 75, cores: 14 },
+      'i5-12600K': { tier: 'high', score: 70, cores: 10 },
+      'i5-11400F': { tier: 'medium', score: 60, cores: 6 },
+      'i3-12100F': { tier: 'medium', score: 45, cores: 4 },
+      'i7-10700K': { tier: 'medium', score: 65, cores: 8 },
+      'i5-10400F': { tier: 'medium', score: 55, cores: 6 },
+      
+      // AMD CPUs
+      'Ryzen 9 7950X': { tier: 'ultra', score: 95, cores: 16 },
+      'Ryzen 7 7800X3D': { tier: 'ultra', score: 92, cores: 8 },
+      'Ryzen 7 7700X': { tier: 'high', score: 80, cores: 8 },
+      'Ryzen 5 7600X': { tier: 'high', score: 72, cores: 6 },
+      'Ryzen 7 5800X': { tier: 'high', score: 75, cores: 8 },
+      'Ryzen 5 5600X': { tier: 'medium', score: 68, cores: 6 },
+      'Ryzen 5 3600': { tier: 'medium', score: 58, cores: 6 },
+      
+      // Apple Silicon
+      'Apple M2 Ultra': { tier: 'high', score: 78, cores: 24 },
+      'Apple M2 Pro': { tier: 'medium', score: 62, cores: 12 },
+      'Apple M2': { tier: 'medium', score: 55, cores: 8 },
+      'Apple M1': { tier: 'medium', score: 50, cores: 8 }
+    }
+  };
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -128,6 +201,78 @@ const App = () => {
     setMenuOpen(false);
   };
 
+  const analyzePCConfig = () => {
+    if (!pcConfig.gpu || !pcConfig.cpu || !pcConfig.ram || !pcConfig.resolution) {
+      return;
+    }
+
+    const gpuData = hardwareDB.gpus[pcConfig.gpu];
+    const cpuData = hardwareDB.cpus[pcConfig.cpu];
+    
+    if (!gpuData || !cpuData) return;
+
+    // Calculate overall score
+    let baseScore = (gpuData.score + cpuData.score) / 2;
+    
+    // Adjust for resolution
+    const resolutionPenalty = {
+      '1080p': 0,
+      '1440p': -15,
+      '4K': -30
+    };
+    baseScore += resolutionPenalty[pcConfig.resolution] || 0;
+    
+    // Adjust for RAM
+    const ramBonus = {
+      '8GB': -10,
+      '16GB': 0,
+      '32GB': 5,
+      '64GB': 10
+    };
+    baseScore += ramBonus[pcConfig.ram] || 0;
+
+    // Determine tier
+    let tier, verdict, fps, settings;
+    if (baseScore >= 85) {
+      tier = 'ultra';
+      verdict = t('ultra_ready');
+      fps = '60+ FPS';
+      settings = 'Ultra';
+    } else if (baseScore >= 65) {
+      tier = 'high';
+      verdict = t('high_performance');
+      fps = '45-60 FPS';
+      settings = 'High';
+    } else if (baseScore >= 45) {
+      tier = 'medium';
+      verdict = t('medium_settings');
+      fps = '30-45 FPS';
+      settings = 'Medium';
+    } else if (baseScore >= 25) {
+      tier = 'low';
+      verdict = t('low_settings');
+      fps = '20-30 FPS';
+      settings = 'Low';
+    } else {
+      tier = 'incompatible';
+      verdict = t('not_compatible');
+      fps = '< 20 FPS';
+      settings = 'Unplayable';
+    }
+
+    setPcAnalysis({
+      score: Math.max(0, Math.min(100, baseScore)),
+      tier,
+      verdict,
+      fps,
+      settings,
+      gpu: gpuData,
+      cpu: cpuData
+    });
+    
+    setShowBenchmark(true);
+  };
+
   // Translations
   const translations = {
     en: {
@@ -136,10 +281,33 @@ const App = () => {
       features: 'Features',
       beta_access: 'Beta Access',
       ai_chat: 'AI Chat',
+      pc_requirements: 'PC Requirements',
       game_stats: 'Game Stats',
       roadmap: 'Roadmap',
       neural_interface_menu: 'NEURAL INTERFACE MENU',
       language: 'Language',
+
+      // PC Requirements
+      system_analyzer: 'SYSTEM ANALYZER',
+      select_hardware: 'Select Your Hardware Configuration',
+      graphics_card: 'Graphics Card',
+      processor: 'Processor',
+      memory: 'Memory (RAM)',
+      resolution: 'Target Resolution',
+      operating_system: 'Operating System',
+      analyze_system: 'ANALYZE SYSTEM',
+      performance_analysis: 'Performance Analysis',
+      compatibility_verdict: 'Compatibility Verdict',
+      expected_performance: 'Expected Performance',
+      benchmark_preview: 'Benchmark Preview',
+      ultra_ready: '⚡ ULTRA READY',
+      high_performance: '✅ HIGH PERFORMANCE',
+      medium_settings: '🟡 MEDIUM SETTINGS',
+      low_settings: '🟠 LOW SETTINGS',
+      not_compatible: '❌ NOT COMPATIBLE',
+      system_score: 'System Score',
+      estimated_fps: 'Estimated FPS',
+      recommended_settings: 'Recommended Settings',
 
       // Hero Section
       hero_subtitle: 'ZeropunkOS v0.92 | Guest Access | dayystudio',
@@ -203,10 +371,33 @@ const App = () => {
       features: '功能',
       beta_access: '测试版访问',
       ai_chat: 'AI 聊天',
+      pc_requirements: '系统要求',
       game_stats: '游戏统计',
       roadmap: '路线图',
       neural_interface_menu: '神经接口菜单',
       language: '语言',
+
+      // PC Requirements
+      system_analyzer: '系统分析器',
+      select_hardware: '选择您的硬件配置',
+      graphics_card: '显卡',
+      processor: '处理器',
+      memory: '内存 (RAM)',
+      resolution: '目标分辨率',
+      operating_system: '操作系统',
+      analyze_system: '分析系统',
+      performance_analysis: '性能分析',
+      compatibility_verdict: '兼容性结论',
+      expected_performance: '预期性能',
+      benchmark_preview: '基准测试预览',
+      ultra_ready: '⚡ 极高画质就绪',
+      high_performance: '✅ 高性能',
+      medium_settings: '🟡 中等设置',
+      low_settings: '🟠 低设置',
+      not_compatible: '❌ 不兼容',
+      system_score: '系统评分',
+      estimated_fps: '预估帧率',
+      recommended_settings: '推荐设置',
 
       // Hero Section
       hero_subtitle: 'ZeropunkOS v0.92 | 访客模式 | dayystudio',
@@ -270,10 +461,33 @@ const App = () => {
       features: 'Fonctionnalités',
       beta_access: 'Accès Bêta',
       ai_chat: 'Chat IA',
+      pc_requirements: 'Config PC',
       game_stats: 'Statistiques',
       roadmap: 'Feuille de Route',
       neural_interface_menu: 'MENU INTERFACE NEURALE',
       language: 'Langue',
+
+      // PC Requirements
+      system_analyzer: 'ANALYSEUR SYSTÈME',
+      select_hardware: 'Sélectionnez Votre Configuration Matérielle',
+      graphics_card: 'Carte Graphique',
+      processor: 'Processeur',
+      memory: 'Mémoire (RAM)',
+      resolution: 'Résolution Cible',
+      operating_system: 'Système d\'Exploitation',
+      analyze_system: 'ANALYSER SYSTÈME',
+      performance_analysis: 'Analyse de Performance',
+      compatibility_verdict: 'Verdict de Compatibilité',
+      expected_performance: 'Performance Attendue',
+      benchmark_preview: 'Aperçu Benchmark',
+      ultra_ready: '⚡ ULTRA PRÊT',
+      high_performance: '✅ HAUTE PERFORMANCE',
+      medium_settings: '🟡 PARAMÈTRES MOYENS',
+      low_settings: '🟠 PARAMÈTRES BAS',
+      not_compatible: '❌ NON COMPATIBLE',
+      system_score: 'Score Système',
+      estimated_fps: 'FPS Estimés',
+      recommended_settings: 'Paramètres Recommandés',
 
       // Hero Section
       hero_subtitle: 'ZeropunkOS v0.92 | Accès Invité | dayystudio',
@@ -348,6 +562,7 @@ const App = () => {
     { id: 'about', label: t('features'), icon: <Info size={20} /> },
     { id: 'beta', label: t('beta_access'), icon: <Gamepad2 size={20} /> },
     { id: 'alia', label: t('ai_chat'), icon: <Bot size={20} /> },
+    { id: 'pc_requirements', label: t('pc_requirements'), icon: <Monitor size={20} /> },
     { id: 'stats', label: t('game_stats'), icon: <BarChart3 size={20} /> },
     { id: 'roadmap', label: t('roadmap'), icon: <Map size={20} /> }
   ];
@@ -551,6 +766,195 @@ const App = () => {
     </div>
   );
 
+  const PCRequirementsSection = () => (
+    <div className="section-container pc-requirements-section">
+      <div className="section-content">
+        <h2 className="section-title">{t('system_analyzer')}</h2>
+        
+        <div className="pc-analyzer-grid">
+          <div className="hardware-config">
+            <h3 className="config-title">{t('select_hardware')}</h3>
+            
+            <div className="config-form">
+              <div className="form-group">
+                <label className="form-label">
+                  <Cpu className="form-icon" />
+                  {t('graphics_card')}
+                </label>
+                <select 
+                  value={pcConfig.gpu} 
+                  onChange={(e) => setPcConfig(prev => ({ ...prev, gpu: e.target.value }))}
+                  className="form-select"
+                >
+                  <option value="">Select GPU...</option>
+                  {Object.keys(hardwareDB.gpus).map(gpu => (
+                    <option key={gpu} value={gpu}>{gpu}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">
+                  <HardDrive className="form-icon" />
+                  {t('processor')}
+                </label>
+                <select 
+                  value={pcConfig.cpu} 
+                  onChange={(e) => setPcConfig(prev => ({ ...prev, cpu: e.target.value }))}
+                  className="form-select"
+                >
+                  <option value="">Select CPU...</option>
+                  {Object.keys(hardwareDB.cpus).map(cpu => (
+                    <option key={cpu} value={cpu}>{cpu}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">
+                  <Settings className="form-icon" />
+                  {t('memory')}
+                </label>
+                <select 
+                  value={pcConfig.ram} 
+                  onChange={(e) => setPcConfig(prev => ({ ...prev, ram: e.target.value }))}
+                  className="form-select"
+                >
+                  <option value="">Select RAM...</option>
+                  <option value="8GB">8GB</option>
+                  <option value="16GB">16GB</option>
+                  <option value="32GB">32GB</option>
+                  <option value="64GB">64GB</option>
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">
+                  <Monitor className="form-icon" />
+                  {t('resolution')}
+                </label>
+                <select 
+                  value={pcConfig.resolution} 
+                  onChange={(e) => setPcConfig(prev => ({ ...prev, resolution: e.target.value }))}
+                  className="form-select"
+                >
+                  <option value="">Select Resolution...</option>
+                  <option value="1080p">1920×1080 (Full HD)</option>
+                  <option value="1440p">2560×1440 (2K)</option>
+                  <option value="4K">3840×2160 (4K)</option>
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">
+                  <Globe className="form-icon" />
+                  {t('operating_system')}
+                </label>
+                <select 
+                  value={pcConfig.os} 
+                  onChange={(e) => setPcConfig(prev => ({ ...prev, os: e.target.value }))}
+                  className="form-select"
+                >
+                  <option value="">Select OS...</option>
+                  <option value="Windows 11">Windows 11</option>
+                  <option value="Windows 10">Windows 10</option>
+                  <option value="macOS">macOS</option>
+                  <option value="Linux">Linux</option>
+                </select>
+              </div>
+
+              <button 
+                className="cta-button primary analyze-btn"
+                onClick={analyzePCConfig}
+                disabled={!pcConfig.gpu || !pcConfig.cpu || !pcConfig.ram || !pcConfig.resolution}
+              >
+                <Brain className="icon" />
+                {t('analyze_system')}
+              </button>
+            </div>
+          </div>
+
+          {pcAnalysis && (
+            <motion.div 
+              className="analysis-results"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h3 className="results-title">{t('performance_analysis')}</h3>
+              
+              <div className="verdict-card">
+                <div className="verdict-header">
+                  <h4>{t('compatibility_verdict')}</h4>
+                  <div className={`verdict-badge ${pcAnalysis.tier}`}>
+                    {pcAnalysis.verdict}
+                  </div>
+                </div>
+                
+                <div className="performance-metrics">
+                  <div className="metric">
+                    <span className="metric-label">{t('system_score')}</span>
+                    <div className="score-bar">
+                      <div 
+                        className={`score-fill ${pcAnalysis.tier}`}
+                        style={{ width: `${pcAnalysis.score}%` }}
+                      ></div>
+                      <span className="score-text">{Math.round(pcAnalysis.score)}/100</span>
+                    </div>
+                  </div>
+                  
+                  <div className="metric">
+                    <span className="metric-label">{t('estimated_fps')}</span>
+                    <span className="metric-value">{pcAnalysis.fps}</span>
+                  </div>
+                  
+                  <div className="metric">
+                    <span className="metric-label">{t('recommended_settings')}</span>
+                    <span className="metric-value">{pcAnalysis.settings}</span>
+                  </div>
+                </div>
+              </div>
+
+              {showBenchmark && (
+                <motion.div 
+                  className="benchmark-preview"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                >
+                  <h4>{t('benchmark_preview')}</h4>
+                  <div className={`benchmark-visualization ${pcAnalysis.tier}`}>
+                    <div className="fps-counter">
+                      <span className="fps-number">{pcAnalysis.fps.split(' ')[0]}</span>
+                      <span className="fps-label">FPS</span>
+                    </div>
+                    <div className="performance-graph">
+                      {[...Array(20)].map((_, i) => (
+                        <div 
+                          key={i}
+                          className="graph-bar"
+                          style={{
+                            height: `${Math.random() * 40 + 20}px`,
+                            animationDelay: `${i * 0.1}s`
+                          }}
+                        ></div>
+                      ))}
+                    </div>
+                    <div className="quality-indicator">
+                      <span className={`quality-badge ${pcAnalysis.tier}`}>
+                        {pcAnalysis.settings} Quality
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </motion.div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
   const StatsSection = () => (
     <div className="section-container stats-section">
       <div className="section-content">
@@ -714,6 +1118,7 @@ const App = () => {
       case 'about': return <AboutSection />;
       case 'beta': return <BetaSection />;
       case 'alia': return <AliaNoxSection />;
+      case 'pc_requirements': return <PCRequirementsSection />;
       case 'stats': return <StatsSection />;
       case 'roadmap': return <RoadmapSection />;
       default: return <HeroSection />;
