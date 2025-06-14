@@ -688,6 +688,34 @@ const App = () => {
       estimated_fps: 'FPS Estimés',
       recommended_settings: 'Paramètres Recommandés',
 
+      // Live Activity
+      live_world_title: 'ACTIVITÉ MONDIALE DES JOUEURS EN DIRECT',
+      players_online: 'Joueurs En Ligne',
+      game_time: 'Temps de Jeu',
+      current_weather: 'Météo Actuelle',
+      market_status: 'État du Marché',
+      faction_control: 'Contrôle des Factions',
+      ongoing_events: 'Événements en Cours',
+      resource_prices: 'Prix des Ressources',
+      trading_volume: 'Volume des Transactions',
+      weather_visibility: 'Visibilité',
+      weather_intensity: 'Intensité',
+      market_active: 'ACTIF',
+      market_volatile: 'VOLATIL',
+      trend_rising: 'En Hausse',
+      trend_stable: 'Stable',
+      trend_falling: 'En Baisse',
+      event_raid: 'Raid Corporatif',
+      event_market_surge: 'Poussée du Marché',
+      participants: 'Participants',
+
+      // Stats Section
+      stats_title: 'STATISTIQUES SYSTÈME',
+      active_neural_links: 'Liaisons Neurales Actives',
+      beta_downloads: 'Téléchargements Bêta',
+      wishlist_count: 'Nombre de Liste de Souhaits',
+      neural_rating: 'Évaluation Neurale',
+
       // Hero Section
       hero_subtitle: 'ZeropunkOS v0.92 | Accès Invité | dayystudio',
       hero_message: 'Vous n\'êtes pas le héros. Vous êtes un citoyen — un autre rouage dans le système fracturé. Mais le système s\'effrite, et vous pourriez être l\'étincelle.',
