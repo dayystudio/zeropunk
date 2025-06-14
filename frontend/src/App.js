@@ -2947,6 +2947,7 @@ const App = () => {
                   ))}
                 </div>
               </div>
+            </motion.nav>
           </>
         )}
       </AnimatePresence>
