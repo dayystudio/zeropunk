@@ -51,6 +51,26 @@ const App = () => {
       'RTX 2070': { tier: 'medium', score: 50, vram: 8 },
       'RTX 2060': { tier: 'medium', score: 42, vram: 6 },
       
+      // GTX Series (Older but popular)
+      'GTX 1080 Ti': { tier: 'medium', score: 48, vram: 11 },
+      'GTX 1080': { tier: 'medium', score: 42, vram: 8 },
+      'GTX 1070 Ti': { tier: 'medium', score: 38, vram: 8 },
+      'GTX 1070': { tier: 'low', score: 35, vram: 8 },
+      'GTX 1660 Ti': { tier: 'low', score: 35, vram: 6 },
+      'GTX 1660 Super': { tier: 'low', score: 33, vram: 6 },
+      'GTX 1660': { tier: 'low', score: 30, vram: 6 },
+      'GTX 1650 Super': { tier: 'low', score: 28, vram: 4 },
+      'GTX 1650': { tier: 'low', score: 25, vram: 4 },
+      'GTX 1060 6GB': { tier: 'low', score: 28, vram: 6 },
+      'GTX 1060 3GB': { tier: 'low', score: 25, vram: 3 },
+      'GTX 1050 Ti': { tier: 'low', score: 22, vram: 4 },
+      'GTX 1050': { tier: 'incompatible', score: 18, vram: 2 },
+      'GTX 980 Ti': { tier: 'low', score: 32, vram: 6 },
+      'GTX 980': { tier: 'low', score: 28, vram: 4 },
+      'GTX 970': { tier: 'low', score: 26, vram: 4 },
+      'GTX 960': { tier: 'low', score: 20, vram: 2 },
+      'GTX 950': { tier: 'incompatible', score: 15, vram: 2 },
+      
       // AMD GPUs
       'RX 7900 XTX': { tier: 'ultra', score: 88, vram: 24 },
       'RX 7900 XT': { tier: 'high', score: 78, vram: 20 },
@@ -59,37 +79,114 @@ const App = () => {
       'RX 6800 XT': { tier: 'high', score: 68, vram: 16 },
       'RX 6700 XT': { tier: 'medium', score: 56, vram: 12 },
       'RX 6600 XT': { tier: 'medium', score: 45, vram: 8 },
+      'RX 6500 XT': { tier: 'low', score: 30, vram: 4 },
+      'RX 5700 XT': { tier: 'medium', score: 50, vram: 8 },
+      'RX 5700': { tier: 'medium', score: 46, vram: 8 },
+      'RX 5600 XT': { tier: 'medium', score: 42, vram: 6 },
+      'RX 5500 XT': { tier: 'low', score: 32, vram: 8 },
+      'RX 580': { tier: 'low', score: 28, vram: 8 },
+      'RX 570': { tier: 'low', score: 25, vram: 4 },
+      'RX 560': { tier: 'low', score: 20, vram: 4 },
       
-      // Lower-end/Older
-      'GTX 1660 Ti': { tier: 'low', score: 35, vram: 6 },
-      'GTX 1650': { tier: 'low', score: 25, vram: 4 },
-      'Intel UHD': { tier: 'incompatible', score: 5, vram: 1 },
-      'Intel Iris': { tier: 'low', score: 15, vram: 2 }
+      // Lower-end/Integrated
+      'Intel Arc A770': { tier: 'medium', score: 45, vram: 16 },
+      'Intel Arc A750': { tier: 'medium', score: 40, vram: 8 },
+      'Intel UHD 630': { tier: 'incompatible', score: 5, vram: 1 },
+      'Intel Iris Xe': { tier: 'low', score: 15, vram: 2 },
+      'Vega 11 (APU)': { tier: 'low', score: 18, vram: 2 },
+      'Vega 8 (APU)': { tier: 'incompatible', score: 12, vram: 1 }
     },
     cpus: {
-      // Intel CPUs
+      // Intel CPUs - Latest Gen
       'i9-13900K': { tier: 'ultra', score: 100, cores: 24 },
       'i7-13700K': { tier: 'high', score: 85, cores: 16 },
       'i5-13600K': { tier: 'high', score: 75, cores: 14 },
-      'i5-12600K': { tier: 'high', score: 70, cores: 10 },
-      'i5-11400F': { tier: 'medium', score: 60, cores: 6 },
-      'i3-12100F': { tier: 'medium', score: 45, cores: 4 },
-      'i7-10700K': { tier: 'medium', score: 65, cores: 8 },
-      'i5-10400F': { tier: 'medium', score: 55, cores: 6 },
+      'i5-13400F': { tier: 'high', score: 68, cores: 10 },
+      'i3-13100F': { tier: 'medium', score: 55, cores: 4 },
       
-      // AMD CPUs
+      // Intel 12th Gen
+      'i9-12900K': { tier: 'ultra', score: 95, cores: 16 },
+      'i7-12700K': { tier: 'high', score: 80, cores: 12 },
+      'i5-12600K': { tier: 'high', score: 70, cores: 10 },
+      'i5-12400F': { tier: 'medium', score: 62, cores: 6 },
+      'i3-12100F': { tier: 'medium', score: 45, cores: 4 },
+      
+      // Intel 11th Gen
+      'i9-11900K': { tier: 'high', score: 75, cores: 8 },
+      'i7-11700K': { tier: 'high', score: 68, cores: 8 },
+      'i5-11600K': { tier: 'medium', score: 62, cores: 6 },
+      'i5-11400F': { tier: 'medium', score: 60, cores: 6 },
+      'i3-11100F': { tier: 'medium', score: 42, cores: 4 },
+      
+      // Intel 10th Gen
+      'i9-10900K': { tier: 'high', score: 70, cores: 10 },
+      'i7-10700K': { tier: 'medium', score: 65, cores: 8 },
+      'i5-10600K': { tier: 'medium', score: 58, cores: 6 },
+      'i5-10400F': { tier: 'medium', score: 55, cores: 6 },
+      'i3-10100F': { tier: 'medium', score: 38, cores: 4 },
+      
+      // Intel 9th Gen
+      'i9-9900K': { tier: 'medium', score: 65, cores: 8 },
+      'i7-9700K': { tier: 'medium', score: 60, cores: 8 },
+      'i5-9600K': { tier: 'medium', score: 52, cores: 6 },
+      'i5-9400F': { tier: 'medium', score: 48, cores: 6 },
+      'i3-9100F': { tier: 'low', score: 35, cores: 4 },
+      
+      // Intel 8th Gen
+      'i7-8700K': { tier: 'medium', score: 55, cores: 6 },
+      'i5-8600K': { tier: 'medium', score: 48, cores: 6 },
+      'i5-8400': { tier: 'medium', score: 45, cores: 6 },
+      'i3-8100': { tier: 'low', score: 32, cores: 4 },
+      
+      // AMD CPUs - Latest Gen
       'Ryzen 9 7950X': { tier: 'ultra', score: 95, cores: 16 },
+      'Ryzen 9 7900X': { tier: 'ultra', score: 88, cores: 12 },
       'Ryzen 7 7800X3D': { tier: 'ultra', score: 92, cores: 8 },
       'Ryzen 7 7700X': { tier: 'high', score: 80, cores: 8 },
       'Ryzen 5 7600X': { tier: 'high', score: 72, cores: 6 },
+      'Ryzen 5 7500F': { tier: 'high', score: 65, cores: 6 },
+      
+      // AMD 5000 Series
+      'Ryzen 9 5950X': { tier: 'ultra', score: 90, cores: 16 },
+      'Ryzen 9 5900X': { tier: 'high', score: 82, cores: 12 },
+      'Ryzen 7 5800X3D': { tier: 'high', score: 85, cores: 8 },
       'Ryzen 7 5800X': { tier: 'high', score: 75, cores: 8 },
+      'Ryzen 7 5700X': { tier: 'high', score: 70, cores: 8 },
       'Ryzen 5 5600X': { tier: 'medium', score: 68, cores: 6 },
+      'Ryzen 5 5600': { tier: 'medium', score: 65, cores: 6 },
+      'Ryzen 5 5500': { tier: 'medium', score: 58, cores: 6 },
+      
+      // AMD 3000 Series
+      'Ryzen 9 3950X': { tier: 'high', score: 78, cores: 16 },
+      'Ryzen 9 3900X': { tier: 'high', score: 72, cores: 12 },
+      'Ryzen 7 3800X': { tier: 'medium', score: 65, cores: 8 },
+      'Ryzen 7 3700X': { tier: 'medium', score: 62, cores: 8 },
+      'Ryzen 5 3600X': { tier: 'medium', score: 60, cores: 6 },
       'Ryzen 5 3600': { tier: 'medium', score: 58, cores: 6 },
+      'Ryzen 5 3500X': { tier: 'medium', score: 52, cores: 6 },
+      'Ryzen 3 3300X': { tier: 'medium', score: 48, cores: 4 },
+      'Ryzen 3 3100': { tier: 'low', score: 42, cores: 4 },
+      
+      // AMD 2000 Series
+      'Ryzen 7 2700X': { tier: 'medium', score: 55, cores: 8 },
+      'Ryzen 7 2700': { tier: 'medium', score: 52, cores: 8 },
+      'Ryzen 5 2600X': { tier: 'medium', score: 48, cores: 6 },
+      'Ryzen 5 2600': { tier: 'medium', score: 45, cores: 6 },
+      'Ryzen 3 2300X': { tier: 'low', score: 38, cores: 4 },
+      
+      // AMD 1000 Series
+      'Ryzen 7 1800X': { tier: 'medium', score: 48, cores: 8 },
+      'Ryzen 7 1700X': { tier: 'medium', score: 45, cores: 8 },
+      'Ryzen 5 1600X': { tier: 'medium', score: 42, cores: 6 },
+      'Ryzen 5 1600': { tier: 'low', score: 40, cores: 6 },
+      'Ryzen 3 1300X': { tier: 'low', score: 35, cores: 4 },
       
       // Apple Silicon
       'Apple M2 Ultra': { tier: 'high', score: 78, cores: 24 },
       'Apple M2 Pro': { tier: 'medium', score: 62, cores: 12 },
       'Apple M2': { tier: 'medium', score: 55, cores: 8 },
+      'Apple M1 Ultra': { tier: 'high', score: 72, cores: 20 },
+      'Apple M1 Pro': { tier: 'medium', score: 58, cores: 10 },
       'Apple M1': { tier: 'medium', score: 50, cores: 8 }
     }
   };
