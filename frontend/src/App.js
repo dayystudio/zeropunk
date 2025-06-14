@@ -1534,12 +1534,31 @@ const App = () => {
     const [activeFeature, setActiveFeature] = useState(0);
     const [hoveredFeature, setHoveredFeature] = useState(null);
     const [scanlinePosition, setScanlinePosition] = useState(0);
+    const [dataStreamActive, setDataStreamActive] = useState(false);
+    const [systemPulse, setSystemPulse] = useState(0);
+    const [particleCount, setParticleCount] = useState(50);
 
     useEffect(() => {
+      // Advanced scanline animation
       const scanlineInterval = setInterval(() => {
-        setScanlinePosition(prev => (prev + 1) % 100);
+        setScanlinePosition(prev => (prev + 2) % 100);
+      }, 60);
+      
+      // Data stream activation
+      const dataStreamInterval = setInterval(() => {
+        setDataStreamActive(prev => !prev);
+      }, 3000);
+      
+      // System pulse for heartbeat effect
+      const pulseInterval = setInterval(() => {
+        setSystemPulse(prev => (prev + 1) % 100);
       }, 50);
-      return () => clearInterval(scanlineInterval);
+
+      return () => {
+        clearInterval(scanlineInterval);
+        clearInterval(dataStreamInterval);
+        clearInterval(pulseInterval);
+      };
     }, []);
 
     const features = [
@@ -1550,7 +1569,24 @@ const App = () => {
         description: t('ai_npcs_desc'),
         details: t('ai_npcs_details'),
         accent: '#00FFFF',
-        stats: { memory: '99.8%', interactions: '2.4M+', accuracy: '97.2%' }
+        gradient: 'linear-gradient(135deg, #00FFFF 0%, #0080FF 100%)',
+        stats: { 
+          memory: { value: 99.8, unit: '%', label: 'Neural Memory' },
+          interactions: { value: 2.4, unit: 'M+', label: 'Daily Interactions' },
+          accuracy: { value: 97.2, unit: '%', label: 'Response Accuracy' }
+        },
+        capabilities: [
+          'Dynamic personality adaptation',
+          'Cross-session memory retention',
+          'Emotional intelligence processing',
+          'Contextual relationship building'
+        ],
+        technicalSpecs: {
+          'Neural Pathways': '2.4B parameters',
+          'Memory Capacity': '∞ TB',
+          'Response Time': '< 50ms',
+          'Learning Rate': 'Adaptive'
+        }
       },
       {
         id: 'neural_dialogue',
@@ -1559,7 +1595,24 @@ const App = () => {
         description: t('neural_dialogue_desc'),
         details: t('neural_dialogue_details'),
         accent: '#FF0080',
-        stats: { processing: '12ms', contexts: '500K+', languages: '47' }
+        gradient: 'linear-gradient(135deg, #FF0080 0%, #FF4040 100%)',
+        stats: { 
+          processing: { value: 12, unit: 'ms', label: 'Processing Speed' },
+          contexts: { value: 500, unit: 'K+', label: 'Context Windows' },
+          languages: { value: 47, unit: '', label: 'Languages Supported' }
+        },
+        capabilities: [
+          'Real-time sentiment analysis',
+          'Multi-language neural translation',
+          'Contextual subtext understanding',
+          'Philosophical reasoning engine'
+        ],
+        technicalSpecs: {
+          'Language Models': 'GPT-4O Hybrid',
+          'Context Length': '128K tokens',
+          'Reasoning Depth': '∞ levels',
+          'Emotion Detection': '99.4% accuracy'
+        }
       },
       {
         id: 'open_world',
@@ -1568,255 +1621,391 @@ const App = () => {
         description: t('open_world_desc'),
         details: t('open_world_details'),
         accent: '#80FF00',
-        stats: { districts: '12', events: '∞', players: 'Active' }
+        gradient: 'linear-gradient(135deg, #80FF00 0%, #40FF80 100%)',
+        stats: { 
+          districts: { value: 12, unit: '', label: 'City Districts' },
+          events: { value: '∞', unit: '', label: 'Dynamic Events' },
+          players: { value: 'Live', unit: '', label: 'Player Activity' }
+        },
+        capabilities: [
+          'Procedural event generation',
+          'Real-time world simulation',
+          'Player-driven narrative evolution',
+          'Quantum-state city systems'
+        ],
+        technicalSpecs: {
+          'World Size': '847 km²',
+          'NPCs Active': '50K+',
+          'Simulation Depth': 'Quantum-level',
+          'Update Frequency': 'Real-time'
+        }
       }
     ];
 
+    const currentFeature = features[activeFeature];
+
     return (
       <div className="section-container about-section">
-        <div className="features-dashboard">
-          {/* Dashboard Header */}
-          <div className="dashboard-header">
-            <div className="header-grid">
-              <div className="status-indicator">
-                <div className="status-dot pulsing"></div>
-                <span className="status-text">NEURAL INTERFACE ONLINE</span>
-              </div>
-              <div className="system-info">
-                <span className="system-version">v0.92.3</span>
-                <span className="system-uptime">UPTIME: 247:15:32</span>
-              </div>
-            </div>
-            <h2 className="dashboard-title">
-              <span className="title-main">{t('neural_interface')}</span>
-              <span className="title-subtitle">Core System Features</span>
-            </h2>
-          </div>
-
-          {/* Main Content Grid */}
-          <div className="features-grid-container">
-            {/* Features Navigation */}
-            <div className="features-nav">
-              <div className="nav-header">
-                <Terminal size={16} />
-                <span>FEATURE_MODULES</span>
-              </div>
-              {features.map((feature, index) => (
-                <motion.div
-                  key={feature.id}
-                  className={`nav-item ${activeFeature === index ? 'active' : ''}`}
-                  onClick={() => setActiveFeature(index)}
-                  onHoverStart={() => setHoveredFeature(index)}
-                  onHoverEnd={() => setHoveredFeature(null)}
-                  whileHover={{ x: 5 }}
-                  style={{ '--accent-color': feature.accent }}
-                >
-                  <div className="nav-icon">{feature.icon}</div>
-                  <div className="nav-content">
-                    <div className="nav-title">{feature.title}</div>
-                    <div className="nav-id">MODULE_{String(index + 1).padStart(2, '0')}</div>
-                  </div>
-                  <div className="nav-indicator"></div>
-                </motion.div>
+        <div className="features-dashboard-v2">
+          {/* Advanced Background Effects */}
+          <div className="dashboard-bg-effects">
+            <div className="neural-grid"></div>
+            <div className="data-streams">
+              {[...Array(8)].map((_, i) => (
+                <div key={i} className={`data-stream stream-${i + 1} ${dataStreamActive ? 'active' : ''}`}></div>
               ))}
             </div>
+            <div className="particle-system">
+              {[...Array(particleCount)].map((_, i) => (
+                <div key={i} className="particle" style={{
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 5}s`,
+                  animationDuration: `${3 + Math.random() * 4}s`
+                }}></div>
+              ))}
+            </div>
+          </div>
 
-            {/* Main Feature Display */}
-            <div className="feature-display">
-              <div className="display-frame">
-                {/* Scanlines Effect */}
-                <div 
-                  className="display-scanlines" 
-                  style={{ transform: `translateY(${scanlinePosition * 4}px)` }}
-                ></div>
+          {/* Enhanced Dashboard Header */}
+          <div className="dashboard-header-v2">
+            <div className="header-top-bar">
+              <div className="system-status">
+                <div className="status-cluster">
+                  <div className="status-dot pulsing" style={{ '--pulse-color': '#00FFFF' }}></div>
+                  <span className="status-label">NEURAL_CORE</span>
+                  <span className="status-value">ONLINE</span>
+                </div>
+                <div className="status-cluster">
+                  <div className="status-dot pulsing" style={{ '--pulse-color': '#80FF00' }}></div>
+                  <span className="status-label">MEMORY_BANK</span>
+                  <span className="status-value">ACTIVE</span>
+                </div>
+                <div className="status-cluster">
+                  <div className="status-dot pulsing" style={{ '--pulse-color': '#FF0080' }}></div>
+                  <span className="status-label">AI_MATRIX</span>
+                  <span className="status-value">SYNCED</span>
+                </div>
+              </div>
+              <div className="system-metrics-top">
+                <div className="metric-chip">
+                  <span className="metric-label">SYSTEM_LOAD</span>
+                  <span className="metric-value">73.2%</span>
+                </div>
+                <div className="metric-chip">
+                  <span className="metric-label">UPTIME</span>
+                  <span className="metric-value">247:15:32</span>
+                </div>
+                <div className="metric-chip">
+                  <span className="metric-label">VERSION</span>
+                  <span className="metric-value">v0.92.3</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="title-section">
+              <motion.h1 
+                className="dashboard-title-v2"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+              >
+                <span className="title-prefix">ZEROPUNK://</span>
+                <span className="title-main-v2">{t('neural_interface')}</span>
+                <span className="title-suffix">CORE_SYSTEMS</span>
+              </motion.h1>
+              <div className="subtitle-container">
+                <div className="subtitle-line"></div>
+                <span className="subtitle-text">Advanced AI Technology Suite</span>
+                <div className="subtitle-line"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Main Dashboard Grid */}
+          <div className="features-main-grid">
+            {/* Enhanced Feature Navigation */}
+            <div className="features-nav-v2">
+              <div className="nav-header-v2">
+                <Terminal className="nav-icon" />
+                <span className="nav-title">FEATURE_MODULES</span>
+                <div className="nav-indicator-bar"></div>
+              </div>
+              
+              <div className="nav-items-container">
+                {features.map((feature, index) => (
+                  <motion.div
+                    key={feature.id}
+                    className={`nav-item-v2 ${activeFeature === index ? 'active' : ''}`}
+                    onClick={() => setActiveFeature(index)}
+                    onHoverStart={() => setHoveredFeature(index)}
+                    onHoverEnd={() => setHoveredFeature(null)}
+                    whileHover={{ x: 8, scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    style={{ 
+                      '--accent-color': feature.accent,
+                      '--feature-gradient': feature.gradient
+                    }}
+                  >
+                    <div className="nav-item-bg"></div>
+                    <div className="nav-item-content">
+                      <div className="nav-item-icon">
+                        {feature.icon}
+                        <div className="icon-glow"></div>
+                      </div>
+                      <div className="nav-item-info">
+                        <div className="nav-item-title">{feature.title}</div>
+                        <div className="nav-item-id">MODULE_{String(index + 1).padStart(2, '0')}</div>
+                        <div className="nav-item-stats">
+                          {Object.entries(feature.stats).slice(0, 1).map(([key, stat]) => (
+                            <span key={key} className="nav-stat">
+                              {stat.value}{stat.unit}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="nav-item-indicator">
+                        <div className="indicator-dot"></div>
+                        <div className="indicator-line"></div>
+                      </div>
+                    </div>
+                    <div className="nav-item-overlay"></div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Enhanced Main Display */}
+            <div className="feature-display-v2">
+              <div className="display-frame-v2">
+                {/* Advanced Visual Effects */}
+                <div className="display-effects">
+                  <div 
+                    className="advanced-scanlines" 
+                    style={{ transform: `translateY(${scanlinePosition * 6}px)` }}
+                  ></div>
+                  <div className="holo-mesh"></div>
+                  <div className="data-overlay"></div>
+                </div>
                 
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeFeature}
-                    className="feature-content"
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -50 }}
-                    transition={{ duration: 0.3 }}
-                    style={{ '--accent-color': features[activeFeature].accent }}
+                    className="feature-content-v2"
+                    initial={{ opacity: 0, x: 100, rotateY: 10 }}
+                    animate={{ opacity: 1, x: 0, rotateY: 0 }}
+                    exit={{ opacity: 0, x: -100, rotateY: -10 }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    style={{ 
+                      '--accent-color': currentFeature.accent,
+                      '--feature-gradient': currentFeature.gradient
+                    }}
                   >
                     {/* Feature Header */}
-                    <div className="feature-header-display">
-                      <div className="feature-icon-large">
-                        {features[activeFeature].icon}
-                        <div className="icon-glow"></div>
+                    <div className="feature-header-v2">
+                      <div className="feature-icon-container">
+                        <div className="icon-frame">
+                          {currentFeature.icon}
+                          <div className="icon-rings">
+                            <div className="ring ring-1"></div>
+                            <div className="ring ring-2"></div>
+                            <div className="ring ring-3"></div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="feature-meta">
-                        <h3 className="feature-title-display">{features[activeFeature].title}</h3>
-                        <p className="feature-subtitle">Advanced Neural Technology</p>
+                      <div className="feature-info">
+                        <h2 className="feature-title-v2">{currentFeature.title}</h2>
+                        <p className="feature-category">NEURAL_TECHNOLOGY_SUITE</p>
+                        <div className="feature-id">#{currentFeature.id.toUpperCase()}_CORE</div>
                       </div>
                     </div>
 
-                    {/* Feature Stats */}
-                    <div className="feature-stats">
-                      {Object.entries(features[activeFeature].stats).map(([key, value]) => (
-                        <div key={key} className="stat-item">
-                          <div className="stat-label">{key.toUpperCase()}</div>
-                          <div className="stat-value">{value}</div>
-                          <div className="stat-bar">
+                    {/* Advanced Stats Grid */}
+                    <div className="stats-grid-v2">
+                      {Object.entries(currentFeature.stats).map(([key, stat], index) => (
+                        <motion.div
+                          key={key}
+                          className="stat-card-v2"
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.1 + 0.3 }}
+                        >
+                          <div className="stat-header">
+                            <div className="stat-icon">
+                              <Activity size={16} />
+                            </div>
+                            <span className="stat-label-v2">{stat.label}</span>
+                          </div>
+                          <div className="stat-value-container">
+                            <span className="stat-value-v2">{stat.value}</span>
+                            <span className="stat-unit">{stat.unit}</span>
+                          </div>
+                          <div className="stat-progress">
                             <motion.div 
-                              className="stat-fill"
+                              className="progress-fill"
                               initial={{ width: 0 }}
-                              animate={{ width: '100%' }}
-                              transition={{ delay: 0.5, duration: 1 }}
+                              animate={{ width: typeof stat.value === 'number' ? `${Math.min(stat.value, 100)}%` : '100%' }}
+                              transition={{ delay: index * 0.1 + 0.5, duration: 1 }}
                             ></motion.div>
                           </div>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
 
                     {/* Feature Description */}
-                    <div className="feature-description-display">
-                      <div className="description-header">
-                        <Code size={16} />
-                        <span>TECHNICAL_OVERVIEW</span>
+                    <div className="feature-description-v2">
+                      <div className="description-header-v2">
+                        <Code className="section-icon" />
+                        <span>SYSTEM_OVERVIEW</span>
+                        <div className="header-line"></div>
                       </div>
-                      <p className="description-text">{features[activeFeature].description}</p>
+                      <p className="description-text-v2">{currentFeature.description}</p>
                     </div>
 
-                    {/* Detailed Information */}
-                    <div className="feature-details-display">
-                      <div className="details-header">
-                        <Settings size={16} />
-                        <span>IMPLEMENTATION_DETAILS</span>
+                    {/* Capabilities Grid */}
+                    <div className="capabilities-section">
+                      <div className="capabilities-header">
+                        <Settings className="section-icon" />
+                        <span>CORE_CAPABILITIES</span>
+                        <div className="header-line"></div>
                       </div>
-                      <div className="details-content">
-                        <p>{features[activeFeature].details}</p>
+                      <div className="capabilities-grid">
+                        {currentFeature.capabilities.map((capability, index) => (
+                          <motion.div
+                            key={index}
+                            className="capability-item"
+                            initial={{ opacity: 0, x: -30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.1 + 0.6 }}
+                          >
+                            <div className="capability-dot"></div>
+                            <span>{capability}</span>
+                          </motion.div>
+                        ))}
                       </div>
                     </div>
 
-                    {/* Interactive Elements */}
-                    <div className="feature-actions">
+                    {/* Enhanced Action Buttons */}
+                    <div className="action-buttons-v2">
                       <motion.button
-                        className="action-btn primary"
-                        whileHover={{ scale: 1.05 }}
+                        className="action-btn-v2 primary"
+                        whileHover={{ scale: 1.05, boxShadow: `0 0 30px ${currentFeature.accent}` }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <Play size={16} />
-                        INITIALIZE MODULE
+                        <Play size={18} />
+                        <span>INITIALIZE_MODULE</span>
+                        <div className="btn-glow"></div>
                       </motion.button>
                       <motion.button
-                        className="action-btn secondary"
+                        className="action-btn-v2 secondary"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <Terminal size={16} />
-                        VIEW DOCS
+                        <Terminal size={18} />
+                        <span>ACCESS_DOCS</span>
                       </motion.button>
                     </div>
                   </motion.div>
                 </AnimatePresence>
-
-                {/* Holographic Effects */}
-                <div className="display-holo-overlay"></div>
               </div>
             </div>
 
-            {/* Side Panel */}
-            <div className="side-panel">
-              <div className="panel-section">
-                <div className="panel-header">
-                  <Activity size={16} />
-                  <span>SYSTEM_STATUS</span>
+            {/* Enhanced Side Panel */}
+            <div className="side-panel-v2">
+              {/* Technical Specifications */}
+              <div className="panel-section-v2">
+                <div className="panel-header-v2">
+                  <Cpu className="panel-icon" />
+                  <span>TECH_SPECS</span>
                 </div>
-                <div className="system-metrics">
-                  <div className="metric">
-                    <span className="metric-label">Neural Load</span>
-                    <div className="metric-bar">
+                <div className="tech-specs">
+                  {Object.entries(currentFeature.technicalSpecs).map(([key, value]) => (
+                    <div key={key} className="spec-item">
+                      <span className="spec-key">{key}</span>
+                      <span className="spec-value">{value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Real-time Monitoring */}
+              <div className="panel-section-v2">
+                <div className="panel-header-v2">
+                  <Activity className="panel-icon" />
+                  <span>LIVE_MONITOR</span>
+                </div>
+                <div className="monitoring-display">
+                  <div className="monitor-item">
+                    <span className="monitor-label">Neural Activity</span>
+                    <div className="monitor-bar">
                       <motion.div 
-                        className="metric-fill"
-                        initial={{ width: 0 }}
-                        animate={{ width: '73%' }}
+                        className="monitor-fill"
+                        animate={{ width: `${50 + Math.sin(systemPulse * 0.1) * 30}%` }}
                         style={{ backgroundColor: '#00FFFF' }}
                       ></motion.div>
                     </div>
-                    <span className="metric-value">73%</span>
                   </div>
-                  <div className="metric">
-                    <span className="metric-label">Memory Sync</span>
-                    <div className="metric-bar">
+                  <div className="monitor-item">
+                    <span className="monitor-label">Data Flow</span>
+                    <div className="monitor-bar">
                       <motion.div 
-                        className="metric-fill"
-                        initial={{ width: 0 }}
-                        animate={{ width: '95%' }}
-                        style={{ backgroundColor: '#80FF00' }}
-                      ></motion.div>
-                    </div>
-                    <span className="metric-value">95%</span>
-                  </div>
-                  <div className="metric">
-                    <span className="metric-label">AI Response</span>
-                    <div className="metric-bar">
-                      <motion.div 
-                        className="metric-fill"
-                        initial={{ width: 0 }}
-                        animate={{ width: '88%' }}
+                        className="monitor-fill"
+                        animate={{ width: `${60 + Math.cos(systemPulse * 0.15) * 25}%` }}
                         style={{ backgroundColor: '#FF0080' }}
                       ></motion.div>
                     </div>
-                    <span className="metric-value">88%</span>
+                  </div>
+                  <div className="monitor-item">
+                    <span className="monitor-label">System Load</span>
+                    <div className="monitor-bar">
+                      <motion.div 
+                        className="monitor-fill"
+                        animate={{ width: `${70 + Math.sin(systemPulse * 0.08) * 20}%` }}
+                        style={{ backgroundColor: '#80FF00' }}
+                      ></motion.div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="panel-section">
-                <div className="panel-header">
-                  <Globe size={16} />
-                  <span>GLOBAL_STATS</span>
-                </div>
-                <div className="global-stats">
-                  <div className="stat">
-                    <span className="stat-number">2.4M+</span>
-                    <span className="stat-label">Neural Links</span>
-                  </div>
-                  <div className="stat">
-                    <span className="stat-number">99.7%</span>
-                    <span className="stat-label">Uptime</span>
-                  </div>
-                  <div className="stat">
-                    <span className="stat-number">12ms</span>
-                    <span className="stat-label">Latency</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="panel-section">
-                <div className="panel-header">
-                  <AlertTriangle size={16} />
+              {/* System Alerts */}
+              <div className="panel-section-v2">
+                <div className="panel-header-v2">
+                  <AlertTriangle className="panel-icon" />
                   <span>ALERTS</span>
                 </div>
-                <div className="alerts-list">
-                  <div className="alert-item info">
-                    <div className="alert-dot"></div>
-                    <span>System optimization complete</span>
+                <div className="alerts-display">
+                  <div className="alert-item-v2 success">
+                    <div className="alert-indicator"></div>
+                    <div className="alert-content">
+                      <span className="alert-title">Neural sync complete</span>
+                      <span className="alert-time">2m ago</span>
+                    </div>
                   </div>
-                  <div className="alert-item warning">
-                    <div className="alert-dot"></div>
-                    <span>Neural cache at 85% capacity</span>
+                  <div className="alert-item-v2 warning">
+                    <div className="alert-indicator"></div>
+                    <div className="alert-content">
+                      <span className="alert-title">Cache optimization needed</span>
+                      <span className="alert-time">5m ago</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Bottom Info Bar */}
-          <div className="dashboard-footer">
-            <div className="footer-item">
-              <Lock size={16} />
-              <span>SECURE CONNECTION</span>
+          {/* Enhanced Footer */}
+          <div className="dashboard-footer-v2">
+            <div className="footer-section">
+              <Shield className="footer-icon" />
+              <span>QUANTUM_ENCRYPTION_ACTIVE</span>
             </div>
-            <div className="footer-item">
-              <Cpu size={16} />
-              <span>QUANTUM ENCRYPTION ENABLED</span>
+            <div className="footer-section">
+              <Lock className="footer-icon" />
+              <span>NEURAL_FIREWALL_ENABLED</span>
             </div>
-            <div className="footer-item">
-              <Shield size={16} />
-              <span>NEURAL FIREWALL ACTIVE</span>
+            <div className="footer-section">
+              <Globe className="footer-icon" />
+              <span>GLOBAL_NEURAL_NETWORK</span>
             </div>
           </div>
         </div>
