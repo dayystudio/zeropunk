@@ -1338,56 +1338,198 @@ const App = () => {
       </div>
     </div>
   );
-    <div className="section-container stats-section">
+  const LiveActivitySection = () => (
+    <div className="section-container live-activity-section">
       <div className="section-content">
-        <h2 className="section-title">{t('stats_title')}</h2>
-        <div className="stats-grid">
-          {gameStats && (
-            <>
-              <motion.div 
-                className="stat-card"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <Users className="stat-icon" />
-                <div className="stat-value">{gameStats.players_online.toLocaleString()}</div>
-                <div className="stat-label">{t('active_neural_links')}</div>
-              </motion.div>
-              
-              <motion.div 
-                className="stat-card"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <Download className="stat-icon" />
-                <div className="stat-value">{gameStats.beta_downloads.toLocaleString()}</div>
-                <div className="stat-label">{t('beta_downloads')}</div>
-              </motion.div>
-              
-              <motion.div 
-                className="stat-card"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <Star className="stat-icon" />
-                <div className="stat-value">{gameStats.wishlist_count.toLocaleString()}</div>
-                <div className="stat-label">{t('wishlist_count')}</div>
-              </motion.div>
-              
-              <motion.div 
-                className="stat-card"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <Brain className="stat-icon" />
-                <div className="stat-value">{gameStats.rating}/5</div>
-                <div className="stat-label">{t('neural_rating')}</div>
-              </motion.div>
-            </>
-          )}
+        <h2 className="section-title">{t('live_world_title')}</h2>
+        
+        <div className="live-dashboard">
+          {/* Player Count & Game Time */}
+          <div className="dashboard-row">
+            <motion.div 
+              className="live-card player-count-card"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <div className="card-header">
+                <Users className="card-icon pulse-blue" />
+                <span className="card-label">{t('players_online')}</span>
+              </div>
+              <div className="card-value">
+                <span className="live-number">{liveData.playerCount.toLocaleString()}</span>
+                <div className="pulse-indicator active"></div>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="live-card game-time-card"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <div className="card-header">
+                <Clock className="card-icon pulse-cyan" />
+                <span className="card-label">{t('game_time')}</span>
+              </div>
+              <div className="card-value">
+                <span className="live-time">
+                  {String(liveData.gameTime.hour).padStart(2, '0')}:
+                  {String(liveData.gameTime.minute).padStart(2, '0')}
+                </span>
+                <span className="time-period">{liveData.gameTime.period}</span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Weather & Market */}
+          <div className="dashboard-row">
+            <motion.div 
+              className="live-card weather-card"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <div className="card-header">
+                <CloudRain className="card-icon pulse-purple" />
+                <span className="card-label">{t('current_weather')}</span>
+              </div>
+              <div className="weather-display">
+                <div className="weather-condition">{liveData.weather.condition}</div>
+                <div className="weather-stats">
+                  <div className="weather-stat">
+                    <span className="stat-label">{t('weather_intensity')}</span>
+                    <div className="stat-bar">
+                      <div 
+                        className="stat-fill weather-intensity"
+                        style={{ width: `${liveData.weather.intensity}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="weather-stat">
+                    <span className="stat-label">{t('weather_visibility')}</span>
+                    <div className="stat-bar">
+                      <div 
+                        className="stat-fill weather-visibility"
+                        style={{ width: `${liveData.weather.visibility}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="live-card market-card"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <div className="card-header">
+                <TrendingUp className="card-icon pulse-green" />
+                <span className="card-label">{t('market_status')}</span>
+              </div>
+              <div className="market-display">
+                <div className={`market-status ${liveData.market.status.toLowerCase()}`}>
+                  {t(`market_${liveData.market.status.toLowerCase()}`)}
+                </div>
+                <div className="market-volume">
+                  <span className="volume-label">{t('trading_volume')}</span>
+                  <span className="volume-value">₦{liveData.market.volume.toLocaleString()}</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Faction Control */}
+          <motion.div 
+            className="live-card faction-card full-width"
+            whileHover={{ scale: 1.01 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <div className="card-header">
+              <Shield className="card-icon pulse-orange" />
+              <span className="card-label">{t('faction_control')}</span>
+            </div>
+            <div className="faction-display">
+              {liveData.factions.map((faction, index) => (
+                <div key={index} className="faction-item">
+                  <div className="faction-info">
+                    <span className="faction-name">{faction.name}</span>
+                    <span className={`faction-trend ${faction.trend}`}>
+                      {t(`trend_${faction.trend}`)} {faction.control}%
+                    </span>
+                  </div>
+                  <div className="faction-bar">
+                    <div 
+                      className={`faction-fill faction-${index + 1}`}
+                      style={{ width: `${faction.control}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Resource Prices & Events */}
+          <div className="dashboard-row">
+            <motion.div 
+              className="live-card resources-card"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <div className="card-header">
+                <Coins className="card-icon pulse-yellow" />
+                <span className="card-label">{t('resource_prices')}</span>
+              </div>
+              <div className="resources-display">
+                {liveData.resources.map((resource, index) => (
+                  <div key={index} className="resource-item">
+                    <span className="resource-name">{resource.name}</span>
+                    <div className="resource-price">
+                      <span className="price-value">₦{resource.price}</span>
+                      <span className={`price-change ${resource.change >= 0 ? 'positive' : 'negative'}`}>
+                        {resource.change >= 0 ? '+' : ''}{resource.change}%
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="live-card events-card"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <div className="card-header">
+                <Activity className="card-icon pulse-red" />
+                <span className="card-label">{t('ongoing_events')}</span>
+              </div>
+              <div className="events-display">
+                {liveData.events.map((event, index) => (
+                  <div key={index} className="event-item">
+                    <div className="event-type">
+                      {t(`event_${event.type}`)}
+                    </div>
+                    <div className="event-details">
+                      {event.location && <span className="event-location">{event.location}</span>}
+                      {event.participants && (
+                        <span className="event-participants">
+                          {event.participants} {t('participants')}
+                        </span>
+                      )}
+                      {event.change && (
+                        <span className="event-change positive">
+                          {event.item}: {event.change}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>
+  );
   );
 
   const RoadmapSection = () => {
