@@ -345,8 +345,18 @@ const App = () => {
   };
 
   const navigateToSection = (section) => {
+    if (section === 'language') {
+      setLanguageMenuOpen(!languageMenuOpen);
+      return;
+    }
     setCurrentSection(section);
     setMenuOpen(false);
+    setLanguageMenuOpen(false);
+  };
+
+  const selectLanguage = (langCode) => {
+    setCurrentLanguage(langCode);
+    setLanguageMenuOpen(false);
   };
 
   const analyzePCConfig = () => {
