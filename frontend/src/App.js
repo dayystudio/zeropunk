@@ -1192,12 +1192,7 @@ const App = () => {
 
           {/* Main Content */}
           <div className="wishlist-hero">
-            <motion.div 
-              className="wishlist-header"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
+            <div className="wishlist-header">
               <h2 className="wishlist-title">
                 <span className="title-line-1">{t('beta_title')}</span>
                 <div className="title-steam-integration">
