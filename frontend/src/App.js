@@ -1021,6 +1021,32 @@ const App = () => {
                 >
                   <h4>{t('benchmark_preview')}</h4>
                   <div className={`benchmark-visualization ${pcAnalysis.tier}`}>
+                    {/* Holographic Environment Sim */}
+                    <div className="holographic-environment">
+                      <div className="holo-grid"></div>
+                      <div className="holo-particles">
+                        {[...Array(8)].map((_, i) => (
+                          <div 
+                            key={i}
+                            className="holo-particle"
+                            style={{
+                              animationDelay: `${i * 0.3}s`,
+                              left: `${10 + i * 10}%`,
+                              animationDuration: `${2 + Math.random() * 2}s`
+                            }}
+                          ></div>
+                        ))}
+                      </div>
+                      <div className="holo-avatar">
+                        <div className="avatar-core"></div>
+                        <div className="avatar-rings">
+                          <div className="ring ring-1"></div>
+                          <div className="ring ring-2"></div>
+                          <div className="ring ring-3"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
                     <div className="fps-counter">
                       <span className="fps-number">{pcAnalysis.fps.split(' ')[0]}</span>
                       <span className="fps-label">FPS</span>
