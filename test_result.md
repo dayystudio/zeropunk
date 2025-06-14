@@ -380,7 +380,6 @@ test_plan:
     - "Cyberpunk UI Foundation"
     - "Mobile Optimization for One-Page Scroll Layout"
     - "Interactive Alia Nox Chat Interface"
-    - "Navigation System"
     - "Hero Section"
     - "Game Stats Display"
     - "About Section"
@@ -394,6 +393,7 @@ test_plan:
     - "Chat History Storage"
     - "AI Chat API Integration with Alia Nox"
     - "API Routing and CORS Configuration"
+    - "Navigation System"
   backend_verified: true
   frontend_issues:
     - "Frontend application not loading properly in browser"
