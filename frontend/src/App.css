@@ -1122,7 +1122,7 @@ section {
 
 /* Hamburger Menu System */
 .main-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -1131,6 +1131,66 @@ section {
   backdrop-filter: blur(25px);
   border-bottom: 1px solid rgba(59, 130, 246, 0.2);
   transition: all 0.3s ease;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-text {
+  color: #00FFFF;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.5));
+}
+
+/* Mobile Header Adjustments */
+@media (max-width: 768px) {
+  .main-header {
+    height: 60px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(30px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+  }
+  
+  .header-content {
+    padding: 0 1rem;
+  }
+  
+  .brand-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    height: 56px;
+  }
+  
+  .header-content {
+    padding: 0 0.75rem;
+  }
+  
+  .brand-text {
+    font-size: 1.1rem;
+  }
 }
 
 .header-content {
