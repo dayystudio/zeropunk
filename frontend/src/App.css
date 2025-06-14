@@ -10053,3 +10053,49 @@ section {
   }
 }
 
+
+/* ===== FIXED HEADER CONTENT ADJUSTMENTS ===== */
+
+/* Main content adjustment for fixed header */
+.main-content {
+  padding-top: 70px;
+  min-height: calc(100vh - 70px);
+}
+
+/* Mobile content adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 60px;
+    min-height: calc(100vh - 60px);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 56px;
+    min-height: calc(100vh - 56px);
+  }
+}
+
+/* Section containers adjustment */
+.section-container {
+  padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding-top: 1.5rem;
+  }
+}
+
+/* Hero section specific adjustment */
+.hero-section {
+  padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 1.5rem;
+  }
+}
+
