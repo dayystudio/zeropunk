@@ -1381,8 +1381,8 @@ section {
 }
 
 .menu-footer {
-  border-top: 1px solid rgba(59, 130, 246, 0.15);
-  padding-top: 1rem;
+  border-top: 1px solid rgba(59, 130, 246, 0.1);
+  padding-top: 0.75rem;
   position: relative;
 }
 
