@@ -2909,62 +2909,19 @@ const App = () => {
         )}
       </AnimatePresence>
 
-      {/* One-Page Scroll Layout - All Sections */}
-      <main className="one-page-layout">
-        {/* Hero Section */}
-        <section id="hero" className="page-section">
-          <HeroSection />
-        </section>
-
-        {/* Features/About Section */}
-        <section id="about" className="page-section">
-          <AboutSection />
-        </section>
-
-        {/* Wishlist/Beta Section */}
-        <section id="beta" className="page-section">
-          <BetaSection />
-        </section>
-
-        {/* Modding Hub Section */}
-        <section id="modding" className="page-section">
-          <ModdingHubComingSoon />
-        </section>
-
-        {/* Character Customization Section */}
-        <section id="character" className="page-section">
-          <CharacterCustomizationSection />
-        </section>
-
-        {/* AI Chat/Alia Section */}
-        <section id="alia" className="page-section">
-          <AliaNoxSection />
-        </section>
-
-        {/* PC Requirements Section */}
-        <section id="pc_requirements" className="page-section">
-          <PCRequirementsSection />
-        </section>
-
-        {/* Live Activity Section */}
-        <section id="live_activity" className="page-section">
-          <LiveActivitySection />
-        </section>
-
-        {/* Game Stats Section */}
-        <section id="stats" className="page-section">
-          <StatsSection />
-        </section>
-
-        {/* Roadmap Section */}
-        <section id="roadmap" className="page-section">
-          <RoadmapSection />
-        </section>
-
-        {/* Contact Section */}
-        <section id="contact" className="page-section">
-          <ContactSection />
-        </section>
+      {/* Main Content */}
+      <main className="main-content">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSection}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            {renderCurrentSection()}
+          </motion.div>
+        </AnimatePresence>
       </main>
 
       {/* Alia Nox Chat Interface */}
