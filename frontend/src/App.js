@@ -1158,46 +1158,206 @@ const App = () => {
     );
   };
 
-  const BetaSection = () => (
-    <div className="section-container beta-section">
-      <div className="section-content">
-        <h2 className="section-title">{t('beta_title')}</h2>
-        <div className="beta-grid">
-          <div className="beta-content">
-            <div className="beta-warning">
-              <AlertTriangle className="warning-icon" />
-              <span>{t('beta_warning')}</span>
+  const BetaSection = () => {
+    const testimonials = [
+      {
+        quote: "A glimpse into the future of gaming. Every NPC feels alive.",
+        author: "TechCrunch",
+        type: "media"
+      },
+      {
+        quote: "I've never experienced AI this immersive in a game before.",
+        author: "Alpha Tester",
+        type: "player"
+      },
+      {
+        quote: "ZEROPUNK redefines what's possible in interactive storytelling.",
+        author: "GameDev Insider",
+        type: "media"
+      },
+      {
+        quote: "The neural dialogue system is revolutionary.",
+        author: "Beta Player",
+        type: "player"
+      }
+    ];
+
+    return (
+      <div className="section-container wishlist-section">
+        <div className="section-content">
+          {/* Animated Background Elements */}
+          <div className="wishlist-bg-effects">
+            <div className="neon-grid"></div>
+            <div className="floating-particles">
+              {[...Array(12)].map((_, i) => (
+                <div 
+                  key={i}
+                  className="particle"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    animationDelay: `${Math.random() * 5}s`,
+                    animationDuration: `${3 + Math.random() * 4}s`
+                  }}
+                ></div>
+              ))}
             </div>
-            
-            <p className="beta-description">
-              {t('beta_description')}
-            </p>
-            
-            <div className="beta-requirements">
-              <h3>{t('system_requirements')}</h3>
-              <ul>
-                <li>{t('neural_compatibility')}</li>
-                <li>{t('consciousness_stability')}</li>
-                <li>{t('memory_fragmentation')}</li>
-                <li>{t('quantum_processing')}</li>
-              </ul>
-            </div>
-            
-            <div className="beta-buttons">
-              <button className="cta-button primary">
-                <Lock className="icon" />
-                {t('request_beta_access')}
-              </button>
-              <button className="cta-button secondary">
-                <Globe className="icon" />
-                {t('view_system_specs')}
-              </button>
-            </div>
+            <div className="glitch-overlay"></div>
+          </div>
+
+          {/* Main Content */}
+          <div className="wishlist-hero">
+            <motion.div 
+              className="wishlist-header"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              <h2 className="wishlist-title">
+                <span className="title-line-1">{t('beta_title')}</span>
+                <div className="title-steam-integration">
+                  <div className="steam-logo-container">
+                    <div className="steam-logo">
+                      <div className="steam-circle"></div>
+                      <div className="steam-lines">
+                        <div className="steam-line"></div>
+                        <div className="steam-line"></div>
+                        <div className="steam-line"></div>
+                      </div>
+                    </div>
+                    <div className="logo-merge-effect"></div>
+                  </div>
+                  <span className="zeropunk-merge">× ZEROPUNK</span>
+                </div>
+              </h2>
+              
+              <div className="launch-status">
+                <div className="status-indicator">
+                  <div className="status-pulse"></div>
+                  <span>{t('beta_warning')}</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="wishlist-description"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
+              <p>{t('beta_description')}</p>
+            </motion.div>
+
+            {/* Main CTA Button */}
+            <motion.div 
+              className="wishlist-cta-container"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.8 }}
+            >
+              <motion.button
+                className="wishlist-cta-btn"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => window.open('https://store.steampowered.com/', '_blank')}
+              >
+                <div className="btn-bg-effects">
+                  <div className="btn-glow"></div>
+                  <div className="btn-scan-lines"></div>
+                  <div className="btn-energy-flow"></div>
+                </div>
+                <div className="btn-content">
+                  <div className="btn-icon">
+                    <Star className="star-icon" />
+                  </div>
+                  <span className="btn-text">{t('request_beta_access')}</span>
+                  <div className="btn-arrow">
+                    <Play size={20} />
+                  </div>
+                </div>
+                <div className="btn-hover-effect"></div>
+              </motion.button>
+            </motion.div>
+
+            {/* Testimonials Grid */}
+            <motion.div 
+              className="testimonials-grid"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.2 }}
+            >
+              <h3 className="testimonials-title">Early Access Reactions</h3>
+              <div className="testimonials-container">
+                {testimonials.map((testimonial, index) => (
+                  <motion.div
+                    key={index}
+                    className={`testimonial-card ${testimonial.type}`}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 1.5 + index * 0.2 }}
+                    whileHover={{ scale: 1.02, y: -5 }}
+                  >
+                    <div className="testimonial-bg">
+                      <div className="testimonial-border"></div>
+                      <div className="testimonial-glow"></div>
+                    </div>
+                    <div className="testimonial-content">
+                      <blockquote>"{testimonial.quote}"</blockquote>
+                      <cite>— {testimonial.author}</cite>
+                    </div>
+                    <div className="testimonial-type-indicator">
+                      {testimonial.type === 'media' ? (
+                        <Eye size={14} />
+                      ) : (
+                        <Users size={14} />
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* System Requirements Showcase */}
+            <motion.div 
+              className="requirements-showcase"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1.8 }}
+            >
+              <div className="requirements-header">
+                <h4>{t('system_requirements')}</h4>
+                <button 
+                  className="specs-btn"
+                  onClick={() => navigateToSection('pc_requirements')}
+                >
+                  {t('view_system_specs')}
+                  <ChevronDown className="specs-arrow" />
+                </button>
+              </div>
+              
+              <div className="requirements-grid">
+                <div className="requirement-item">
+                  <Brain className="req-icon" />
+                  <span>{t('neural_compatibility')}</span>
+                </div>
+                <div className="requirement-item">
+                  <Zap className="req-icon" />
+                  <span>{t('consciousness_stability')}</span>
+                </div>
+                <div className="requirement-item">
+                  <Activity className="req-icon" />
+                  <span>{t('memory_fragmentation')}</span>
+                </div>
+                <div className="requirement-item">
+                  <Settings className="req-icon" />
+                  <span>{t('quantum_processing')}</span>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   const AliaNoxSection = () => (
     <div className="section-container alia-section">
