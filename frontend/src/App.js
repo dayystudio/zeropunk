@@ -2233,6 +2233,7 @@ const App = () => {
       case 'hero': return <HeroSection />;
       case 'about': return <AboutSection />;
       case 'beta': return <BetaSection />;
+      case 'modding': return <ModdingHub currentLanguage={currentLanguage} />;
       case 'character': return <CharacterCustomizationSection />;
       case 'alia': return <AliaNoxSection />;
       case 'pc_requirements': return <PCRequirementsSection />;
