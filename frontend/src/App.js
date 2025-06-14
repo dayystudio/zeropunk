@@ -242,7 +242,35 @@ const App = () => {
   useEffect(() => {
     setSessionId(generateSessionId());
     fetchGameStats();
+    
+    // Start live data updates
+    const liveDataInterval = setInterval(updateLiveData, 3000);
+    return () => clearInterval(liveDataInterval);
   }, []);
+
+  const updateLiveData = () => {
+    setLiveData(prev => ({
+      ...prev,
+      playerCount: prev.playerCount + Math.floor(Math.random() * 20) - 10,
+      gameTime: {
+        ...prev.gameTime,
+        minute: (prev.gameTime.minute + 1) % 60,
+        hour: prev.gameTime.minute === 59 ? (prev.gameTime.hour + 1) % 24 : prev.gameTime.hour
+      },
+      weather: {
+        ...prev.weather,
+        intensity: Math.max(10, Math.min(100, prev.weather.intensity + Math.floor(Math.random() * 10) - 5))
+      },
+      market: {
+        ...prev.market,
+        volume: prev.market.volume + Math.floor(Math.random() * 10000) - 5000
+      },
+      resources: prev.resources.map(resource => ({
+        ...resource,
+        change: resource.change + Math.floor(Math.random() * 6) - 3
+      }))
+    }));
+  };
 
   const generateSessionId = () => {
     return 'session_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
