@@ -111,14 +111,14 @@ backend:
     file: "/app/backend/server.py"
     stuck_count: 1
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
       - working: true
         agent: "main"
         comment: "Implemented OpenAI GPT-4o integration with emergentintegrations library for Alia Nox AI character chat"
       - working: false
         agent: "testing"
-        comment: "The AI Chat API is implemented correctly but fails with authentication error. The OpenAI API key in backend/.env is set to a placeholder value 'your_openai_api_key_here' which causes 401 Unauthorized errors. The API endpoint structure and error handling work correctly, but a valid API key is required for full functionality."
+        comment: "Backend API structure is correctly implemented but fails due to invalid OpenAI API key. User needs to provide valid OpenAI API key to enable AI chat functionality."
   
   - task: "Game Stats API Endpoint"
     implemented: true
