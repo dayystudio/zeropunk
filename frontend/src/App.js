@@ -549,6 +549,18 @@ const App = () => {
       // Roadmap Section
       roadmap_title: 'DEVELOPMENT ROADMAP',
 
+      // Contact Section
+      contact: 'Contact',
+      contact_title: 'Get in Touch with the Zeropunk Team',
+      contact_intro: 'Whether you\'re a player, a curious mind, a journalist, or a potential partner — welcome to the back alleys of Zeropunk. We\'re ready to talk. ✉️',
+      contact_name: 'Name',
+      contact_email: 'Email Address',
+      contact_subject: 'Subject',
+      contact_message: 'Message',
+      contact_send: 'Send Message',
+      contact_success: 'Thanks! Your message has been transmitted to the Zeropunk network. We\'ll get back to you soon, netrunner.',
+      alia_contact_message: 'I\'m Alia. I\'ll make sure your message reaches the right sector.',
+
       // Chat
       alia_chat_title: 'ALIA NOX - Neural Interface Active',
       chat_welcome: 'Welcome to the neural link. I\'m Alia Nox. What questions burn within your mind?',
