@@ -625,6 +625,7 @@ const App = () => {
       beta_access: 'Accès Bêta',
       ai_chat: 'Chat IA',
       pc_requirements: 'Config PC',
+      live_activity: 'Activité Live',
       game_stats: 'Statistiques',
       roadmap: 'Feuille de Route',
       neural_interface_menu: 'MENU INTERFACE NEURALE',
