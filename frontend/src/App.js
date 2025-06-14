@@ -728,6 +728,23 @@ const App = () => {
       contact_success: '谢谢！您的消息已传输到 Zeropunk 网络。我们很快就会回复您，网络骑手。',
       alia_contact_message: '我是 Alia。我会确保您的消息到达正确的区域。',
 
+      // Character Customization
+      character_customization: '角色定制',
+      character_title: '设计你的赛博朋克身份',
+      character_intro: '用尖端的 3D 定制系统创造完美的网络跑者化身。每个选择都塑造你在霓虹浸透的 ZEROPUNK 世界中的数字存在。',
+      customize_face: '面部与身份',
+      customize_hair: '神经发型',
+      customize_outfit: '街头时尚',
+      customize_accessories: '科技配件',
+      customize_augmentations: '赛博改造',
+      customize_weapons: '战斗装备',
+      gender_male: '男性',
+      gender_female: '女性',
+      randomize_character: '随机生成',
+      save_character: '保存头像',
+      share_character: '分享设计',
+      reset_character: '重置为默认',
+
       // Chat
       alia_chat_title: 'ALIA NOX - 神经接口激活',
       chat_welcome: '欢迎来到神经链接。我是Alia Nox。你心中燃烧着什么问题？',
