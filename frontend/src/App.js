@@ -802,7 +802,7 @@ const App = () => {
       // Hero Section
       hero_subtitle: 'ZeropunkOS v0.92 | Accès Invité | dayystudio',
       hero_message: 'Vous n\'êtes pas le héros. Vous êtes un citoyen — un autre rouage dans le système fracturé. Mais le système s\'effrite, et vous pourriez être l\'étincelle.',
-      enter_beta: 'ENTRER DANS LA BÊTA',
+      enter_beta: 'LISTE DE SOUHAITS STEAM',
       talk_to_alia: 'PARLER À ALIA NOX',
 
       // About Section
