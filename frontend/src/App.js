@@ -973,18 +973,18 @@ const App = () => {
   ];
 
   const menuItems = [
-    { id: 'hero', label: t('home'), icon: <Home size={20} /> },
-    { id: 'about', label: t('features'), icon: <Info size={20} /> },
-    { id: 'beta', label: t('wishlist_steam'), icon: <Gamepad2 size={20} /> },
-    { id: 'character', label: t('character_customization'), icon: <UserCircle size={20} /> },
-    { id: 'alia', label: 'Alia Nox AI Chat', icon: <Bot size={20} /> },
-    { id: 'pc_requirements', label: t('pc_requirements'), icon: <Monitor size={20} /> },
-    { id: 'stats', label: 'GameStat', icon: <BarChart3 size={20} /> },
-    { id: 'live_activity', label: 'Live World Activity', icon: <Globe size={20} /> },
-    { id: 'roadmap', label: t('roadmap'), icon: <Map size={20} /> },
-    { id: 'modding', label: 'Modding Hub', icon: <Code size={20} /> },
-    { id: 'contact', label: t('contact'), icon: <Mail size={20} /> },
-    { id: 'language', label: t('language'), icon: <Languages size={20} />, isLanguageSelector: true }
+    { id: 'hero', label: t('home'), icon: <Home size={22} /> },
+    { id: 'about', label: t('features'), icon: <Info size={22} /> },
+    { id: 'beta', label: t('wishlist_steam'), icon: <Gamepad2 size={22} /> },
+    { id: 'character', label: t('character_customization'), icon: <UserCircle size={22} /> },
+    { id: 'alia', label: 'Alia Nox AI Chat', icon: <Bot size={22} /> },
+    { id: 'pc_requirements', label: t('pc_requirements'), icon: <Monitor size={22} /> },
+    { id: 'stats', label: 'GameStat', icon: <BarChart3 size={22} /> },
+    { id: 'live_activity', label: 'Live World Activity', icon: <Globe size={22} /> },
+    { id: 'roadmap', label: t('roadmap'), icon: <Map size={22} /> },
+    { id: 'modding', label: 'Modding Hub', icon: <Code size={22} /> },
+    { id: 'contact', label: t('contact'), icon: <Mail size={22} /> },
+    { id: 'language', label: t('language'), icon: <Languages size={22} />, isLanguageSelector: true }
   ];
 
   const ModdingHubComingSoon = () => {
