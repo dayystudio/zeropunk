@@ -660,6 +660,7 @@ const App = () => {
     { id: 'beta', label: t('beta_access'), icon: <Gamepad2 size={20} /> },
     { id: 'alia', label: t('ai_chat'), icon: <Bot size={20} /> },
     { id: 'pc_requirements', label: t('pc_requirements'), icon: <Monitor size={20} /> },
+    { id: 'live_activity', label: t('live_activity'), icon: <Globe size={20} /> },
     { id: 'stats', label: t('game_stats'), icon: <BarChart3 size={20} /> },
     { id: 'roadmap', label: t('roadmap'), icon: <Map size={20} /> }
   ];
