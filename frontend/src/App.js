@@ -803,7 +803,8 @@ const App = () => {
     { id: 'pc_requirements', label: t('pc_requirements'), icon: <Monitor size={20} /> },
     { id: 'live_activity', label: t('live_activity'), icon: <Globe size={20} /> },
     { id: 'stats', label: t('game_stats'), icon: <BarChart3 size={20} /> },
-    { id: 'roadmap', label: t('roadmap'), icon: <Map size={20} /> }
+    { id: 'roadmap', label: t('roadmap'), icon: <Map size={20} /> },
+    { id: 'language', label: t('language'), icon: <Languages size={20} />, isLanguageSelector: true }
   ];
 
   const HeroSection = () => (
