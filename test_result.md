@@ -372,6 +372,11 @@ test_plan:
     - "AI Chat API Integration with Alia Nox"
     - "API Routing and CORS Configuration"
   backend_verified: true
+  frontend_issues:
+    - "Frontend application not loading properly in browser"
+    - "Browser shows 'Not Found' error while curl returns 200 OK"
+    - "Likely routing configuration issue in React application"
+    - "Server responds but React app is not rendering"
 
 agent_communication:
   - agent: "main"
