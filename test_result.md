@@ -168,6 +168,9 @@ frontend:
       - working: false
         agent: "testing"
         comment: "CRITICAL ISSUE: The frontend application is not loading properly. When accessing both http://localhost:3000 and http://localhost:8001, the browser shows a 'Not Found' error. The React application is not rendering, preventing testing of the UI components."
+      - working: false
+        agent: "testing"
+        comment: "Further investigation shows that while curl requests to http://localhost:3000 return a 200 OK status, the browser still shows a 'Not Found' error. This suggests a routing issue in the React application. The server is responding but the React app is not properly rendering. This is likely related to client-side routing configuration."
 
   - task: "Interactive Alia Nox Chat Interface"
     implemented: true
