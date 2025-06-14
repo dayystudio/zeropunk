@@ -277,7 +277,38 @@ class ZeropunkBackendTests(unittest.TestCase):
         self.assertIn("Access-Control-Allow-Origin", response.headers)
         self.assertEqual(response.headers["Access-Control-Allow-Origin"], "*")
         
+        # Check other CORS headers
+        self.assertIn("Access-Control-Allow-Methods", response.headers)
+        self.assertIn("Access-Control-Allow-Headers", response.headers)
+        
         print(f"CORS headers: {response.headers.get('Access-Control-Allow-Origin')}")
+        
+    def test_08_api_prefix(self):
+        """Test that all endpoints use /api prefix correctly"""
+        print("\nTesting API prefix...")
+        
+        # Test direct access to root without /api prefix (should fail)
+        response = requests.get(f"{BACKEND_URL}/")
+        print(f"Direct root access status: {response.status_code}")
+        
+        # Test access to root with /api prefix (should succeed)
+        response = requests.get(f"{BACKEND_URL}/api/")
+        self.assertEqual(response.status_code, 200)
+        print(f"API prefixed root access status: {response.status_code}")
+        
+        # Test game-stats with prefix
+        response = requests.get(f"{BACKEND_URL}/api/game-stats")
+        self.assertEqual(response.status_code, 200)
+        print(f"API prefixed game-stats access status: {response.status_code}")
+        
+        # Verify all endpoints are accessible only through /api prefix
+        endpoints = ["/", "/game-stats", "/status"]
+        for endpoint in endpoints:
+            direct_response = requests.get(f"{BACKEND_URL}{endpoint}")
+            api_response = requests.get(f"{BACKEND_URL}/api{endpoint}")
+            
+            print(f"Endpoint {endpoint}: Direct={direct_response.status_code}, With API prefix={api_response.status_code}")
+            self.assertEqual(api_response.status_code, 200, f"API prefixed endpoint {endpoint} should return 200")
 
 if __name__ == "__main__":
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
