@@ -985,297 +985,195 @@ const App = () => {
   ];
 
   const CharacterCustomizationSection = () => {
-    const [activeCategory, setActiveCategory] = useState('face');
-    const [aliaNoxComments, setAliaNoxComments] = useState([]);
-    const [scrollProgress, setScrollProgress] = useState(0);
+    const [glitchActive, setGlitchActive] = useState(false);
+    const [scanlinePosition, setScanlinePosition] = useState(0);
     
-    const customizationCategories = [
-      { id: 'face', label: t('customize_face'), icon: <UserCircle size={18} /> },
-      { id: 'hair', label: t('customize_hair'), icon: <Palette size={18} /> },
-      { id: 'outfit', label: t('customize_outfit'), icon: <Settings size={18} /> },
-      { id: 'accessories', label: t('customize_accessories'), icon: <Eye size={18} /> },
-      { id: 'augmentations', label: t('customize_augmentations'), icon: <Cpu size={18} /> },
-      { id: 'weapons', label: t('customize_weapons'), icon: <Shield size={18} /> }
-    ];
-
-    // Track scroll progress for cinematic effects
     useEffect(() => {
-      const handleScroll = () => {
-        const characterSection = document.querySelector('.character-section');
-        if (characterSection) {
-          const rect = characterSection.getBoundingClientRect();
-          const progress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
-          setScrollProgress(progress);
-        }
+      // Glitch effect interval
+      const glitchInterval = setInterval(() => {
+        setGlitchActive(true);
+        setTimeout(() => setGlitchActive(false), 200);
+      }, 3000 + Math.random() * 2000);
+      
+      // Scanline animation
+      const scanlineInterval = setInterval(() => {
+        setScanlinePosition(prev => (prev + 1) % 100);
+      }, 50);
+      
+      return () => {
+        clearInterval(glitchInterval);
+        clearInterval(scanlineInterval);
       };
-
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const updateCharacterConfig = (category, property, value) => {
-      setCharacterConfig(prev => ({
-        ...prev,
-        [category]: {
-          ...prev[category],
-          [property]: value
-        }
-      }));
-      
-      // Trigger Alia Nox comment based on change
-      generateAliaNoxComment(category, property, value);
-    };
-
-    const generateAliaNoxComment = (category, property, value) => {
-      const comments = {
-        face: {
-          implants: {
-            basic: "Basic neural interfaces are a good start, but there's so much more you could explore.",
-            advanced: "Now those are some serious facial augmentations. You're starting to look like a real netrunner.",
-            military: "Military-grade facial mods? Impressive. You're not playing around."
-          }
-        },
-        hair: {
-          glow: {
-            true: "The neural glow in your hair will help you stand out in the digital underground.",
-            false: "Classic look. Sometimes subtlety is the best camouflage in the corporate sectors."
-          }
-        },
-        augmentations: {
-          arms: {
-            cybernetic: "Those cybernetic arms will give you a serious edge in both combat and hacking.",
-            enhanced: "Enhanced limbs are practical. Good choice for long-term survival in the sprawl."
-          }
-        }
-      };
-
-      const comment = comments[category]?.[property]?.[value];
-      if (comment) {
-        setAliaNoxComments(prev => [...prev.slice(-2), { text: comment, timestamp: Date.now() }]);
-      }
-    };
-
-    const randomizeCharacter = () => {
-      const randomConfig = {
-        gender: Math.random() > 0.5 ? 'male' : 'female',
-        face: {
-          shape: ['angular', 'rounded', 'square', 'heart'][Math.floor(Math.random() * 4)],
-          skinTone: ['#FDBCB4', '#F1C27D', '#E0AC69', '#C68642', '#8D5524'][Math.floor(Math.random() * 5)],
-          eyes: ['blue', 'green', 'brown', 'cyber', 'heterochromia'][Math.floor(Math.random() * 5)],
-          scars: ['none', 'facial', 'eye', 'cheek'][Math.floor(Math.random() * 4)],
-          implants: ['basic', 'advanced', 'military'][Math.floor(Math.random() * 3)]
-        },
-        hair: {
-          style: ['punk', 'mohawk', 'long', 'buzzed', 'braids'][Math.floor(Math.random() * 5)],
-          color: ['#00FFFF', '#FF0080', '#80FF00', '#FF8000', '#8000FF'][Math.floor(Math.random() * 5)],
-          glow: Math.random() > 0.5
-        },
-        outfit: {
-          torso: ['jacket', 'vest', 'armor', 'hoodie'][Math.floor(Math.random() * 4)],
-          legs: ['cargo', 'jeans', 'tactical', 'leather'][Math.floor(Math.random() * 4)],
-          boots: ['combat', 'sneakers', 'steel', 'hover'][Math.floor(Math.random() * 4)],
-          gloves: ['fingerless', 'tactical', 'none', 'cyber'][Math.floor(Math.random() * 4)]
-        },
-        accessories: {
-          mask: ['none', 'half', 'full', 'respirator'][Math.floor(Math.random() * 4)],
-          visor: ['none', 'hud', 'tactical', 'ar'][Math.floor(Math.random() * 4)],
-          jewelry: ['none', 'neon', 'chrome', 'holographic'][Math.floor(Math.random() * 4)]
-        },
-        augmentations: {
-          arms: ['none', 'enhanced', 'cybernetic', 'military'][Math.floor(Math.random() * 4)],
-          legs: ['none', 'enhanced', 'spring', 'hydraulic'][Math.floor(Math.random() * 4)],
-          spine: ['none', 'neural', 'data', 'combat'][Math.floor(Math.random() * 4)]
-        },
-        weapons: {
-          sidearm: ['none', 'plasma', 'kinetic', 'energy'][Math.floor(Math.random() * 4)],
-          melee: ['none', 'blade', 'baton', 'whip'][Math.floor(Math.random() * 4)],
-          rifle: ['none', 'assault', 'sniper', 'beam'][Math.floor(Math.random() * 4)]
-        }
-      };
-      setCharacterConfig(randomConfig);
-      setAliaNoxComments(prev => [...prev.slice(-2), { 
-        text: "Interesting randomization! This configuration has some unique combinations. Want me to analyze your new look?", 
-        timestamp: Date.now() 
-      }]);
-    };
-
-    const saveCharacterScreenshot = () => {
-      // This would capture the 3D canvas and save as image
-      setAliaNoxComments(prev => [...prev.slice(-2), { 
-        text: "Your avatar design has been saved to the local archives. Looking good, netrunner!", 
-        timestamp: Date.now() 
-      }]);
-    };
-
     return (
-      <div className="character-section cinematic-scroll">
-        {/* Cinematic Header */}
-        <div className="character-hero" style={{ transform: `translateY(${scrollProgress * 50}px)` }}>
-          <div className="character-hero-content">
-            <motion.h1 
-              className="character-main-title"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              {t('character_title')}
-            </motion.h1>
-            <motion.p 
-              className="character-hero-description"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-            >
-              {t('character_intro')}
-            </motion.p>
+      <div className="character-section coming-soon-section">
+        <div className="coming-soon-container">
+          {/* Holographic display frame */}
+          <div className="holo-frame">
+            <div className="frame-corners">
+              <div className="corner corner-tl"></div>
+              <div className="corner corner-tr"></div>
+              <div className="corner corner-bl"></div>
+              <div className="corner corner-br"></div>
+            </div>
+            
+            {/* Scanlines effect */}
+            <div 
+              className="scanlines" 
+              style={{ transform: `translateY(${scanlinePosition * 6}px)` }}
+            ></div>
+            
+            {/* Main content */}
+            <div className={`coming-soon-content ${glitchActive ? 'glitch-active' : ''}`}>
+              {/* Status indicator */}
+              <div className="status-indicator">
+                <div className="status-dot pulsing"></div>
+                <span className="status-text">NEURAL INTERFACE</span>
+              </div>
+              
+              {/* Main title */}
+              <motion.h1 
+                className="coming-soon-title"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
+                CHARACTER FORGE
+                <span className="title-glitch" data-text="CHARACTER FORGE">CHARACTER FORGE</span>
+              </motion.h1>
+              
+              {/* Subtitle */}
+              <motion.h2 
+                className="coming-soon-subtitle"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                NEURAL AVATAR CUSTOMIZATION
+              </motion.h2>
+              
+              {/* Status message */}
+              <motion.div 
+                className="status-message"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+              >
+                <div className="message-header">
+                  <Cpu className="message-icon" size={24} />
+                  <span>SYSTEM STATUS</span>
+                </div>
+                <div className="message-content">
+                  <p>Neural interface calibration in progress...</p>
+                  <p>Advanced avatar customization system under development</p>
+                </div>
+              </motion.div>
+              
+              {/* Progress indicators */}
+              <motion.div 
+                className="development-progress"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.5 }}
+              >
+                <div className="progress-item">
+                  <div className="progress-bar">
+                    <div className="progress-fill" style={{ width: '75%' }}></div>
+                  </div>
+                  <span className="progress-label">Facial Recognition System</span>
+                  <span className="progress-value">75%</span>
+                </div>
+                
+                <div className="progress-item">
+                  <div className="progress-bar">
+                    <div className="progress-fill" style={{ width: '60%' }}></div>
+                  </div>
+                  <span className="progress-label">Cybernetic Implant Database</span>
+                  <span className="progress-value">60%</span>
+                </div>
+                
+                <div className="progress-item">
+                  <div className="progress-bar">
+                    <div className="progress-fill" style={{ width: '90%' }}></div>
+                  </div>
+                  <span className="progress-label">Neural Pattern Mapping</span>
+                  <span className="progress-value">90%</span>
+                </div>
+              </motion.div>
+              
+              {/* Feature list */}
+              <motion.div 
+                className="feature-preview"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.8 }}
+              >
+                <h3>INCOMING FEATURES</h3>
+                <div className="feature-grid">
+                  <div className="feature-item">
+                    <UserCircle size={20} />
+                    <span>Facial Reconstruction</span>
+                  </div>
+                  <div className="feature-item">
+                    <Eye size={20} />
+                    <span>Augmented Reality Eyes</span>
+                  </div>
+                  <div className="feature-item">
+                    <Brain size={20} />
+                    <span>Neural Implants</span>
+                  </div>
+                  <div className="feature-item">
+                    <Cpu size={20} />
+                    <span>Cybernetic Limbs</span>
+                  </div>
+                  <div className="feature-item">
+                    <Palette size={20} />
+                    <span>Bio-luminescent Hair</span>
+                  </div>
+                  <div className="feature-item">
+                    <Shield size={20} />
+                    <span>Tactical Gear Systems</span>
+                  </div>
+                </div>
+              </motion.div>
+              
+              {/* Notification signup */}
+              <motion.div 
+                className="notify-section"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 2.1 }}
+              >
+                <h4>GET NOTIFIED WHEN READY</h4>
+                <div className="notify-input-group">
+                  <input 
+                    type="email" 
+                    placeholder="neural.link@zeropunk.net"
+                    className="notify-input"
+                  />
+                  <button className="notify-btn">
+                    <Zap size={16} />
+                    SYNC
+                  </button>
+                </div>
+                <p className="notify-disclaimer">
+                  Join the neural network for early access to avatar customization
+                </p>
+              </motion.div>
+            </div>
+            
+            {/* Holographic effects */}
+            <div className="holo-overlay"></div>
+            <div className="holo-flicker"></div>
           </div>
           
-          {/* Scroll progress indicator */}
-          <div className="scroll-progress-indicator">
-            <div className="progress-line" style={{ height: `${scrollProgress * 100}%` }}></div>
+          {/* Background effects */}
+          <div className="bg-matrix">
+            <div className="matrix-rain"></div>
+            <div className="matrix-rain"></div>
+            <div className="matrix-rain"></div>
           </div>
-        </div>
-
-        {/* Main Character Workshop */}
-        <div className="character-workshop">
-          {/* 3D Character Viewer - Large Cinema Display */}
-          <div className="character-cinema-display">
-            <div className="cinema-frame">
-              <div className="frame-border">
-                <div className="frame-corner tl"></div>
-                <div className="frame-corner tr"></div>
-                <div className="frame-corner bl"></div>
-                <div className="frame-corner br"></div>
-              </div>
-              
-              <div className="character-viewer-ultra">
-                <PhotorealisticCharacterViewer 
-                  characterConfig={characterConfig}
-                  onViewChange={(e) => {
-                    // Handle view changes if needed
-                  }}
-                />
-              </div>
-              
-              {/* Character Actions Overlay */}
-              <div className="character-actions-overlay">
-                <motion.button 
-                  className="action-btn primary"
-                  onClick={randomizeCharacter}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Shuffle size={18} />
-                  <span>{t('randomize_character')}</span>
-                </motion.button>
-                
-                <motion.button 
-                  className="action-btn secondary"
-                  onClick={saveCharacterScreenshot}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Camera size={18} />
-                  <span>{t('save_character')}</span>
-                </motion.button>
-                
-                <motion.button 
-                  className="action-btn secondary"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Send size={18} />
-                  <span>{t('share_character')}</span>
-                </motion.button>
-              </div>
-            </div>
-          </div>
-
-          {/* Customization Panels */}
-          <div className="customization-workspace">
-            {/* Category Navigation */}
-            <div className="category-navigation">
-              <h3 className="customization-title">Neural Customization Interface</h3>
-              <div className="category-grid">
-                {customizationCategories.map((category, index) => (
-                  <motion.button
-                    key={category.id}
-                    className={`category-card ${activeCategory === category.id ? 'active' : ''}`}
-                    onClick={() => setActiveCategory(category.id)}
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                  >
-                    <div className="category-icon">{category.icon}</div>
-                    <span className="category-label">{category.label}</span>
-                    <div className="category-glow"></div>
-                  </motion.button>
-                ))}
-              </div>
-            </div>
-
-            {/* Customization Options Panel */}
-            <div className="customization-options-panel">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeCategory}
-                  className="customization-options"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {/* Include simplified customization options for demo */}
-                  {activeCategory === 'face' && (
-                    <div className="options-grid">
-                      <div className="option-group">
-                        <label>Cybernetic Implants</label>
-                        <div className="option-buttons">
-                          {['basic', 'advanced', 'military'].map(implant => (
-                            <button
-                              key={implant}
-                              className={`option-btn ${characterConfig.face.implants === implant ? 'active' : ''} rarity-${implant}`}
-                              onClick={() => updateCharacterConfig('face', 'implants', implant)}
-                            >
-                              {implant}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
-
-          {/* Alia Nox Comments Section */}
-          {aliaNoxComments.length > 0 && (
-            <div className="alia-comments-section">
-              <div className="alia-avatar">
-                <Bot size={24} />
-              </div>
-              <div className="alia-messages">
-                <AnimatePresence>
-                  {aliaNoxComments.map((comment, index) => (
-                    <motion.div 
-                      key={comment.timestamp} 
-                      className="alia-message"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <span className="alia-name">Alia Nox:</span>
-                      <p>{comment.text}</p>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     );
