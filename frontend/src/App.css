@@ -1219,21 +1219,23 @@ section {
   z-index: 998;
 }
 
-/* Navigation Menu */
+/* Navigation Menu - Compact Floating Style */
 .navigation-menu {
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  max-width: 320px;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(40px);
+  top: 80px;
+  right: 20px;
+  width: 280px;
+  max-height: 70vh;
+  background: rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(25px);
   z-index: 999;
-  border-left: 1px solid rgba(59, 130, 246, 0.15);
-  box-shadow: -15px 0 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 16px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 60px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  position: relative;
 }
 
 .navigation-menu::before {
