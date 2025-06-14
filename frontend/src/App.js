@@ -889,6 +889,163 @@ const App = () => {
     { id: 'language', label: t('language'), icon: <Languages size={20} />, isLanguageSelector: true }
   ];
 
+  const ContactSection = () => (
+    <div className="section-container contact-section">
+      <div className="section-content">
+        <h2 className="section-title">{t('contact_title')}</h2>
+        
+        <div className="contact-grid">
+          <div className="contact-intro">
+            <p className="contact-description">
+              {t('contact_intro')}
+            </p>
+            
+            {/* Social Links */}
+            <div className="social-links">
+              <motion.a 
+                href="https://tiktok.com/@zeropunkproject" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-link tiktok"
+                whileHover={{ scale: 1.05, x: 5 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Music className="social-icon" size={20} />
+                <span>@zeropunkproject</span>
+                <div className="social-glow"></div>
+              </motion.a>
+              
+              <motion.a 
+                href="https://instagram.com/zeropunkproject" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-link instagram"
+                whileHover={{ scale: 1.05, x: 5 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Instagram className="social-icon" size={20} />
+                <span>@zeropunkproject</span>
+                <div className="social-glow"></div>
+              </motion.a>
+              
+              <motion.a 
+                href="mailto:dayystudio@gmail.com"
+                className="social-link email"
+                whileHover={{ scale: 1.05, x: 5 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Mail className="social-icon" size={20} />
+                <span>dayystudio@gmail.com</span>
+                <div className="social-glow"></div>
+              </motion.a>
+              
+              <motion.a 
+                href="#discord" 
+                className="social-link discord"
+                whileHover={{ scale: 1.05, x: 5 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <MessageCircle className="social-icon" size={20} />
+                <span>Zeropunk Discord</span>
+                <div className="social-glow"></div>
+              </motion.a>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="contact-form-container">
+            {/* Alia Avatar */}
+            <div className="alia-contact-avatar">
+              <div className="contact-avatar-head">
+                <div className="contact-avatar-eyes">
+                  <div className="eye left"></div>
+                  <div className="eye right"></div>
+                </div>
+                <div className="contact-avatar-mouth"></div>
+              </div>
+              <div className="contact-avatar-glow"></div>
+              <div className="alia-message">
+                <p>{t('alia_contact_message')}</p>
+              </div>
+            </div>
+
+            {contactSubmitted ? (
+              <motion.div 
+                className="contact-success"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="success-icon">
+                  <Send className="success-check" size={40} />
+                </div>
+                <p className="success-message">{t('contact_success')}</p>
+              </motion.div>
+            ) : (
+              <form className="contact-form" onSubmit={handleContactSubmit}>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label className="form-label">{t('contact_name')}</label>
+                    <input
+                      type="text"
+                      value={contactForm.name}
+                      onChange={(e) => handleContactFormChange('name', e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">{t('contact_email')}</label>
+                    <input
+                      type="email"
+                      value={contactForm.email}
+                      onChange={(e) => handleContactFormChange('email', e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+                </div>
+                
+                <div className="form-group">
+                  <label className="form-label">{t('contact_subject')}</label>
+                  <input
+                    type="text"
+                    value={contactForm.subject}
+                    onChange={(e) => handleContactFormChange('subject', e.target.value)}
+                    className="form-input"
+                    required
+                  />
+                </div>
+                
+                <div className="form-group">
+                  <label className="form-label">{t('contact_message')}</label>
+                  <textarea
+                    value={contactForm.message}
+                    onChange={(e) => handleContactFormChange('message', e.target.value)}
+                    className="form-textarea"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+                
+                <motion.button
+                  type="submit"
+                  className="contact-submit-btn"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Send className="submit-icon" size={18} />
+                  {t('contact_send')}
+                  <div className="button-glow"></div>
+                </motion.button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   const HeroSection = () => (
     <div className="section-container hero-section">
       <div className="hero-content">
