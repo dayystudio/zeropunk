@@ -6,21 +6,11 @@ import {
   ContactShadows, 
   PerspectiveCamera,
   Html,
-  useTexture,
   MeshTransmissionMaterial,
   Effects,
   EffectComposer,
-  Bloom,
-  ChromaticAberration,
-  Noise,
-  Vignette
+  Bloom
 } from '@react-three/drei';
-import { 
-  EffectComposer as PostEffectComposer, 
-  RenderPass, 
-  UnrealBloomPass, 
-  ShaderPass 
-} from 'three/examples/jsm/postprocessing/EffectComposer';
 import * as THREE from 'three';
 
 // Advanced Realistic Character Model Component
