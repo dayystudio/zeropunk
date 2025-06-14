@@ -9327,7 +9327,7 @@ section {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Mobile Positioning */
+/* Mobile Positioning - Properly aligned */
 @media (max-width: 768px) {
   .navigation-menu-premium {
     top: 50%;
@@ -9336,15 +9336,15 @@ section {
     transform: translate(-50%, -50%);
     width: calc(100vw - 2rem);
     max-width: 400px;
-    max-height: calc(100vh - 2rem);
+    max-height: calc(100vh - 8rem);
   }
 }
 
-/* Ultra-mobile */
+/* Ultra-mobile - More compact */
 @media (max-width: 480px) {
   .navigation-menu-premium {
     width: calc(100vw - 1rem);
-    max-height: calc(100vh - 1rem);
+    max-height: calc(100vh - 6rem);
   }
 }
 
