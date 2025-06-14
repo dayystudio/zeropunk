@@ -1221,24 +1221,14 @@ const App = () => {
                   <span>{t('beta_warning')}</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              className="wishlist-description"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            >
+            <div className="wishlist-description">
               <p>{t('beta_description')}</p>
-            </motion.div>
+            </div>
 
             {/* Main CTA Button */}
-            <motion.div 
-              className="wishlist-cta-container"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.8 }}
-            >
+            <div className="wishlist-cta-container">
               <motion.button
                 className="wishlist-cta-btn"
                 whileHover={{ scale: 1.02 }}
