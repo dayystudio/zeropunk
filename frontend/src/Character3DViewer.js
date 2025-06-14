@@ -532,17 +532,9 @@ const AdvancedLighting = () => {
   );
 };
 
-// Simplified Post-processing Effects
+// Simplified Post-processing Effects (removed due to library compatibility)
 const PostProcessingEffects = () => {
-  return (
-    <EffectComposer>
-      <Bloom 
-        intensity={0.3}
-        luminanceThreshold={0.1}
-        luminanceSmoothing={0.9}
-      />
-    </EffectComposer>
-  );
+  return null; // Disabled for compatibility
 };
 
 // Main Ultra-Realistic 3D Viewer
