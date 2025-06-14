@@ -1593,3 +1593,459 @@ section {
     height: 200px;
   }
 }
+
+/* PC Requirements Section */
+.pc-requirements-section {
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+}
+
+.pc-analyzer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hardware-config {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(15px);
+}
+
+.config-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.5rem;
+  color: #3b82f6;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.config-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.form-icon {
+  width: 18px;
+  height: 18px;
+  color: #3b82f6;
+}
+
+.form-select {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: 12px;
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.form-select:hover {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #ec4899;
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+}
+
+.form-select option {
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 0.5rem;
+}
+
+.analyze-btn {
+  margin-top: 1rem;
+  padding: 1.25rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 15px;
+}
+
+.analyze-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Analysis Results */
+.analysis-results {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(15px);
+}
+
+.results-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.5rem;
+  color: #3b82f6;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.verdict-card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.verdict-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.verdict-header h4 {
+  font-family: 'Orbitron', monospace;
+  color: #ffffff;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.verdict-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.verdict-badge.ultra {
+  background: linear-gradient(45deg, #22c55e, #16a34a);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.verdict-badge.high {
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.verdict-badge.medium {
+  background: linear-gradient(45deg, #f59e0b, #d97706);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+}
+
+.verdict-badge.low {
+  background: linear-gradient(45deg, #f97316, #ea580c);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+}
+
+.verdict-badge.incompatible {
+  background: linear-gradient(45deg, #ef4444, #dc2626);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+.performance-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.metric:last-child {
+  border-bottom: none;
+}
+
+.metric-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.metric-value {
+  color: #ffffff;
+  font-weight: 600;
+  font-family: 'Orbitron', monospace;
+}
+
+.score-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  max-width: 200px;
+  position: relative;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+  position: relative;
+}
+
+.score-fill.ultra {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+}
+
+.score-fill.high {
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+}
+
+.score-fill.medium {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
+}
+
+.score-fill.low {
+  background: linear-gradient(90deg, #f97316, #ea580c);
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.6);
+}
+
+.score-fill.incompatible {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+}
+
+.score-text {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Benchmark Preview */
+.benchmark-preview {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.benchmark-preview h4 {
+  font-family: 'Orbitron', monospace;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.benchmark-visualization {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.benchmark-visualization::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.1) 50%, transparent 70%);
+  animation: scanline 3s linear infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.fps-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.fps-number {
+  font-family: 'Orbitron', monospace;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #3b82f6;
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  animation: fpsPulse 2s ease-in-out infinite;
+}
+
+@keyframes fpsPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.fps-label {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.2em;
+}
+
+.performance-graph {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 3px;
+  height: 80px;
+  margin: 1.5rem 0;
+}
+
+.graph-bar {
+  width: 4px;
+  background: linear-gradient(to top, #3b82f6, #60a5fa);
+  border-radius: 2px 2px 0 0;
+  animation: barPulse 1.5s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
+
+.benchmark-visualization.ultra .graph-bar {
+  background: linear-gradient(to top, #22c55e, #4ade80);
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+}
+
+.benchmark-visualization.high .graph-bar {
+  background: linear-gradient(to top, #3b82f6, #60a5fa);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
+
+.benchmark-visualization.medium .graph-bar {
+  background: linear-gradient(to top, #f59e0b, #fbbf24);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+.benchmark-visualization.low .graph-bar {
+  background: linear-gradient(to top, #f97316, #fb923c);
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.4);
+}
+
+.benchmark-visualization.incompatible .graph-bar {
+  background: linear-gradient(to top, #ef4444, #f87171);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes barPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.quality-indicator {
+  margin-top: 1rem;
+}
+
+.quality-badge {
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid;
+}
+
+.quality-badge.ultra {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border-color: #22c55e;
+}
+
+.quality-badge.high {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.quality-badge.medium {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+  border-color: #f59e0b;
+}
+
+.quality-badge.low {
+  background: rgba(249, 115, 22, 0.2);
+  color: #f97316;
+  border-color: #f97316;
+}
+
+.quality-badge.incompatible {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+/* Responsive Design for PC Requirements */
+@media (max-width: 768px) {
+  .pc-analyzer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .hardware-config,
+  .analysis-results {
+    padding: 1.5rem;
+  }
+  
+  .config-title,
+  .results-title {
+    font-size: 1.2rem;
+  }
+  
+  .score-bar {
+    max-width: 150px;
+  }
+  
+  .fps-number {
+    font-size: 2.5rem;
+  }
+  
+  .performance-graph {
+    height: 60px;
+  }
+}
