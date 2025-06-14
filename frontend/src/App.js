@@ -21,6 +21,28 @@ const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState('hero');
 
+  // Live Activity state
+  const [liveData, setLiveData] = useState({
+    playerCount: 1247,
+    gameTime: { hour: 14, minute: 23, period: 'Day Cycle' },
+    weather: { condition: 'Neon Rain', intensity: 75, visibility: 60 },
+    market: { status: 'Active', volume: 2847329, trend: 'up' },
+    factions: [
+      { name: 'Neon Corp', control: 34, trend: 'rising' },
+      { name: 'Data Miners', control: 28, trend: 'stable' },
+      { name: 'Ghost Runners', control: 23, trend: 'falling' }
+    ],
+    events: [
+      { type: 'raid', location: 'Sector 7', participants: 89 },
+      { type: 'market_surge', item: 'Neural Chips', change: '+24%' }
+    ],
+    resources: [
+      { name: 'Neural Chips', price: 145, change: 24 },
+      { name: 'Data Cores', price: 89, change: -3 },
+      { name: 'Quantum Bits', price: 203, change: 15 }
+    ]
+  });
+
   // PC Requirements state
   const [pcConfig, setPcConfig] = useState({
     gpu: '',
