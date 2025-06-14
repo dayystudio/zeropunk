@@ -608,17 +608,6 @@ const App = () => {
       neural_link_disrupted: '神经链接中断。矩阵闪烁...'
     },
 
-      // Roadmap Section
-      roadmap_title: '开发路线图',
-
-      // Chat
-      alia_chat_title: 'ALIA NOX - 神经接口激活',
-      chat_welcome: '欢迎来到神经链接。我是Alia Nox。你心中燃烧着什么问题？',
-      chat_placeholder: '传输你的想法...',
-      send: '发送',
-      neural_link_disrupted: '神经链接中断。矩阵闪烁...'
-    },
-
       // Hero Section
       hero_subtitle: 'ZeropunkOS v0.92 | 访客模式 | dayystudio',
       hero_message: '你不是英雄。你是一个公民——破碎系统中的又一个齿轮。但系统正在崩溃，而你可能就是那个火花。',
