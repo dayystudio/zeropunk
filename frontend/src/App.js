@@ -633,6 +633,17 @@ const App = () => {
 
       // Roadmap Section
       roadmap_title: '开发路线图',
+      // Contact Section
+      contact: '联系我们',
+      contact_title: '联系 Zeropunk 团队',
+      contact_intro: '无论您是玩家、好奇的探索者、记者还是潜在合作伙伴——欢迎来到 Zeropunk 的后街小巷。我们准备好对话了。✉️',
+      contact_name: '姓名',
+      contact_email: '电子邮箱',
+      contact_subject: '主题',
+      contact_message: '消息',
+      contact_send: '发送消息',
+      contact_success: '谢谢！您的消息已传输到 Zeropunk 网络。我们很快就会回复您，网络骑手。',
+      alia_contact_message: '我是 Alia。我会确保您的消息到达正确的区域。',
 
       // Chat
       alia_chat_title: 'ALIA NOX - 神经接口激活',
