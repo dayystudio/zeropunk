@@ -2947,41 +2947,6 @@ const App = () => {
                   ))}
                 </div>
               </div>
-            </motion.nav>
-                                {item.id === 'hero' && 'Main Page'}
-                                {item.id === 'about' && 'Neural Interface'}
-                                {item.id === 'beta' && 'Early Access'}
-                                {item.id === 'modding' && 'Community'}
-                                {item.id === 'character' && 'Avatar Builder'}
-                                {item.id === 'alia' && 'AI Companion'}
-                                {item.id === 'pc_requirements' && 'System Specs'}
-                                {item.id === 'live_activity' && 'Real-time Data'}
-                                {item.id === 'stats' && 'Game Analytics'}
-                                {item.id === 'roadmap' && 'Development'}
-                                {item.id === 'contact' && 'Get in Touch'}
-                              </span>
-                            </div>
-                            {currentSection === item.id && (
-                              <div className="active-indicator">
-                                <div className="indicator-dot"></div>
-                              </div>
-                            )}
-                          </motion.button>
-                        )}
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Footer */}
-                <div className="menu-glass-footer">
-                  <div className="footer-info">
-                    <span className="version-text">ZEROPUNK v0.92</span>
-                    <span className="status-text">Neural Core Online</span>
-                  </div>
-                </div>
-              </div>
-            </motion.nav>
           </>
         )}
       </AnimatePresence>
