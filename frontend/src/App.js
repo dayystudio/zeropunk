@@ -2803,23 +2803,6 @@ const App = () => {
     );
   };
 
-  const renderCurrentSection = () => {
-    switch (currentSection) {
-      case 'hero': return <HeroSection />;
-      case 'about': return <AboutSection />;
-      case 'beta': return <BetaSection />;
-      case 'modding': return <ModdingHubComingSoon />;
-      case 'character': return <CharacterCustomizationSection />;
-      case 'alia': return <AliaNoxSection />;
-      case 'pc_requirements': return <PCRequirementsSection />;
-      case 'live_activity': return <LiveActivitySection />;
-      case 'stats': return <StatsSection />;
-      case 'roadmap': return <RoadmapSection />;
-      case 'contact': return <ContactSection />;
-      default: return <HeroSection />;
-    }
-  };
-
   return (
     <div className="app">
       {/* Background Effects */}
