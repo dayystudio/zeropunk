@@ -1240,7 +1240,7 @@ const App = () => {
                   </div>
                 </div>
               </motion.button>
-            </motion.div>
+            </div>
 
             {/* Testimonials Grid */}
             <motion.div 
