@@ -605,8 +605,7 @@ const App = () => {
       chat_welcome: '欢迎来到神经链接。我是Alia Nox。你心中燃烧着什么问题？',
       chat_placeholder: '传输你的想法...',
       send: '发送',
-      neural_link_disrupted: '神经链接中断。矩阵闪烁...'
-    },
+      neural_link_disrupted: '神经链接中断。矩阵闪烁...',
 
       // Hero Section
       hero_subtitle: 'ZeropunkOS v0.92 | 访客模式 | dayystudio',
