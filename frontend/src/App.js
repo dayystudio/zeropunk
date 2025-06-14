@@ -233,6 +233,7 @@ const App = () => {
       if (event.key === 'Escape') {
         setMenuOpen(false);
         setAliaChatOpen(false);
+        setLanguageMenuOpen(false);
       }
     };
 
