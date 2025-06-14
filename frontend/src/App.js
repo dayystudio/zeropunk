@@ -988,7 +988,153 @@ const App = () => {
     { id: 'language', label: t('language'), icon: <Languages size={20} />, isLanguageSelector: true }
   ];
 
-  const CharacterCustomizationSection = () => {
+  const ModdingHubComingSoon = () => {
+    const [scanlinePosition, setScanlinePosition] = useState(0);
+    const [glitchActive, setGlitchActive] = useState(false);
+    
+    useEffect(() => {
+      // Scanline animation
+      const scanlineInterval = setInterval(() => {
+        setScanlinePosition(prev => (prev + 2) % 100);
+      }, 50);
+      
+      // Glitch effect
+      const glitchInterval = setInterval(() => {
+        setGlitchActive(true);
+        setTimeout(() => setGlitchActive(false), 150);
+      }, 4000 + Math.random() * 2000);
+      
+      return () => {
+        clearInterval(scanlineInterval);
+        clearInterval(glitchInterval);
+      };
+    }, []);
+
+    return (
+      <div className="modding-coming-soon">
+        <div className="coming-soon-frame">
+          {/* Animated border corners */}
+          <div className="frame-corners">
+            <div className="corner corner-tl"></div>
+            <div className="corner corner-tr"></div>
+            <div className="corner corner-bl"></div>
+            <div className="corner corner-br"></div>
+          </div>
+          
+          {/* Scanlines effect */}
+          <div 
+            className="scanlines-overlay" 
+            style={{ transform: `translateY(${scanlinePosition}px)` }}
+          ></div>
+          
+          <div className={`coming-soon-content ${glitchActive ? 'glitch-active' : ''}`}>
+            {/* Status indicator */}
+            <div className="status-bar">
+              <div className="status-dot"></div>
+              <span className="status-text">MODDING INTERFACE</span>
+              <div className="status-dot"></div>
+            </div>
+            
+            {/* Main title */}
+            <motion.h1 
+              className="coming-soon-title"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              MODDING HUB
+              <span className="title-subtitle">Creator Central Station</span>
+            </motion.h1>
+            
+            {/* Development status */}
+            <motion.div 
+              className="dev-status"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <div className="status-icon">
+                <Code size={32} />
+              </div>
+              <div className="status-info">
+                <h3>Development in Progress</h3>
+                <p>Advanced creator tools and community features coming soon...</p>
+              </div>
+            </motion.div>
+            
+            {/* Feature preview */}
+            <motion.div 
+              className="features-preview"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <h4>Incoming Features</h4>
+              <div className="features-grid">
+                <div className="feature-item">
+                  <Terminal size={20} />
+                  <span>Modding Documentation</span>
+                </div>
+                <div className="feature-item">
+                  <Palette size={20} />
+                  <span>Skin Creator Tools</span>
+                </div>
+                <div className="feature-item">
+                  <Upload size={20} />
+                  <span>Community Upload Hub</span>
+                </div>
+                <div className="feature-item">
+                  <Bot size={20} />
+                  <span>AI Mod Assistant</span>
+                </div>
+              </div>
+            </motion.div>
+            
+            {/* Development progress */}
+            <motion.div 
+              className="progress-section"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.1 }}
+            >
+              <div className="progress-item">
+                <span className="progress-label">Development Progress</span>
+                <div className="progress-bar">
+                  <div className="progress-fill" style={{ width: '65%' }}></div>
+                </div>
+                <span className="progress-percent">65%</span>
+              </div>
+            </motion.div>
+            
+            {/* Notification signup */}
+            <motion.div 
+              className="notify-signup"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+            >
+              <p>Get notified when the Creator Hub goes live</p>
+              <div className="notify-form">
+                <input 
+                  type="email" 
+                  placeholder="your.email@zeropunk.net"
+                  className="notify-input"
+                />
+                <button className="notify-btn">
+                  <Zap size={16} />
+                  SYNC
+                </button>
+              </div>
+            </motion.div>
+          </div>
+          
+          {/* Holographic overlay effects */}
+          <div className="holo-overlay"></div>
+          <div className="data-stream"></div>
+        </div>
+      </div>
+    );
+  };
     const [glitchActive, setGlitchActive] = useState(false);
     const [scanlinePosition, setScanlinePosition] = useState(0);
     
