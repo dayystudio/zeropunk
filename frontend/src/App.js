@@ -2838,74 +2838,151 @@ const App = () => {
       {/* Navigation Menu */}
       <AnimatePresence>
         {menuOpen && (
-          <motion.nav 
-            className="navigation-menu"
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-          >
-            <div className="nav-content">
-              <div className="nav-header">
-                <h2 className="nav-title">{t('neural_interface_menu')}</h2>
-                <button 
-                  className="nav-close"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <X size={24} />
-                </button>
-              </div>
-              
-              <div className="nav-items">
-                {menuItems.map((item) => (
-                  <div key={item.id} className="nav-item-container">
-                    {item.isLanguageSelector ? (
-                      <div className="language-selector">
-                        <button
-                          className={`nav-item ${languageMenuOpen ? 'active' : ''}`}
-                          onClick={() => navigateToSection('language')}
-                        >
-                          {item.icon}
-                          <span>{item.label}</span>
-                          <ChevronDown className={`chevron ${languageMenuOpen ? 'rotated' : ''}`} />
-                        </button>
-                        <AnimatePresence>
-                          {languageMenuOpen && (
-                            <motion.div
-                              className="language-dropdown"
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: 'auto' }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              {languages.map((lang) => (
-                                <button
-                                  key={lang.code}
-                                  className={`language-option ${currentLanguage === lang.code ? 'active' : ''}`}
-                                  onClick={() => selectLanguage(lang.code)}
-                                >
-                                  <span className="flag">{lang.flag}</span>
-                                  <span>{lang.name}</span>
-                                </button>
-                              ))}
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    ) : (
-                      <button
-                        className={`nav-item ${currentSection === item.id ? 'active' : ''}`}
-                        onClick={() => navigateToSection(item.id)}
-                      >
-                        {item.icon}
-                        <span>{item.label}</span>
-                      </button>
-                    )}
+          <>
+            {/* Backdrop */}
+            <motion.div
+              className="menu-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              onClick={() => setMenuOpen(false)}
+            />
+            
+            {/* Glassmorphism Menu */}
+            <motion.nav 
+              className="navigation-menu-premium"
+              initial={{ opacity: 0, scale: 0.9, y: -20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: -20 }}
+              transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+            >
+              <div className="menu-glass-container">
+                {/* Header */}
+                <div className="menu-glass-header">
+                  <div className="menu-title-premium">
+                    <span className="title-icon">⚡</span>
+                    <span className="title-text">{t('neural_interface_menu')}</span>
                   </div>
-                ))}
+                  <motion.button 
+                    className="menu-close-premium"
+                    onClick={() => setMenuOpen(false)}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <X size={20} />
+                  </motion.button>
+                </div>
+                
+                {/* Scrollable Menu Items */}
+                <div className="menu-scroll-container">
+                  <div className="menu-items-premium">
+                    {menuItems.map((item, index) => (
+                      <motion.div
+                        key={item.id}
+                        className="menu-item-wrapper"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05, duration: 0.3 }}
+                      >
+                        {item.isLanguageSelector ? (
+                          <>
+                            <motion.button
+                              className={`menu-item-premium ${languageMenuOpen ? 'active' : ''}`}
+                              onClick={() => navigateToSection('language')}
+                              whileHover={{ x: 4 }}
+                              whileTap={{ scale: 0.98 }}
+                            >
+                              <div className="item-icon">{item.icon}</div>
+                              <div className="item-content">
+                                <span className="item-label">{item.label}</span>
+                                <span className="item-subtitle">Select Language</span>
+                              </div>
+                              <ChevronDown 
+                                className={`item-chevron ${languageMenuOpen ? 'rotated' : ''}`} 
+                                size={16} 
+                              />
+                            </motion.button>
+                            
+                            <AnimatePresence>
+                              {languageMenuOpen && (
+                                <motion.div
+                                  className="language-submenu-premium"
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: 'auto' }}
+                                  exit={{ opacity: 0, height: 0 }}
+                                  transition={{ duration: 0.3 }}
+                                >
+                                  {languages.map((lang, langIndex) => (
+                                    <motion.button
+                                      key={lang.code}
+                                      className={`language-item-premium ${currentLanguage === lang.code ? 'active' : ''}`}
+                                      onClick={() => selectLanguage(lang.code)}
+                                      initial={{ opacity: 0, x: -10 }}
+                                      animate={{ opacity: 1, x: 0 }}
+                                      transition={{ delay: langIndex * 0.05 }}
+                                      whileHover={{ x: 4 }}
+                                      whileTap={{ scale: 0.98 }}
+                                    >
+                                      <span className="flag-premium">{lang.flag}</span>
+                                      <span className="lang-name">{lang.name}</span>
+                                      {currentLanguage === lang.code && (
+                                        <div className="active-indicator">
+                                          <div className="indicator-dot"></div>
+                                        </div>
+                                      )}
+                                    </motion.button>
+                                  ))}
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </>
+                        ) : (
+                          <motion.button
+                            className={`menu-item-premium ${currentSection === item.id ? 'active' : ''}`}
+                            onClick={() => navigateToSection(item.id)}
+                            whileHover={{ x: 4 }}
+                            whileTap={{ scale: 0.98 }}
+                          >
+                            <div className="item-icon">{item.icon}</div>
+                            <div className="item-content">
+                              <span className="item-label">{item.label}</span>
+                              <span className="item-subtitle">
+                                {item.id === 'hero' && 'Main Page'}
+                                {item.id === 'about' && 'Neural Interface'}
+                                {item.id === 'beta' && 'Early Access'}
+                                {item.id === 'modding' && 'Community'}
+                                {item.id === 'character' && 'Avatar Builder'}
+                                {item.id === 'alia' && 'AI Companion'}
+                                {item.id === 'pc_requirements' && 'System Specs'}
+                                {item.id === 'live_activity' && 'Real-time Data'}
+                                {item.id === 'stats' && 'Game Analytics'}
+                                {item.id === 'roadmap' && 'Development'}
+                                {item.id === 'contact' && 'Get in Touch'}
+                              </span>
+                            </div>
+                            {currentSection === item.id && (
+                              <div className="active-indicator">
+                                <div className="indicator-dot"></div>
+                              </div>
+                            )}
+                          </motion.button>
+                        )}
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Footer */}
+                <div className="menu-glass-footer">
+                  <div className="footer-info">
+                    <span className="version-text">ZEROPUNK v0.92</span>
+                    <span className="status-text">Neural Core Online</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </motion.nav>
+            </motion.nav>
+          </>
         )}
       </AnimatePresence>
 
