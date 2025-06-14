@@ -1284,15 +1284,11 @@ const App = () => {
                   <motion.div
                     key={index}
                     className={`testimonial-card ${testimonial.type}`}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 1.5 + index * 0.2 }}
-                    whileHover={{ scale: 1.02, y: -5 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
+                    whileHover={{ scale: 1.02, y: -2 }}
                   >
-                    <div className="testimonial-bg">
-                      <div className="testimonial-border"></div>
-                      <div className="testimonial-glow"></div>
-                    </div>
                     <div className="testimonial-content">
                       <blockquote>"{testimonial.quote}"</blockquote>
                       <cite>— {testimonial.author}</cite>
