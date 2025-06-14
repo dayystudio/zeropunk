@@ -1693,6 +1693,7 @@ const App = () => {
                       )}
                     </div>
                   ))}
+                </div>
               </div>
             </motion.nav>
           </>
