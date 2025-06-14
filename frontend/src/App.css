@@ -1258,8 +1258,11 @@ section {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 0;
   position: relative;
   z-index: 1;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .menu-header {
