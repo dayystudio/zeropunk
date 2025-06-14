@@ -399,9 +399,20 @@ const App = () => {
       setLanguageMenuOpen(!languageMenuOpen);
       return;
     }
-    setCurrentSection(section);
+    
+    // Close the menu
     setMenuOpen(false);
     setLanguageMenuOpen(false);
+    
+    // Smooth scroll to the section
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start',
+        inline: 'nearest'
+      });
+    }
   };
 
   const selectLanguage = (langCode) => {
