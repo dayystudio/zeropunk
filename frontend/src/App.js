@@ -1650,16 +1650,48 @@ const App = () => {
                 
                 <div className="menu-items">
                   {menuItems.map((item) => (
-                    <motion.button
-                      key={item.id}
-                      className={`menu-item ${currentSection === item.id ? 'active' : ''}`}
-                      onClick={() => navigateToSection(item.id)}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {item.icon}
-                      <span>{item.label}</span>
-                    </motion.button>
+                    <div key={item.id}>
+                      <motion.button
+                        className={`menu-item ${currentSection === item.id ? 'active' : ''} ${item.isLanguageSelector && languageMenuOpen ? 'active' : ''}`}
+                        onClick={() => navigateToSection(item.id)}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {item.icon}
+                        <span>{item.label}</span>
+                        {item.isLanguageSelector && (
+                          <ChevronDown className={`language-chevron ${languageMenuOpen ? 'rotated' : ''}`} size={16} />
+                        )}
+                      </motion.button>
+                      
+                      {/* Language Submenu */}
+                      {item.isLanguageSelector && (
+                        <AnimatePresence>
+                          {languageMenuOpen && (
+                            <motion.div
+                              className="language-submenu"
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              {languages.map(lang => (
+                                <motion.button
+                                  key={lang.code}
+                                  className={`language-option ${currentLanguage === lang.code ? 'active' : ''}`}
+                                  onClick={() => selectLanguage(lang.code)}
+                                  whileHover={{ scale: 1.02 }}
+                                  whileTap={{ scale: 0.98 }}
+                                >
+                                  <span className="language-flag">{lang.flag}</span>
+                                  <span className="language-name">{lang.name}</span>
+                                </motion.button>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      )}
+                    </div>
                   ))}
                 </div>
                 
