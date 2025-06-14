@@ -1524,7 +1524,7 @@ section {
     width: 280px;
     top: 65px;
     right: 10px;
-    max-height: 65vh;
+    max-height: 70vh;
   }
   
   .menu-content {
@@ -1546,6 +1546,17 @@ section {
     width: 12px;
     height: 12px;
   }
+  
+  .language-option {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.7rem;
+    gap: 0.5rem;
+  }
+  
+  .language-flag {
+    font-size: 0.8rem;
+  }
+}
   
   .menu-footer {
     padding-top: 0.875rem;
