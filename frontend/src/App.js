@@ -2402,6 +2402,9 @@ const App = () => {
     }
   };
 
+    }
+  };
+
   return (
     <div className="app">
       {/* Background Effects */}
