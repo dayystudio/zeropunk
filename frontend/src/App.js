@@ -569,6 +569,34 @@ const App = () => {
       estimated_fps: '预估帧率',
       recommended_settings: '推荐设置',
 
+      // Live Activity
+      live_world_title: '实时玩家世界活动',
+      players_online: '在线玩家',
+      game_time: '游戏时间',
+      current_weather: '当前天气',
+      market_status: '市场状态',
+      faction_control: '势力控制',
+      ongoing_events: '进行中的事件',
+      resource_prices: '资源价格',
+      trading_volume: '交易量',
+      weather_visibility: '能见度',
+      weather_intensity: '强度',
+      market_active: '活跃',
+      market_volatile: '波动',
+      trend_rising: '上升',
+      trend_stable: '稳定',
+      trend_falling: '下降',
+      event_raid: '企业突袭',
+      event_market_surge: '市场激增',
+      participants: '参与者',
+
+      // Stats Section
+      stats_title: '系统统计',
+      active_neural_links: '活跃神经链接',
+      beta_downloads: '测试版下载',
+      wishlist_count: '愿望清单数量',
+      neural_rating: '神经评级',
+
       // Hero Section
       hero_subtitle: 'ZeropunkOS v0.92 | 访客模式 | dayystudio',
       hero_message: '你不是英雄。你是一个公民——破碎系统中的又一个齿轮。但系统正在崩溃，而你可能就是那个火花。',
