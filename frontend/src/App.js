@@ -2855,7 +2855,7 @@ const App = () => {
                   {menuItems.map((item) => (
                     <div key={item.id}>
                       <motion.button
-                        className={`menu-item ${currentSection === item.id ? 'active' : ''} ${item.isLanguageSelector && languageMenuOpen ? 'active' : ''}`}
+                        className={`menu-item ${item.isLanguageSelector && languageMenuOpen ? 'active' : ''}`}
                         onClick={() => navigateToSection(item.id)}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
