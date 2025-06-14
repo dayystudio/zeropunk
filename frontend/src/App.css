@@ -1398,12 +1398,11 @@ section {
 }
 
 .menu-footer .language-selector {
-  position: static;
-  background: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.15);
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.1);
   border-radius: 8px;
-  padding: 0.75rem;
-  backdrop-filter: blur(20px);
+  padding: 0.6rem;
+  backdrop-filter: blur(10px);
 }
 
 .menu-footer .language-label {
