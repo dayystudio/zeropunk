@@ -517,6 +517,13 @@ const App = () => {
       event_market_surge: 'Market Surge',
       participants: 'Participants',
 
+      // Stats Section
+      stats_title: 'SYSTEM STATISTICS',
+      active_neural_links: 'Active Neural Links',
+      beta_downloads: 'Beta Downloads',
+      wishlist_count: 'Wishlist Count',
+      neural_rating: 'Neural Rating',
+
       // Roadmap Section
       roadmap_title: 'DEVELOPMENT ROADMAP',
 
