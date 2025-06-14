@@ -474,6 +474,7 @@ const App = () => {
       home: 'Home',
       features: 'Features',
       beta_access: 'Beta Access',
+      wishlist_steam: 'Wishlist on Steam',
       ai_chat: 'AI Chat',
       pc_requirements: 'PC Requirements',
       live_activity: 'Live Activity',
