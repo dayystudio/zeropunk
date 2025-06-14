@@ -699,15 +699,15 @@ const App = () => {
       open_world_details: '城市跨越12个不同的区域，每个区域都有独特的AI治理系统。从霓虹灯浸润的企业塔楼到数据挖掘地下，每个地点都具有由所有玩家的集体行动驱动的程序生成事件。',
 
       // Beta Section
-      beta_title: '测试版访问',
-      beta_warning: '警告：神经接口测试阶段激活',
-      beta_description: '加入封闭测试版，体验AI驱动游戏的未来。你的神经模式将帮助训练我们先进的AI系统。',
+      beta_title: 'STEAM 愿望清单',
+      beta_warning: '发布中：Steam 愿望清单现已开放',
+      beta_description: '将 ZEROPUNK 添加到您的 Steam 愿望清单，成为首批体验 AI 驱动游戏未来的玩家。',
       system_requirements: '系统要求',
       neural_compatibility: '神经兼容性指数：7.5+',
       consciousness_stability: '意识稳定性评级：B级最低',
       memory_fragmentation: '记忆碎片化：<15%',
       quantum_processing: '量子处理能力：推荐',
-      request_beta_access: '请求测试版访问',
+      request_beta_access: 'STEAM 愿望清单',
       view_system_specs: '查看系统规格',
 
       // Alia Section
