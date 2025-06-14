@@ -976,13 +976,13 @@ const App = () => {
     { id: 'hero', label: t('home'), icon: <Home size={20} /> },
     { id: 'about', label: t('features'), icon: <Info size={20} /> },
     { id: 'beta', label: t('wishlist_steam'), icon: <Gamepad2 size={20} /> },
-    { id: 'modding', label: t('modding_hub'), icon: <Code size={20} /> },
     { id: 'character', label: t('character_customization'), icon: <UserCircle size={20} /> },
-    { id: 'alia', label: t('ai_chat'), icon: <Bot size={20} /> },
+    { id: 'alia', label: 'Alia Nox AI Chat', icon: <Bot size={20} /> },
     { id: 'pc_requirements', label: t('pc_requirements'), icon: <Monitor size={20} /> },
-    { id: 'live_activity', label: t('live_activity'), icon: <Globe size={20} /> },
-    { id: 'stats', label: t('game_stats'), icon: <BarChart3 size={20} /> },
+    { id: 'stats', label: 'GameStat', icon: <BarChart3 size={20} /> },
+    { id: 'live_activity', label: 'Live World Activity', icon: <Globe size={20} /> },
     { id: 'roadmap', label: t('roadmap'), icon: <Map size={20} /> },
+    { id: 'modding', label: 'Modding Hub', icon: <Code size={20} /> },
     { id: 'contact', label: t('contact'), icon: <Mail size={20} /> },
     { id: 'language', label: t('language'), icon: <Languages size={20} />, isLanguageSelector: true }
   ];
