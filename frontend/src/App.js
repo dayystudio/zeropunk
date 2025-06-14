@@ -2835,7 +2835,7 @@ const App = () => {
         </div>
       </header>
 
-      {/* Navigation Menu */}
+      {/* Redesigned Glassmorphism Navigation Menu */}
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -2845,21 +2845,19 @@ const App = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.3 }}
               onClick={() => setMenuOpen(false)}
             />
             
-            {/* Enhanced Glassmorphism Navigation Menu */}
+            {/* Clean Glassmorphism Menu */}
             <motion.nav 
               className="navigation-menu"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95, y: -10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -10 }}
               transition={{ 
-                duration: 0.6, 
-                ease: [0.4, 0, 0.2, 1],
-                scale: { duration: 0.4 },
-                opacity: { duration: 0.3 }
+                duration: 0.3, 
+                ease: [0.4, 0, 0.2, 1]
               }}
             >
               <div className="menu-content">
@@ -2868,34 +2866,24 @@ const App = () => {
                   <h3>{t('neural_interface_menu')}</h3>
                 </div>
                 
-                {/* Touch-Friendly Scrollable Menu Items */}
+                {/* Clean Menu Items */}
                 <div className="menu-items">
                   {menuItems.map((item, index) => (
-                    <motion.div
-                      key={item.id}
-                      className="menu-item-wrapper"
-                      initial={{ opacity: 0, x: -30 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.08, duration: 0.4 }}
-                    >
+                    <div key={item.id}>
                       {item.isLanguageSelector ? (
                         <div className="language-dropdown">
                           <motion.button
                             className={`menu-item ${languageMenuOpen ? 'active' : ''}`}
                             onClick={() => navigateToSection('language')}
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.05, duration: 0.3 }}
                           >
                             <div className="menu-item-icon">{item.icon}</div>
                             <span>{item.label}</span>
                             <ChevronDown 
                               className={`item-chevron ${languageMenuOpen ? 'rotated' : ''}`} 
                               size={16} 
-                              style={{
-                                marginLeft: 'auto',
-                                transition: 'transform 0.3s ease',
-                                transform: languageMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)'
-                              }}
                             />
                           </motion.button>
                           
@@ -2903,30 +2891,23 @@ const App = () => {
                             {languageMenuOpen && (
                               <motion.div
                                 className="language-dropdown-menu"
-                                initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                                animate={{ opacity: 1, y: 0, scale: 1 }}
-                                exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3 }}
                               >
-                                {languages.map((lang, langIndex) => (
-                                  <motion.button
+                                {languages.map((lang) => (
+                                  <div
                                     key={lang.code}
                                     className={`language-option ${currentLanguage === lang.code ? 'active' : ''}`}
                                     onClick={() => selectLanguage(lang.code)}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: langIndex * 0.05 }}
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
                                   >
                                     <span className="language-flag">{lang.flag}</span>
                                     <span className="language-name">{lang.name}</span>
                                     {currentLanguage === lang.code && (
-                                      <div className="active-indicator">
-                                        <div className="indicator-dot"></div>
-                                      </div>
+                                      <div className="active-indicator"></div>
                                     )}
-                                  </motion.button>
+                                  </div>
                                 ))}
                               </motion.div>
                             )}
@@ -2936,14 +2917,15 @@ const App = () => {
                         <motion.button
                           className={`menu-item ${currentSection === item.id ? 'active' : ''}`}
                           onClick={() => navigateToSection(item.id)}
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05, duration: 0.3 }}
                         >
                           <div className="menu-item-icon">{item.icon}</div>
                           <span>{item.label}</span>
                         </motion.button>
                       )}
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
