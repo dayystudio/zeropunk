@@ -933,6 +933,23 @@ const App = () => {
       contact_success: 'Merci ! Votre message a été transmis au réseau Zeropunk. Nous vous répondrons bientôt, coureur du net.',
       alia_contact_message: 'Je suis Alia. Je m\'assurerai que votre message atteigne le bon secteur.',
 
+      // Character Customization
+      character_customization: 'Personnalisation du Personnage',
+      character_title: 'Concevez votre Identité Cyberpunk',
+      character_intro: 'Créez votre avatar netrunner parfait avec un système de personnalisation 3D de pointe. Chaque choix façonne votre présence numérique dans le monde néon-trempé de ZEROPUNK.',
+      customize_face: 'Visage et Identité',
+      customize_hair: 'Cheveux Neuraux',
+      customize_outfit: 'Mode de Rue',
+      customize_accessories: 'Accessoires Tech',
+      customize_augmentations: 'Augmentations Cybernétiques',
+      customize_weapons: 'Équipement de Combat',
+      gender_male: 'Masculin',
+      gender_female: 'Féminin',
+      randomize_character: 'Aléatoire',
+      save_character: 'Sauvegarder Avatar',
+      share_character: 'Partager Design',
+      reset_character: 'Remettre par Défaut',
+
       // Chat
       alia_chat_title: 'ALIA NOX - Interface Neurale Active',
       chat_welcome: 'Bienvenue dans la liaison neurale. Je suis Alia Nox. Quelles questions brûlent dans votre esprit ?',
