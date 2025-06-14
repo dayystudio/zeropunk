@@ -363,6 +363,8 @@ test_plan:
   completed_tests:
     - "Game Stats API Endpoint"
     - "Chat History Storage"
+    - "AI Chat API Integration with Alia Nox"
+    - "API Routing and CORS Configuration"
 
 agent_communication:
   - agent: "main"
