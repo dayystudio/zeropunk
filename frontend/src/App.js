@@ -1255,15 +1255,10 @@ const App = () => {
             >
               <motion.button
                 className="wishlist-cta-btn"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => window.open('https://store.steampowered.com/', '_blank')}
               >
-                <div className="btn-bg-effects">
-                  <div className="btn-glow"></div>
-                  <div className="btn-scan-lines"></div>
-                  <div className="btn-energy-flow"></div>
-                </div>
                 <div className="btn-content">
                   <div className="btn-icon">
                     <Star className="star-icon" />
@@ -1273,7 +1268,6 @@ const App = () => {
                     <Play size={20} />
                   </div>
                 </div>
-                <div className="btn-hover-effect"></div>
               </motion.button>
             </motion.div>
 
