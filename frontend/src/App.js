@@ -1607,22 +1607,6 @@ const App = () => {
     </div>
   );
 
-  const CharacterCustomizationSection = () => (
-    <div className="section-container character-section">
-      <div className="section-content">
-        <h2 className="section-title">{t('character_customization')}</h2>
-        <div className="character-intro">
-          <p>Create your perfect cyberpunk avatar. Full 3D customization system coming soon!</p>
-        </div>
-        <div className="character-placeholder">
-          <UserCircle size={120} />
-          <p>3D Character Customization System</p>
-          <p>Coming Soon...</p>
-        </div>
-      </div>
-    </div>
-  );
-
   const HeroSection = () => (
     <div className="section-container hero-section">
       <div className="hero-content">
