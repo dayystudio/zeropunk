@@ -1134,6 +1134,8 @@ const App = () => {
       </div>
     );
   };
+
+  const CharacterCustomizationSection = () => {
     const [glitchActive, setGlitchActive] = useState(false);
     const [scanlinePosition, setScanlinePosition] = useState(0);
     
