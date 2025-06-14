@@ -819,15 +819,15 @@ const App = () => {
       open_world_details: 'La ville s\'étend sur 12 districts distincts, chacun avec des systèmes de gouvernance IA uniques. Des tours corporatives imprégnées de néon au sous-sol de minage de données, chaque lieu présente des événements générés procéduralement alimentés par les actions collectives de tous les joueurs.',
 
       // Beta Section
-      beta_title: 'ACCÈS BÊTA',
-      beta_warning: 'ATTENTION : Phase de Test d\'Interface Neurale Active',
-      beta_description: 'Rejoignez la bêta fermée et découvrez l\'avenir du jeu alimenté par IA. Vos modèles neuraux aideront à entraîner nos systèmes IA avancés.',
+      beta_title: 'LISTE DE SOUHAITS STEAM',
+      beta_warning: 'LANCEMENT : Liste de Souhaits Steam Maintenant Disponible',
+      beta_description: 'Ajoutez ZEROPUNK à votre liste de souhaits Steam et soyez parmi les premiers à découvrir l\'avenir du jeu alimenté par IA lors de notre lancement.',
       system_requirements: 'Configuration Requise',
       neural_compatibility: 'Index de compatibilité neurale : 7.5+',
       consciousness_stability: 'Évaluation de stabilité de conscience : Classe B minimum',
       memory_fragmentation: 'Fragmentation de mémoire : <15%',
       quantum_processing: 'Capacités de traitement quantique : Recommandé',
-      request_beta_access: 'DEMANDER ACCÈS BÊTA',
+      request_beta_access: 'LISTE DE SOUHAITS STEAM',
       view_system_specs: 'VOIR SPÉCIFICATIONS SYSTÈME',
 
       // Alia Section
