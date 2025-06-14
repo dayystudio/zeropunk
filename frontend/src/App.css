@@ -1224,8 +1224,8 @@ section {
   position: fixed;
   top: 80px;
   right: 20px;
-  width: 280px;
-  max-height: 70vh;
+  width: 320px;
+  max-height: 75vh;
   background: rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(25px);
   z-index: 999;
