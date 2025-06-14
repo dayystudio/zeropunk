@@ -627,6 +627,9 @@ const App = () => {
       contact_success: 'Thanks! Your message has been transmitted to the Zeropunk network. We\'ll get back to you soon, netrunner.',
       alia_contact_message: 'I\'m Alia. I\'ll make sure your message reaches the right sector.',
 
+      // Modding Hub
+      modding_hub: 'Modding Hub',
+
       // Character Customization
       character_customization: 'Character Customization',
       character_title: 'Design Your Cyberpunk Identity',
