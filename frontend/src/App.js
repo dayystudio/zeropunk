@@ -31,6 +31,45 @@ const App = () => {
   });
   const [contactSubmitted, setContactSubmitted] = useState(false);
 
+  // Character customization state
+  const [characterConfig, setCharacterConfig] = useState({
+    gender: 'male',
+    face: {
+      shape: 'angular',
+      skinTone: '#FDBCB4',
+      eyes: 'blue',
+      scars: 'none',
+      implants: 'basic'
+    },
+    hair: {
+      style: 'punk',
+      color: '#00FFFF',
+      glow: true
+    },
+    outfit: {
+      torso: 'jacket',
+      legs: 'cargo',
+      boots: 'combat',
+      gloves: 'fingerless'
+    },
+    accessories: {
+      mask: 'none',
+      visor: 'hud',
+      jewelry: 'neon'
+    },
+    augmentations: {
+      arms: 'cybernetic',
+      legs: 'enhanced',
+      spine: 'neural'
+    },
+    weapons: {
+      sidearm: 'plasma',
+      melee: 'blade',
+      rifle: 'none'
+    }
+  });
+  const [characterView, setCharacterView] = useState({ rotation: 0, zoom: 1, position: [0, 0, 0] });
+
   // Live Activity state
   const [liveData, setLiveData] = useState({
     playerCount: 1247,
