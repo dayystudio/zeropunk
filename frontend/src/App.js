@@ -2894,7 +2894,7 @@ const App = () => {
                       </div>
                     ) : (
                       <button
-                        className="nav-item"
+                        className={`nav-item ${currentSection === item.id ? 'active' : ''}`}
                         onClick={() => navigateToSection(item.id)}
                       >
                         {item.icon}
