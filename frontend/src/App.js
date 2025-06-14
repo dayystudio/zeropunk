@@ -606,13 +606,7 @@ const App = () => {
       chat_placeholder: '传输你的想法...',
       send: '发送',
       neural_link_disrupted: '神经链接中断。矩阵闪烁...'
-
-      // Stats Section
-      stats_title: '系统统计',
-      active_neural_links: '活跃神经链接',
-      beta_downloads: '测试版下载',
-      wishlist_count: '愿望清单数量',
-      neural_rating: '神经评级',
+    },
 
       // Roadmap Section
       roadmap_title: '开发路线图',
