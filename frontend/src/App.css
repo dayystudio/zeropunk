@@ -1685,9 +1685,19 @@ section {
   }
 }
 
-/* Enhanced Section Spacing */
-.hero-section {
+/* Enhanced Section Spacing - Increased */
+.section-container {
+  min-height: calc(100vh - 70px);
   padding: 8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.hero-section {
+  padding: 10rem 2rem;
+  margin-bottom: 6rem;
 }
 
 .about-section,
@@ -1697,31 +1707,58 @@ section {
 .live-activity-section,
 .stats-section,
 .roadmap-section {
-  padding: 6rem 2rem;
-  margin-bottom: 2rem;
+  padding: 8rem 2rem;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+/* Add visual separators between sections */
+.about-section::before,
+.beta-section::before,
+.alia-section::before,
+.pc-requirements-section::before,
+.live-activity-section::before,
+.stats-section::before,
+.roadmap-section::before {
+  content: '';
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
 }
 
 .section-title {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   text-align: center;
   position: relative;
+  padding-bottom: 2rem;
 }
 
 .section-title::after {
   content: '';
   position: absolute;
-  bottom: -1rem;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 2px;
+  width: 150px;
+  height: 3px;
   background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  border-radius: 2px;
 }
 
-/* Mobile Section Spacing */
+/* Mobile Section Spacing - Increased */
 @media (max-width: 768px) {
-  .hero-section {
+  .section-container {
     padding: 6rem 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .hero-section {
+    padding: 8rem 1.5rem;
+    margin-bottom: 4rem;
   }
   
   .about-section,
@@ -1731,18 +1768,24 @@ section {
   .live-activity-section,
   .stats-section,
   .roadmap-section {
-    padding: 4rem 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 6rem 1.5rem;
+    margin-bottom: 3rem;
   }
   
   .section-title {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 }
 
 @media (max-width: 480px) {
+  .section-container {
+    padding: 5rem 1rem;
+    margin-bottom: 2rem;
+  }
+  
   .hero-section {
-    padding: 4rem 1rem;
+    padding: 6rem 1rem;
+    margin-bottom: 3rem;
   }
   
   .about-section,
@@ -1752,12 +1795,12 @@ section {
   .live-activity-section,
   .stats-section,
   .roadmap-section {
-    padding: 3rem 1rem;
-    margin-bottom: 1rem;
+    padding: 5rem 1rem;
+    margin-bottom: 2rem;
   }
   
   .section-title {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-size: 2rem;
   }
 }
