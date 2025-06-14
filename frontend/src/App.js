@@ -496,12 +496,26 @@ const App = () => {
       emotional_intelligence: 'Real-time Emotional Intelligence',
       initiate_neural_link: 'INITIATE NEURAL LINK',
 
-      // Stats Section
-      stats_title: 'SYSTEM STATISTICS',
-      active_neural_links: 'Active Neural Links',
-      beta_downloads: 'Beta Downloads',
-      wishlist_count: 'Wishlist Count',
-      neural_rating: 'Neural Rating',
+      // Live Activity
+      live_world_title: 'LIVE PLAYER WORLD ACTIVITY',
+      players_online: 'Players Online',
+      game_time: 'Game Time',
+      current_weather: 'Current Weather',
+      market_status: 'Market Status',
+      faction_control: 'Faction Control',
+      ongoing_events: 'Ongoing Events',
+      resource_prices: 'Resource Prices',
+      trading_volume: 'Trading Volume',
+      weather_visibility: 'Visibility',
+      weather_intensity: 'Intensity',
+      market_active: 'ACTIVE',
+      market_volatile: 'VOLATILE',
+      trend_rising: 'Rising',
+      trend_stable: 'Stable',
+      trend_falling: 'Falling',
+      event_raid: 'Corporate Raid',
+      event_market_surge: 'Market Surge',
+      participants: 'Participants',
 
       // Roadmap Section
       roadmap_title: 'DEVELOPMENT ROADMAP',
