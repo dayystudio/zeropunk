@@ -255,9 +255,9 @@ const App = () => {
     setSessionId(generateSessionId());
     fetchGameStats();
     
-    // Start live data updates (reduced frequency to prevent flickering)
-    const liveDataInterval = setInterval(updateLiveData, 10000); // Changed from 3000ms to 10000ms (10 seconds)
-    return () => clearInterval(liveDataInterval);
+    // Start live data updates (temporarily disabled to prevent flickering)
+    // const liveDataInterval = setInterval(updateLiveData, 10000);
+    // return () => clearInterval(liveDataInterval);
   }, []);
 
   const updateLiveData = () => {
