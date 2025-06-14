@@ -1185,22 +1185,9 @@ const App = () => {
     return (
       <div className="section-container wishlist-section">
         <div className="section-content">
-          {/* Simplified Background Effects */}
+          {/* Stable Background Effects */}
           <div className="wishlist-bg-effects">
             <div className="neon-grid"></div>
-            <div className="floating-particles">
-              {[...Array(6)].map((_, i) => (
-                <div 
-                  key={i}
-                  className="particle"
-                  style={{
-                    left: `${Math.random() * 100}%`,
-                    animationDelay: `${Math.random() * 5}s`,
-                    animationDuration: `${4 + Math.random() * 2}s`
-                  }}
-                ></div>
-              ))}
-            </div>
           </div>
 
           {/* Main Content */}
