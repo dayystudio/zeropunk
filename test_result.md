@@ -365,6 +365,7 @@ test_plan:
     - "Chat History Storage"
     - "AI Chat API Integration with Alia Nox"
     - "API Routing and CORS Configuration"
+  backend_verified: true
 
 agent_communication:
   - agent: "main"
