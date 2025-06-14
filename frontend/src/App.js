@@ -1824,6 +1824,7 @@ const App = () => {
       case 'live_activity': return <LiveActivitySection />;
       case 'stats': return <StatsSection />;
       case 'roadmap': return <RoadmapSection />;
+      case 'contact': return <ContactSection />;
       default: return <HeroSection />;
     }
   };
