@@ -370,10 +370,12 @@ metadata:
 test_plan:
   current_focus:
     - "Cyberpunk UI Foundation"
+    - "Mobile Optimization for One-Page Scroll Layout"
     - "PC Requirements System Analyzer"
     - "Live Player World Activity Dashboard"
   stuck_tasks:
     - "Cyberpunk UI Foundation"
+    - "Mobile Optimization for One-Page Scroll Layout"
     - "Interactive Alia Nox Chat Interface"
     - "Navigation System"
     - "Hero Section"
