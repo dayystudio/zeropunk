@@ -1643,6 +1643,7 @@ const App = () => {
       case 'beta': return <BetaSection />;
       case 'alia': return <AliaNoxSection />;
       case 'pc_requirements': return <PCRequirementsSection />;
+      case 'live_activity': return <LiveActivitySection />;
       case 'stats': return <StatsSection />;
       case 'roadmap': return <RoadmapSection />;
       default: return <HeroSection />;
