@@ -1449,6 +1449,8 @@ const App = () => {
       </div>
     );
   };
+
+  const ContactSection = () => (
     <div className="section-container contact-section">
       <div className="section-content">
         <h2 className="section-title">{t('contact_title')}</h2>
