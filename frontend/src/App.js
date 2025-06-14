@@ -399,14 +399,7 @@ const App = () => {
       setLanguageMenuOpen(!languageMenuOpen);
       return;
     }
-    // Smooth scroll to section instead of switching content
-    const element = document.getElementById(section);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
+    setCurrentSection(section);
     setMenuOpen(false);
     setLanguageMenuOpen(false);
   };
