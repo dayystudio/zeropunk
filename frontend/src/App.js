@@ -2373,18 +2373,6 @@ const App = () => {
     );
   };
 
-  // Smooth scroll to section
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-    setMenuOpen(false);
-  };
-
   const renderCurrentSection = () => {
     switch (currentSection) {
       case 'hero': return <HeroSection />;
