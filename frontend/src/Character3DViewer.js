@@ -536,7 +536,7 @@ const AdvancedLighting = () => {
   );
 };
 
-// Post-processing Effects
+// Simplified Post-processing Effects
 const PostProcessingEffects = () => {
   return (
     <EffectComposer>
@@ -545,9 +545,6 @@ const PostProcessingEffects = () => {
         luminanceThreshold={0.1}
         luminanceSmoothing={0.9}
       />
-      <ChromaticAberration offset={[0.0005, 0.0005]} />
-      <Noise opacity={0.02} />
-      <Vignette eskil={false} offset={0.1} darkness={0.5} />
     </EffectComposer>
   );
 };
