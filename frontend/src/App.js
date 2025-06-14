@@ -987,6 +987,7 @@ const App = () => {
   const CharacterCustomizationSection = () => {
     const [activeCategory, setActiveCategory] = useState('face');
     const [aliaNoxComments, setAliaNoxComments] = useState([]);
+    const [scrollProgress, setScrollProgress] = useState(0);
     
     const customizationCategories = [
       { id: 'face', label: t('customize_face'), icon: <UserCircle size={18} /> },
@@ -996,6 +997,21 @@ const App = () => {
       { id: 'augmentations', label: t('customize_augmentations'), icon: <Cpu size={18} /> },
       { id: 'weapons', label: t('customize_weapons'), icon: <Shield size={18} /> }
     ];
+
+    // Track scroll progress for cinematic effects
+    useEffect(() => {
+      const handleScroll = () => {
+        const characterSection = document.querySelector('.character-section');
+        if (characterSection) {
+          const rect = characterSection.getBoundingClientRect();
+          const progress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
+          setScrollProgress(progress);
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const updateCharacterConfig = (category, property, value) => {
       setCharacterConfig(prev => ({
@@ -1092,96 +1108,125 @@ const App = () => {
     };
 
     return (
-      <div className="section-container character-section">
-        <div className="section-content">
-          <h2 className="section-title">{t('character_title')}</h2>
+      <div className="character-section cinematic-scroll">
+        {/* Cinematic Header */}
+        <div className="character-hero" style={{ transform: `translateY(${scrollProgress * 50}px)` }}>
+          <div className="character-hero-content">
+            <motion.h1 
+              className="character-main-title"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              {t('character_title')}
+            </motion.h1>
+            <motion.p 
+              className="character-hero-description"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+            >
+              {t('character_intro')}
+            </motion.p>
+          </div>
           
-          <div className="character-intro">
-            <p>{t('character_intro')}</p>
+          {/* Scroll progress indicator */}
+          <div className="scroll-progress-indicator">
+            <div className="progress-line" style={{ height: `${scrollProgress * 100}%` }}></div>
+          </div>
+        </div>
+
+        {/* Main Character Workshop */}
+        <div className="character-workshop">
+          {/* 3D Character Viewer - Large Cinema Display */}
+          <div className="character-cinema-display">
+            <div className="cinema-frame">
+              <div className="frame-border">
+                <div className="frame-corner tl"></div>
+                <div className="frame-corner tr"></div>
+                <div className="frame-corner bl"></div>
+                <div className="frame-corner br"></div>
+              </div>
+              
+              <div className="character-viewer-ultra">
+                <UltraRealistic3DViewer 
+                  characterConfig={characterConfig}
+                  onViewChange={(e) => {
+                    // Handle view changes if needed
+                  }}
+                />
+              </div>
+              
+              {/* Character Actions Overlay */}
+              <div className="character-actions-overlay">
+                <motion.button 
+                  className="action-btn primary"
+                  onClick={randomizeCharacter}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Shuffle size={18} />
+                  <span>{t('randomize_character')}</span>
+                </motion.button>
+                
+                <motion.button 
+                  className="action-btn secondary"
+                  onClick={saveCharacterScreenshot}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Camera size={18} />
+                  <span>{t('save_character')}</span>
+                </motion.button>
+                
+                <motion.button 
+                  className="action-btn secondary"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Send size={18} />
+                  <span>{t('share_character')}</span>
+                </motion.button>
+              </div>
+            </div>
           </div>
 
-          <div className="character-customization-grid">
-            {/* 3D Character Viewer */}
-            <div className="character-viewer-container">
-              <div className="character-viewer">
-                <div className="viewer-canvas">
-                  <Character3DViewer 
-                    characterConfig={characterConfig}
-                    onViewChange={(e) => {
-                      // Handle view changes if needed
-                    }}
-                  />
-                </div>
-                
-                {/* 3D Controls */}
-                <div className="viewer-controls">
-                  <button className="control-btn" title="Rotate">
-                    <RotateCcw size={16} />
-                  </button>
-                  <button className="control-btn" title="Zoom In">
-                    <ZoomIn size={16} />
-                  </button>
-                  <button className="control-btn" title="Zoom Out">
-                    <ZoomOut size={16} />
-                  </button>
-                  <button className="control-btn" title="Pan">
-                    <Move3D size={16} />
-                  </button>
-                </div>
-
-                {/* Character Actions */}
-                <div className="character-actions">
-                  <button className="action-btn primary" onClick={randomizeCharacter}>
-                    <Shuffle size={16} />
-                    {t('randomize_character')}
-                  </button>
-                  <button className="action-btn secondary" onClick={saveCharacterScreenshot}>
-                    <Camera size={16} />
-                    {t('save_character')}
-                  </button>
-                  <button className="action-btn secondary">
-                    <Send size={16} />
-                    {t('share_character')}
-                  </button>
-                </div>
-              </div>
-
-              {/* Alia Nox Comments */}
-              {aliaNoxComments.length > 0 && (
-                <div className="alia-comments">
-                  <div className="alia-avatar">
-                    <Bot size={20} />
-                  </div>
-                  <div className="alia-messages">
-                    {aliaNoxComments.map((comment, index) => (
-                      <div key={comment.timestamp} className="alia-message">
-                        <span className="alia-name">Alia Nox:</span>
-                        <p>{comment.text}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Customization Panel */}
-            <div className="customization-panel">
-              {/* Category Tabs */}
-              <div className="category-tabs">
-                {customizationCategories.map(category => (
-                  <button
+          {/* Customization Panels */}
+          <div className="customization-workspace">
+            {/* Category Navigation */}
+            <div className="category-navigation">
+              <h3 className="customization-title">Neural Customization Interface</h3>
+              <div className="category-grid">
+                {customizationCategories.map((category, index) => (
+                  <motion.button
                     key={category.id}
-                    className={`category-tab ${activeCategory === category.id ? 'active' : ''}`}
+                    className={`category-card ${activeCategory === category.id ? 'active' : ''}`}
                     onClick={() => setActiveCategory(category.id)}
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    {category.icon}
-                    <span>{category.label}</span>
-                  </button>
+                    <div className="category-icon">{category.icon}</div>
+                    <span className="category-label">{category.label}</span>
+                    <div className="category-glow"></div>
+                  </motion.button>
                 ))}
               </div>
+            </div>
 
-              {/* Customization Options */}
-              <div className="customization-options">
+            {/* Customization Options Panel */}
+            <div className="customization-options-panel">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeCategory}
+                  className="customization-options"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
                 {activeCategory === 'face' && (
                   <div className="options-grid">
                     <div className="option-group">
