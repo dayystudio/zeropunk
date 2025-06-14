@@ -1158,7 +1158,7 @@ const App = () => {
     );
   };
 
-  const BetaSection = () => {
+  const BetaSection = React.memo(() => {
     const testimonials = [
       {
         quote: "A glimpse into the future of gaming. Every NPC feels alive.",
