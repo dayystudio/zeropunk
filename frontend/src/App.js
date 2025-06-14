@@ -740,6 +740,7 @@ const App = () => {
       home: 'Accueil',
       features: 'Fonctionnalités',
       beta_access: 'Accès Bêta',
+      wishlist_steam: 'Liste de Souhaits Steam',
       ai_chat: 'Chat IA',
       pc_requirements: 'Config PC',
       live_activity: 'Activité Live',
