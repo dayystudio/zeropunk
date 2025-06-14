@@ -1693,24 +1693,6 @@ const App = () => {
                       )}
                     </div>
                   ))}
-                </div>
-                
-                <div className="menu-footer">
-                  <div className="language-selector">
-                    <span className="language-label">{t('language')}:</span>
-                    <select 
-                      value={currentLanguage}
-                      onChange={(e) => setCurrentLanguage(e.target.value)}
-                      className="language-select"
-                    >
-                      {languages.map(lang => (
-                        <option key={lang.code} value={lang.code}>
-                          {lang.flag} {lang.name}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
               </div>
             </motion.nav>
           </>
