@@ -20,6 +20,7 @@ const App = () => {
   // Navigation state
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState('hero');
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
 
   // Live Activity state
   const [liveData, setLiveData] = useState({
