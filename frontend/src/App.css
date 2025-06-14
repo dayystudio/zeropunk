@@ -1267,182 +1267,98 @@ section {
   background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.2), transparent);
 }
 
-/* Enhanced Menu Backdrop - Cyberpunk Glass */
+/* ==========================================
+   COMPLETELY REDESIGNED GLASSMORPHISM MENU
+   ========================================== */
+
+/* Menu Backdrop */
 .menu-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.03), transparent 70%),
-    radial-gradient(circle at 70% 70%, rgba(236, 72, 153, 0.03), transparent 70%),
-    rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 998;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: backdropPulse 8s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes backdropPulse {
-  0%, 100% { backdrop-filter: blur(12px); }
-  50% { backdrop-filter: blur(8px); }
-}
-
-/* Revolutionary Glassmorphism Navigation Menu */
+/* Revolutionary Glassmorphism Menu Container */
 .navigation-menu {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(420px, 85vw);
-  max-height: 75vh;
+  top: 70px; /* Right below the header */
+  right: 20px; /* Aligned with hamburger button */
+  width: 320px;
+  max-height: calc(100vh - 100px);
   background: 
-    linear-gradient(135deg, 
-      rgba(0, 0, 0, 0.1) 0%,
-      rgba(0, 0, 0, 0.05) 50%,
-      rgba(0, 0, 0, 0.1) 100%
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0.1) 100%
     );
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
-  z-index: 999;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
   box-shadow: 
-    0 25px 80px rgba(0, 0, 0, 0.4),
-    0 0 120px rgba(59, 130, 246, 0.15),
-    0 0 200px rgba(236, 72, 153, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
-  display: flex;
-  flex-direction: column;
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 80px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  z-index: 999;
   overflow: hidden;
-  animation: menuFloat 6s ease-in-out infinite;
+  transform-origin: top right;
 }
 
-@keyframes menuFloat {
-  0%, 100% { 
-    transform: translate(-50%, -50%) translateY(0px);
-    box-shadow: 
-      0 25px 80px rgba(0, 0, 0, 0.4),
-      0 0 120px rgba(59, 130, 246, 0.15),
-      0 0 200px rgba(236, 72, 153, 0.08);
-  }
-  50% { 
-    transform: translate(-50%, -50%) translateY(-5px);
-    box-shadow: 
-      0 35px 90px rgba(0, 0, 0, 0.5),
-      0 0 140px rgba(59, 130, 246, 0.2),
-      0 0 220px rgba(236, 72, 153, 0.12);
-  }
-}
-
-/* Cyberpunk Neon Border Animation */
+/* Cyberpunk Neon Border Effect */
 .navigation-menu::before {
   content: '';
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: 
-    linear-gradient(45deg, 
-      rgba(59, 130, 246, 0.6) 0%,
-      rgba(0, 255, 255, 0.4) 25%,
-      rgba(236, 72, 153, 0.6) 50%,
-      rgba(255, 0, 128, 0.4) 75%,
-      rgba(59, 130, 246, 0.6) 100%
-    );
-  border-radius: 26px;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(45deg, 
+    transparent 0%,
+    rgba(59, 130, 246, 0.5) 25%,
+    rgba(0, 255, 255, 0.3) 50%,
+    rgba(236, 72, 153, 0.5) 75%,
+    transparent 100%
+  );
+  border-radius: 17px;
   z-index: -1;
-  animation: neonBorder 4s linear infinite;
   opacity: 0.7;
+  animation: borderGlow 3s ease-in-out infinite;
 }
 
-@keyframes neonBorder {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes borderGlow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
 }
 
-/* Neural Grid Overlay */
-.navigation-menu::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.05), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.05), transparent 40%),
-    linear-gradient(45deg, transparent 45%, rgba(0, 255, 255, 0.02) 50%, transparent 55%),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 98px,
-      rgba(255, 255, 255, 0.01) 100px
-    );
-  pointer-events: none;
-  z-index: 0;
-  border-radius: 24px;
-}
-
-/* Enhanced Glass Menu Content */
+/* Menu Content Container */
 .menu-content {
-  padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
+  padding: 1.5rem 0;
   height: 100%;
-  min-height: 0;
   position: relative;
   z-index: 2;
-  border-radius: 24px;
-  overflow: hidden;
 }
 
 /* Futuristic Menu Header */
 .menu-header {
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
+  padding: 0 1.5rem 1rem 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
+  margin-bottom: 1rem;
   text-align: center;
-}
-
-.menu-header::before {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 2px;
-  background: linear-gradient(90deg, 
-    transparent,
-    rgba(59, 130, 246, 0.8) 20%,
-    rgba(0, 255, 255, 0.6) 50%,
-    rgba(236, 72, 153, 0.8) 80%,
-    transparent
-  );
-  animation: headerGlow 3s ease-in-out infinite alternate;
-  border-radius: 2px;
-}
-
-@keyframes headerGlow {
-  0% { 
-    opacity: 0.6;
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-  }
-  100% { 
-    opacity: 1;
-    box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
-  }
 }
 
 .menu-header h3 {
   font-family: 'Orbitron', 'Saira Semi Condensed', monospace;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
   background: linear-gradient(135deg, 
     rgba(59, 130, 246, 1) 0%,
     rgba(0, 255, 255, 0.9) 50%,
@@ -1451,95 +1367,61 @@ section {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-align: center;
-  letter-spacing: 0.15em;
-  text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-  font-weight: 700;
-  text-transform: uppercase;
   margin: 0;
-  animation: titlePulse 4s ease-in-out infinite;
+  animation: headerPulse 2s ease-in-out infinite alternate;
 }
 
-@keyframes titlePulse {
-  0%, 100% { 
-    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
-  }
-  50% { 
-    filter: drop-shadow(0 0 15px rgba(236, 72, 153, 0.5));
-  }
+@keyframes headerPulse {
+  0% { filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3)); }
+  100% { filter: drop-shadow(0 0 12px rgba(236, 72, 153, 0.5)); }
 }
 
-/* Touch-Friendly Scrollable Menu Items */
+/* Scrollable Menu Items Container */
 .menu-items {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  flex: 1;
+  max-height: calc(100vh - 200px);
   overflow-y: auto;
-  min-height: 0;
-  padding-right: 0.5rem;
-  padding-bottom: 1rem;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
+  padding: 0 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59, 130, 246, 0.5) transparent;
 }
 
-/* Custom Cyberpunk Scrollbar */
 .menu-items::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .menu-items::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-  margin: 0.5rem 0;
+  background: transparent;
 }
 
 .menu-items::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, 
-    rgba(59, 130, 246, 0.6),
-    rgba(236, 72, 153, 0.6)
-  );
-  border-radius: 3px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.6), rgba(236, 72, 153, 0.6));
+  border-radius: 2px;
 }
 
-.menu-items::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, 
-    rgba(59, 130, 246, 0.8),
-    rgba(236, 72, 153, 0.8)
-  );
-  box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
-}
-
-/* Revolutionary Menu Items */
+/* Enhanced Menu Item */
 .menu-item {
-  background: 
-    linear-gradient(135deg,
-      rgba(255, 255, 255, 0.03) 0%,
-      rgba(255, 255, 255, 0.01) 50%,
-      rgba(255, 255, 255, 0.03) 100%
-    );
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.9);
-  padding: 1rem 1.25rem;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Saira Semi Condensed', sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
-  font-family: 'Saira Semi Condensed', sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(10px);
-  min-height: 44px; /* Touch-friendly minimum */
-  touch-action: manipulation;
+  min-height: 44px; /* Touch-friendly */
 }
 
-/* Menu Item Hover Effects */
+/* Menu Item Hover Effect */
 .menu-item::before {
   content: '';
   position: absolute;
@@ -1549,10 +1431,10 @@ section {
   height: 100%;
   background: linear-gradient(90deg,
     transparent,
-    rgba(59, 130, 246, 0.1) 50%,
+    rgba(59, 130, 246, 0.1),
     transparent
   );
-  transition: left 0.6s ease;
+  transition: left 0.5s ease;
   z-index: 0;
 }
 
@@ -1561,65 +1443,48 @@ section {
 }
 
 .menu-item:hover {
-  background: 
-    linear-gradient(135deg,
-      rgba(59, 130, 246, 0.1) 0%,
-      rgba(0, 255, 255, 0.05) 50%,
-      rgba(236, 72, 153, 0.1) 100%
-    );
-  border-color: rgba(59, 130, 246, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(59, 130, 246, 0.4);
   color: rgba(255, 255, 255, 1);
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 
-    0 8px 25px rgba(59, 130, 246, 0.2),
-    0 0 30px rgba(59, 130, 246, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
 }
 
 .menu-item:active {
-  transform: translateY(0) scale(0.98);
-  transition: all 0.1s ease;
+  transform: translateX(2px) scale(0.98);
 }
 
 /* Active Menu Item */
 .menu-item.active {
-  background: 
-    linear-gradient(135deg,
-      rgba(59, 130, 246, 0.15) 0%,
-      rgba(0, 255, 255, 0.08) 50%,
-      rgba(236, 72, 153, 0.15) 100%
-    );
-  border-color: rgba(59, 130, 246, 0.4);
-  color: rgba(255, 255, 255, 1);
-  box-shadow: 
-    0 0 25px rgba(59, 130, 246, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.5);
+  color: rgba(0, 255, 255, 1);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 
-/* Menu Item Icons */
+/* Menu Item Icon */
 .menu-item-icon {
+  width: 20px;
+  height: 20px;
   color: rgba(59, 130, 246, 0.8);
   transition: all 0.3s ease;
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
   position: relative;
   z-index: 1;
 }
 
 .menu-item:hover .menu-item-icon {
   color: rgba(0, 255, 255, 0.9);
-  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
   transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
 }
 
 .menu-item.active .menu-item-icon {
   color: rgba(0, 255, 255, 1);
-  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.8));
-  animation: iconPulse 2s ease-in-out infinite;
+  animation: iconGlow 2s ease-in-out infinite;
 }
 
-@keyframes iconPulse {
+@keyframes iconGlow {
   0%, 100% { transform: scale(1.1); }
   50% { transform: scale(1.2); }
 }
@@ -1628,7 +1493,178 @@ section {
 .menu-item span {
   position: relative;
   z-index: 1;
+  flex: 1;
+}
+
+/* Language Dropdown */
+.language-dropdown {
+  position: relative;
+}
+
+.language-dropdown-menu {
+  margin-top: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  cursor: pointer;
   transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.language-option:last-child {
+  border-bottom: none;
+}
+
+.language-option:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.language-option.active {
+  background: rgba(59, 130, 246, 0.2);
+  color: rgba(0, 255, 255, 1);
+}
+
+.language-flag {
+  font-size: 1.1rem;
+}
+
+.language-name {
+  flex: 1;
+}
+
+.active-indicator {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 1), rgba(0, 255, 255, 1));
+  border-radius: 50%;
+  animation: indicatorPulse 2s ease-in-out infinite;
+}
+
+@keyframes indicatorPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+/* Chevron Icon */
+.item-chevron {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.item-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .navigation-menu {
+    top: 60px;
+    right: 10px;
+    left: 10px;
+    width: auto;
+    max-width: none;
+    border-radius: 12px;
+  }
+
+  .menu-content {
+    padding: 1rem 0;
+  }
+
+  .menu-header {
+    padding: 0 1rem 0.75rem 1rem;
+  }
+
+  .menu-items {
+    padding: 0 0.75rem;
+    max-height: calc(100vh - 150px);
+  }
+
+  .menu-item {
+    min-height: 48px; /* Larger touch targets on mobile */
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation-menu {
+    top: 55px;
+    right: 5px;
+    left: 5px;
+  }
+
+  .menu-item {
+    min-height: 50px;
+  }
+}
+
+/* Enhanced Hamburger Button */
+.hamburger-menu {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger-menu:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: rgba(255, 255, 255, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+}
+
+.hamburger-menu.open {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.5);
+  color: rgba(0, 255, 255, 1);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Menu Animation Classes */
+.menu-enter {
+  opacity: 0;
+  transform: scale(0.9) translateY(-10px);
+}
+
+.menu-enter-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-exit {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.menu-exit-active {
+  opacity: 0;
+  transform: scale(0.9) translateY(-10px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Language Dropdown Styles */
 .language-dropdown {
