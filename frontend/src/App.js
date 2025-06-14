@@ -2831,75 +2831,74 @@ const App = () => {
       {/* Navigation Menu */}
       <AnimatePresence>
         {menuOpen && (
-          <>
-            <motion.div
-              className="menu-backdrop"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setMenuOpen(false)}
-            />
-            <motion.nav
-              className="navigation-menu"
-              initial={{ opacity: 0, x: '100%' }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: '100%' }}
-              transition={{ type: 'spring', damping: 20 }}
-            >
-              <div className="menu-content">
-                <div className="menu-header">
-                  <h3>{t('neural_interface_menu')}</h3>
-                </div>
-                
-                <div className="menu-items">
-                  {menuItems.map((item) => (
-                    <div key={item.id}>
-                      <motion.button
-                        className={`menu-item ${item.isLanguageSelector && languageMenuOpen ? 'active' : ''}`}
-                        onClick={() => navigateToSection(item.id)}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        {item.icon}
-                        <span>{item.label}</span>
-                        {item.isLanguageSelector && (
-                          <ChevronDown className={`language-chevron ${languageMenuOpen ? 'rotated' : ''}`} size={16} />
-                        )}
-                      </motion.button>
-                      
-                      {/* Language Submenu */}
-                      {item.isLanguageSelector && (
+          <motion.nav 
+            className="navigation-menu"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
+            <div className="nav-content">
+              <div className="nav-header">
+                <h2 className="nav-title">{t('neural_interface_menu')}</h2>
+                <button 
+                  className="nav-close"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <X size={24} />
+                </button>
+              </div>
+              
+              <div className="nav-items">
+                {menuItems.map((item) => (
+                  <div key={item.id} className="nav-item-container">
+                    {item.isLanguageSelector ? (
+                      <div className="language-selector">
+                        <button
+                          className={`nav-item ${languageMenuOpen ? 'active' : ''}`}
+                          onClick={() => navigateToSection('language')}
+                        >
+                          {item.icon}
+                          <span>{item.label}</span>
+                          <ChevronDown className={`chevron ${languageMenuOpen ? 'rotated' : ''}`} />
+                        </button>
                         <AnimatePresence>
                           {languageMenuOpen && (
                             <motion.div
-                              className="language-submenu"
+                              className="language-dropdown"
                               initial={{ opacity: 0, height: 0 }}
                               animate={{ opacity: 1, height: 'auto' }}
                               exit={{ opacity: 0, height: 0 }}
                               transition={{ duration: 0.2 }}
                             >
-                              {languages.map(lang => (
-                                <motion.button
+                              {languages.map((lang) => (
+                                <button
                                   key={lang.code}
                                   className={`language-option ${currentLanguage === lang.code ? 'active' : ''}`}
                                   onClick={() => selectLanguage(lang.code)}
-                                  whileHover={{ scale: 1.02 }}
-                                  whileTap={{ scale: 0.98 }}
                                 >
-                                  <span className="language-flag">{lang.flag}</span>
-                                  <span className="language-name">{lang.name}</span>
-                                </motion.button>
+                                  <span className="flag">{lang.flag}</span>
+                                  <span>{lang.name}</span>
+                                </button>
                               ))}
                             </motion.div>
                           )}
                         </AnimatePresence>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                      </div>
+                    ) : (
+                      <button
+                        className="nav-item"
+                        onClick={() => navigateToSection(item.id)}
+                      >
+                        {item.icon}
+                        <span>{item.label}</span>
+                      </button>
+                    )}
+                  </div>
+                ))}
               </div>
-            </motion.nav>
-          </>
+            </div>
+          </motion.nav>
         )}
       </AnimatePresence>
 
