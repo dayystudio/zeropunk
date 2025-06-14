@@ -294,17 +294,20 @@ metadata:
 
 test_plan:
   current_focus:
-    - "AI Chat API Integration with Alia Nox"
-    - "Game Stats Display"
+    - "Cyberpunk UI Foundation"
+    - "PC Requirements System Analyzer"
   stuck_tasks:
-    - "AI Chat API Integration with Alia Nox"
+    - "Cyberpunk UI Foundation"
+    - "Interactive Alia Nox Chat Interface"
+    - "Navigation System"
+    - "Hero Section"
+    - "Game Stats Display"
+    - "About Section"
+    - "Alia Nox Preview Section"
+    - "PC Requirements System Analyzer"
   test_all: false
   test_priority: "high_first"
   completed_tests:
-    - "Interactive Alia Nox Chat Interface"
-    - "Game Stats Display"
-    - "Navigation System"
-    - "Cyberpunk UI Foundation"
     - "Game Stats API Endpoint"
     - "Chat History Storage"
 
