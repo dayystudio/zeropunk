@@ -1253,9 +1253,10 @@ section {
 }
 
 .menu-content {
-  padding: 1.25rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  height: 100%;
   position: relative;
   z-index: 1;
 }
