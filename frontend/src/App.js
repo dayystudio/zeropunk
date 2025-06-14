@@ -21,6 +21,15 @@ const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState('hero');
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+  
+  // Contact form state
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [contactSubmitted, setContactSubmitted] = useState(false);
 
   // Live Activity state
   const [liveData, setLiveData] = useState({
