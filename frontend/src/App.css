@@ -1517,25 +1517,6 @@ section {
   .language-flag {
     font-size: 0.875rem;
   }
-  
-  .menu-footer {
-    padding-top: 1rem;
-    margin-top: 1rem;
-  }
-  
-  .menu-footer .language-selector {
-    padding: 0.875rem;
-  }
-  
-  .menu-footer .language-label {
-    font-size: 0.7rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .menu-footer .language-select {
-    font-size: 0.75rem;
-    padding: 0.625rem;
-  }
 }
 
 @media (max-width: 480px) {
