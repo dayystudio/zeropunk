@@ -1185,23 +1185,22 @@ const App = () => {
     return (
       <div className="section-container wishlist-section">
         <div className="section-content">
-          {/* Animated Background Elements */}
+          {/* Simplified Background Effects */}
           <div className="wishlist-bg-effects">
             <div className="neon-grid"></div>
             <div className="floating-particles">
-              {[...Array(12)].map((_, i) => (
+              {[...Array(6)].map((_, i) => (
                 <div 
                   key={i}
                   className="particle"
                   style={{
                     left: `${Math.random() * 100}%`,
                     animationDelay: `${Math.random() * 5}s`,
-                    animationDuration: `${3 + Math.random() * 4}s`
+                    animationDuration: `${4 + Math.random() * 2}s`
                   }}
                 ></div>
               ))}
             </div>
-            <div className="glitch-overlay"></div>
           </div>
 
           {/* Main Content */}
