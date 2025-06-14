@@ -258,9 +258,10 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Interactive Alia Nox Chat Interface"
+    - "AI Chat API Integration with Alia Nox"
     - "Game Stats Display"
-  stuck_tasks: []
+  stuck_tasks:
+    - "AI Chat API Integration with Alia Nox"
   test_all: false
   test_priority: "high_first"
   completed_tests:
@@ -268,6 +269,8 @@ test_plan:
     - "Game Stats Display"
     - "Navigation System"
     - "Cyberpunk UI Foundation"
+    - "Game Stats API Endpoint"
+    - "Chat History Storage"
 
 agent_communication:
   - agent: "main"
