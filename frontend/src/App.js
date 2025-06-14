@@ -2386,44 +2386,20 @@ const App = () => {
   };
 
   const renderCurrentSection = () => {
-    // Single page layout - render all sections
-    return (
-      <>
-        <section id="hero">
-          <HeroSection />
-        </section>
-        <section id="about">
-          <AboutSection />
-        </section>
-        <section id="beta">
-          <BetaSection />
-        </section>
-        <section id="modding">
-          <ModdingHubComingSoon />
-        </section>
-        <section id="character">
-          <CharacterCustomizationSection />
-        </section>
-        <section id="alia">
-          <AliaNoxSection />
-        </section>
-        <section id="pc_requirements">
-          <PCRequirementsSection />
-        </section>
-        <section id="live_activity">
-          <LiveActivitySection />
-        </section>
-        <section id="stats">
-          <StatsSection />
-        </section>
-        <section id="roadmap">
-          <RoadmapSection />
-        </section>
-        <section id="contact">
-          <ContactSection />
-        </section>
-      </>
-    );
+    switch (currentSection) {
+      case 'hero': return <HeroSection />;
+      case 'about': return <AboutSection />;
+      case 'beta': return <BetaSection />;
+      case 'modding': return <ModdingHubComingSoon />;
+      case 'character': return <CharacterCustomizationSection />;
+      case 'alia': return <AliaNoxSection />;
+      case 'pc_requirements': return <PCRequirementsSection />;
+      case 'live_activity': return <LiveActivitySection />;
+      case 'stats': return <StatsSection />;
+      case 'roadmap': return <RoadmapSection />;
+      case 'contact': return <ContactSection />;
+      default: return <HeroSection />;
+    }
   };
 
   return (
