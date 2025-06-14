@@ -370,6 +370,31 @@ const App = () => {
     setLanguageMenuOpen(false);
   };
 
+  const handleContactFormChange = (field, value) => {
+    setContactForm(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const handleContactSubmit = (e) => {
+    e.preventDefault();
+    // Here you could integrate with a backend API
+    console.log('Contact form submitted:', contactForm);
+    setContactSubmitted(true);
+    
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setContactSubmitted(false);
+      setContactForm({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    }, 3000);
+  };
+
   const analyzePCConfig = () => {
     if (!pcConfig.gpu || !pcConfig.cpu || !pcConfig.ram || !pcConfig.resolution) {
       return;
