@@ -1413,13 +1413,14 @@ section {
 
 .menu-footer .language-label {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.7rem;
-  margin-bottom: 0.4rem;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
   display: block;
   font-family: 'Saira Semi Condensed', monospace;
   letter-spacing: 0.05em;
   font-weight: 500;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .menu-footer .language-select {
