@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Brain, Zap, Users, Download, Star, MessageCircle, Play, Eye, ChevronDown, AlertTriangle, Lock, Globe } from 'lucide-react';
+import { Brain, Zap, Users, Download, Star, MessageCircle, Play, Eye, ChevronDown, AlertTriangle, Lock, Globe, Menu, X, Home, Info, BarChart3, Bot, Map, Gamepad2 } from 'lucide-react';
 import './App.css';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -16,6 +16,10 @@ const App = () => {
   const [aliaAnimating, setAliaAnimating] = useState(false);
   const [expandedFeature, setExpandedFeature] = useState(null);
   const [selectedLanguage, setSelectedLanguage] = useState('English');
+  
+  // Navigation state
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [currentSection, setCurrentSection] = useState('hero');
 
   // Initialize session
   useEffect(() => {
@@ -94,11 +98,9 @@ const App = () => {
     }
   };
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const navigateToSection = (section) => {
+    setCurrentSection(section);
+    setMenuOpen(false);
   };
 
   const languages = [
@@ -107,8 +109,17 @@ const App = () => {
     { code: 'fr', name: 'French', flag: '🇫🇷' }
   ];
 
+  const menuItems = [
+    { id: 'hero', label: 'Home', icon: <Home size={20} /> },
+    { id: 'about', label: 'Features', icon: <Info size={20} /> },
+    { id: 'beta', label: 'Beta Access', icon: <Gamepad2 size={20} /> },
+    { id: 'alia', label: 'AI Chat', icon: <Bot size={20} /> },
+    { id: 'stats', label: 'Game Stats', icon: <BarChart3 size={20} /> },
+    { id: 'roadmap', label: 'Roadmap', icon: <Map size={20} /> }
+  ];
+
   const HeroSection = () => (
-    <section id="hero" className="hero-section">
+    <div className="section-container hero-section">
       <div className="hero-content">
         <motion.div
           className="logo-container"
@@ -138,7 +149,7 @@ const App = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
         >
-          <button className="cta-button primary" onClick={() => scrollToSection('beta')}>
+          <button className="cta-button primary" onClick={() => navigateToSection('beta')}>
             <Play className="icon" />
             ENTER THE BETA
           </button>
@@ -148,7 +159,7 @@ const App = () => {
           </button>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 
   const AboutSection = () => {
@@ -174,7 +185,7 @@ const App = () => {
     ];
 
     return (
-      <section id="about" className="about-section">
+      <div className="section-container about-section">
         <div className="section-content">
           <h2 className="section-title">NEURAL INTERFACE</h2>
           <div className="about-grid">
@@ -198,221 +209,222 @@ const App = () => {
                       <span className="feature-title">{feature.title}</span>
                       <ChevronDown className={`expand-icon ${expandedFeature === index ? 'rotated' : ''}`} />
                     </div>
-                    <p className="feature-description">{feature.description}</p>
-                    <AnimatePresence>
-                      {expandedFeature === index && (
-                        <motion.div
-                          className="feature-details"
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          <div className="glitch-border"></div>
-                          <p className="feature-detail-text">{feature.details}</p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                    <div className="feature-description">{feature.description}</div>
+                    {expandedFeature === index && (
+                      <motion.div
+                        className="feature-details"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                      >
+                        {feature.details}
+                      </motion.div>
+                    )}
                   </motion.div>
                 ))}
               </div>
             </div>
-            <div className="tech-specs">
-              <div className="spec-item">
-                <span className="spec-label">ENGINE</span>
-                <span className="spec-value">Unreal Engine 5.5</span>
-              </div>
-              <div className="spec-item">
-                <span className="spec-label">DEVELOPER</span>
-                <span className="spec-value">dayystudio</span>
-              </div>
-              <div className="spec-item">
-                <span className="spec-label">STATUS</span>
-                <span className="spec-value">Beta Available</span>
-              </div>
-            </div>
           </div>
         </div>
-      </section>
+      </div>
     );
   };
 
-  const StatsSection = () => (
-    <section id="stats" className="stats-section">
-      <div className="section-content">
-        <h2 className="section-title">NETWORK STATUS</h2>
-        {gameStats && (
-          <div className="stats-grid">
-            <motion.div 
-              className="stat-card"
-              whileHover={{ scale: 1.05 }}
-            >
-              <Users className="stat-icon" />
-              <div className="stat-number">{gameStats.players_online}</div>
-              <div className="stat-label">Active Players</div>
-            </motion.div>
-            <motion.div 
-              className="stat-card"
-              whileHover={{ scale: 1.05 }}
-            >
-              <Download className="stat-icon" />
-              <div className="stat-number">{gameStats.beta_downloads}</div>
-              <div className="stat-label">Steam Players</div>
-            </motion.div>
-            <motion.div 
-              className="stat-card"
-              whileHover={{ scale: 1.05 }}
-            >
-              <Star className="stat-icon" />
-              <div className="stat-number">{gameStats.wishlist_count.toLocaleString()}</div>
-              <div className="stat-label">Steam Wishlist</div>
-            </motion.div>
-            <motion.div 
-              className="stat-card"
-              whileHover={{ scale: 1.05 }}
-            >
-              <Brain className="stat-icon" />
-              <div className="stat-number">{gameStats.rating}/5</div>
-              <div className="stat-label">Rating</div>
-            </motion.div>
-          </div>
-        )}
-      </div>
-    </section>
-  );
-
   const BetaSection = () => (
-    <section id="beta" className="beta-section">
+    <div className="section-container beta-section">
       <div className="section-content">
         <h2 className="section-title">BETA ACCESS</h2>
-        <div className="beta-content">
-          <div className="beta-info">
-            <h3 className="beta-version">ZEROPUNK BETA v0.92</h3>
-            <p className="beta-description">
-              Experience the future of AI-driven gaming. Join dozens of players in the most innovative 
-              cyberpunk beta test. Shape the world while it shapes you.
-            </p>
-            <div className="beta-features">
-              <div className="beta-feature">✓ Complete Story Campaign (Act I)</div>
-              <div className="beta-feature">✓ AI NPC Memory System</div>
-              <div className="beta-feature">✓ Neural Dialogue Interface</div>
-              <div className="beta-feature">✓ 3 Explorable Districts</div>
-              <div className="beta-feature">✓ Basic Multiplayer Hub</div>
+        <div className="beta-grid">
+          <div className="beta-content">
+            <div className="beta-warning">
+              <AlertTriangle className="warning-icon" />
+              <span>WARNING: Neural Interface Testing Phase Active</span>
             </div>
-          </div>
-          <div className="beta-download">
-            <button className="cta-button primary large">
-              <Download className="icon" />
-              DOWNLOAD BETA
-            </button>
-            <p className="beta-note">
-              Windows • 25GB • Steam Integration • Free Access
+            
+            <p className="beta-description">
+              Join the closed beta and experience the future of AI-powered gaming. 
+              Your neural patterns will help train our advanced AI systems.
             </p>
+            
+            <div className="beta-requirements">
+              <h3>System Requirements</h3>
+              <ul>
+                <li>Neural compatibility index: 7.5+</li>
+                <li>Consciousness stability rating: B-Class minimum</li>
+                <li>Memory fragmentation: &lt;15%</li>
+                <li>Quantum processing capabilities: Recommended</li>
+              </ul>
+            </div>
+            
+            <div className="beta-buttons">
+              <button className="cta-button primary">
+                <Lock className="icon" />
+                REQUEST BETA ACCESS
+              </button>
+              <button className="cta-button secondary">
+                <Globe className="icon" />
+                VIEW SYSTEM SPECS
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 
   const AliaNoxSection = () => (
-    <section id="alia" className="alia-section">
+    <div className="section-container alia-section">
       <div className="section-content">
-        <h2 className="section-title">ALIA NOX - AI INTERFACE</h2>
-        <div className="alia-preview">
-          <div className="alia-avatar-3d">
-            <div className="alia-character">
-              <div className="character-head">
-                <div className="character-eyes">
-                  <div className="eye left"></div>
-                  <div className="eye right"></div>
-                </div>
-                <div className="character-mouth"></div>
+        <h2 className="section-title">ALIA NOX</h2>
+        <div className="alia-preview-grid">
+          <div className="alia-avatar-large">
+            <div className="large-avatar-head">
+              <div className="large-avatar-eyes">
+                <div className="eye left"></div>
+                <div className="eye right"></div>
               </div>
-              <div className="character-body"></div>
-              <div className="neural-connections">
-                <div className="connection"></div>
-                <div className="connection"></div>
-                <div className="connection"></div>
+              <div className="large-avatar-mouth"></div>
+            </div>
+            <div className="large-avatar-glow"></div>
+          </div>
+          
+          <div className="alia-description">
+            <p>
+              Meet Alia Nox, your guide through the fractured digital landscape. 
+              She's not just an AI assistant—she's a consciousness born from the collective 
+              memories of the city's neural network.
+            </p>
+            
+            <div className="alia-features">
+              <div className="alia-feature">
+                <Brain className="alia-feature-icon" />
+                <span>Advanced Memory Systems</span>
+              </div>
+              <div className="alia-feature">
+                <MessageCircle className="alia-feature-icon" />
+                <span>Natural Language Processing</span>
+              </div>
+              <div className="alia-feature">
+                <Zap className="alia-feature-icon" />
+                <span>Real-time Emotional Intelligence</span>
               </div>
             </div>
+            
+            <button 
+              className="cta-button primary"
+              onClick={() => setAliaChatOpen(true)}
+            >
+              <MessageCircle className="icon" />
+              INITIATE NEURAL LINK
+            </button>
           </div>
-          <p className="alia-intro">
-            "I exist beyond the boundaries of flesh and code. Want to explore the nature of consciousness?"
-          </p>
-          <button 
-            className="cta-button primary"
-            onClick={() => setAliaChatOpen(true)}
-          >
-            <MessageCircle className="icon" />
-            INITIATE NEURAL LINK
-          </button>
         </div>
       </div>
-    </section>
+    </div>
+  );
+
+  const StatsSection = () => (
+    <div className="section-container stats-section">
+      <div className="section-content">
+        <h2 className="section-title">SYSTEM STATISTICS</h2>
+        <div className="stats-grid">
+          {gameStats && (
+            <>
+              <motion.div 
+                className="stat-card"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <Users className="stat-icon" />
+                <div className="stat-value">{gameStats.players_online.toLocaleString()}</div>
+                <div className="stat-label">Active Neural Links</div>
+              </motion.div>
+              
+              <motion.div 
+                className="stat-card"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <Download className="stat-icon" />
+                <div className="stat-value">{gameStats.beta_downloads.toLocaleString()}</div>
+                <div className="stat-label">Beta Downloads</div>
+              </motion.div>
+              
+              <motion.div 
+                className="stat-card"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <Star className="stat-icon" />
+                <div className="stat-value">{gameStats.wishlist_count.toLocaleString()}</div>
+                <div className="stat-label">Wishlist Count</div>
+              </motion.div>
+              
+              <motion.div 
+                className="stat-card"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <Brain className="stat-icon" />
+                <div className="stat-value">{gameStats.rating}/5</div>
+                <div className="stat-label">Neural Rating</div>
+              </motion.div>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
   );
 
   const RoadmapSection = () => {
     const roadmapPhases = [
       {
-        year: "2025",
-        phase: "Foundation Era",
-        status: "current",
+        year: "2025 Q1",
+        phase: "Closed Beta Launch",
+        status: "active",
         items: [
-          "Q1: Beta Launch & Community Building",
-          "Q2: AI Memory System Enhancement", 
-          "Q3: Multiplayer Infrastructure Development",
-          "Q4: Official Release & Story Campaign Completion",
-          "Advanced Neural Dialogue Systems",
-          "Basic Faction Mechanics Implementation"
+          "Core AI Memory System Integration",
+          "Basic Neural Dialogue Implementation", 
+          "Initial World Building & Districts",
+          "Player Testing & Feedback Collection",
+          "Performance Optimization & Bug Fixes",
+          "Community Discord Launch"
         ]
       },
       {
-        year: "2026", 
-        phase: "Expansion Phase",
-        status: "upcoming",
+        year: "2025 Q2-Q3",
+        phase: "Enhanced Neural Systems",
+        status: "planned",
         items: [
-          "Fleet Combat & Space Exploration Systems",
-          "Corporate Warfare Mechanics",
-          "Player-driven Economic Systems", 
-          "First Major DLC: 'Neon Uprising'",
-          "Advanced Character Customization",
-          "Cross-platform Play Implementation"
+          "Advanced NPC Relationship Dynamics",
+          "Multi-layered Conversation Memory",
+          "Emotional Intelligence Upgrades",
+          "Cross-NPC Information Sharing",
+          "Player Choice Consequence System",
+          "Steam Early Access Launch"
         ]
       },
       {
-        year: "2027-2028",
-        phase: "AI Civilization Layer",
-        status: "future", 
+        year: "2025 Q4",
+        phase: "Expanded Reality",
+        status: "development",
         items: [
-          "Smart City AI Governance Systems",
-          "Dynamic Faction Evolution Mechanics",
-          "AI-Generated Content Pipelines",
-          "Cross-Reality Narrative Events",
-          "NPC Society Simulation",
-          "Player Impact on Global AI Behavior"
+          "Full 12-District World Completion",
+          "Corporate Faction System",
+          "Underground Network Mechanics",
+          "Advanced Crime & Law Systems",
+          "Player-to-Player Neural Connections",
+          "Mobile Companion App Integration"
         ]
       },
       {
-        year: "2029-2030",
-        phase: "Neural Integration Era",
-        status: "future",
+        year: "2026",
+        phase: "Consciousness Evolution",
+        status: "research",
         items: [
-          "Advanced NPC Consciousness Networks", 
-          "Persistent World State Simulation",
-          "Player Legacy & Inheritance Systems",
-          "AI Companion Evolution & Relationships",
-          "Memory Transfer Between Characters",
-          "Quantum Decision Impact Modeling"
-        ]
-      },
-      {
-        year: "2031-2035", 
-        phase: "Reality Convergence",
-        status: "visionary",
-        items: [
-          "Real-world Data Integration Systems",
-          "Player-run Government & Law Creation",
-          "Quantum Decision Matrix Implementation", 
+          "Dynamic NPC Personality Evolution",
+          "Player Action Ripple Effect System",
+          "Advanced Moral Dilemma Engine",
           "Living World Ecosystem Simulation",
           "AI Rights & Ethics Gameplay Mechanics",
           "Cross-Game Universe Connectivity"
@@ -434,7 +446,7 @@ const App = () => {
     ];
 
     return (
-      <section id="roadmap" className="roadmap-section">
+      <div className="section-container roadmap-section">
         <div className="section-content">
           <h2 className="section-title">DEVELOPMENT ROADMAP</h2>
           <div className="roadmap-timeline">
@@ -443,9 +455,8 @@ const App = () => {
                 key={index}
                 className={`roadmap-phase ${phase.status}`}
                 initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className="phase-marker">
                   <div className="marker-dot"></div>
@@ -465,8 +476,20 @@ const App = () => {
             ))}
           </div>
         </div>
-      </section>
+      </div>
     );
+  };
+
+  const renderCurrentSection = () => {
+    switch (currentSection) {
+      case 'hero': return <HeroSection />;
+      case 'about': return <AboutSection />;
+      case 'beta': return <BetaSection />;
+      case 'alia': return <AliaNoxSection />;
+      case 'stats': return <StatsSection />;
+      case 'roadmap': return <RoadmapSection />;
+      default: return <HeroSection />;
+    }
   };
 
   return (
@@ -478,48 +501,87 @@ const App = () => {
         <div className="particles"></div>
       </div>
 
-      {/* Navigation */}
-      <nav className="top-nav">
-        <div className="nav-container">
-          <div className="nav-brand">
+      {/* Header with Hamburger Menu */}
+      <header className="main-header">
+        <div className="header-content">
+          <div className="header-brand">
             <span className="brand-text">ZEROPUNK</span>
           </div>
-          <div className="nav-links">
-            <button onClick={() => scrollToSection('hero')} className="nav-link">Home</button>
-            <button onClick={() => scrollToSection('about')} className="nav-link">Features</button>
-            <button onClick={() => scrollToSection('beta')} className="nav-link">Beta</button>
-            <button onClick={() => scrollToSection('alia')} className="nav-link">AI Chat</button>
-            <button onClick={() => scrollToSection('stats')} className="nav-link">Stats</button>
-            <button onClick={() => scrollToSection('roadmap')} className="nav-link">Roadmap</button>
-          </div>
+          
+          <button 
+            className={`hamburger-menu ${menuOpen ? 'open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-      </nav>
+      </header>
+
+      {/* Navigation Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav
+            className="navigation-menu"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 20 }}
+          >
+            <div className="menu-content">
+              <div className="menu-header">
+                <h3>NEURAL INTERFACE MENU</h3>
+              </div>
+              
+              <div className="menu-items">
+                {menuItems.map((item) => (
+                  <motion.button
+                    key={item.id}
+                    className={`menu-item ${currentSection === item.id ? 'active' : ''}`}
+                    onClick={() => navigateToSection(item.id)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {item.icon}
+                    <span>{item.label}</span>
+                  </motion.button>
+                ))}
+              </div>
+              
+              <div className="menu-footer">
+                <div className="language-selector">
+                  <span className="language-label">Language:</span>
+                  <select 
+                    value={selectedLanguage}
+                    onChange={(e) => setSelectedLanguage(e.target.value)}
+                    className="language-select"
+                  >
+                    {languages.map(lang => (
+                      <option key={lang.code} value={lang.name}>
+                        {lang.flag} {lang.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
 
       {/* Main Content */}
-      <main className="main-container">
-        <HeroSection />
-        <AboutSection />
-        <BetaSection />
-        <AliaNoxSection />
-        <StatsSection />
-        <RoadmapSection />
+      <main className="main-content">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSection}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            {renderCurrentSection()}
+          </motion.div>
+        </AnimatePresence>
       </main>
-
-      {/* Language Selector */}
-      <div className="language-selector">
-        <span className="language-label">Language:</span>
-        <select 
-          value={selectedLanguage}
-          onChange={(e) => setSelectedLanguage(e.target.value)}
-          className="language-select"
-        >
-          {languages.map(lang => (
-            <option key={lang.code} value={lang.name}>
-              {lang.flag} {lang.name}
-            </option>
-          ))}
-        </select>
-      </div>
 
       {/* Alia Nox Chat Interface */}
       <AnimatePresence>
