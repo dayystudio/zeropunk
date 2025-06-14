@@ -949,7 +949,506 @@ const App = () => {
     { id: 'language', label: t('language'), icon: <Languages size={20} />, isLanguageSelector: true }
   ];
 
-  const ContactSection = () => (
+  const CharacterCustomizationSection = () => {
+    const [activeCategory, setActiveCategory] = useState('face');
+    const [aliaNoxComments, setAliaNoxComments] = useState([]);
+    
+    const customizationCategories = [
+      { id: 'face', label: t('customize_face'), icon: <UserCircle size={18} /> },
+      { id: 'hair', label: t('customize_hair'), icon: <Palette size={18} /> },
+      { id: 'outfit', label: t('customize_outfit'), icon: <Settings size={18} /> },
+      { id: 'accessories', label: t('customize_accessories'), icon: <Eye size={18} /> },
+      { id: 'augmentations', label: t('customize_augmentations'), icon: <Cpu size={18} /> },
+      { id: 'weapons', label: t('customize_weapons'), icon: <Shield size={18} /> }
+    ];
+
+    const updateCharacterConfig = (category, property, value) => {
+      setCharacterConfig(prev => ({
+        ...prev,
+        [category]: {
+          ...prev[category],
+          [property]: value
+        }
+      }));
+      
+      // Trigger Alia Nox comment based on change
+      generateAliaNoxComment(category, property, value);
+    };
+
+    const generateAliaNoxComment = (category, property, value) => {
+      const comments = {
+        face: {
+          implants: {
+            basic: "Basic neural interfaces are a good start, but there's so much more you could explore.",
+            advanced: "Now those are some serious facial augmentations. You're starting to look like a real netrunner.",
+            military: "Military-grade facial mods? Impressive. You're not playing around."
+          }
+        },
+        hair: {
+          glow: {
+            true: "The neural glow in your hair will help you stand out in the digital underground.",
+            false: "Classic look. Sometimes subtlety is the best camouflage in the corporate sectors."
+          }
+        },
+        augmentations: {
+          arms: {
+            cybernetic: "Those cybernetic arms will give you a serious edge in both combat and hacking.",
+            enhanced: "Enhanced limbs are practical. Good choice for long-term survival in the sprawl."
+          }
+        }
+      };
+
+      const comment = comments[category]?.[property]?.[value];
+      if (comment) {
+        setAliaNoxComments(prev => [...prev.slice(-2), { text: comment, timestamp: Date.now() }]);
+      }
+    };
+
+    const randomizeCharacter = () => {
+      const randomConfig = {
+        gender: Math.random() > 0.5 ? 'male' : 'female',
+        face: {
+          shape: ['angular', 'rounded', 'square', 'heart'][Math.floor(Math.random() * 4)],
+          skinTone: ['#FDBCB4', '#F1C27D', '#E0AC69', '#C68642', '#8D5524'][Math.floor(Math.random() * 5)],
+          eyes: ['blue', 'green', 'brown', 'cyber', 'heterochromia'][Math.floor(Math.random() * 5)],
+          scars: ['none', 'facial', 'eye', 'cheek'][Math.floor(Math.random() * 4)],
+          implants: ['basic', 'advanced', 'military'][Math.floor(Math.random() * 3)]
+        },
+        hair: {
+          style: ['punk', 'mohawk', 'long', 'buzzed', 'braids'][Math.floor(Math.random() * 5)],
+          color: ['#00FFFF', '#FF0080', '#80FF00', '#FF8000', '#8000FF'][Math.floor(Math.random() * 5)],
+          glow: Math.random() > 0.5
+        },
+        outfit: {
+          torso: ['jacket', 'vest', 'armor', 'hoodie'][Math.floor(Math.random() * 4)],
+          legs: ['cargo', 'jeans', 'tactical', 'leather'][Math.floor(Math.random() * 4)],
+          boots: ['combat', 'sneakers', 'steel', 'hover'][Math.floor(Math.random() * 4)],
+          gloves: ['fingerless', 'tactical', 'none', 'cyber'][Math.floor(Math.random() * 4)]
+        },
+        accessories: {
+          mask: ['none', 'half', 'full', 'respirator'][Math.floor(Math.random() * 4)],
+          visor: ['none', 'hud', 'tactical', 'ar'][Math.floor(Math.random() * 4)],
+          jewelry: ['none', 'neon', 'chrome', 'holographic'][Math.floor(Math.random() * 4)]
+        },
+        augmentations: {
+          arms: ['none', 'enhanced', 'cybernetic', 'military'][Math.floor(Math.random() * 4)],
+          legs: ['none', 'enhanced', 'spring', 'hydraulic'][Math.floor(Math.random() * 4)],
+          spine: ['none', 'neural', 'data', 'combat'][Math.floor(Math.random() * 4)]
+        },
+        weapons: {
+          sidearm: ['none', 'plasma', 'kinetic', 'energy'][Math.floor(Math.random() * 4)],
+          melee: ['none', 'blade', 'baton', 'whip'][Math.floor(Math.random() * 4)],
+          rifle: ['none', 'assault', 'sniper', 'beam'][Math.floor(Math.random() * 4)]
+        }
+      };
+      setCharacterConfig(randomConfig);
+      setAliaNoxComments(prev => [...prev.slice(-2), { 
+        text: "Interesting randomization! This configuration has some unique combinations. Want me to analyze your new look?", 
+        timestamp: Date.now() 
+      }]);
+    };
+
+    const saveCharacterScreenshot = () => {
+      // This would capture the 3D canvas and save as image
+      setAliaNoxComments(prev => [...prev.slice(-2), { 
+        text: "Your avatar design has been saved to the local archives. Looking good, netrunner!", 
+        timestamp: Date.now() 
+      }]);
+    };
+
+    return (
+      <div className="section-container character-section">
+        <div className="section-content">
+          <h2 className="section-title">{t('character_title')}</h2>
+          
+          <div className="character-intro">
+            <p>{t('character_intro')}</p>
+          </div>
+
+          <div className="character-customization-grid">
+            {/* 3D Character Viewer */}
+            <div className="character-viewer-container">
+              <div className="character-viewer">
+                <div className="viewer-canvas">
+                  {/* This will contain the React Three Fiber 3D scene */}
+                  <div className="placeholder-3d">
+                    <div className="character-silhouette">
+                      <UserCircle size={120} />
+                    </div>
+                    <div className="viewer-overlay">
+                      <span>3D Character Preview</span>
+                      <p>{characterConfig.gender} • {characterConfig.face.shape} face • {characterConfig.hair.style} hair</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* 3D Controls */}
+                <div className="viewer-controls">
+                  <button className="control-btn" title="Rotate">
+                    <RotateCcw size={16} />
+                  </button>
+                  <button className="control-btn" title="Zoom In">
+                    <ZoomIn size={16} />
+                  </button>
+                  <button className="control-btn" title="Zoom Out">
+                    <ZoomOut size={16} />
+                  </button>
+                  <button className="control-btn" title="Pan">
+                    <Move3D size={16} />
+                  </button>
+                </div>
+
+                {/* Character Actions */}
+                <div className="character-actions">
+                  <button className="action-btn primary" onClick={randomizeCharacter}>
+                    <Shuffle size={16} />
+                    {t('randomize_character')}
+                  </button>
+                  <button className="action-btn secondary" onClick={saveCharacterScreenshot}>
+                    <Camera size={16} />
+                    {t('save_character')}
+                  </button>
+                  <button className="action-btn secondary">
+                    <Send size={16} />
+                    {t('share_character')}
+                  </button>
+                </div>
+              </div>
+
+              {/* Alia Nox Comments */}
+              {aliaNoxComments.length > 0 && (
+                <div className="alia-comments">
+                  <div className="alia-avatar">
+                    <Bot size={20} />
+                  </div>
+                  <div className="alia-messages">
+                    {aliaNoxComments.map((comment, index) => (
+                      <div key={comment.timestamp} className="alia-message">
+                        <span className="alia-name">Alia Nox:</span>
+                        <p>{comment.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Customization Panel */}
+            <div className="customization-panel">
+              {/* Category Tabs */}
+              <div className="category-tabs">
+                {customizationCategories.map(category => (
+                  <button
+                    key={category.id}
+                    className={`category-tab ${activeCategory === category.id ? 'active' : ''}`}
+                    onClick={() => setActiveCategory(category.id)}
+                  >
+                    {category.icon}
+                    <span>{category.label}</span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Customization Options */}
+              <div className="customization-options">
+                {activeCategory === 'face' && (
+                  <div className="options-grid">
+                    <div className="option-group">
+                      <label>Gender</label>
+                      <div className="option-buttons">
+                        <button 
+                          className={`option-btn ${characterConfig.gender === 'male' ? 'active' : ''}`}
+                          onClick={() => setCharacterConfig(prev => ({ ...prev, gender: 'male' }))}
+                        >
+                          {t('gender_male')}
+                        </button>
+                        <button 
+                          className={`option-btn ${characterConfig.gender === 'female' ? 'active' : ''}`}
+                          onClick={() => setCharacterConfig(prev => ({ ...prev, gender: 'female' }))}
+                        >
+                          {t('gender_female')}
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="option-group">
+                      <label>Face Shape</label>
+                      <div className="option-buttons">
+                        {['angular', 'rounded', 'square', 'heart'].map(shape => (
+                          <button
+                            key={shape}
+                            className={`option-btn ${characterConfig.face.shape === shape ? 'active' : ''}`}
+                            onClick={() => updateCharacterConfig('face', 'shape', shape)}
+                          >
+                            {shape}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="option-group">
+                      <label>Skin Tone</label>
+                      <div className="color-picker">
+                        {['#FDBCB4', '#F1C27D', '#E0AC69', '#C68642', '#8D5524'].map(color => (
+                          <button
+                            key={color}
+                            className={`color-swatch ${characterConfig.face.skinTone === color ? 'active' : ''}`}
+                            style={{ backgroundColor: color }}
+                            onClick={() => updateCharacterConfig('face', 'skinTone', color)}
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="option-group">
+                      <label>Cybernetic Implants</label>
+                      <div className="option-buttons">
+                        {['basic', 'advanced', 'military'].map(implant => (
+                          <button
+                            key={implant}
+                            className={`option-btn ${characterConfig.face.implants === implant ? 'active' : ''} rarity-${implant}`}
+                            onClick={() => updateCharacterConfig('face', 'implants', implant)}
+                          >
+                            {implant}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activeCategory === 'hair' && (
+                  <div className="options-grid">
+                    <div className="option-group">
+                      <label>Hair Style</label>
+                      <div className="option-buttons">
+                        {['punk', 'mohawk', 'long', 'buzzed', 'braids'].map(style => (
+                          <button
+                            key={style}
+                            className={`option-btn ${characterConfig.hair.style === style ? 'active' : ''}`}
+                            onClick={() => updateCharacterConfig('hair', 'style', style)}
+                          >
+                            {style}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="option-group">
+                      <label>Hair Color</label>
+                      <div className="color-picker">
+                        {['#00FFFF', '#FF0080', '#80FF00', '#FF8000', '#8000FF'].map(color => (
+                          <button
+                            key={color}
+                            className={`color-swatch ${characterConfig.hair.color === color ? 'active' : ''}`}
+                            style={{ backgroundColor: color }}
+                            onClick={() => updateCharacterConfig('hair', 'color', color)}
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="option-group">
+                      <label>Neural Glow</label>
+                      <div className="option-buttons">
+                        <button
+                          className={`option-btn ${characterConfig.hair.glow ? 'active' : ''}`}
+                          onClick={() => updateCharacterConfig('hair', 'glow', !characterConfig.hair.glow)}
+                        >
+                          {characterConfig.hair.glow ? 'On' : 'Off'}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activeCategory === 'outfit' && (
+                  <div className="options-grid">
+                    <div className="option-group">
+                      <label>Torso</label>
+                      <div className="option-buttons">
+                        {['jacket', 'vest', 'armor', 'hoodie'].map(item => (
+                          <button
+                            key={item}
+                            className={`option-btn ${characterConfig.outfit.torso === item ? 'active' : ''}`}
+                            onClick={() => updateCharacterConfig('outfit', 'torso', item)}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="option-group">
+                      <label>Legs</label>
+                      <div className="option-buttons">
+                        {['cargo', 'jeans', 'tactical', 'leather'].map(item => (
+                          <button
+                            key={item}
+                            className={`option-btn ${characterConfig.outfit.legs === item ? 'active' : ''}`}
+                            onClick={() => updateCharacterConfig('outfit', 'legs', item)}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="option-group">
+                      <label>Footwear</label>
+                      <div className="option-buttons">
+                        {['combat', 'sneakers', 'steel', 'hover'].map(item => (
+                          <button
+                            key={item}
+                            className={`option-btn ${characterConfig.outfit.boots === item ? 'active' : ''}`}
+                            onClick={() => updateCharacterConfig('outfit', 'boots', item)}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activeCategory === 'accessories' && (
+                  <div className="options-grid">
+                    <div className="option-group">
+                      <label>Face Mask</label>
+                      <div className="option-buttons">
+                        {['none', 'half', 'full', 'respirator'].map(item => (
+                          <button
+                            key={item}
+                            className={`option-btn ${characterConfig.accessories.mask === item ? 'active' : ''}`}
+                            onClick={() => updateCharacterConfig('accessories', 'mask', item)}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="option-group">
+                      <label>AR Visor</label>
+                      <div className="option-buttons">
+                        {['none', 'hud', 'tactical', 'ar'].map(item => (
+                          <button
+                            key={item}
+                            className={`option-btn ${characterConfig.accessories.visor === item ? 'active' : ''}`}
+                            onClick={() => updateCharacterConfig('accessories', 'visor', item)}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activeCategory === 'augmentations' && (
+                  <div className="options-grid">
+                    <div className="option-group">
+                      <label>Arm Modifications</label>
+                      <div className="option-buttons">
+                        {['none', 'enhanced', 'cybernetic', 'military'].map(item => (
+                          <button
+                            key={item}
+                            className={`option-btn ${characterConfig.augmentations.arms === item ? 'active' : ''} rarity-${item}`}
+                            onClick={() => updateCharacterConfig('augmentations', 'arms', item)}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="option-group">
+                      <label>Leg Enhancements</label>
+                      <div className="option-buttons">
+                        {['none', 'enhanced', 'spring', 'hydraulic'].map(item => (
+                          <button
+                            key={item}
+                            className={`option-btn ${characterConfig.augmentations.legs === item ? 'active' : ''}`}
+                            onClick={() => updateCharacterConfig('augmentations', 'legs', item)}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="option-group">
+                      <label>Spinal Interface</label>
+                      <div className="option-buttons">
+                        {['none', 'neural', 'data', 'combat'].map(item => (
+                          <button
+                            key={item}
+                            className={`option-btn ${characterConfig.augmentations.spine === item ? 'active' : ''}`}
+                            onClick={() => updateCharacterConfig('augmentations', 'spine', item)}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activeCategory === 'weapons' && (
+                  <div className="options-grid">
+                    <div className="option-group">
+                      <label>Sidearm</label>
+                      <div className="option-buttons">
+                        {['none', 'plasma', 'kinetic', 'energy'].map(item => (
+                          <button
+                            key={item}
+                            className={`option-btn ${characterConfig.weapons.sidearm === item ? 'active' : ''}`}
+                            onClick={() => updateCharacterConfig('weapons', 'sidearm', item)}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="option-group">
+                      <label>Melee Weapon</label>
+                      <div className="option-buttons">
+                        {['none', 'blade', 'baton', 'whip'].map(item => (
+                          <button
+                            key={item}
+                            className={`option-btn ${characterConfig.weapons.melee === item ? 'active' : ''}`}
+                            onClick={() => updateCharacterConfig('weapons', 'melee', item)}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="option-group">
+                      <label>Primary Weapon</label>
+                      <div className="option-buttons">
+                        {['none', 'assault', 'sniper', 'beam'].map(item => (
+                          <button
+                            key={item}
+                            className={`option-btn ${characterConfig.weapons.rifle === item ? 'active' : ''}`}
+                            onClick={() => updateCharacterConfig('weapons', 'rifle', item)}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
     <div className="section-container contact-section">
       <div className="section-content">
         <h2 className="section-title">{t('contact_title')}</h2>
