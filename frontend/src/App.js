@@ -534,6 +534,7 @@ const App = () => {
       beta_access: '测试版访问',
       ai_chat: 'AI 聊天',
       pc_requirements: '系统要求',
+      live_activity: '实时活动',
       game_stats: '游戏统计',
       roadmap: '路线图',
       neural_interface_menu: '神经接口菜单',
