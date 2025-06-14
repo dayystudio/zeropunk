@@ -1999,6 +1999,7 @@ const App = () => {
       case 'hero': return <HeroSection />;
       case 'about': return <AboutSection />;
       case 'beta': return <BetaSection />;
+      case 'character': return <CharacterCustomizationSection />;
       case 'alia': return <AliaNoxSection />;
       case 'pc_requirements': return <PCRequirementsSection />;
       case 'live_activity': return <LiveActivitySection />;
