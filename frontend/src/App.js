@@ -1223,7 +1223,6 @@ const App = () => {
                         <div className="steam-line"></div>
                       </div>
                     </div>
-                    <div className="logo-merge-effect"></div>
                   </div>
                   <span className="zeropunk-merge">× ZEROPUNK</span>
                 </div>
