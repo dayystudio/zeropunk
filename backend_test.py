@@ -188,7 +188,56 @@ class ZeropunkBackendTests(unittest.TestCase):
             self.assertIn("message", first_message)
             self.assertIn("response", first_message)
     
-    def test_06_error_handling(self):
+    def test_06_database_integration(self):
+        """Test database integration with status check endpoints"""
+        print("\nTesting database integration...")
+        
+        # Create a status check
+        client_name = f"test_client_{uuid.uuid4()}"
+        payload = {
+            "client_name": client_name
+        }
+        
+        create_response = requests.post(
+            f"{API_URL}/status",
+            json=payload
+        )
+        
+        # Check response status and structure
+        self.assertEqual(create_response.status_code, 200)
+        create_data = create_response.json()
+        
+        # Verify all required fields are present
+        self.assertIn("id", create_data)
+        self.assertIn("client_name", create_data)
+        self.assertIn("timestamp", create_data)
+        
+        # Verify client_name matches what we sent
+        self.assertEqual(create_data["client_name"], client_name)
+        
+        print(f"Created status check with ID: {create_data['id']}")
+        
+        # Now retrieve all status checks
+        get_response = requests.get(f"{API_URL}/status")
+        
+        # Check response status
+        self.assertEqual(get_response.status_code, 200)
+        get_data = get_response.json()
+        
+        # Verify response is a list
+        self.assertIsInstance(get_data, list)
+        
+        # Verify our status check is in the list
+        found = False
+        for status in get_data:
+            if status["id"] == create_data["id"]:
+                found = True
+                break
+        
+        self.assertTrue(found, "Created status check not found in retrieved list")
+        print(f"Successfully retrieved {len(get_data)} status checks from database")
+    
+    def test_07_error_handling(self):
         """Test error handling with invalid requests"""
         print("\nTesting error handling...")
         
