@@ -19,7 +19,6 @@ const App = () => {
   
   // Navigation state
   const [menuOpen, setMenuOpen] = useState(false);
-  const [currentSection, setCurrentSection] = useState('hero');
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   
   // Contact form state
