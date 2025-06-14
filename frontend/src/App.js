@@ -1149,7 +1149,7 @@ const App = () => {
               </div>
               
               <div className="character-viewer-ultra">
-                <UltraRealistic3DViewer 
+                <PhotorealisticCharacterViewer 
                   characterConfig={characterConfig}
                   onViewChange={(e) => {
                     // Handle view changes if needed
