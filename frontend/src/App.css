@@ -1386,8 +1386,10 @@ section {
 
 .menu-footer {
   border-top: 1px solid rgba(59, 130, 246, 0.1);
-  padding-top: 0.75rem;
+  padding-top: 1.25rem;
+  margin-top: 1.25rem;
   position: relative;
+  flex-shrink: 0;
 }
 
 .menu-footer::before {
