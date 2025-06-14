@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Brain, Zap, Users, Download, Star, MessageCircle, Play, Eye, ChevronDown, AlertTriangle, Lock, Globe, Menu, X, Home, Info, BarChart3, Bot, Map, Gamepad2, Monitor, Cpu, HardDrive, Settings, Clock, CloudRain, TrendingUp, Shield, Coins, Activity, Languages, Mail, Send, Instagram, Music } from 'lucide-react';
+import { Brain, Zap, Users, Download, Star, MessageCircle, Play, Eye, ChevronDown, AlertTriangle, Lock, Globe, Menu, X, Home, Info, BarChart3, Bot, Map, Gamepad2, Monitor, Cpu, HardDrive, Settings, Clock, CloudRain, TrendingUp, Shield, Coins, Activity, Languages, Mail, Send, Instagram, Music, UserCircle, Palette, Camera, Shuffle, RotateCcw, ZoomIn, ZoomOut, Move3D } from 'lucide-react';
 import './App.css';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
