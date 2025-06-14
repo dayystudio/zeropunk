@@ -599,6 +599,7 @@ const App = () => {
       home: '主页',
       features: '功能',
       beta_access: '测试版访问',
+      wishlist_steam: 'Steam 愿望清单',
       ai_chat: 'AI 聊天',
       pc_requirements: '系统要求',
       live_activity: '实时活动',
