@@ -682,7 +682,7 @@ const App = () => {
       // Hero Section
       hero_subtitle: 'ZeropunkOS v0.92 | 访客模式 | dayystudio',
       hero_message: '你不是英雄。你是一个公民——破碎系统中的又一个齿轮。但系统正在崩溃，而你可能就是那个火花。',
-      enter_beta: '进入测试版',
+      enter_beta: 'STEAM 愿望清单',
       talk_to_alia: '与 ALIA NOX 对话',
 
       // About Section
