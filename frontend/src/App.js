@@ -2849,25 +2849,24 @@ const App = () => {
               onClick={() => setMenuOpen(false)}
             />
             
-            {/* Right-Sliding Glassmorphism Menu */}
+            {/* Minimalist Side-Attached Glassmorphism Menu */}
             <motion.nav 
               className="navigation-menu"
-              initial={{ opacity: 0, x: 100, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: 100, scale: 0.95 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 50 }}
               transition={{ 
-                duration: 0.4, 
-                ease: [0.4, 0, 0.2, 1],
-                x: { type: "spring", stiffness: 300, damping: 30 }
+                duration: 0.25, 
+                ease: [0.4, 0, 0.2, 1]
               }}
             >
               <div className="menu-content">
-                {/* Elegant Header */}
+                {/* Clean Header */}
                 <div className="menu-header">
-                  <h3>{t('neural_interface_menu')}</h3>
+                  <h3>Navigation</h3>
                 </div>
                 
-                {/* Smooth Scrollable Menu Items */}
+                {/* Compact Menu Items */}
                 <div className="menu-items">
                   {menuItems.map((item, index) => (
                     <div key={item.id}>
@@ -2876,15 +2875,15 @@ const App = () => {
                           <motion.button
                             className={`menu-item ${languageMenuOpen ? 'active' : ''}`}
                             onClick={() => navigateToSection('language')}
-                            initial={{ opacity: 0, x: 30 }}
+                            initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.06, duration: 0.3 }}
+                            transition={{ delay: index * 0.03, duration: 0.2 }}
                           >
                             <div className="menu-item-icon">{item.icon}</div>
                             <span>{item.label}</span>
                             <ChevronDown 
                               className={`item-chevron ${languageMenuOpen ? 'rotated' : ''}`} 
-                              size={16} 
+                              size={14} 
                             />
                           </motion.button>
                           
@@ -2892,26 +2891,23 @@ const App = () => {
                             {languageMenuOpen && (
                               <motion.div
                                 className="language-dropdown-menu"
-                                initial={{ opacity: 0, height: 0, y: -10 }}
-                                animate={{ opacity: 1, height: 'auto', y: 0 }}
-                                exit={{ opacity: 0, height: 0, y: -10 }}
-                                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.2 }}
                               >
-                                {languages.map((lang, langIndex) => (
-                                  <motion.div
+                                {languages.map((lang) => (
+                                  <div
                                     key={lang.code}
                                     className={`language-option ${currentLanguage === lang.code ? 'active' : ''}`}
                                     onClick={() => selectLanguage(lang.code)}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: langIndex * 0.04 }}
                                   >
                                     <span className="language-flag">{lang.flag}</span>
                                     <span className="language-name">{lang.name}</span>
                                     {currentLanguage === lang.code && (
                                       <div className="active-indicator"></div>
                                     )}
-                                  </motion.div>
+                                  </div>
                                 ))}
                               </motion.div>
                             )}
@@ -2921,9 +2917,9 @@ const App = () => {
                         <motion.button
                           className={`menu-item ${currentSection === item.id ? 'active' : ''}`}
                           onClick={() => navigateToSection(item.id)}
-                          initial={{ opacity: 0, x: 30 }}
+                          initial={{ opacity: 0, x: 20 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.06, duration: 0.3 }}
+                          transition={{ delay: index * 0.03, duration: 0.2 }}
                         >
                           <div className="menu-item-icon">{item.icon}</div>
                           <span>{item.label}</span>
