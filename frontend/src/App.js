@@ -402,9 +402,19 @@ const App = () => {
       setLanguageMenuOpen(!languageMenuOpen);
       return;
     }
-    setCurrentSection(section);
+    
+    // Close menu
     setMenuOpen(false);
     setLanguageMenuOpen(false);
+    
+    // Smooth scroll to section
+    const targetElement = document.getElementById(section);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   const selectLanguage = (langCode) => {
