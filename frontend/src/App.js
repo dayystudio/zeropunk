@@ -3386,19 +3386,77 @@ const App = () => {
         )}
       </AnimatePresence>
 
-      {/* Main Content */}
-      <main className="main-content">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSection}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            {renderCurrentSection()}
-          </motion.div>
-        </AnimatePresence>
+      {/* Main Content - Scrollable Homepage */}
+      <main className="main-content scrollable-homepage">
+        {/* Hero Section */}
+        <div id="hero">
+          <HeroSection />
+        </div>
+
+        {/* Broadcast TV Section */}
+        <div id="broadcast">
+          <BroadcastSection />
+        </div>
+
+        {/* Features/About Section */}
+        <div id="about">
+          <AboutSection />
+        </div>
+
+        {/* Wishlist/Beta Section */}
+        <div id="beta">
+          <BetaSection />
+        </div>
+
+        {/* Support Section (directly on homepage) */}
+        <div id="support">
+          <SupportSection />
+        </div>
+
+        {/* FAQ Section */}
+        <div id="faq">
+          <FAQSection />
+        </div>
+
+        {/* Alia Nox Section */}
+        <div id="alia">
+          <AliaNoxSection />
+        </div>
+
+        {/* Character Customization Section */}
+        <div id="character">
+          <CharacterCustomizationSection />
+        </div>
+
+        {/* PC Requirements Section */}
+        <div id="pc_requirements">
+          <PCRequirementsSection />
+        </div>
+
+        {/* Game Stats Section */}
+        <div id="stats">
+          <StatsSection />
+        </div>
+
+        {/* Live Activity Section */}
+        <div id="live_activity">
+          <LiveActivitySection />
+        </div>
+
+        {/* Roadmap Section */}
+        <div id="roadmap">
+          <RoadmapSection />
+        </div>
+
+        {/* Modding Hub Section */}
+        <div id="modding">
+          <ModdingHubComingSoon />
+        </div>
+
+        {/* Contact Section */}
+        <div id="contact">
+          <ContactSection />
+        </div>
       </main>
 
       {/* Alia Nox Chat Interface */}
