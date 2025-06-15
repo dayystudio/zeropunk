@@ -2470,6 +2470,160 @@ const App = () => {
     );
   };
 
+  const BroadcastSection = () => {
+    const [isMuted, setIsMuted] = useState(true);
+    const [currentFeed, setCurrentFeed] = useState(0);
+    
+    const feedContent = [
+      {
+        title: "SECTOR 7 UPRISING",
+        subtitle: "CORPORATE FORCES MOBILIZING",
+        content: "Neural chip shortage sparks riots in downtown district..."
+      },
+      {
+        title: "AI CONSCIOUSNESS DEBATE",
+        subtitle: "ETHICS COMMITTEE HEARING",
+        content: "Is artificial sentience a threat to human autonomy?"
+      },
+      {
+        title: "NEON DISTRICT LOCKDOWN",
+        subtitle: "SECURITY BREACH DETECTED",
+        content: "Unknown hackers infiltrate city surveillance network..."
+      },
+      {
+        title: "ZEROPUNK BETA ACCESS",
+        subtitle: "LIMITED SLOTS AVAILABLE",
+        content: "Early access program launches for neural compatibility testing..."
+      }
+    ];
+
+    useEffect(() => {
+      const feedInterval = setInterval(() => {
+        setCurrentFeed(prev => (prev + 1) % feedContent.length);
+      }, 4000);
+      
+      return () => clearInterval(feedInterval);
+    }, []);
+
+    return (
+      <div className="section-container broadcast-section" id="broadcast">
+        <div className="section-content">
+          {/* Background Effects */}
+          <div className="broadcast-bg-effects">
+            <div className="broadcast-grid"></div>
+            <div className="broadcast-static"></div>
+            <div className="broadcast-scanlines"></div>
+          </div>
+
+          {/* Broadcast Content */}
+          <div className="broadcast-container">
+            <motion.div
+              className="broadcast-header"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="broadcast-title">
+                <span className="broadcast-icon">📡</span>
+                CITYCAST LIVE 2137
+              </h2>
+              <p className="broadcast-subtitle">
+                Neural Network Broadcasting • Live from Neon District 7
+              </p>
+            </motion.div>
+
+            <div className="broadcast-screen-container">
+              <div className="broadcast-screen">
+                {/* Screen Frame */}
+                <div className="screen-frame">
+                  <div className="frame-corner tl"></div>
+                  <div className="frame-corner tr"></div>
+                  <div className="frame-corner bl"></div>
+                  <div className="frame-corner br"></div>
+                </div>
+
+                {/* Screen Content */}
+                <div className="screen-content">
+                  <div className="broadcast-hud">
+                    <div className="hud-top">
+                      <div className="live-indicator">
+                        <div className="live-dot"></div>
+                        <span>LIVE</span>
+                      </div>
+                      <div className="signal-strength">
+                        <div className="signal-bar"></div>
+                        <div className="signal-bar"></div>
+                        <div className="signal-bar"></div>
+                        <div className="signal-bar active"></div>
+                        <div className="signal-bar active"></div>
+                      </div>
+                    </div>
+                    
+                    <div className="hud-bottom">
+                      <div className="timestamp">2137.03.15 | 23:47:33</div>
+                      <button 
+                        className="mute-toggle"
+                        onClick={() => setIsMuted(!isMuted)}
+                      >
+                        {isMuted ? '🔇' : '🔊'}
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* News Feed Content */}
+                  <div className="news-feed">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={currentFeed}
+                        className="news-item"
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -100 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <div className="news-header">
+                          <h3 className="news-title">{feedContent[currentFeed].title}</h3>
+                          <p className="news-subtitle">{feedContent[currentFeed].subtitle}</p>
+                        </div>
+                        <p className="news-content">{feedContent[currentFeed].content}</p>
+                        
+                        {/* Fake gameplay preview */}
+                        <div className="gameplay-preview">
+                          <div className="preview-placeholder">
+                            <div className="preview-text">ZEROPUNK GAMEPLAY PREVIEW</div>
+                            <div className="preview-bars">
+                              <div className="bar bar-1"></div>
+                              <div className="bar bar-2"></div>
+                              <div className="bar bar-3"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Ticker at bottom */}
+                  <div className="news-ticker">
+                    <div className="ticker-content">
+                      BREAKING: Neural implant compatibility tests show 94% success rate • 
+                      ZEROPUNK beta signups exceed 10,000 registrations • 
+                      City Council debates AI rights legislation • 
+                      Neon Corp stock rises 15% after quantum breakthrough •
+                    </div>
+                  </div>
+                </div>
+
+                {/* Screen Effects */}
+                <div className="screen-glitch"></div>
+                <div className="screen-reflection"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const AliaNoxSection = () => (
     <div className="section-container alia-section">
       <div className="section-content">
