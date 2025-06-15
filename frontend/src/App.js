@@ -3768,13 +3768,46 @@ const App = () => {
             <span className="brand-text">ZEROPUNK</span>
           </div>
           
-          <button 
-            className={`hamburger-menu ${menuOpen ? 'open' : ''}`}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="header-controls">
+            {/* Auth Controls */}
+            <div className="auth-controls">
+              {isAuthenticated ? (
+                <div className="user-menu">
+                  <div className="user-info">
+                    <span className="user-icon">🧠</span>
+                    <span className="username">{user?.username}</span>
+                  </div>
+                  <button 
+                    className="logout-btn"
+                    onClick={handleLogout}
+                    title="Disconnect from Z-Net"
+                  >
+                    <Send size={16} />
+                  </button>
+                </div>
+              ) : (
+                <button 
+                  className="auth-btn"
+                  onClick={() => {
+                    setAuthMode('login');
+                    setShowAuthModal(true);
+                  }}
+                >
+                  <span className="auth-btn-icon">🔐</span>
+                  <span>Z-NET LOGIN</span>
+                </button>
+              )}
+            </div>
+
+            {/* Navigation Toggle */}
+            <button 
+              className={`hamburger-menu ${menuOpen ? 'open' : ''}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            >
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </header>
 
