@@ -1294,17 +1294,17 @@ section {
   max-height: calc(100vh - 90px);
   background: 
     linear-gradient(135deg,
-      rgba(255, 255, 255, 0.006) 0%,
-      rgba(255, 255, 255, 0.003) 100%
+      rgba(255, 255, 255, 0.001) 0%,
+      rgba(255, 255, 255, 0.0005) 100%
     );
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 12px;
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.2),
-    0 0 0 1px rgba(255, 255, 255, 0.02),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.01),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
   z-index: 999;
   overflow: hidden;
   transform-origin: top right;
