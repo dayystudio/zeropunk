@@ -3793,8 +3793,7 @@ const App = () => {
                     setShowAuthModal(true);
                   }}
                 >
-                  <span className="auth-btn-icon">🔐</span>
-                  <span>Z-NET LOGIN</span>
+                  <span>ACCOUNT</span>
                 </button>
               )}
             </div>
