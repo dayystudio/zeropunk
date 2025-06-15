@@ -2115,7 +2115,7 @@ section {
 
   .menu-item {
     padding: 0.75rem 0.875rem;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     min-height: 50px; /* Even larger touch targets on small phones */
   }
 
