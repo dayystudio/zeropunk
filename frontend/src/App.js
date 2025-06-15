@@ -2849,24 +2849,24 @@ const App = () => {
               onClick={() => setMenuOpen(false)}
             />
             
-            {/* Minimalist Side-Attached Glassmorphism Menu */}
+            {/* Minimalist HUD-Style Navigation Menu */}
             <motion.nav 
               className="navigation-menu"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 30, scale: 0.98 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: 30, scale: 0.98 }}
               transition={{ 
-                duration: 0.25, 
+                duration: 0.3, 
                 ease: [0.4, 0, 0.2, 1]
               }}
             >
               <div className="menu-content">
-                {/* Clean Header */}
+                {/* Clean HUD Header */}
                 <div className="menu-header">
-                  <h3>Navigation</h3>
+                  <h3>System Menu</h3>
                 </div>
                 
-                {/* Compact Menu Items */}
+                {/* Smooth Dropdown Panel */}
                 <div className="menu-items">
                   {menuItems.map((item, index) => (
                     <div key={item.id}>
@@ -2875,9 +2875,9 @@ const App = () => {
                           <motion.button
                             className={`menu-item ${languageMenuOpen ? 'active' : ''}`}
                             onClick={() => navigateToSection('language')}
-                            initial={{ opacity: 0, x: 20 }}
+                            initial={{ opacity: 0, x: 15 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.03, duration: 0.2 }}
+                            transition={{ delay: index * 0.04, duration: 0.25 }}
                           >
                             <div className="menu-item-icon">{item.icon}</div>
                             <span>{item.label}</span>
@@ -2894,7 +2894,7 @@ const App = () => {
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
-                                transition={{ duration: 0.2 }}
+                                transition={{ duration: 0.25 }}
                               >
                                 {languages.map((lang) => (
                                   <div
@@ -2917,9 +2917,9 @@ const App = () => {
                         <motion.button
                           className={`menu-item ${currentSection === item.id ? 'active' : ''}`}
                           onClick={() => navigateToSection(item.id)}
-                          initial={{ opacity: 0, x: 20 }}
+                          initial={{ opacity: 0, x: 15 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.03, duration: 0.2 }}
+                          transition={{ delay: index * 0.04, duration: 0.25 }}
                         >
                           <div className="menu-item-icon">{item.icon}</div>
                           <span>{item.label}</span>
