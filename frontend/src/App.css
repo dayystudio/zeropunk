@@ -2029,6 +2029,24 @@ section {
   animation: brandPulse 4s ease-in-out infinite;
 }
 
+/* Cyberpunk Neon Glow Animation for Hamburger Menu */
+@keyframes subtleNeonPulse {
+  0%, 100% { 
+    box-shadow: 
+      0 0 20px rgba(59, 130, 246, 0.1),
+      0 0 40px rgba(0, 255, 255, 0.05);
+  }
+  50% { 
+    box-shadow: 
+      0 0 25px rgba(59, 130, 246, 0.15),
+      0 0 50px rgba(0, 255, 255, 0.08);
+  }
+}
+
+.hamburger-menu {
+  animation: subtleNeonPulse 3s ease-in-out infinite;
+}
+
 @keyframes brandPulse {
   0%, 100% { 
     filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
