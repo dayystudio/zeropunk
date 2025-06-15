@@ -1964,13 +1964,13 @@ section {
   right: -1px;
   bottom: -1px;
   background: linear-gradient(45deg, 
-    rgba(59, 130, 246, 0.3) 0%,
-    rgba(0, 255, 255, 0.2) 25%,
-    rgba(236, 72, 153, 0.3) 50%,
-    rgba(255, 0, 128, 0.2) 75%,
-    rgba(59, 130, 246, 0.3) 100%
+    rgba(59, 130, 246, 0.2) 0%,
+    rgba(0, 255, 255, 0.15) 25%,
+    rgba(236, 72, 153, 0.2) 50%,
+    rgba(255, 0, 128, 0.15) 75%,
+    rgba(59, 130, 246, 0.2) 100%
   );
-  border-radius: 13px;
+  border-radius: 11px;
   z-index: -1;
   opacity: 0;
   transition: opacity 0.3s ease;
