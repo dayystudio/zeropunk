@@ -70,6 +70,53 @@ class GameStats(BaseModel):
     wishlist_count: int = 8027
     rating: float = 4.6
 
+# Authentication Models
+class UserCreate(BaseModel):
+    username: str = Field(..., min_length=3, max_length=20)
+    email: EmailStr
+    password: str = Field(..., min_length=8)
+    accept_terms: bool = Field(..., description="Must accept terms and conditions")
+
+class UserLogin(BaseModel):
+    username_or_email: str
+    password: str
+    remember_me: bool = False
+
+class User(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    username: str
+    email: str
+    is_active: bool = True
+    is_supporter: bool = False
+    discord_linked: bool = False
+    discord_username: Optional[str] = None
+    avatar_url: Optional[str] = None
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    last_login: Optional[datetime] = None
+
+class UserInDB(User):
+    hashed_password: str
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
+    user: User
+
+class UserProfile(BaseModel):
+    username: str
+    email: str
+    is_supporter: bool
+    discord_linked: bool
+    discord_username: Optional[str]
+    avatar_url: Optional[str]
+    created_at: datetime
+    last_login: Optional[datetime]
+
+class PasswordStrength(BaseModel):
+    score: int  # 0-4
+    feedback: List[str]
+    is_valid: bool
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
