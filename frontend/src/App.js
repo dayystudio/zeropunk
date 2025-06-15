@@ -31,6 +31,12 @@ const App = () => {
   });
   const [contactSubmitted, setContactSubmitted] = useState(false);
 
+  // Authentication state
+  const [user, setUser] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authMode, setAuthMode] = useState('login'); // 'login' or 'register'
+
   // FAQ state
   const [openFaqItems, setOpenFaqItems] = useState(new Set());
 
