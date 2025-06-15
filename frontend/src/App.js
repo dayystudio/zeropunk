@@ -2982,6 +2982,7 @@ const App = () => {
       case 'about': return <AboutSection />;
       case 'beta': return <BetaSection />;
       case 'faq': return <FAQSection />;
+      case 'support': return <SupportSection />;
       case 'modding': return <ModdingHubComingSoon />;
       case 'character': return <CharacterCustomizationSection />;
       case 'alia': return <AliaNoxSection />;
