@@ -3920,6 +3920,9 @@ section {
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .section-content {
