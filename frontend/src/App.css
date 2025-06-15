@@ -11646,13 +11646,19 @@ section {
 /* Scrollable Homepage Layout */
 .scrollable-homepage {
   overflow-y: auto;
+  overflow-x: hidden;
   height: 100vh;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .scrollable-homepage > div {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 /* Broadcast Section Styles */
