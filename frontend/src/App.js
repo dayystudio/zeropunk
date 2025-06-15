@@ -31,6 +31,9 @@ const App = () => {
   });
   const [contactSubmitted, setContactSubmitted] = useState(false);
 
+  // FAQ state
+  const [openFaqItems, setOpenFaqItems] = useState(new Set());
+
   // Character customization state
   const [characterConfig, setCharacterConfig] = useState({
     gender: 'male',
