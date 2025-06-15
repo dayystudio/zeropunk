@@ -2061,7 +2061,7 @@ section {
     max-height: 80vh;
     border-radius: 20px;
     top: 45%;
-    backdrop-filter: blur(35px) saturate(160%);
+    backdrop-filter: blur(4px) saturate(120%);
   }
 
   .navigation-menu::before {
