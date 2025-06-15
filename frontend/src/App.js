@@ -2930,6 +2930,35 @@ const App = () => {
                             )}
                           </AnimatePresence>
                         </div>
+                      ) : item.isExternalLink ? (
+                        <motion.div
+                          className="menu-item-wrapper external-link"
+                          initial={{ opacity: 0, x: 15 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.04, duration: 0.25 }}
+                        >
+                          <div
+                            className="menu-item external"
+                            onClick={() => {
+                              if (item.url && item.url !== '#donate' && item.url !== '#discord') {
+                                window.open(item.url, '_blank');
+                              } else {
+                                // Placeholder action for now
+                                alert(`${item.label} - Coming soon! ${item.description}`);
+                              }
+                              setMenuOpen(false);
+                            }}
+                            title={item.tooltip || item.description}
+                          >
+                            <div className="menu-item-icon">{item.icon}</div>
+                            <div className="menu-item-content">
+                              <span className="menu-item-label">{item.label}</span>
+                              {item.description && (
+                                <span className="menu-item-description">{item.description}</span>
+                              )}
+                            </div>
+                          </div>
+                        </motion.div>
                       ) : (
                         <motion.button
                           className={`menu-item ${currentSection === item.id ? 'active' : ''}`}
