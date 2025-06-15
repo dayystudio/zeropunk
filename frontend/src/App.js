@@ -59,6 +59,94 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Check for existing authentication token on app load
+  useEffect(() => {
+    const token = localStorage.getItem('zeropunk_token');
+    if (token) {
+      validateToken(token);
+    }
+  }, []);
+
+  // Authentication functions
+  const validateToken = async (token) => {
+    try {
+      const response = await fetch(`${import.meta.env.REACT_APP_BACKEND_URL || process.env.REACT_APP_BACKEND_URL}/auth/me`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      
+      if (response.ok) {
+        const userData = await response.json();
+        setUser(userData);
+        setIsAuthenticated(true);
+      } else {
+        localStorage.removeItem('zeropunk_token');
+      }
+    } catch (error) {
+      console.error('Token validation failed:', error);
+      localStorage.removeItem('zeropunk_token');
+    }
+  };
+
+  const handleLogin = async (credentials) => {
+    try {
+      const response = await fetch(`${import.meta.env.REACT_APP_BACKEND_URL || process.env.REACT_APP_BACKEND_URL}/auth/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(credentials)
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('zeropunk_token', data.access_token);
+        setUser(data.user);
+        setIsAuthenticated(true);
+        setShowAuthModal(false);
+        return { success: true };
+      } else {
+        const error = await response.json();
+        return { success: false, error: error.detail };
+      }
+    } catch (error) {
+      return { success: false, error: 'Neural link connection failed. Please try again.' };
+    }
+  };
+
+  const handleRegister = async (userData) => {
+    try {
+      const response = await fetch(`${import.meta.env.REACT_APP_BACKEND_URL || process.env.REACT_APP_BACKEND_URL}/auth/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData)
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('zeropunk_token', data.access_token);
+        setUser(data.user);
+        setIsAuthenticated(true);
+        setShowAuthModal(false);
+        return { success: true };
+      } else {
+        const error = await response.json();
+        return { success: false, error: error.detail };
+      }
+    } catch (error) {
+      return { success: false, error: 'Neural network registration failed. Please try again.' };
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('zeropunk_token');
+    setUser(null);
+    setIsAuthenticated(false);
+  };
+
   // Character customization state
   const [characterConfig, setCharacterConfig] = useState({
     gender: 'male',
