@@ -2358,6 +2358,107 @@ const App = () => {
     );
   };
 
+  const SupportSection = () => {
+    return (
+      <div className="section-container support-section">
+        <div className="section-content">
+          {/* Background Effects */}
+          <div className="support-bg-effects">
+            <div className="support-grid-overlay"></div>
+            <div className="support-particles"></div>
+            <div className="support-glitch-lines"></div>
+          </div>
+
+          {/* Support Content */}
+          <div className="support-container">
+            <motion.div
+              className="support-header"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="support-title">
+                <span className="support-icon">💜</span>
+                SUPPORT THE PROJECT
+              </h2>
+              <p className="support-intro">
+                Support the future of ZEROPUNK. Join the community. Help shape the game.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="support-actions"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
+              <div className="support-buttons">
+                <motion.button
+                  className="support-btn donation-btn"
+                  onClick={() => {
+                    // Placeholder for donation platform redirect
+                    alert('Donation platform coming soon! Thank you for your support.');
+                  }}
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="btn-glow-effect"></div>
+                  <Heart className="btn-icon" size={20} />
+                  <span className="btn-text">Make a Donation</span>
+                  <div className="btn-arrow">→</div>
+                </motion.button>
+
+                <motion.button
+                  className="support-btn discord-btn"
+                  onClick={() => {
+                    // Placeholder for Discord invite redirect
+                    alert('Discord server invite coming soon! Stay tuned.');
+                  }}
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="btn-glow-effect"></div>
+                  <MessageCircle className="btn-icon" size={20} />
+                  <span className="btn-text">Join the Discord Server</span>
+                  <div className="btn-arrow">→</div>
+                </motion.button>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="support-benefits"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              <div className="benefits-content">
+                <p className="benefits-intro">
+                  By supporting the project and joining Discord, you'll gain access to an exclusive developer-only channel, where you can:
+                </p>
+                <ul className="benefits-list">
+                  <li>
+                    <span className="benefit-icon">💡</span>
+                    Share your ideas directly with the dev
+                  </li>
+                  <li>
+                    <span className="benefit-icon">🎬</span>
+                    See exclusive behind-the-scenes content
+                  </li>
+                  <li>
+                    <span className="benefit-icon">🎁</span>
+                    Get early previews, polls, and rewards
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const AliaNoxSection = () => (
     <div className="section-container alia-section">
       <div className="section-content">
