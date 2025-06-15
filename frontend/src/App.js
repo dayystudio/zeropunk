@@ -4016,8 +4016,7 @@ const App = () => {
         </div>
       </div>
     </div>
-  );
-
+  
 
   const RoadmapSection = () => {
     const roadmapPhases = [
