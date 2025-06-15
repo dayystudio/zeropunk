@@ -980,6 +980,7 @@ const App = () => {
     { id: 'about', label: t('features'), icon: <Info size={16} /> },
     { id: 'beta', label: t('wishlist_steam'), icon: <Gamepad2 size={16} /> },
     { id: 'faq', label: 'F.A.Q', icon: <Info size={16} /> },
+    { id: 'support', label: 'Support the Project', icon: <Heart size={16} /> },
     { id: 'character', label: t('character_customization'), icon: <UserCircle size={16} /> },
     { id: 'alia', label: 'Alia Nox AI Chat', icon: <Bot size={16} /> },
     { id: 'pc_requirements', label: t('pc_requirements'), icon: <Monitor size={16} /> },
@@ -988,23 +989,6 @@ const App = () => {
     { id: 'roadmap', label: t('roadmap'), icon: <Map size={16} /> },
     { id: 'modding', label: 'Modding Hub', icon: <Code size={16} /> },
     { id: 'contact', label: t('contact'), icon: <Mail size={16} /> },
-    { 
-      id: 'donate', 
-      label: 'Support the Project', 
-      icon: <Heart size={16} />, 
-      isExternalLink: true,
-      url: '#donate', // Placeholder for now
-      description: 'Support the project and unlock exclusive rewards!'
-    },
-    { 
-      id: 'discord', 
-      label: 'Join the Discord', 
-      icon: <MessageCircle size={16} />, 
-      isExternalLink: true,
-      url: '#discord', // Placeholder for now
-      description: 'Get early access, exclusive content, and behind-the-scenes updates!',
-      tooltip: 'Donors get access to a private Discord channel with sneak peeks, bonus content, and rewards.'
-    },
     { id: 'language', label: t('language'), icon: <Languages size={16} />, isLanguageSelector: true }
   ];
 
