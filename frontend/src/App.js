@@ -4084,6 +4084,11 @@ const App = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Authentication Modal */}
+      <AnimatePresence>
+        {showAuthModal && <AuthModal />}
+      </AnimatePresence>
     </div>
   );
 };
