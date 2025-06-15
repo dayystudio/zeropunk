@@ -1985,8 +1985,9 @@ section {
   border-color: rgba(59, 130, 246, 0.3);
   color: rgba(255, 255, 255, 1);
   box-shadow: 
-    0 8px 25px rgba(59, 130, 246, 0.2),
-    0 0 30px rgba(59, 130, 246, 0.1);
+    0 8px 25px rgba(59, 130, 246, 0.25),
+    0 0 35px rgba(0, 255, 255, 0.15),
+    0 0 15px rgba(59, 130, 246, 0.3);
 }
 
 .hamburger-menu:active {
