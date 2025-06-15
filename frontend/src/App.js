@@ -3936,6 +3936,11 @@ const App = () => {
           <SupportSection />
         </div>
 
+        {/* Visual Archive Section */}
+        <div id="visual-archive">
+          <VisualArchiveSection />
+        </div>
+
         {/* FAQ Section */}
         <div id="faq">
           <FAQSection />
