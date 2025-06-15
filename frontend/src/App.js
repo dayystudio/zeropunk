@@ -2737,6 +2737,403 @@ const App = () => {
     );
   };
 
+  const AuthModal = () => {
+    const [formData, setFormData] = useState({
+      username: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      username_or_email: '',
+      accept_terms: false,
+      remember_me: false
+    });
+    const [errors, setErrors] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
+    const [passwordStrength, setPasswordStrength] = useState(null);
+    const [usernameAvailable, setUsernameAvailable] = useState(null);
+
+    const checkUsernameAvailability = async (username) => {
+      if (username.length < 3) return;
+      
+      try {
+        const response = await fetch(`${import.meta.env.REACT_APP_BACKEND_URL || process.env.REACT_APP_BACKEND_URL}/auth/check-username?username=${username}`);
+        const data = await response.json();
+        setUsernameAvailable(data);
+      } catch (error) {
+        console.error('Username check failed:', error);
+      }
+    };
+
+    const checkPasswordStrength = async (password) => {
+      if (password.length === 0) {
+        setPasswordStrength(null);
+        return;
+      }
+
+      try {
+        const response = await fetch(`${import.meta.env.REACT_APP_BACKEND_URL || process.env.REACT_APP_BACKEND_URL}/auth/check-password?password=${password}`, {
+          method: 'POST'
+        });
+        const data = await response.json();
+        setPasswordStrength(data);
+      } catch (error) {
+        console.error('Password strength check failed:', error);
+      }
+    };
+
+    const handleInputChange = (e) => {
+      const { name, value, type, checked } = e.target;
+      const newValue = type === 'checkbox' ? checked : value;
+      
+      setFormData(prev => ({
+        ...prev,
+        [name]: newValue
+      }));
+
+      // Clear errors for this field
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+
+      // Check username availability
+      if (name === 'username' && authMode === 'register') {
+        checkUsernameAvailability(value);
+      }
+
+      // Check password strength
+      if (name === 'password' && authMode === 'register') {
+        checkPasswordStrength(value);
+      }
+    };
+
+    const validateForm = () => {
+      const newErrors = {};
+
+      if (authMode === 'register') {
+        if (!formData.username) newErrors.username = 'Username is required';
+        if (!formData.email) newErrors.email = 'Email is required';
+        if (!formData.password) newErrors.password = 'Password is required';
+        if (!formData.confirmPassword) newErrors.confirmPassword = 'Confirm password is required';
+        if (formData.password !== formData.confirmPassword) {
+          newErrors.confirmPassword = 'Passwords do not match';
+        }
+        if (!formData.accept_terms) newErrors.accept_terms = 'You must accept the terms';
+        if (usernameAvailable && !usernameAvailable.available) {
+          newErrors.username = 'Username not available';
+        }
+        if (passwordStrength && !passwordStrength.is_valid) {
+          newErrors.password = 'Password is too weak';
+        }
+      } else {
+        if (!formData.username_or_email) newErrors.username_or_email = 'Username or email is required';
+        if (!formData.password) newErrors.password = 'Password is required';
+      }
+
+      setErrors(newErrors);
+      return Object.keys(newErrors).length === 0;
+    };
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      
+      if (!validateForm()) return;
+      
+      setIsLoading(true);
+      
+      let result;
+      if (authMode === 'register') {
+        result = await handleRegister({
+          username: formData.username,
+          email: formData.email,
+          password: formData.password,
+          accept_terms: formData.accept_terms
+        });
+      } else {
+        result = await handleLogin({
+          username_or_email: formData.username_or_email,
+          password: formData.password,
+          remember_me: formData.remember_me
+        });
+      }
+
+      setIsLoading(false);
+
+      if (!result.success) {
+        setErrors({ submit: result.error });
+      }
+    };
+
+    const resetForm = () => {
+      setFormData({
+        username: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        username_or_email: '',
+        accept_terms: false,
+        remember_me: false
+      });
+      setErrors({});
+      setPasswordStrength(null);
+      setUsernameAvailable(null);
+    };
+
+    const switchMode = (mode) => {
+      setAuthMode(mode);
+      resetForm();
+    };
+
+    if (!showAuthModal) return null;
+
+    return (
+      <div className="auth-modal-overlay" onClick={() => setShowAuthModal(false)}>
+        <motion.div
+          className="auth-modal"
+          onClick={(e) => e.stopPropagation()}
+          initial={{ opacity: 0, scale: 0.8, y: 50 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.8, y: 50 }}
+          transition={{ duration: 0.3 }}
+        >
+          {/* Background Effects */}
+          <div className="auth-bg-effects">
+            <div className="auth-grid"></div>
+            <div className="auth-scanlines"></div>
+            <div className="auth-particles"></div>
+          </div>
+
+          {/* Header */}
+          <div className="auth-header">
+            <h2 className="auth-title">
+              <span className="auth-icon">🔐</span>
+              {authMode === 'login' ? 'Z-NET ACCESS TERMINAL' : 'NEURAL REGISTRATION MATRIX'}
+            </h2>
+            <p className="auth-subtitle">
+              {authMode === 'login' 
+                ? 'Welcome back, Citizen. Verify your identity.' 
+                : 'Initialize your neural profile in the ZEROPUNK network.'
+              }
+            </p>
+            <button 
+              className="auth-close"
+              onClick={() => setShowAuthModal(false)}
+            >
+              <X size={20} />
+            </button>
+          </div>
+
+          {/* Mode Toggle */}
+          <div className="auth-mode-toggle">
+            <button
+              className={`mode-btn ${authMode === 'login' ? 'active' : ''}`}
+              onClick={() => switchMode('login')}
+            >
+              LOGIN
+            </button>
+            <button
+              className={`mode-btn ${authMode === 'register' ? 'active' : ''}`}
+              onClick={() => switchMode('register')}
+            >
+              REGISTER
+            </button>
+          </div>
+
+          {/* Form */}
+          <form className="auth-form" onSubmit={handleSubmit}>
+            {authMode === 'register' ? (
+              <>
+                {/* Username Field */}
+                <div className="auth-field">
+                  <label className="auth-label">Neural ID (Username)</label>
+                  <div className="field-container">
+                    <input
+                      type="text"
+                      name="username"
+                      value={formData.username}
+                      onChange={handleInputChange}
+                      className={`auth-input ${errors.username ? 'error' : ''} ${usernameAvailable?.available === true ? 'success' : ''}`}
+                      placeholder="Enter your desired username"
+                    />
+                    {usernameAvailable && (
+                      <div className={`field-status ${usernameAvailable.available ? 'success' : 'error'}`}>
+                        {usernameAvailable.available ? '✓ Available' : '✗ Taken'}
+                      </div>
+                    )}
+                  </div>
+                  {errors.username && <div className="auth-error">{errors.username}</div>}
+                </div>
+
+                {/* Email Field */}
+                <div className="auth-field">
+                  <label className="auth-label">Neural Link Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className={`auth-input ${errors.email ? 'error' : ''}`}
+                    placeholder="your.email@domain.com"
+                  />
+                  {errors.email && <div className="auth-error">{errors.email}</div>}
+                </div>
+
+                {/* Password Field */}
+                <div className="auth-field">
+                  <label className="auth-label">Security Passphrase</label>
+                  <input
+                    type="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleInputChange}
+                    className={`auth-input ${errors.password ? 'error' : ''}`}
+                    placeholder="Create a strong password"
+                  />
+                  {passwordStrength && (
+                    <div className="password-strength">
+                      <div className="strength-bar">
+                        <div 
+                          className={`strength-fill strength-${passwordStrength.score}`}
+                          style={{ width: `${(passwordStrength.score / 4) * 100}%` }}
+                        ></div>
+                      </div>
+                      <div className="strength-feedback">
+                        {passwordStrength.feedback.map((feedback, index) => (
+                          <div key={index} className="feedback-item">{feedback}</div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {errors.password && <div className="auth-error">{errors.password}</div>}
+                </div>
+
+                {/* Confirm Password Field */}
+                <div className="auth-field">
+                  <label className="auth-label">Confirm Passphrase</label>
+                  <input
+                    type="password"
+                    name="confirmPassword"
+                    value={formData.confirmPassword}
+                    onChange={handleInputChange}
+                    className={`auth-input ${errors.confirmPassword ? 'error' : ''}`}
+                    placeholder="Confirm your password"
+                  />
+                  {errors.confirmPassword && <div className="auth-error">{errors.confirmPassword}</div>}
+                </div>
+
+                {/* Terms Checkbox */}
+                <div className="auth-field checkbox-field">
+                  <label className="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="accept_terms"
+                      checked={formData.accept_terms}
+                      onChange={handleInputChange}
+                      className="auth-checkbox"
+                    />
+                    <span className="checkbox-custom"></span>
+                    <span className="checkbox-text">
+                      I accept the <span className="terms-link">Neural Interface Terms & Conditions</span>
+                    </span>
+                  </label>
+                  {errors.accept_terms && <div className="auth-error">{errors.accept_terms}</div>}
+                </div>
+              </>
+            ) : (
+              <>
+                {/* Username/Email Field */}
+                <div className="auth-field">
+                  <label className="auth-label">Neural ID or Email</label>
+                  <input
+                    type="text"
+                    name="username_or_email"
+                    value={formData.username_or_email}
+                    onChange={handleInputChange}
+                    className={`auth-input ${errors.username_or_email ? 'error' : ''}`}
+                    placeholder="Enter username or email"
+                  />
+                  {errors.username_or_email && <div className="auth-error">{errors.username_or_email}</div>}
+                </div>
+
+                {/* Password Field */}
+                <div className="auth-field">
+                  <label className="auth-label">Security Passphrase</label>
+                  <input
+                    type="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleInputChange}
+                    className={`auth-input ${errors.password ? 'error' : ''}`}
+                    placeholder="Enter your password"
+                  />
+                  {errors.password && <div className="auth-error">{errors.password}</div>}
+                </div>
+
+                {/* Remember Me Checkbox */}
+                <div className="auth-field checkbox-field">
+                  <label className="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="remember_me"
+                      checked={formData.remember_me}
+                      onChange={handleInputChange}
+                      className="auth-checkbox"
+                    />
+                    <span className="checkbox-custom"></span>
+                    <span className="checkbox-text">Keep me logged into the neural matrix</span>
+                  </label>
+                </div>
+
+                {/* Forgot Password Link */}
+                <div className="auth-link">
+                  <a href="#" className="forgot-password">Neural pattern corrupted? Reset access codes</a>
+                </div>
+              </>
+            )}
+
+            {/* Submit Error */}
+            {errors.submit && <div className="auth-error submit-error">{errors.submit}</div>}
+
+            {/* Submit Button */}
+            <button 
+              type="submit" 
+              className="auth-submit"
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <div className="loading-spinner">
+                  <div className="spinner"></div>
+                  <span>
+                    {authMode === 'login' ? 'Verifying Identity...' : 'Initializing Neural Profile...'}
+                  </span>
+                </div>
+              ) : (
+                <>
+                  <span className="submit-icon">
+                    {authMode === 'login' ? '🚀' : '🧠'}
+                  </span>
+                  <span>
+                    {authMode === 'login' ? 'ACCESS Z-NET' : 'JOIN THE MATRIX'}
+                  </span>
+                </>
+              )}
+            </button>
+          </form>
+
+          {/* Footer */}
+          <div className="auth-footer">
+            <p className="auth-disclaimer">
+              {authMode === 'login' 
+                ? '⚠️ Unauthorized access will be reported to the Nexus Authority'
+                : '🛡️ Your neural data is encrypted with quantum-level security'
+              }
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    );
+  };
+
   const AliaNoxSection = () => (
     <div className="section-container alia-section">
       <div className="section-content">
