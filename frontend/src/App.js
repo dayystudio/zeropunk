@@ -34,6 +34,9 @@ const App = () => {
   // FAQ state
   const [openFaqItems, setOpenFaqItems] = useState(new Set());
 
+  // Current section tracking for scrollable homepage
+  const [currentSection, setCurrentSection] = useState('hero');
+
   // Character customization state
   const [characterConfig, setCharacterConfig] = useState({
     gender: 'male',
