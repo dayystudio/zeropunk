@@ -2088,7 +2088,7 @@ section {
 
   .menu-item {
     padding: 0.875rem 1rem;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     min-height: 48px; /* Larger touch target on mobile */
     border-radius: 12px;
   }
