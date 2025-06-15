@@ -2195,6 +2195,185 @@ const App = () => {
     );
   };
 
+  const FAQSection = () => {
+    const toggleFaqItem = (index) => {
+      const newOpenItems = new Set(openFaqItems);
+      if (newOpenItems.has(index)) {
+        newOpenItems.delete(index);
+      } else {
+        newOpenItems.add(index);
+      }
+      setOpenFaqItems(newOpenItems);
+    };
+
+    const faqData = [
+      {
+        question: "What is ZEROPUNK?",
+        answer: "ZEROPUNK is an immersive open-world futuristic RPG, blending deep narrative, AI-driven NPCs, and a cinematic cyberpunk experience. Set in a dystopian megacity fractured by AI control, mega-corporations, underground resistance groups, and forgotten secrets, the game invites you to explore, survive, and make your own story — with no chosen-one, no fixed path, and full freedom."
+      },
+      {
+        question: "What kind of universe does the game take place in?",
+        answer: "ZEROPUNK is set in Neon District 7, year 2137. A dense and vertical city with rich corporate zones, outlaw sectors, AI-controlled districts, slums, and restricted areas. Augmentations are common, surveillance is constant, and freedom is rare."
+      },
+      {
+        question: "Is there a main storyline?",
+        answer: "Yes — but it's fully optional and dynamic. You can follow the main quest or ignore it entirely. The story adapts to your choices, alliances, betrayals, and your unique path."
+      },
+      {
+        question: "Can I customize my character?",
+        answer: "Absolutely. You can fully customize your gender, body, voice, clothing, tattoos, cybernetic implants, skills, abilities, and personality. You'll be able to make a character that truly feels like your own."
+      },
+      {
+        question: "Are there vehicles?",
+        answer: "Yes. You can drive cars, ride bikes, and even fly futuristic vehicles. Some are customizable, and vehicles are seamlessly integrated into the open world."
+      },
+      {
+        question: "Will I have my own apartment?",
+        answer: "Yes. You'll be able to buy, unlock, or take over apartments in the city. Apartments can be customized and used as your base for sleeping, storing items, upgrading gear, or accessing secret networks."
+      },
+      {
+        question: "What kinds of weapons are available?",
+        answer: "From traditional firearms to futuristic plasma guns, drones, hacking tools, energy blades, and cybernetic melee weapons — the game gives you total freedom to build your own combat style."
+      },
+      {
+        question: "Can I play stealth or melee?",
+        answer: "Yes. You can play full stealth, hack your way through systems, or beat enemies with fists or augmented strength. The gameplay supports combat, infiltration, tech-based approaches, and social manipulation."
+      },
+      {
+        question: "Is there a skill tree?",
+        answer: "Yes, a modular progression system allows you to shape your playstyle. Branches include: Hacking, Combat (ranged/melee), Piloting, Stealth, Social manipulation, and Survival/Analysis."
+      },
+      {
+        question: "Are NPCs controlled by AI?",
+        answer: "Yes. All core NPCs are powered by a neural AI system, allowing them to remember previous conversations with you, react to your behavior, history, and decisions, and change attitudes dynamically over time."
+      },
+      {
+        question: "Can I talk to NPCs like real people?",
+        answer: "Yes. ZEROPUNK integrates natural language AI. You'll be able to talk to NPCs freely. They respond with real personality, emotion, and memory. You'll build relationships through real interaction — not just dialogue trees."
+      },
+      {
+        question: "Do NPCs remember me?",
+        answer: "Absolutely. NPCs will remember what you say, how you act, and what you've done. They'll hold grudges, grow fond of you, betray you — or even become long-term allies."
+      },
+      {
+        question: "Is the city open-world and explorable?",
+        answer: "Yes. ZEROPUNK is fully open-world. You can travel on foot, by vehicle, through alleys, rooftops, tunnels, and elevators. Many buildings are enterable and have secrets inside."
+      },
+      {
+        question: "Can I go inside buildings?",
+        answer: "Yes. Stores, apartments, clubs, labs, and secret areas can be accessed. Some require hacking, bribing, or persuading guards. Urban exploration is a big part of the experience."
+      },
+      {
+        question: "Is there a day/night cycle?",
+        answer: "Yes, with full dynamic impact: Some quests only appear at night, police are more present during certain hours, stores open and close, and some NPCs only come out after dark."
+      },
+      {
+        question: "Does the game have a HUD?",
+        answer: "The HUD is minimal and immersive. Most information is shown through your cyber implants, holographic projections, and real-world cues like signs, sounds, and AI voice assistants."
+      },
+      {
+        question: "Will there be advanced graphic settings?",
+        answer: "Yes — but they'll be available once the full settings system is in place. For now, the demo visuals are scaled down for performance. Future phases will increase visual fidelity significantly."
+      },
+      {
+        question: "What engine is ZEROPUNK developed with?",
+        answer: "ZEROPUNK is developed using Unreal Engine 5.5, with Nanite, Lumen, Virtual Shadow Maps, World Partition, AI-driven NPC systems, and real-time voice dialogue systems."
+      },
+      {
+        question: "Will the game run on my PC?",
+        answer: "The goal is to offer multiple quality presets. ZEROPUNK will support high-end rigs (Ultra Mode) and mid-range setups, with scalable options and automatic performance tuning."
+      },
+      {
+        question: "How can I support the project?",
+        answer: "You can support the development by donating via the [Donate] page, joining the Discord server, sharing ZEROPUNK on social media, and wishlisting on Steam. Supporters get early access, rewards, and exclusive community roles."
+      },
+      {
+        question: "What do I get if I donate?",
+        answer: "Donors get access to a private Discord channel, exclusive in-development previews, in-game rewards, recognition in the game credits, and possibly early access to testing phases."
+      },
+      {
+        question: "What's inside the Discord?",
+        answer: "The Discord server includes devlogs & behind-the-scenes content, community votes for development decisions, exclusive polls, content drops, and bonus rewards, plus live discussions with the dev(s)."
+      },
+      {
+        question: "Is there a roadmap?",
+        answer: "Yes. A long-term roadmap up to 2037 includes: Beta testing, full NPC AI integration, multiplayer PVE & PVP, player-run factions and economies, dynamic city expansion, advanced housing & base-building, emotional NPC interaction, and console support."
+      }
+    ];
+
+    return (
+      <div className="section-container faq-section">
+        <div className="section-content">
+          {/* Background Effects */}
+          <div className="faq-bg-effects">
+            <div className="faq-grid-overlay"></div>
+            <div className="faq-particles"></div>
+          </div>
+
+          {/* FAQ Content */}
+          <div className="faq-container">
+            <motion.div
+              className="faq-header"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="faq-title">
+                <span className="faq-icon">📘</span>
+                F.A.Q – FREQUENTLY ASKED QUESTIONS
+              </h2>
+              <p className="faq-subtitle">
+                Everything you need to know about ZEROPUNK
+              </p>
+            </motion.div>
+
+            <div className="faq-list">
+              {faqData.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="faq-item"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                >
+                  <div
+                    className={`faq-question ${openFaqItems.has(index) ? 'active' : ''}`}
+                    onClick={() => toggleFaqItem(index)}
+                  >
+                    <div className="question-content">
+                      <span className="question-icon">❓</span>
+                      <span className="question-text">{item.question}</span>
+                    </div>
+                    <ChevronDown
+                      className={`faq-chevron ${openFaqItems.has(index) ? 'rotated' : ''}`}
+                      size={20}
+                    />
+                  </div>
+                  
+                  <AnimatePresence>
+                    {openFaqItems.has(index) && (
+                      <motion.div
+                        className="faq-answer"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                      >
+                        <div className="answer-content">
+                          {item.answer}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const AliaNoxSection = () => (
     <div className="section-container alia-section">
       <div className="section-content">
