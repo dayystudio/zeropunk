@@ -11780,11 +11780,13 @@ section {
   display: flex;
   justify-content: center;
   padding: 2rem;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .broadcast-screen {
   position: relative;
-  width: 800px;
+  width: min(800px, 90vw);
   height: 500px;
   background: rgba(0, 0, 0, 0.9);
   border: 3px solid rgba(0, 255, 255, 0.3);
