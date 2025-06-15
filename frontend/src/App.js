@@ -3134,6 +3134,192 @@ const App = () => {
     );
   };
 
+  const VisualArchiveSection = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+    const gameplayImages = [
+      {
+        id: 1,
+        url: "https://images.unsplash.com/photo-1573767291321-c0af2eaf5266",
+        title: "NEON DISTRICT OVERVIEW",
+        subtitle: "Aerial view of the sprawling megacity",
+        description: "Explore the vast cyberpunk metropolis from above, where neon lights pierce through the eternal darkness of District 7."
+      },
+      {
+        id: 2,
+        url: "https://images.unsplash.com/photo-1512364615838-8088a04a778b",
+        title: "DOWNTOWN SECTOR",
+        subtitle: "Street-level urban exploration",
+        description: "Navigate through the dense urban landscape where corporate towers and underground networks intersect."
+      },
+      {
+        id: 3,
+        url: "https://images.pexels.com/photos/4090093/pexels-photo-4090093.jpeg",
+        title: "PLAYER APARTMENT",
+        subtitle: "Your personal neural sanctuary",
+        description: "Customize your living space with futuristic amenities and advanced neural interface technology."
+      },
+      {
+        id: 4,
+        url: "https://images.unsplash.com/photo-1613046883984-dcf0c289b896",
+        title: "SHADOW ALLEYS",
+        subtitle: "Hidden passages of the underground",
+        description: "Discover secret routes through the city's dark underbelly where resistance movements thrive."
+      }
+    ];
+
+    const openLightbox = (image) => {
+      setSelectedImage(image);
+      setIsLightboxOpen(true);
+    };
+
+    const closeLightbox = () => {
+      setIsLightboxOpen(false);
+      setSelectedImage(null);
+    };
+
+    const nextImage = () => {
+      const currentIndex = gameplayImages.findIndex(img => img.id === selectedImage.id);
+      const nextIndex = (currentIndex + 1) % gameplayImages.length;
+      setSelectedImage(gameplayImages[nextIndex]);
+    };
+
+    const prevImage = () => {
+      const currentIndex = gameplayImages.findIndex(img => img.id === selectedImage.id);
+      const prevIndex = (currentIndex - 1 + gameplayImages.length) % gameplayImages.length;
+      setSelectedImage(gameplayImages[prevIndex]);
+    };
+
+    return (
+      <>
+        <div className="section-container visual-archive-section" id="visual-archive">
+          <div className="section-content">
+            {/* Background Effects */}
+            <div className="visual-bg-effects">
+              <div className="visual-grid-overlay"></div>
+              <div className="visual-scan-lines"></div>
+              <div className="visual-particles"></div>
+            </div>
+
+            {/* Visual Archive Content */}
+            <div className="visual-container">
+              <motion.div
+                className="visual-header"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h2 className="visual-title">
+                  <span className="visual-icon">📷</span>
+                  ZEROPUNK VISUAL ARCHIVE
+                </h2>
+                <p className="visual-subtitle">
+                  Immerse yourself in the cyberpunk world of District 7
+                </p>
+              </motion.div>
+
+              <div className="gameplay-gallery">
+                {gameplayImages.map((image, index) => (
+                  <motion.div
+                    key={image.id}
+                    className="gallery-item"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.2, duration: 0.6 }}
+                    onClick={() => openLightbox(image)}
+                  >
+                    <div className="image-container">
+                      <img 
+                        src={`${image.url}?w=600&h=400&fit=crop&auto=format&q=80`}
+                        alt={image.title}
+                        className="gameplay-image"
+                        loading="lazy"
+                      />
+                      
+                      {/* Image Overlay */}
+                      <div className="image-overlay">
+                        <div className="overlay-content">
+                          <h3 className="image-title">{image.title}</h3>
+                          <p className="image-subtitle">{image.subtitle}</p>
+                          <div className="view-indicator">
+                            <ZoomIn size={24} />
+                            <span>ENTER NEURAL LINK</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Glitch Effect */}
+                      <div className="glitch-effect"></div>
+                      
+                      {/* Scan Lines */}
+                      <div className="image-scanlines"></div>
+                    </div>
+
+                    <div className="image-info">
+                      <h4 className="info-title">{image.title}</h4>
+                      <p className="info-description">{image.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Lightbox Modal */}
+        <AnimatePresence>
+          {isLightboxOpen && selectedImage && (
+            <motion.div
+              className="lightbox-overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeLightbox}
+            >
+              <motion.div
+                className="lightbox-container"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Close Button */}
+                <button className="lightbox-close" onClick={closeLightbox}>
+                  <X size={24} />
+                </button>
+
+                {/* Navigation Arrows */}
+                <button className="lightbox-nav prev" onClick={prevImage}>
+                  <ChevronDown size={32} style={{ transform: 'rotate(90deg)' }} />
+                </button>
+                <button className="lightbox-nav next" onClick={nextImage}>
+                  <ChevronDown size={32} style={{ transform: 'rotate(-90deg)' }} />
+                </button>
+
+                {/* Image */}
+                <div className="lightbox-image-container">
+                  <img 
+                    src={`${selectedImage.url}?w=1200&h=800&fit=crop&auto=format&q=90`}
+                    alt={selectedImage.title}
+                    className="lightbox-image"
+                  />
+                  
+                  {/* Info Panel */}
+                  <div className="lightbox-info">
+                    <h3 className="lightbox-title">{selectedImage.title}</h3>
+                    <p className="lightbox-subtitle">{selectedImage.subtitle}</p>
+                    <p className="lightbox-description">{selectedImage.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </>
+    );
+  };
+
   const AliaNoxSection = () => (
     <div className="section-container alia-section">
       <div className="section-content">
