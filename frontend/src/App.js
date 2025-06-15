@@ -53,28 +53,6 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Add scroll detection for section highlighting
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['hero', 'broadcast', 'about', 'beta', 'support', 'faq', 'alia', 'character', 'pc_requirements', 'stats', 'live_activity', 'roadmap', 'modding', 'contact'];
-      const scrollPos = window.scrollY + 100; // Offset for header
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const element = document.getElementById(sections[i]);
-        if (element && element.offsetTop <= scrollPos) {
-          setCurrentSection(sections[i]);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Current section tracking for scrollable homepage
-  const [currentSection, setCurrentSection] = useState('hero');
-
   // Character customization state
   const [characterConfig, setCharacterConfig] = useState({
     gender: 'male',
