@@ -233,6 +233,160 @@ def check_password_strength(password: str) -> PasswordStrength:
 async def root():
     return {"message": "ZEROPUNK OS v0.92 - SYSTEM ONLINE"}
 
+# Authentication Endpoints
+@api_router.post("/auth/register", response_model=Token)
+async def register_user(user_data: UserCreate):
+    """Register a new user in the Z-Net system"""
+    # Validate username
+    username_errors = validate_username(user_data.username)
+    if username_errors:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Username validation failed: {', '.join(username_errors)}"
+        )
+    
+    # Check password strength
+    password_strength = check_password_strength(user_data.password)
+    if not password_strength.is_valid:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Password too weak: {', '.join(password_strength.feedback)}"
+        )
+    
+    # Check if terms are accepted
+    if not user_data.accept_terms:
+        raise HTTPException(
+            status_code=400,
+            detail="You must accept the Neural Interface Terms & Conditions"
+        )
+    
+    # Check if user already exists
+    existing_user = await get_user_by_username(user_data.username)
+    if existing_user:
+        raise HTTPException(
+            status_code=400,
+            detail="This username is already registered in the Z-Net database"
+        )
+    
+    existing_email = await get_user_by_email(user_data.email)
+    if existing_email:
+        raise HTTPException(
+            status_code=400,
+            detail="This email is already connected to a Z-Net account"
+        )
+    
+    # Create new user
+    hashed_password = get_password_hash(user_data.password)
+    new_user = UserInDB(
+        username=user_data.username,
+        email=user_data.email,
+        hashed_password=hashed_password
+    )
+    
+    # Save to database
+    await db.users.insert_one(new_user.dict())
+    
+    # Create access token
+    access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    access_token = create_access_token(
+        data={"sub": new_user.username}, expires_delta=access_token_expires
+    )
+    
+    # Return user without password
+    user_response = User(**{k: v for k, v in new_user.dict().items() if k != 'hashed_password'})
+    
+    return Token(access_token=access_token, user=user_response)
+
+@api_router.post("/auth/login", response_model=Token)
+async def login_user(user_credentials: UserLogin):
+    """Login to the Z-Net secure interface"""
+    user = await authenticate_user(user_credentials.username_or_email, user_credentials.password)
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid credentials. Access denied by Nexus Authority.",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    
+    # Update last login
+    await db.users.update_one(
+        {"username": user.username},
+        {"$set": {"last_login": datetime.utcnow()}}
+    )
+    
+    # Create access token with longer expiration if remember_me is True
+    token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES * 4) if user_credentials.remember_me else None
+    access_token = create_access_token(
+        data={"sub": user.username}, expires_delta=token_expires
+    )
+    
+    # Return user without password
+    user_response = User(**{k: v for k, v in user.dict().items() if k != 'hashed_password'})
+    user_response.last_login = datetime.utcnow()
+    
+    return Token(access_token=access_token, user=user_response)
+
+@api_router.get("/auth/me", response_model=UserProfile)
+async def get_current_user_profile(current_user: UserInDB = Depends(get_current_user)):
+    """Get current user profile from neural interface"""
+    return UserProfile(
+        username=current_user.username,
+        email=current_user.email,
+        is_supporter=current_user.is_supporter,
+        discord_linked=current_user.discord_linked,
+        discord_username=current_user.discord_username,
+        avatar_url=current_user.avatar_url,
+        created_at=current_user.created_at,
+        last_login=current_user.last_login
+    )
+
+@api_router.post("/auth/check-username")
+async def check_username_availability(username: str):
+    """Check if username is available in Z-Net database"""
+    errors = validate_username(username)
+    if errors:
+        return {"available": False, "errors": errors}
+    
+    existing_user = await get_user_by_username(username)
+    if existing_user:
+        return {"available": False, "errors": ["Username already exists in the neural matrix"]}
+    
+    return {"available": True, "errors": []}
+
+@api_router.post("/auth/check-password", response_model=PasswordStrength)
+async def check_password_strength_endpoint(password: str):
+    """Analyze password security for neural encryption"""
+    return check_password_strength(password)
+
+@api_router.post("/auth/logout")
+async def logout_user(current_user: UserInDB = Depends(get_current_user)):
+    """Disconnect from Z-Net neural interface"""
+    # In a real app, you might want to blacklist the token
+    # For now, we'll just return a success message
+    return {"message": "Neural link terminated. Stay safe out there, citizen."}
+
+@api_router.post("/user/update-profile")
+async def update_user_profile(
+    discord_username: Optional[str] = None,
+    current_user: UserInDB = Depends(get_current_user)
+):
+    """Update user profile in Z-Net database"""
+    update_data = {}
+    
+    if discord_username is not None:
+        update_data["discord_username"] = discord_username
+        update_data["discord_linked"] = bool(discord_username)
+    
+    if update_data:
+        await db.users.update_one(
+            {"username": current_user.username},
+            {"$set": update_data}
+        )
+    
+    return {"message": "Profile updated in neural matrix"}
+
+# Existing endpoints
+
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
     status_dict = input.dict()
