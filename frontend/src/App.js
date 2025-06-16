@@ -9,7 +9,7 @@ import {
   BarChart3, Bot, Map, Camera, UserCircle, ShoppingCart, 
   Code, Mail, Languages, Terminal, ZoomIn, Palette, 
   AlertTriangle, CloudRain, Music, Send, Upload, Instagram, Coins,
-  Lock
+  Lock, ShoppingBag
 } from 'lucide-react';
 
 // Import Reality Components
