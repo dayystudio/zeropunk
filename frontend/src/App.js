@@ -4542,6 +4542,11 @@ const App = () => {
           <LiveActivitySection />
         </div>
 
+        {/* ZEROMARKET Section */}
+        <div id="zeromarket">
+          <ZeroMarketSection />
+        </div>
+
         {/* Roadmap Section */}
         <div id="roadmap">
           <RoadmapSection />
