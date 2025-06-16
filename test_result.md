@@ -511,9 +511,14 @@ test_plan:
     - "Reality Fractures Implementation"
     - "ZEROMARKET Section Visual Effects"
     - "Support Section Button Functionality"
+    - "Browser Compatibility Testing"
+    - "Mobile Responsiveness Testing"
+    - "Multilingual Functionality Testing"
   backend_verified: true
   frontend_issues:
     - "Minor console warnings related to ZEROMARKET section"
+    - "Donation button in Support section needs href attribute"
+    - "PC Requirements System Analyzer selection functionality needs refinement"
 
 agent_communication:
   - agent: "main"
