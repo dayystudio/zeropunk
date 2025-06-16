@@ -3715,20 +3715,6 @@ section {
   padding-right: 0.5rem;
 }
 
-.customization-options::-webkit-scrollbar {
-  width: 4px;
-}
-
-.customization-options::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 2px;
-}
-
-.customization-options::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.3);
-  border-radius: 2px;
-}
-
 .options-grid {
   display: flex;
   flex-direction: column;
