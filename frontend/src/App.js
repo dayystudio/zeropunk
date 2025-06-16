@@ -4334,8 +4334,8 @@ const App = () => {
                 >
                   <Users className="stat-icon" />
                   <div className="stat-number">{gameStats.players_online?.toLocaleString()}</div>
-                  <div className="stat-label">ACTIVE NEURAL LINKS</div>
-                  <div className="stat-sublabel">Real-time connections</div>
+                  <div className="stat-label">NEURAL LINKS</div>
+                  <div className="stat-sublabel">Active connections</div>
                 </motion.div>
                 
                 <motion.div 
@@ -4345,8 +4345,8 @@ const App = () => {
                 >
                   <Download className="stat-icon" />
                   <div className="stat-number">{gameStats.beta_downloads?.toLocaleString()}</div>
-                  <div className="stat-label">BETA INSTALLATIONS</div>
-                  <div className="stat-sublabel">Package deployments</div>
+                  <div className="stat-label">DOWNLOADS</div>
+                  <div className="stat-sublabel">Beta installs</div>
                 </motion.div>
                 
                 <motion.div 
@@ -4356,8 +4356,8 @@ const App = () => {
                 >
                   <Star className="stat-icon" />
                   <div className="stat-number">{gameStats.wishlist_count?.toLocaleString()}</div>
-                  <div className="stat-label">NEURAL QUEUE</div>
-                  <div className="stat-sublabel">Pending activations</div>
+                  <div className="stat-label">WISHLIST</div>
+                  <div className="stat-sublabel">Queue pending</div>
                 </motion.div>
                 
                 <motion.div 
@@ -4367,8 +4367,8 @@ const App = () => {
                 >
                   <Activity className="stat-icon" />
                   <div className="stat-number">{gameStats.rating}</div>
-                  <div className="stat-label">SYNC RATING</div>
-                  <div className="stat-sublabel">Neural compatibility</div>
+                  <div className="stat-label">RATING</div>
+                  <div className="stat-sublabel">Sync score</div>
                 </motion.div>
               </>
             )}
