@@ -3587,107 +3587,129 @@ const App = () => {
   );
 
   const LiveActivitySection = () => {
-    const [terminalLogs, setTerminalLogs] = useState([]);
-    const [isExpanded, setIsExpanded] = useState(false);
-    const [surveillanceData, setSurveillanceData] = useState({
-      activePlayers: 2847,
-      activitiesBreakdown: {
-        exploring: 52,
-        combat: 27,
-        trading: 11,
-        afk: 10
+    const [liveData, setLiveData] = useState({
+      playerCount: 2847,
+      currentTime: { hour: 14, minute: 23, period: 'Day Cycle' },
+      weather: { condition: 'Neon Rain', intensity: 75, visibility: 85, temperature: 18 },
+      market: { 
+        status: 'VOLATILE', 
+        volume: 2847329, 
+        trend: 'rising',
+        changePercent: 12.7
       },
-      sectors: {
-        downtown: { activity: 89, threat: 3 },
-        coreZone: { activity: 76, threat: 7 },
-        underground: { activity: 68, threat: 8 },
-        skyline: { activity: 45, threat: 2 },
-        slums: { activity: 91, threat: 9 },
-        industrial: { activity: 34, threat: 4 }
-      },
-      factionControl: {
-        redClaw: 46,
-        corporate: 38,
-        resistance: 16
-      },
-      alianoxStats: {
-        queriesAnswered: 187,
-        topQuery: "How do I hack a Nexus Lock?"
-      },
-      globalThreatLevel: 73,
-      systemStatus: "COMPROMISED"
+      zones: [
+        { name: 'Downtown Core', players: 847, activity: 'High', threat: 3, status: 'stable' },
+        { name: 'Underground', players: 634, activity: 'Very High', threat: 8, status: 'caution' },
+        { name: 'Corporate Sector', players: 512, activity: 'Medium', threat: 2, status: 'secure' },
+        { name: 'Neon District', players: 389, activity: 'High', threat: 5, status: 'active' },
+        { name: 'Industrial Zone', players: 287, activity: 'Low', threat: 4, status: 'quiet' },
+        { name: 'Skyline Towers', players: 178, activity: 'Medium', threat: 1, status: 'elite' }
+      ],
+      factions: [
+        { name: 'Neon Syndicate', control: 38, trend: 'rising', color: '#00FFFF' },
+        { name: 'Shadow Corp', control: 32, trend: 'stable', color: '#FF0080' },
+        { name: 'Free Runners', control: 22, trend: 'rising', color: '#80FF00' },
+        { name: 'Neural Collective', control: 8, trend: 'falling', color: '#FFD700' }
+      ],
+      events: [
+        { id: 1, type: 'raid', title: 'Corporate Raid', location: 'Sector 7-Alpha', participants: 89, status: 'active', time: '2m ago' },
+        { id: 2, type: 'market', title: 'Resource Surge', location: 'Underground Market', change: '+24%', status: 'trending', time: '5m ago' },
+        { id: 3, type: 'faction', title: 'Territory Dispute', location: 'Neon District', participants: 67, status: 'escalating', time: '8m ago' },
+        { id: 4, type: 'weather', title: 'Acid Storm Warning', location: 'Industrial Zone', severity: 'moderate', status: 'incoming', time: '12m ago' }
+      ],
+      resources: [
+        { name: 'Neural Chips', price: 2847, change: 18, trend: 'up', volume: '1.2M' },
+        { name: 'Data Cores', price: 1523, change: -7, trend: 'down', volume: '850K' },
+        { name: 'Quantum Bits', price: 3901, change: 31, trend: 'up', volume: '2.1M' },
+        { name: 'Nano-Tech', price: 756, change: 5, trend: 'stable', volume: '500K' }
+      ],
+      networkStatus: {
+        latency: 12,
+        stability: 94,
+        encryption: 'AES-256',
+        threats: 3
+      }
     });
 
-    const [worldEvents, setWorldEvents] = useState([
-      { id: 1, type: "riot", message: "⚠️ Riot in Sector 6 – Police drones deployed", severity: "high", time: "03:42:17" },
-      { id: 2, type: "breach", message: "🔒 Corporate vault breach detected in Skyline HQ", severity: "critical", time: "03:41:55" },
-      { id: 3, type: "weather", message: "🌧️ Acid rain event forecasted in Upper City", severity: "medium", time: "03:41:28" },
-      { id: 4, type: "surveillance", message: "👁️ Mass surveillance protocol activated", severity: "high", time: "03:40:12" }
-    ]);
+    const [activeTab, setActiveTab] = useState('overview');
+    const [timeOfDay, setTimeOfDay] = useState('day');
 
-    // Real-time terminal log generation
+    // Update live data with smooth animations
     useEffect(() => {
-      const logMessages = [
-        () => `[${getCurrentTimestamp()}] Subject_${Math.floor(Math.random() * 99999).toString().padStart(5, '0')} → Logged in — Apartment: District ${Math.floor(Math.random() * 8) + 1}`,
-        () => `[${getCurrentTimestamp()}] Nexus signal breach attempt detected`,
-        () => `[${getCurrentTimestamp()}] Alianox intervention triggered – risk level ${Math.floor(Math.random() * 5) + 1}`,
-        () => `[${getCurrentTimestamp()}] Corporate patrol scan: ${Math.floor(Math.random() * 50) + 10} civilians identified`,
-        () => `[${getCurrentTimestamp()}] Underground movement detected in tunnel ${Math.floor(Math.random() * 12) + 1}`,
-        () => `[${getCurrentTimestamp()}] Black market transaction flagged: ₦${Math.floor(Math.random() * 5000) + 1000}`,
-        () => `[${getCurrentTimestamp()}] Resistance signal intercepted — location: ${['Downtown', 'Core Zone', 'Slums', 'Industrial'][Math.floor(Math.random() * 4)]}`,
-        () => `[${getCurrentTimestamp()}] Neural implant malfunction reported — medical dispatch sent`,
-        () => `[${getCurrentTimestamp()}] Zone lockdown lifted in Sector ${Math.floor(Math.random() * 8) + 1}`,
-        () => `[${getCurrentTimestamp()}] Unauthorized drone activity in restricted airspace`,
-        () => `[${getCurrentTimestamp()}] Citizen behavior anomaly detected — psychological profile updated`,
-        () => `[${getCurrentTimestamp()}] Corporate security breach — Level ${Math.floor(Math.random() * 5) + 1} containment protocols`
-      ];
-
-      const addLog = () => {
-        const randomMessage = logMessages[Math.floor(Math.random() * logMessages.length)];
-        setTerminalLogs(prev => {
-          const newLogs = [randomMessage(), ...prev];
-          return newLogs.slice(0, 50); // Keep only last 50 logs
-        });
-      };
-
-      // Add initial logs
-      for (let i = 0; i < 8; i++) {
-        setTimeout(() => addLog(), i * 300);
-      }
-
-      // Continue adding logs periodically
-      const interval = setInterval(addLog, 3000 + Math.random() * 2000);
-      return () => clearInterval(interval);
-    }, []);
-
-    // Update surveillance data periodically
-    useEffect(() => {
-      const updateData = () => {
-        setSurveillanceData(prev => ({
+      const updateLiveData = () => {
+        setLiveData(prev => ({
           ...prev,
-          activePlayers: prev.activePlayers + Math.floor(Math.random() * 10) - 5,
-          globalThreatLevel: Math.max(0, Math.min(100, prev.globalThreatLevel + Math.floor(Math.random() * 6) - 3)),
-          alianoxStats: {
-            ...prev.alianoxStats,
-            queriesAnswered: prev.alianoxStats.queriesAnswered + Math.floor(Math.random() * 3)
-          }
+          playerCount: Math.max(2000, prev.playerCount + Math.floor(Math.random() * 20) - 10),
+          currentTime: {
+            ...prev.currentTime,
+            minute: (prev.currentTime.minute + 1) % 60,
+            hour: prev.currentTime.minute === 59 ? (prev.currentTime.hour + 1) % 24 : prev.currentTime.hour
+          },
+          weather: {
+            ...prev.weather,
+            intensity: Math.max(20, Math.min(100, prev.weather.intensity + Math.floor(Math.random() * 10) - 5)),
+            visibility: Math.max(30, Math.min(100, prev.weather.visibility + Math.floor(Math.random() * 8) - 4))
+          },
+          market: {
+            ...prev.market,
+            volume: prev.market.volume + Math.floor(Math.random() * 50000) - 25000,
+            changePercent: Math.max(-50, Math.min(50, prev.market.changePercent + (Math.random() * 2 - 1)))
+          },
+          zones: prev.zones.map(zone => ({
+            ...zone,
+            players: Math.max(50, zone.players + Math.floor(Math.random() * 20) - 10),
+            threat: Math.max(1, Math.min(10, zone.threat + Math.floor(Math.random() * 2) - 1))
+          })),
+          resources: prev.resources.map(resource => ({
+            ...resource,
+            change: Math.max(-50, Math.min(50, resource.change + Math.floor(Math.random() * 6) - 3))
+          }))
         }));
       };
 
-      const interval = setInterval(updateData, 5000);
+      const interval = setInterval(updateLiveData, 3000);
       return () => clearInterval(interval);
     }, []);
 
-    const getCurrentTimestamp = () => {
-      const now = new Date();
-      return `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+    // Set time of day based on hour
+    useEffect(() => {
+      const hour = liveData.currentTime.hour;
+      if (hour >= 6 && hour < 18) {
+        setTimeOfDay('day');
+      } else if (hour >= 18 && hour < 22) {
+        setTimeOfDay('evening');
+      } else {
+        setTimeOfDay('night');
+      }
+    }, [liveData.currentTime.hour]);
+
+    const getZoneStatusColor = (status) => {
+      const colors = {
+        stable: '#00FF88',
+        caution: '#FFD700',
+        secure: '#00BFFF',
+        active: '#FF6B35',
+        quiet: '#9B59B6',
+        elite: '#E74C3C'
+      };
+      return colors[status] || '#FFFFFF';
     };
 
-    const getThreatColor = (level) => {
-      if (level >= 80) return '#ff0040';
-      if (level >= 60) return '#ff8800';
-      if (level >= 40) return '#ffdd00';
-      return '#00ff88';
+    const getThreatLevel = (threat) => {
+      if (threat <= 3) return { level: 'LOW', color: '#00FF88' };
+      if (threat <= 6) return { level: 'MEDIUM', color: '#FFD700' };
+      if (threat <= 8) return { level: 'HIGH', color: '#FF8800' };
+      return { level: 'CRITICAL', color: '#FF0040' };
+    };
+
+    const getEventIcon = (type) => {
+      const icons = {
+        raid: '⚔️',
+        market: '📈',
+        faction: '🏴',
+        weather: '⛈️'
+      };
+      return icons[type] || '📡';
     };
 
     return (
