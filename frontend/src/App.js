@@ -63,7 +63,7 @@ const App = () => {
   // Add scroll detection for section highlighting
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'broadcast', 'about', 'beta', 'support', 'visual-archive', 'faq', 'alia', 'character', 'pc_requirements', 'stats', 'live_activity', 'zeromarket', 'roadmap', 'modding', 'contact'];
+      const sections = ['hero', 'broadcast', 'about', 'beta', 'support', 'visual-archive', 'faq', 'alia', 'character', 'pc_requirements', 'stats', 'live_activity', 'zeromarket', 'reality-fractures', 'roadmap', 'modding', 'contact'];
       const scrollPos = window.scrollY + 100; // Offset for header
 
       for (let i = sections.length - 1; i >= 0; i--) {
