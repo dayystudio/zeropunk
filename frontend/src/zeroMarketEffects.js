@@ -135,6 +135,11 @@ export const createHoloDistortion = (element) => {
 
 // Data Stream Effect
 export const createDataStream = (container) => {
+  if (!container) {
+    console.warn('createDataStream: container is null or undefined');
+    return;
+  }
+
   const dataElements = ['0x7F', 'NULL', '404', 'EOF', 'TCP', 'UDP', 'SSL', 'API', 'JSON', 'XML'];
   
   setInterval(() => {
