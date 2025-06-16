@@ -763,6 +763,19 @@
   }
 }
 
+@media (min-width: 1400px) {
+  .zm-main {
+    grid-template-columns: 320px 1fr;
+    gap: 2.5rem;
+    padding: 0 4rem;
+  }
+  
+  .zm-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+}
+
 /* Mobile Specific */
 @media (max-width: 767px) {
   .zm-quick-cart {
