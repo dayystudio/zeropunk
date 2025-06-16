@@ -643,8 +643,13 @@
   display: none;
 }
 
-/* Mobile Adjustments */
+/* Hide fixed elements on mobile */
 @media (max-width: 767px) {
+  .checkout-terminal:not(.mobile-bottom-section .checkout-terminal),
+  .ai-assistant:not(.mobile-bottom-section .ai-assistant) {
+    display: none;
+  }
+  
   .mobile-bottom-section {
     display: block;
     margin-top: 2rem;
@@ -675,18 +680,16 @@
     margin-bottom: 0;
   }
   
-  .checkout-terminal {
+  .mobile-bottom-section .checkout-terminal {
     position: relative;
     width: 100%;
     margin: 1rem 0;
-    order: 3;
   }
   
-  .ai-assistant {
+  .mobile-bottom-section .ai-assistant {
     position: relative;
     width: 100%;
     margin: 1rem 0;
-    order: 4;
   }
 }
 
