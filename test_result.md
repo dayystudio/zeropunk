@@ -386,7 +386,6 @@ test_plan:
     - "Cyberpunk UI Foundation"
     - "Mobile Optimization for One-Page Scroll Layout"
     - "PC Requirements System Analyzer"
-    - "Live Player World Activity Dashboard"
   stuck_tasks:
     - "Cyberpunk UI Foundation"
     - "Mobile Optimization for One-Page Scroll Layout"
@@ -396,7 +395,6 @@ test_plan:
     - "About Section"
     - "Alia Nox Preview Section"
     - "PC Requirements System Analyzer"
-    - "Live Player World Activity Dashboard"
   test_all: false
   test_priority: "high_first"
   completed_tests:
@@ -405,6 +403,7 @@ test_plan:
     - "AI Chat API Integration with Alia Nox"
     - "API Routing and CORS Configuration"
     - "Navigation System"
+    - "Live Player World Activity Dashboard"
   backend_verified: true
   frontend_issues:
     - "Frontend application not loading properly in browser"
