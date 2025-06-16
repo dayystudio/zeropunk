@@ -306,7 +306,19 @@ export const translations = {
     online_players: '在线玩家',
     active_missions: '活跃任务',
     data_processed: '已处理数据',
-    neural_links: '神经连接'
+    neural_links: '神经连接',
+    
+    // YoungShop Page
+    youngshop_title: 'YoungShop x Zeropunk',
+    visit_clothing_website: '访问我的官方服装网站：',
+    connect_style: '将您的现实世界风格连接到ZEROPUNK宇宙。',
+    how_it_works: '使用方法：',
+    step_1: '在 yougnshop.com 购买任何服装商品',
+    step_2: '订单完成后，给我们发送邮件',
+    step_3: '使用与下单相同的邮箱地址',
+    step_4: '我们将发送给您一个独特代码，解锁游戏内的服装',
+    support_email: '邮箱：support@zeropunk-game.com',
+    feature_availability: '此功能将在游戏完整版发布后提供。'
   }
 };
 
