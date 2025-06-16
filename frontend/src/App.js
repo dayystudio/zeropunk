@@ -26,6 +26,9 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const App = () => {
+  // Translation hook
+  const { currentLanguage, changeLanguage, t, languages } = useTranslation();
+  
   // Core app states
   const [gameStats, setGameStats] = useState(null);
   const [aliaChatOpen, setAliaChatOpen] = useState(false);
@@ -35,7 +38,6 @@ const App = () => {
   const [sessionId, setSessionId] = useState(null);
   const [aliaAnimating, setAliaAnimating] = useState(false);
   const [expandedFeature, setExpandedFeature] = useState(null);
-  const [currentLanguage, setCurrentLanguage] = useState('en');
   
   // Navigation state
   const [menuOpen, setMenuOpen] = useState(false);
