@@ -74,6 +74,7 @@ export const translations = {
     join_discord_server: 'Join the Discord Server',
     enter_beta: 'Enter Beta',
     talk_to_alia: 'Talk to ALIA',
+    beta_title: 'Beta coming soon',
     
     // Footer
     copyright: '© 2024 ZEROPUNK. All rights reserved.',
