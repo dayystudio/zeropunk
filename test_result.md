@@ -393,17 +393,8 @@ frontend:
         agent: "testing"
         comment: "Code review of the ZEROMARKET frontend implementation shows proper implementation of the UI with mock data. The ZeroMarketSection component in App.js includes product listings, filtering, cart functionality, and checkout process. The visual effects in zeroMarketEffects.js are properly implemented with null checks to prevent 'Cannot read properties of null' errors. The particle system, digital rain, scanning lines, and circuit patterns are all implemented correctly."
 
-  - task: "Support Section with Donation and Discord Links"
-    implemented: true
-    working: true
-    file: "/app/frontend/src/App.js"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-      - working: true
-        agent: "testing"
-        comment: "Code review confirms that the Support section is properly implemented with two main buttons: 'Make a Donation' button correctly links to https://buymeacoffee.com/zeropunk and 'Join the Discord Server' button correctly links to https://discord.gg/cGWWV2TF2C. The buttons are styled with proper hover effects and animations."
+metadata:
+  created_by: "main_agent"
   version: "1.0"
   test_sequence: 0
   run_ui: false
