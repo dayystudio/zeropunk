@@ -2539,8 +2539,7 @@ const App = () => {
                 <motion.button
                   className="support-btn discord-btn"
                   onClick={() => {
-                    // Placeholder for Discord invite redirect
-                    alert('Discord server invite coming soon! Stay tuned.');
+                    window.open('https://discord.gg/cGWWV2TF2C', '_blank');
                   }}
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
