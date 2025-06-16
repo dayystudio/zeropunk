@@ -1701,6 +1701,7 @@ section {
 .menu-items {
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 0 0.75rem;
   max-height: calc(100vh - 160px);
   scroll-behavior: smooth;
@@ -1710,37 +1711,24 @@ section {
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
-/* Custom Scrollbar for Webkit browsers */
-.menu-items::-webkit-scrollbar {
-  width: 6px;
-}
-
-.menu-items::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 3px;
-}
-
-.menu-items::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 3px;
-  transition: background 0.3s ease;
-}
-
-.menu-items::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-/* Mobile scroll improvements */
+/* Mobile scroll improvements - HORIZONTAL SCROLLING */
 @media (max-width: 768px) {
   .menu-items {
-    max-height: calc(100vh - 120px);
-    padding: 0 0.5rem;
+    max-height: none;
+    height: auto;
+    padding: 0.5rem;
+    /* Enable horizontal scrolling on mobile */
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
     /* Enable momentum scrolling on iOS */
     -webkit-overflow-scrolling: touch;
     /* Improve scroll snap behavior */
-    scroll-snap-type: y proximity;
+    scroll-snap-type: x mandatory;
     /* Enhanced mobile scrolling */
-    overscroll-behavior-y: contain;
+    overscroll-behavior-x: contain;
   }
   
   .menu-item {
@@ -1749,15 +1737,26 @@ section {
     scroll-snap-align: start;
     /* Better mobile touch feedback */
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+    /* Prevent shrinking and ensure visibility */
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-width: 120px;
+    text-align: center;
   }
   
-  /* Enhanced mobile scrollbar */
+  /* Enhanced mobile scrollbar for horizontal */
   .menu-items::-webkit-scrollbar {
-    width: 8px; /* Slightly wider on mobile */
+    height: 8px; /* Height instead of width for horizontal */
+    width: auto;
   }
   
   .menu-items::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3); /* More visible on mobile */
+    border-radius: 4px;
+  }
+  
+  .menu-items::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
   }
 }
