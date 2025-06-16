@@ -308,8 +308,8 @@ export const translations = {
     data_processed: '已处理数据',
     neural_links: '神经连接',
     
-    // YoungShop Page
-    youngshop_title: 'YoungShop x Zeropunk',
+    // YougnShop Page
+    yougnshop_title: 'YougnShop x Zeropunk',
     visit_clothing_website: '访问我的官方服装网站：',
     connect_style: '将您的现实世界风格连接到ZEROPUNK宇宙。',
     how_it_works: '使用方法：',
