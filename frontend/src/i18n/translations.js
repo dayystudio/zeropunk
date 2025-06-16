@@ -1,0 +1,293 @@
+// Complete translations for ZEROPUNK website
+export const translations = {
+  en: {
+    // Navigation
+    home: 'Home',
+    features: 'Features',
+    wishlist_steam: 'Wishlist on Steam',
+    character_customization: 'Character Customization',
+    pc_requirements: 'PC Requirements',
+    roadmap: 'Roadmap',
+    contact: 'Contact',
+    language: 'Language',
+    
+    // Hero Section
+    hero_title: 'ZEROPUNK',
+    hero_subtitle: 'Immersive Cyberpunk Gaming Experience',
+    hero_description: 'Step into a neon-lit dystopian future where technology and humanity collide. Experience the ultimate cyberpunk adventure.',
+    steam_wishlist: 'Wishlist on Steam',
+    join_discord: 'Join Discord',
+    
+    // Features
+    features_title: 'Game Features',
+    immersive_world: 'Immersive World',
+    immersive_world_desc: 'Explore a vast cyberpunk metropolis with countless stories to discover.',
+    advanced_ai: 'Advanced AI',
+    advanced_ai_desc: 'Interact with sophisticated AI characters that respond to your choices.',
+    neural_interface: 'Neural Interface',
+    neural_interface_desc: 'Experience direct neural connection with the game world.',
+    
+    // Character Customization
+    character_title: 'Character Customization',
+    appearance: 'Appearance',
+    augmentations: 'Augmentations',
+    neural_mods: 'Neural Modifications',
+    cybernetics: 'Cybernetics',
+    
+    // PC Requirements
+    system_analyzer: 'SYSTEM ANALYZER',
+    select_hardware: 'Select Your Hardware Configuration',
+    graphics_card: 'Graphics Card',
+    processor: 'Processor',
+    memory: 'Memory (RAM)',
+    resolution: 'Target Resolution',
+    operating_system: 'Operating System',
+    analyze_system: 'ANALYZE SYSTEM',
+    
+    // ALIA Chat
+    alia_title: 'ALIA NOX - AI Assistant',
+    chat_with_alia: 'Chat with ALIA',
+    type_message: 'Type your message...',
+    send: 'Send',
+    
+    // Reality Fractures
+    reality_fractures_title: 'REALITY FRACTURES',
+    reality_warning: '⚠️ WARNING: Reality modifications may cause permanent changes to your perception. Neural imprints from alternate realities cannot be undone.',
+    forbidden_sight: 'Forbidden Sight',
+    possibility_thread: 'Possibility Thread #4-21',
+    delta_access: 'Delta Access Confirmed',
+    
+    // Contact
+    contact_title: 'Contact Us',
+    name: 'Name',
+    email: 'Email',
+    subject: 'Subject',
+    message: 'Message',
+    send_message: 'Send Message',
+    
+    // Buttons
+    learn_more: 'Learn More',
+    get_started: 'Get Started',
+    download: 'Download',
+    play_now: 'Play Now',
+    make_donation: 'Make a Donation',
+    join_discord_server: 'Join the Discord Server',
+    
+    // Footer
+    copyright: '© 2024 ZEROPUNK. All rights reserved.',
+    privacy_policy: 'Privacy Policy',
+    terms_of_service: 'Terms of Service',
+    
+    // Alternate Realities
+    specter_mode: 'SPECTER MODE',
+    echoes_future: 'ECHOES OF TOMORROW',
+    zone_delta: 'ZONE Δ - RESTRICTED ACCESS',
+    return_primary: 'RETURN TO PRIMARY REALITY',
+    escape_specter: 'ESCAPE SPECTER MODE',
+    return_present: 'RETURN TO PRESENT TIMELINE',
+    
+    // Game Stats
+    online_players: 'Online Players',
+    active_missions: 'Active Missions',
+    data_processed: 'Data Processed',
+    neural_links: 'Neural Links'
+  },
+  
+  fr: {
+    // Navigation
+    home: 'Accueil',
+    features: 'Fonctionnalités',
+    wishlist_steam: 'Liste de souhaits Steam',
+    character_customization: 'Personnalisation du Personnage',
+    pc_requirements: 'Configuration PC',
+    roadmap: 'Feuille de Route',
+    contact: 'Contact',
+    language: 'Langue',
+    
+    // Hero Section
+    hero_title: 'ZEROPUNK',
+    hero_subtitle: 'Expérience de Jeu Cyberpunk Immersive',
+    hero_description: 'Plongez dans un futur dystopique éclairé au néon où la technologie et l\'humanité s\'affrontent. Vivez l\'aventure cyberpunk ultime.',
+    steam_wishlist: 'Liste de souhaits Steam',
+    join_discord: 'Rejoindre Discord',
+    
+    // Features
+    features_title: 'Fonctionnalités du Jeu',
+    immersive_world: 'Monde Immersif',
+    immersive_world_desc: 'Explorez une vaste métropole cyberpunk avec d\'innombrables histoires à découvrir.',
+    advanced_ai: 'IA Avancée',
+    advanced_ai_desc: 'Interagissez avec des personnages IA sophistiqués qui répondent à vos choix.',
+    neural_interface: 'Interface Neuronale',
+    neural_interface_desc: 'Expérimentez une connexion neuronale directe avec le monde du jeu.',
+    
+    // Character Customization
+    character_title: 'Personnalisation du Personnage',
+    appearance: 'Apparence',
+    augmentations: 'Augmentations',
+    neural_mods: 'Modifications Neuronales',
+    cybernetics: 'Cybernétique',
+    
+    // PC Requirements
+    system_analyzer: 'ANALYSEUR SYSTÈME',
+    select_hardware: 'Sélectionnez Votre Configuration Matérielle',
+    graphics_card: 'Carte Graphique',
+    processor: 'Processeur',
+    memory: 'Mémoire (RAM)',
+    resolution: 'Résolution Cible',
+    operating_system: 'Système d\'Exploitation',
+    analyze_system: 'ANALYSER SYSTÈME',
+    
+    // ALIA Chat
+    alia_title: 'ALIA NOX - Assistante IA',
+    chat_with_alia: 'Discuter avec ALIA',
+    type_message: 'Tapez votre message...',
+    send: 'Envoyer',
+    
+    // Reality Fractures
+    reality_fractures_title: 'FRACTURES DE RÉALITÉ',
+    reality_warning: '⚠️ AVERTISSEMENT : Les modifications de réalité peuvent causer des changements permanents à votre perception. Les empreintes neuronales des réalités alternatives ne peuvent pas être annulées.',
+    forbidden_sight: 'Vue Interdite',
+    possibility_thread: 'Fil de Possibilité #4-21',
+    delta_access: 'Accès Delta Confirmé',
+    
+    // Contact
+    contact_title: 'Nous Contacter',
+    name: 'Nom',
+    email: 'Email',
+    subject: 'Sujet',
+    message: 'Message',
+    send_message: 'Envoyer le Message',
+    
+    // Buttons
+    learn_more: 'En Savoir Plus',
+    get_started: 'Commencer',
+    download: 'Télécharger',
+    play_now: 'Jouer Maintenant',
+    make_donation: 'Faire un Don',
+    join_discord_server: 'Rejoindre le Serveur Discord',
+    
+    // Footer
+    copyright: '© 2024 ZEROPUNK. Tous droits réservés.',
+    privacy_policy: 'Politique de Confidentialité',
+    terms_of_service: 'Conditions d\'Utilisation',
+    
+    // Alternate Realities
+    specter_mode: 'MODE SPECTRE',
+    echoes_future: 'ÉCHOS DE DEMAIN',
+    zone_delta: 'ZONE Δ - ACCÈS RESTREINT',
+    return_primary: 'RETOUR À LA RÉALITÉ PRINCIPALE',
+    escape_specter: 'ÉCHAPPER AU MODE SPECTRE',
+    return_present: 'RETOUR À LA CHRONOLOGIE PRÉSENTE',
+    
+    // Game Stats
+    online_players: 'Joueurs en Ligne',
+    active_missions: 'Missions Actives',
+    data_processed: 'Données Traitées',
+    neural_links: 'Liens Neuronaux'
+  },
+  
+  zh: {
+    // Navigation
+    home: '首页',
+    features: '功能',
+    wishlist_steam: 'Steam愿望单',
+    character_customization: '角色定制',
+    pc_requirements: 'PC配置要求',
+    roadmap: '路线图',
+    contact: '联系我们',
+    language: '语言',
+    
+    // Hero Section
+    hero_title: 'ZEROPUNK',
+    hero_subtitle: '沉浸式赛博朋克游戏体验',
+    hero_description: '步入霓虹照亮的反乌托邦未来，在这里科技与人性相互碰撞。体验终极赛博朋克冒险。',
+    steam_wishlist: 'Steam愿望单',
+    join_discord: '加入Discord',
+    
+    // Features
+    features_title: '游戏特色',
+    immersive_world: '沉浸式世界',
+    immersive_world_desc: '探索广阔的赛博朋克大都市，发现无数故事。',
+    advanced_ai: '先进AI',
+    advanced_ai_desc: '与响应您选择的复杂AI角色互动。',
+    neural_interface: '神经接口',
+    neural_interface_desc: '体验与游戏世界的直接神经连接。',
+    
+    // Character Customization
+    character_title: '角色定制',
+    appearance: '外观',
+    augmentations: '增强',
+    neural_mods: '神经改造',
+    cybernetics: '赛博技术',
+    
+    // PC Requirements
+    system_analyzer: '系统分析器',
+    select_hardware: '选择您的硬件配置',
+    graphics_card: '显卡',
+    processor: '处理器',
+    memory: '内存 (RAM)',
+    resolution: '目标分辨率',
+    operating_system: '操作系统',
+    analyze_system: '分析系统',
+    
+    // ALIA Chat
+    alia_title: 'ALIA NOX - AI助手',
+    chat_with_alia: '与ALIA对话',
+    type_message: '输入您的消息...',
+    send: '发送',
+    
+    // Reality Fractures
+    reality_fractures_title: '现实裂隙',
+    reality_warning: '⚠️ 警告：现实修改可能对您的感知造成永久性改变。来自替代现实的神经印记无法撤销。',
+    forbidden_sight: '禁忌视野',
+    possibility_thread: '可能性线程 #4-21',
+    delta_access: 'Delta访问已确认',
+    
+    // Contact
+    contact_title: '联系我们',
+    name: '姓名',
+    email: '邮箱',
+    subject: '主题',
+    message: '消息',
+    send_message: '发送消息',
+    
+    // Buttons
+    learn_more: '了解更多',
+    get_started: '开始',
+    download: '下载',
+    play_now: '立即游戏',
+    make_donation: '捐赠',
+    join_discord_server: '加入Discord服务器',
+    
+    // Footer
+    copyright: '© 2024 ZEROPUNK. 版权所有。',
+    privacy_policy: '隐私政策',
+    terms_of_service: '服务条款',
+    
+    // Alternate Realities
+    specter_mode: '幽灵模式',
+    echoes_future: '明日回响',
+    zone_delta: '区域Δ - 受限访问',
+    return_primary: '返回主要现实',
+    escape_specter: '逃离幽灵模式',
+    return_present: '返回当前时间线',
+    
+    // Game Stats
+    online_players: '在线玩家',
+    active_missions: '活跃任务',
+    data_processed: '已处理数据',
+    neural_links: '神经连接'
+  }
+};
+
+// Language configuration
+export const languages = [
+  { code: 'en', name: 'English', flag: '🇺🇸' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: 'zh', name: '简体中文', flag: '🇨🇳' }
+];
+
+// Get translation function
+export const getTranslation = (currentLanguage, key) => {
+  return translations[currentLanguage]?.[key] || translations.en[key] || key;
+};
