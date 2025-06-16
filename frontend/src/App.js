@@ -956,7 +956,7 @@ const App = () => {
       open_world_details: '城市跨越12个不同的区域，每个区域都有独特的AI治理系统。从霓虹灯浸润的企业塔楼到数据挖掘地下，每个地点都具有由所有玩家的集体行动驱动的程序生成事件。',
 
       // Beta Section
-      beta_title: 'STEAM 愿望清单',
+      beta_title: '测试版即将推出',
       beta_warning: '发布中：Steam 愿望清单现已开放',
       beta_description: '将 ZEROPUNK 添加到您的 Steam 愿望清单，成为首批体验 AI 驱动游戏未来的玩家。',
       system_requirements: '系统要求',
