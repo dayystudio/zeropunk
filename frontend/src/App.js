@@ -21,15 +21,23 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const App = () => {
-  const [gameStats, setGameStats] = useState(null);
-  const [aliaChatOpen, setAliaChatOpen] = useState(false);
-  const [chatMessages, setChatMessages] = useState([]);
-  const [currentMessage, setCurrentMessage] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
-  const [sessionId, setSessionId] = useState(null);
-  const [aliaAnimating, setAliaAnimating] = useState(false);
-  const [expandedFeature, setExpandedFeature] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
+  const [showChat, setShowChat] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState('en');
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+
+  // Reality Management States
+  const [currentReality, setCurrentReality] = useState(
+    localStorage.getItem('zeropunk_reality') || 'primary'
+  );
+
+  // Other existing states...
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authMode, setAuthMode] = useState('login'); // 'login' or 'signup'
+  const [user, setUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   
   // Navigation state
   const [menuOpen, setMenuOpen] = useState(false);
