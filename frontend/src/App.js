@@ -3849,11 +3849,76 @@ const App = () => {
       </div>
     );
   };
-    <div className="section-container live-activity-section">
-      <div className="section-content">
-        <h2 className="section-title">{t('live_world_title')}</h2>
-        
-        <div className="live-dashboard">
+
+  const LiveActivitySection = () => {
+    const [liveData, setLiveData] = useState({
+      playerCount: 2847,
+      gameTime: { hour: 14, minute: 23, period: 'Day Cycle' },
+      weather: { condition: 'Neon Rain', intensity: 75, visibility: 85 },
+      market: { 
+        status: 'VOLATILE', 
+        volume: 2847329, 
+        trend: 'rising',
+        changePercent: 12.7
+      },
+      factions: [
+        { name: 'Neon Syndicate', control: 38, trend: 'rising' },
+        { name: 'Shadow Corp', control: 32, trend: 'stable' },
+        { name: 'Free Runners', control: 22, trend: 'rising' },
+        { name: 'Neural Collective', control: 8, trend: 'falling' }
+      ],
+      events: [
+        { type: 'raid', location: 'Sector 7-Alpha', participants: 89 },
+        { type: 'market_surge', item: 'Neural Chips', change: '+24%' },
+        { type: 'faction', location: 'Neon District', participants: 67 },
+        { type: 'weather', location: 'Industrial Zone', severity: 'moderate' }
+      ],
+      resources: [
+        { name: 'Neural Chips', price: 2847, change: 18 },
+        { name: 'Data Cores', price: 1523, change: -7 },
+        { name: 'Quantum Bits', price: 3901, change: 31 },
+        { name: 'Nano-Tech', price: 756, change: 5 }
+      ]
+    });
+
+    // Update live data periodically
+    useEffect(() => {
+      const updateLiveData = () => {
+        setLiveData(prev => ({
+          ...prev,
+          playerCount: Math.max(2000, prev.playerCount + Math.floor(Math.random() * 20) - 10),
+          gameTime: {
+            ...prev.gameTime,
+            minute: (prev.gameTime.minute + 1) % 60,
+            hour: prev.gameTime.minute === 59 ? (prev.gameTime.hour + 1) % 24 : prev.gameTime.hour
+          },
+          weather: {
+            ...prev.weather,
+            intensity: Math.max(20, Math.min(100, prev.weather.intensity + Math.floor(Math.random() * 10) - 5)),
+            visibility: Math.max(30, Math.min(100, prev.weather.visibility + Math.floor(Math.random() * 8) - 4))
+          },
+          market: {
+            ...prev.market,
+            volume: prev.market.volume + Math.floor(Math.random() * 50000) - 25000,
+            changePercent: Math.max(-50, Math.min(50, prev.market.changePercent + (Math.random() * 2 - 1)))
+          },
+          resources: prev.resources.map(resource => ({
+            ...resource,
+            change: Math.max(-50, Math.min(50, resource.change + Math.floor(Math.random() * 6) - 3))
+          }))
+        }));
+      };
+
+      const interval = setInterval(updateLiveData, 3000);
+      return () => clearInterval(interval);
+    }, []);
+
+    return (
+      <div className="section-container live-activity-section">
+        <div className="section-content">
+          <h2 className="section-title">{t('live_world_title')}</h2>
+          
+          <div className="live-dashboard">
           {/* Player Count & Game Time */}
           <div className="dashboard-row">
             <motion.div 
