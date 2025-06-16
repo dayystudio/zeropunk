@@ -4611,12 +4611,18 @@ const App = () => {
 
   return (
     <div className="app">
-      {/* Background Effects */}
-      <div className="cyberpunk-bg">
-        <div className="rain-effect"></div>
-        <div className="grid-overlay"></div>
-        <div className="particles"></div>
-      </div>
+      {/* Render alternate reality if not primary */}
+      {currentReality !== 'primary' && renderCurrentReality()}
+      
+      {/* Only render main app content if in primary reality */}
+      {currentReality === 'primary' && (
+        <>
+          {/* Background Effects */}
+          <div className="cyberpunk-bg">
+            <div className="rain-effect"></div>
+            <div className="grid-overlay"></div>
+            <div className="particles"></div>
+          </div>
 
       {/* Header with Hamburger Menu */}
       <header className="main-header">
