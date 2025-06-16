@@ -290,6 +290,7 @@ export const translations = {
     join_discord_server: '加入Discord服务器',
     enter_beta: '进入测试版',
     talk_to_alia: '与ALIA对话',
+    beta_title: '测试版即将推出',
     
     // Footer
     copyright: '© 2024 ZEROPUNK. 版权所有。',
