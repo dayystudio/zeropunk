@@ -3713,136 +3713,193 @@ const App = () => {
     };
 
     return (
-      <div className="section-container surveillance-section">
+      <div className="section-container live-activity-section">
         <div className="section-content">
-          {/* Background Effects */}
-          <div className="surveillance-bg-effects">
-            <div className="surveillance-grid"></div>
-            <div className="surveillance-scanlines"></div>
-            <div className="surveillance-static"></div>
-            <div className="data-streams"></div>
-          </div>
-
-          {/* Header */}
-          <motion.div
-            className="surveillance-header"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="surveillance-title">
-              <span className="surveillance-icon">🔴</span>
-              Z-NET ACTIVITY SCAN
-              <span className="access-level">ACCESS LEVEL 5</span>
-            </h2>
-            <p className="surveillance-subtitle">
-              <span className="status-indicator compromised"></span>
-              NEXUS SURVEILLANCE GRID — SYSTEM STATUS: {surveillanceData.systemStatus}
-            </p>
-          </motion.div>
-
-          {/* Main Dashboard */}
-          <div className="surveillance-dashboard">
-            {/* Top Stats Row */}
-            <div className="stats-row">
-              <motion.div className="stat-panel players-panel"
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
+          <h2 className="section-title">{t('live_world_title')}</h2>
+          
+          <div className="live-dashboard">
+            {/* Player Count & Game Time */}
+            <div className="dashboard-row">
+              <motion.div 
+                className="live-card player-count-card"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 300 }}
               >
-                <div className="panel-header">
-                  <Activity className="panel-icon" size={20} />
-                  <span>ACTIVE CITIZENS</span>
+                <div className="card-header">
+                  <Users className="card-icon pulse-blue" />
+                  <span className="card-label">{t('players_online')}</span>
                 </div>
-                <div className="panel-value">
-                  <span className="main-number">{surveillanceData.activePlayers.toLocaleString()}</span>
-                  <span className="sub-text">neural links active</span>
-                </div>
-                <div className="activity-breakdown">
-                  <div className="activity-item">
-                    <span className="activity-percent">{surveillanceData.activitiesBreakdown.exploring}%</span>
-                    <span className="activity-label">Exploring</span>
-                  </div>
-                  <div className="activity-item">
-                    <span className="activity-percent">{surveillanceData.activitiesBreakdown.combat}%</span>
-                    <span className="activity-label">Combat Zones</span>
-                  </div>
-                  <div className="activity-item">
-                    <span className="activity-percent">{surveillanceData.activitiesBreakdown.trading}%</span>
-                    <span className="activity-label">Black Market</span>
-                  </div>
-                  <div className="activity-item">
-                    <span className="activity-percent">{surveillanceData.activitiesBreakdown.afk}%</span>
-                    <span className="activity-label">AFK/Apartments</span>
-                  </div>
+                <div className="card-value">
+                  <span className="live-number">{liveData.playerCount.toLocaleString()}</span>
+                  <div className="pulse-indicator active"></div>
                 </div>
               </motion.div>
 
-              <motion.div className="stat-panel threat-panel"
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
+              <motion.div 
+                className="live-card game-time-card"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 300 }}
               >
-                <div className="panel-header">
-                  <AlertTriangle className="panel-icon" size={20} />
-                  <span>GLOBAL THREAT LEVEL</span>
+                <div className="card-header">
+                  <Clock className="card-icon pulse-cyan" />
+                  <span className="card-label">{t('game_time')}</span>
                 </div>
-                <div className="threat-display">
-                  <div className="threat-meter">
-                    <div 
-                      className="threat-fill"
-                      style={{ 
-                        width: `${surveillanceData.globalThreatLevel}%`,
-                        backgroundColor: getThreatColor(surveillanceData.globalThreatLevel)
-                      }}
-                    ></div>
-                  </div>
-                  <span className="threat-value" style={{ color: getThreatColor(surveillanceData.globalThreatLevel) }}>
-                    {surveillanceData.globalThreatLevel}/100
+                <div className="card-value">
+                  <span className="live-time">
+                    {String(liveData.currentTime.hour).padStart(2, '0')}:
+                    {String(liveData.currentTime.minute).padStart(2, '0')}
                   </span>
-                </div>
-                <div className="threat-status">
-                  {surveillanceData.globalThreatLevel >= 80 && <span className="status-critical">CRITICAL - MARTIAL LAW</span>}
-                  {surveillanceData.globalThreatLevel >= 60 && surveillanceData.globalThreatLevel < 80 && <span className="status-high">HIGH - INCREASED PATROLS</span>}
-                  {surveillanceData.globalThreatLevel >= 40 && surveillanceData.globalThreatLevel < 60 && <span className="status-elevated">ELEVATED - ENHANCED MONITORING</span>}
-                  {surveillanceData.globalThreatLevel < 40 && <span className="status-normal">NORMAL - ROUTINE SURVEILLANCE</span>}
+                  <span className="time-period">{liveData.currentTime.period}</span>
                 </div>
               </motion.div>
             </div>
 
-            {/* Terminal Log Panel */}
-            <motion.div className="terminal-panel"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-            >
-              <div className="terminal-header">
-                <Terminal className="panel-icon" size={20} />
-                <span>LIVE SURVEILLANCE FEED</span>
-                <button 
-                  className="expand-btn"
-                  onClick={() => setIsExpanded(!isExpanded)}
-                >
-                  {isExpanded ? 'MINIMIZE' : 'EXPAND'}
-                </button>
-              </div>
-              <div className={`terminal-content ${isExpanded ? 'expanded' : ''}`}>
-                <div className="terminal-logs">
-                  {terminalLogs.map((log, index) => (
-                    <motion.div 
-                      key={index} 
-                      className="terminal-line"
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {log}
-                    </motion.div>
-                  ))}
+            {/* Weather & Market */}
+            <div className="dashboard-row">
+              <motion.div 
+                className="live-card weather-card"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <div className="card-header">
+                  <CloudRain className="card-icon pulse-purple" />
+                  <span className="card-label">{t('current_weather')}</span>
                 </div>
-                <div className="terminal-cursor">█</div>
+                <div className="weather-display">
+                  <div className="weather-condition">{liveData.weather.condition}</div>
+                  <div className="weather-stats">
+                    <div className="weather-stat">
+                      <span className="stat-label">{t('weather_intensity')}</span>
+                      <div className="stat-bar">
+                        <div 
+                          className="stat-fill weather-intensity"
+                          style={{ width: `${liveData.weather.intensity}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                    <div className="weather-stat">
+                      <span className="stat-label">{t('weather_visibility')}</span>
+                      <div className="stat-bar">
+                        <div 
+                          className="stat-fill weather-visibility"
+                          style={{ width: `${liveData.weather.visibility}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="live-card market-card"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <div className="card-header">
+                  <TrendingUp className="card-icon pulse-green" />
+                  <span className="card-label">{t('market_status')}</span>
+                </div>
+                <div className="market-display">
+                  <div className={`market-status ${liveData.market.status.toLowerCase()}`}>
+                    {t(`market_${liveData.market.status.toLowerCase()}`)}
+                  </div>
+                  <div className="market-volume">
+                    <span className="volume-label">{t('trading_volume')}</span>
+                    <span className="volume-value">₦{liveData.market.volume.toLocaleString()}</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Faction Control */}
+            <motion.div 
+              className="live-card faction-card full-width"
+              whileHover={{ scale: 1.01 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <div className="card-header">
+                <Shield className="card-icon pulse-orange" />
+                <span className="card-label">{t('faction_control')}</span>
+              </div>
+              <div className="faction-display">
+                {liveData.factions.map((faction, index) => (
+                  <div key={index} className="faction-item">
+                    <div className="faction-info">
+                      <span className="faction-name">{faction.name}</span>
+                      <span className={`faction-trend ${faction.trend}`}>
+                        {t(`trend_${faction.trend}`)} {faction.control}%
+                      </span>
+                    </div>
+                    <div className="faction-bar">
+                      <div 
+                        className={`faction-fill faction-${index + 1}`}
+                        style={{ width: `${faction.control}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </motion.div>
+
+            {/* Resource Prices & Events */}
+            <div className="dashboard-row">
+              <motion.div 
+                className="live-card resources-card"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <div className="card-header">
+                  <Coins className="card-icon pulse-yellow" />
+                  <span className="card-label">{t('resource_prices')}</span>
+                </div>
+                <div className="resources-display">
+                  {liveData.resources.map((resource, index) => (
+                    <div key={index} className="resource-item">
+                      <span className="resource-name">{resource.name}</span>
+                      <div className="resource-price">
+                        <span className="price-value">₦{resource.price}</span>
+                        <span className={`price-change ${resource.change >= 0 ? 'positive' : 'negative'}`}>
+                          {resource.change >= 0 ? '+' : ''}{resource.change}%
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="live-card events-card"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <div className="card-header">
+                  <Activity className="card-icon pulse-red" />
+                  <span className="card-label">{t('ongoing_events')}</span>
+                </div>
+                <div className="events-display">
+                  {liveData.events.map((event, index) => (
+                    <div key={index} className="event-item">
+                      <div className="event-type">
+                        {t(`event_${event.type}`)}
+                      </div>
+                      <div className="event-details">
+                        {event.location && <span className="event-location">{event.location}</span>}
+                        {event.participants && (
+                          <span className="event-participants">
+                            {event.participants} {t('participants')}
+                          </span>
+                        )}
+                        {event.change && (
+                          <span className="event-change positive">
+                            {event.item}: {event.change}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
