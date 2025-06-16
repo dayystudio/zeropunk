@@ -4482,7 +4482,7 @@ const App = () => {
 
         {/* Live Activity Section */}
         <div id="live_activity">
-          <SurveillanceSection />
+          <LiveActivitySection />
         </div>
 
         {/* Roadmap Section */}
