@@ -262,6 +262,8 @@ export const translations = {
     play_now: '立即游戏',
     make_donation: '捐赠',
     join_discord_server: '加入Discord服务器',
+    enter_beta: '进入测试版',
+    talk_to_alia: '与ALIA对话',
     
     // Footer
     copyright: '© 2024 ZEROPUNK. 版权所有。',
