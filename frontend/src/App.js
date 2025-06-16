@@ -744,7 +744,7 @@ const App = () => {
       open_world_details: 'The city spans 12 distinct districts, each with unique AI governance systems. From the neon-soaked corporate towers to the data-mining underground, every location features procedurally generated events driven by the collective actions of all players.',
 
       // Beta Section
-      beta_title: 'WISHLIST ON STEAM',
+      beta_title: 'Beta coming soon',
       beta_warning: 'LAUNCHING: Steam Wishlist Now Available',
       beta_description: 'Add ZEROPUNK to your Steam wishlist and be among the first to experience the future of AI-powered gaming when we launch.',
       system_requirements: 'System Requirements',
