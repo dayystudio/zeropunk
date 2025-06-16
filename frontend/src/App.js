@@ -3683,35 +3683,6 @@ const App = () => {
       }
     }, [liveData.currentTime.hour]);
 
-    const getZoneStatusColor = (status) => {
-      const colors = {
-        stable: '#00FF88',
-        caution: '#FFD700',
-        secure: '#00BFFF',
-        active: '#FF6B35',
-        quiet: '#9B59B6',
-        elite: '#E74C3C'
-      };
-      return colors[status] || '#FFFFFF';
-    };
-
-    const getThreatLevel = (threat) => {
-      if (threat <= 3) return { level: 'LOW', color: '#00FF88' };
-      if (threat <= 6) return { level: 'MEDIUM', color: '#FFD700' };
-      if (threat <= 8) return { level: 'HIGH', color: '#FF8800' };
-      return { level: 'CRITICAL', color: '#FF0040' };
-    };
-
-    const getEventIcon = (type) => {
-      const icons = {
-        raid: '⚔️',
-        market: '📈',
-        faction: '🏴',
-        weather: '⛈️'
-      };
-      return icons[type] || '📡';
-    };
-
     return (
       <div className="section-container live-activity-section">
         <div className="section-content">
