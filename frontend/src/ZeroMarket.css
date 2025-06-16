@@ -638,8 +638,18 @@
   }
 }
 
+/* Mobile Bottom Section */
+.mobile-bottom-section {
+  display: none;
+}
+
 /* Mobile Adjustments */
 @media (max-width: 767px) {
+  .mobile-bottom-section {
+    display: block;
+    margin-top: 2rem;
+  }
+  
   .zeromarket-section {
     padding: 1rem 0;
   }
@@ -668,7 +678,7 @@
   .checkout-terminal {
     position: relative;
     width: 100%;
-    margin: 2rem 0 1rem 0;
+    margin: 1rem 0;
     order: 3;
   }
   
