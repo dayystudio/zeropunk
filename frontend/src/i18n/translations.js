@@ -92,7 +92,19 @@ export const translations = {
     online_players: 'Online Players',
     active_missions: 'Active Missions',
     data_processed: 'Data Processed',
-    neural_links: 'Neural Links'
+    neural_links: 'Neural Links',
+    
+    // YoungShop Page
+    youngshop_title: 'YoungShop x Zeropunk',
+    visit_clothing_website: 'Visit my official clothing website:',
+    connect_style: 'Connect your real-world style to the ZEROPUNK universe.',
+    how_it_works: 'How it works:',
+    step_1: 'Purchase any clothing item from yougnshop.com',
+    step_2: 'After your order is complete, send us an email',
+    step_3: 'Use the same email you used to place the order',
+    step_4: 'We\'ll send you a unique code to unlock your clothing inside the game',
+    support_email: 'Email: support@zeropunk-game.com',
+    feature_availability: 'This feature will be available once the full version of the game is released.'
   },
   
   fr: {
