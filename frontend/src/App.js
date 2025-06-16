@@ -4053,14 +4053,6 @@ const App = () => {
       setCart(prev => [...prev, product]);
     };
 
-    const startBiometricScan = () => {
-      setIsScanning(true);
-      setTimeout(() => {
-        setIsScanning(false);
-        // Handle purchase logic here
-      }, 3000);
-    };
-
     return (
       <div className="zeromarket-section" ref={sectionRef}>
         <div className="zeromarket-content">
