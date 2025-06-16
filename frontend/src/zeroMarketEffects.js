@@ -2,6 +2,11 @@
 
 // Particle System for Background
 export const createParticleSystem = (container) => {
+  if (!container) {
+    console.warn('createParticleSystem: container is null or undefined');
+    return [];
+  }
+
   const particles = [];
   const particleCount = 50;
 
