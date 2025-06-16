@@ -233,6 +233,16 @@ const addAnimations = () => {
 
 // Initialize all effects
 export const initZeroMarketEffects = (container) => {
+  if (!container) {
+    console.warn('initZeroMarketEffects: container is null or undefined');
+    return {
+      particles: [],
+      digitalRain: [],
+      scanLine: null,
+      circuit: null
+    };
+  }
+
   addAnimations();
   
   const particles = createParticleSystem(container);
