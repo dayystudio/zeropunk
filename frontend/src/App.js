@@ -583,7 +583,7 @@ const App = () => {
   };
 
   const selectLanguage = (langCode) => {
-    setCurrentLanguage(langCode);
+    changeLanguage(langCode);
     setLanguageMenuOpen(false);
   };
 
