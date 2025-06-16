@@ -220,7 +220,7 @@ const RealityFractures = ({ onResetToMain }) => {
                   <div className="hollow-center" />
                   <div className="hollow-ripple" />
                 </div>
-                <div className="glyph-tooltip delta-tooltip">Delta Access Confirmed</div>
+                <div className="glyph-tooltip delta-tooltip">{t('delta_access')}</div>
                 <div className="glyph-aura dark-aura" />
               </motion.div>
             )}
