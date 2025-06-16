@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from './i18n/useTranslation';
 import './RealityFractures.css';
 
 // Reality state management
