@@ -3945,13 +3945,12 @@ const App = () => {
           }).catch(error => {
             console.error('Failed to load zeroMarketEffects:', error);
           });
-        } else {
-          console.warn('ZEROMARKET section ref not available for effects initialization');
         }
-      }, 100);
+        // Removed console warning as it's expected behavior on first render
+      }, 150); // Slightly increased delay for better reliability
 
       return () => clearTimeout(timer);
-    }, []);
+    }, []); // Dependency array to prevent re-running
 
     // Enhanced product data with better structure
     const products = [
