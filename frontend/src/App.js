@@ -1141,11 +1141,6 @@ const App = () => {
   };
 
 
-  const languages = [
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'zh', name: '中文 (简体)', flag: '🇨🇳' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' }
-  ];
 
   const menuItems = [
     { id: 'hero', label: t('home'), icon: <Home size={16} /> },
