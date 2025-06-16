@@ -503,6 +503,8 @@ test_plan:
     - "Mobile Optimization for One-Page Scroll Layout"
     - "PC Requirements System Analyzer"
     - "Reality Fractures Implementation"
+    - "ZEROMARKET Section Visual Effects"
+    - "Support Section Button Functionality"
   backend_verified: true
   frontend_issues:
     - "Minor console warnings related to ZEROMARKET section"
