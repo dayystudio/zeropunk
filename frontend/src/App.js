@@ -4841,9 +4841,11 @@ const App = () => {
         </div>
 
         {/* Reality Fractures Section */}
+        {/* Temporarily commented out for debugging
         <div id="reality-fractures">
           <RealityFractures onResetToMain={handleRealityChange} />
         </div>
+        */}
 
         {/* Roadmap Section */}
         <div id="roadmap">
