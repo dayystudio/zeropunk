@@ -4278,22 +4278,61 @@ const App = () => {
   };
 
   const StatsSection = () => {
+    const [systemStats, setSystemStats] = useState({
+      networkLoad: 73.2,
+      securityLevel: 94.8,
+      dataFlow: 847320,
+      activeSessions: 2847,
+      threatLevel: 23.1
+    });
+
+    // Live system stats updates
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setSystemStats(prev => ({
+          networkLoad: Math.max(60, Math.min(95, prev.networkLoad + (Math.random() * 4 - 2))),
+          securityLevel: Math.max(85, Math.min(99, prev.securityLevel + (Math.random() * 2 - 1))),
+          dataFlow: prev.dataFlow + Math.floor(Math.random() * 10000) - 5000,
+          activeSessions: Math.max(2000, prev.activeSessions + Math.floor(Math.random() * 40) - 20),
+          threatLevel: Math.max(0, Math.min(100, prev.threatLevel + (Math.random() * 6 - 3)))
+        }));
+      }, 2000);
+      
+      return () => clearInterval(interval);
+    }, []);
+
+    const getStatusColor = (value, type) => {
+      if (type === 'threat') {
+        if (value < 25) return '#00ff88';
+        if (value < 50) return '#ffff00';
+        if (value < 75) return '#ff8800';
+        return '#ff0040';
+      } else {
+        if (value > 90) return '#00ff88';
+        if (value > 70) return '#00ffff';
+        if (value > 50) return '#ffff00';
+        return '#ff8800';
+      }
+    };
+
     return (
       <div className="section-container stats-section">
         <div className="section-content">
-          <h2 className="section-title">SYSTEM STATISTICS</h2>
+          <h2 className="section-title">NEURAL NETWORK STATISTICS</h2>
           
+          {/* Real-time Game Stats */}
           <div className="stats-grid">
             {gameStats && (
               <>
                 <motion.div 
-                  className="stat-card"
+                  className="stat-card primary-stat"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
                   <Users className="stat-icon" />
-                  <div className="stat-number">{gameStats.players_online}</div>
+                  <div className="stat-number">{gameStats.players_online?.toLocaleString()}</div>
                   <div className="stat-label">ACTIVE NEURAL LINKS</div>
+                  <div className="stat-sublabel">Real-time connections</div>
                 </motion.div>
                 
                 <motion.div 
@@ -4302,8 +4341,9 @@ const App = () => {
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
                   <Download className="stat-icon" />
-                  <div className="stat-number">{gameStats.beta_downloads}</div>
-                  <div className="stat-label">BETA DOWNLOADS</div>
+                  <div className="stat-number">{gameStats.beta_downloads?.toLocaleString()}</div>
+                  <div className="stat-label">BETA INSTALLATIONS</div>
+                  <div className="stat-sublabel">Package deployments</div>
                 </motion.div>
                 
                 <motion.div 
@@ -4312,8 +4352,9 @@ const App = () => {
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
                   <Star className="stat-icon" />
-                  <div className="stat-number">{gameStats.wishlist_count}</div>
-                  <div className="stat-label">WISHLIST COUNT</div>
+                  <div className="stat-number">{gameStats.wishlist_count?.toLocaleString()}</div>
+                  <div className="stat-label">NEURAL QUEUE</div>
+                  <div className="stat-sublabel">Pending activations</div>
                 </motion.div>
                 
                 <motion.div 
@@ -4322,11 +4363,137 @@ const App = () => {
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
                   <Activity className="stat-icon" />
-                  <div className="stat-value">{gameStats.rating}</div>
-                  <div className="stat-label">NEURAL RATING</div>
+                  <div className="stat-number">{gameStats.rating}</div>
+                  <div className="stat-label">SYNC RATING</div>
+                  <div className="stat-sublabel">Neural compatibility</div>
                 </motion.div>
               </>
             )}
+          </div>
+
+          {/* System Monitoring Dashboard */}
+          <div className="system-dashboard">
+            <h3 className="dashboard-title">SYSTEM MONITORING</h3>
+            
+            <div className="monitoring-grid">
+              <motion.div 
+                className="monitor-card"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="monitor-header">
+                  <Monitor className="monitor-icon" />
+                  <span>Network Load</span>
+                </div>
+                <div className="monitor-value" style={{ color: getStatusColor(systemStats.networkLoad, 'normal') }}>
+                  {systemStats.networkLoad.toFixed(1)}%
+                </div>
+                <div className="monitor-bar">
+                  <div 
+                    className="monitor-fill"
+                    style={{ 
+                      width: `${systemStats.networkLoad}%`,
+                      backgroundColor: getStatusColor(systemStats.networkLoad, 'normal')
+                    }}
+                  ></div>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="monitor-card"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="monitor-header">
+                  <Shield className="monitor-icon" />
+                  <span>Security Level</span>
+                </div>
+                <div className="monitor-value" style={{ color: getStatusColor(systemStats.securityLevel, 'normal') }}>
+                  {systemStats.securityLevel.toFixed(1)}%
+                </div>
+                <div className="monitor-bar">
+                  <div 
+                    className="monitor-fill"
+                    style={{ 
+                      width: `${systemStats.securityLevel}%`,
+                      backgroundColor: getStatusColor(systemStats.securityLevel, 'normal')
+                    }}
+                  ></div>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="monitor-card"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="monitor-header">
+                  <Zap className="monitor-icon" />
+                  <span>Data Flow</span>
+                </div>
+                <div className="monitor-value" style={{ color: '#00ffff' }}>
+                  {(systemStats.dataFlow / 1000).toFixed(1)}K
+                </div>
+                <div className="monitor-sublabel">packets/sec</div>
+              </motion.div>
+
+              <motion.div 
+                className="monitor-card"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="monitor-header">
+                  <Globe className="monitor-icon" />
+                  <span>Active Sessions</span>
+                </div>
+                <div className="monitor-value" style={{ color: '#00ff88' }}>
+                  {systemStats.activeSessions.toLocaleString()}
+                </div>
+                <div className="monitor-sublabel">concurrent users</div>
+              </motion.div>
+
+              <motion.div 
+                className="monitor-card threat-monitor"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="monitor-header">
+                  <AlertTriangle className="monitor-icon" />
+                  <span>Threat Level</span>
+                </div>
+                <div className="monitor-value" style={{ color: getStatusColor(systemStats.threatLevel, 'threat') }}>
+                  {systemStats.threatLevel.toFixed(1)}%
+                </div>
+                <div className="monitor-bar">
+                  <div 
+                    className="monitor-fill"
+                    style={{ 
+                      width: `${systemStats.threatLevel}%`,
+                      backgroundColor: getStatusColor(systemStats.threatLevel, 'threat')
+                    }}
+                  ></div>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="monitor-card status-monitor"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="monitor-header">
+                  <Terminal className="monitor-icon" />
+                  <span>System Status</span>
+                </div>
+                <div className="status-display">
+                  <div className="status-item">
+                    <span className="status-dot online"></span>
+                    <span>Neural Core: ONLINE</span>
+                  </div>
+                  <div className="status-item">
+                    <span className="status-dot online"></span>
+                    <span>Data Matrix: STABLE</span>
+                  </div>
+                  <div className="status-item">
+                    <span className="status-dot warning"></span>
+                    <span>Firewall: ELEVATED</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
