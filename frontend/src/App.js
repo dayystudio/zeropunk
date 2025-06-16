@@ -1140,9 +1140,6 @@ const App = () => {
     }
   };
 
-  const t = (key) => {
-    return translations[currentLanguage]?.[key] || translations.en[key] || key;
-  };
 
   const languages = [
     { code: 'en', name: 'English', flag: '🇺🇸' },
