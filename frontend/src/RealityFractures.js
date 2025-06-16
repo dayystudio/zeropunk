@@ -234,8 +234,7 @@ const RealityFractures = ({ onResetToMain }) => {
             transition={{ delay: 1.5, duration: 1 }}
           >
             <div className="warning-text">
-              ⚠️ WARNING: Reality modifications may cause permanent changes to your perception.
-              Neural imprints from alternate realities cannot be undone.
+              {t('reality_warning')}
             </div>
           </motion.div>
         </motion.div>
