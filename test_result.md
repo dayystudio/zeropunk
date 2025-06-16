@@ -526,6 +526,7 @@ test_plan:
     - "Browser Compatibility Testing"
     - "Mobile Responsiveness Testing"
     - "Multilingual Functionality Testing"
+    - "YougnShop x Zeropunk Page"
   backend_verified: true
   frontend_issues:
     - "Minor console warnings related to ZEROMARKET section"
