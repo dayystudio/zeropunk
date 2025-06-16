@@ -58,6 +58,11 @@ export const applyGlitchEffect = (element, duration = 200) => {
 
 // Matrix-style Digital Rain
 export const createDigitalRain = (container) => {
+  if (!container) {
+    console.warn('createDigitalRain: container is null or undefined');
+    return [];
+  }
+
   const characters = '01アカサタナハマヤラワ';
   const streams = [];
   const streamCount = 20;
