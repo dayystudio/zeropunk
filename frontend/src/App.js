@@ -3890,6 +3890,17 @@ const App = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [cart, setCart] = useState([]);
     const [isScanning, setIsScanning] = useState(false);
+    const sectionRef = useRef(null);
+
+    // Initialize visual effects
+    useEffect(() => {
+      if (sectionRef.current) {
+        // Import and initialize effects
+        import('./zeroMarketEffects.js').then(({ initZeroMarketEffects }) => {
+          initZeroMarketEffects(sectionRef.current);
+        });
+      }
+    }, []);
 
     // Sample product data
     const products = [
