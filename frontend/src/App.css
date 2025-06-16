@@ -7,6 +7,35 @@
   padding: 0;
 }
 
+/* Global scrollbar styles - remove default white scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 255, 0.3) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.3);
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 255, 0.5);
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
