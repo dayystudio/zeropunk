@@ -4838,6 +4838,11 @@ const App = () => {
           <RealityFractures onResetToMain={handleRealityChange} />
         </div>
 
+        {/* YougnShop Section */}
+        <div id="yougnshop">
+          <YougnShopPage />
+        </div>
+
         {/* Roadmap Section */}
         <div id="roadmap">
           <RoadmapSection />
