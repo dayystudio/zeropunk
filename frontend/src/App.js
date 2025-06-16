@@ -1514,7 +1514,9 @@ const App = () => {
               </motion.a>
               
               <motion.a 
-                href="#discord" 
+                href="https://discord.gg/cGWWV2TF2C"
+                target="_blank"
+                rel="noopener noreferrer" 
                 className="social-link discord"
                 whileHover={{ scale: 1.05, x: 5 }}
                 whileTap={{ scale: 0.95 }}
