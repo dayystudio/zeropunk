@@ -3879,6 +3879,290 @@ const App = () => {
     );
   };
 
+  const ZeroMarketSection = () => {
+    const [selectedFilters, setSelectedFilters] = useState({
+      faction: [],
+      rarity: [],
+      type: [],
+      availability: []
+    });
+    
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [cart, setCart] = useState([]);
+    const [isScanning, setIsScanning] = useState(false);
+
+    // Sample product data
+    const products = [
+      {
+        id: 1,
+        name: "Neural Interface Mk-VII",
+        category: "ingame",
+        rarity: "epic",
+        type: "functional",
+        faction: "corpo",
+        availability: "in_stock",
+        price: 2847,
+        description: "Military-grade neural interface with enhanced data processing capabilities. Direct cortex connection for lightning-fast reaction times.",
+        stats: { power: 95, rarity: 89, demand: 72 },
+        icon: "🧠",
+        buttonText: "INJECT"
+      },
+      {
+        id: 2,
+        name: "Holographic T-Shirt",
+        category: "physical",
+        rarity: "rare",
+        type: "cosmetic",
+        faction: "hacker",
+        availability: "limited",
+        price: 67,
+        description: "Limited edition holographic fabric that shifts between neon patterns. Collectors item from the underground scene.",
+        stats: { style: 88, rarity: 76, comfort: 85 },
+        icon: "👕",
+        buttonText: "TRANSFER"
+      },
+      {
+        id: 3,
+        name: "Quantum Encryption Core",
+        category: "secret",
+        rarity: "classified",
+        type: "functional",
+        faction: "rebel",
+        availability: "preorder",
+        price: 15420,
+        description: "[REDACTED] - Access Level 7 Required. Quantum-entangled security protocol for ultimate data protection.",
+        stats: { security: 99, rarity: 95, power: 87 },
+        icon: "🔐",
+        buttonText: "DEPLOY",
+        locked: true
+      },
+      {
+        id: 4,
+        name: "Neon Weapon Skin Pack",
+        category: "ingame",
+        rarity: "rare",
+        type: "cosmetic",
+        faction: "mercenary",
+        availability: "in_stock",
+        price: 156,
+        description: "Complete weapon skin collection with animated neon effects. Transform your arsenal into works of art.",
+        stats: { style: 91, rarity: 68, glow: 94 },
+        icon: "⚡",
+        buttonText: "DOWNLOAD"
+      },
+      {
+        id: 5,
+        name: "Data Crystal Archive",
+        category: "physical",
+        rarity: "common",
+        type: "functional",
+        faction: "hacker",
+        availability: "in_stock",
+        price: 89,
+        description: "Crystalline storage device containing archived data streams from the old net. USB-C compatible.",
+        stats: { storage: 78, rarity: 45, durability: 92 },
+        icon: "💎",
+        buttonText: "TRANSFER"
+      },
+      {
+        id: 6,
+        name: "Cybernetic Arm Enhancement",
+        category: "ingame",
+        rarity: "epic",
+        type: "functional",
+        faction: "corpo",
+        availability: "limited",
+        price: 8945,
+        description: "State-of-the-art prosthetic enhancement with built-in weaponry and tool integration.",
+        stats: { power: 96, tech: 89, combat: 94 },
+        icon: "🦾",
+        buttonText: "INJECT"
+      }
+    ];
+
+    const filterOptions = {
+      faction: [
+        { id: 'corpo', label: 'Corporate' },
+        { id: 'hacker', label: 'Hacker Collective' },
+        { id: 'mercenary', label: 'Mercenary Guild' },
+        { id: 'rebel', label: 'Rebel Alliance' }
+      ],
+      rarity: [
+        { id: 'common', label: 'Common' },
+        { id: 'rare', label: 'Rare' },
+        { id: 'epic', label: 'Epic' },
+        { id: 'classified', label: 'Classified' }
+      ],
+      type: [
+        { id: 'physical', label: 'Physical Goods' },
+        { id: 'cosmetic', label: 'Cosmetic Items' },
+        { id: 'functional', label: 'Functional Gear' }
+      ],
+      availability: [
+        { id: 'in_stock', label: 'In Stock' },
+        { id: 'limited', label: 'Limited Edition' },
+        { id: 'preorder', label: 'Pre-Order' }
+      ]
+    };
+
+    const aiMessages = [
+      "Welcome to ZEROMARKET, choom. What's your poison today?",
+      "Careful with those classified items... they bite back.",
+      "That neural interface is hot property. Moving fast.",
+      "Remember, all sales are final in the underground.",
+      "Need something untraceable? You've come to the right place."
+    ];
+
+    const [currentAiMessage, setCurrentAiMessage] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentAiMessage((prev) => (prev + 1) % aiMessages.length);
+      }, 8000);
+      return () => clearInterval(interval);
+    }, []);
+
+    const toggleFilter = (category, value) => {
+      setSelectedFilters(prev => ({
+        ...prev,
+        [category]: prev[category].includes(value)
+          ? prev[category].filter(item => item !== value)
+          : [...prev[category], value]
+      }));
+    };
+
+    const filteredProducts = products.filter(product => {
+      return Object.keys(selectedFilters).every(category => {
+        if (selectedFilters[category].length === 0) return true;
+        return selectedFilters[category].includes(product[category]);
+      });
+    });
+
+    const addToCart = (product) => {
+      if (product.locked) return;
+      setCart(prev => [...prev, product]);
+    };
+
+    const startBiometricScan = () => {
+      setIsScanning(true);
+      setTimeout(() => {
+        setIsScanning(false);
+        // Handle purchase logic here
+      }, 3000);
+    };
+
+    return (
+      <div className="zeromarket-section">
+        <div className="zeromarket-content">
+          {/* Header */}
+          <div className="zeromarket-header">
+            <h1 className="zeromarket-logo">ZEROMARKET</h1>
+            <p className="zeromarket-subtitle">Underground Tech Bazaar • Level 7 Access Required</p>
+          </div>
+
+          {/* Main Layout */}
+          <div className="zeromarket-main">
+            {/* Filters Sidebar */}
+            <div className="zeromarket-filters">
+              {Object.entries(filterOptions).map(([category, options]) => (
+                <div key={category} className="filter-section">
+                  <h3 className="filter-title">{category.replace('_', ' ')}</h3>
+                  {options.map(option => (
+                    <div 
+                      key={option.id} 
+                      className="filter-option"
+                      onClick={() => toggleFilter(category, option.id)}
+                    >
+                      <div className={`filter-checkbox ${selectedFilters[category].includes(option.id) ? 'checked' : ''}`}></div>
+                      <span className="filter-label">{option.label}</span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+
+            {/* Product Grid */}
+            <div className="zeromarket-products">
+              {filteredProducts.map(product => (
+                <motion.div 
+                  key={product.id} 
+                  className={`product-card ${product.locked ? 'locked-item' : ''}`}
+                  whileHover={{ scale: product.locked ? 1 : 1.02 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <div className="product-header">
+                    <span className={`product-category category-${product.category}`}>
+                      {product.category.replace('_', ' ')}
+                    </span>
+                    <span className={`product-rarity rarity-${product.rarity}`}>
+                      {product.rarity}
+                    </span>
+                  </div>
+
+                  <div className="product-image">
+                    <span className="product-icon">{product.icon}</span>
+                  </div>
+
+                  <h3 className="product-name">{product.name}</h3>
+                  <p className="product-description">{product.description}</p>
+
+                  <div className="product-stats">
+                    {Object.entries(product.stats).map(([stat, value]) => (
+                      <div key={stat} className="stat-item">
+                        <span className="stat-value">{value}</span>
+                        <span className="stat-label">{stat}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="product-footer">
+                    <div className="product-price">
+                      <span className="currency-symbol">₦</span>{product.price.toLocaleString()}
+                    </div>
+                    <button 
+                      className="product-button"
+                      onClick={() => addToCart(product)}
+                      disabled={product.locked}
+                    >
+                      {product.buttonText}
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Checkout Terminal */}
+          <div className="checkout-terminal">
+            <div className="terminal-header">
+              <h3 className="terminal-title">Biometric Checkout</h3>
+            </div>
+            <div 
+              className="biometric-scanner"
+              onClick={startBiometricScan}
+            >
+              <Hand className="scanner-icon" />
+              {isScanning && <div className="scanning-effect"></div>}
+            </div>
+            <p style={{ textAlign: 'center', fontSize: '0.8rem', color: '#00ffff', marginTop: '1rem' }}>
+              {cart.length} items • ₦{cart.reduce((sum, item) => sum + item.price, 0).toLocaleString()}
+            </p>
+          </div>
+
+          {/* AI Assistant */}
+          <div className="ai-assistant">
+            <div className="ai-avatar">
+              <ZapIcon size={24} color="#ff00ff" />
+            </div>
+            <div className="ai-message">
+              {aiMessages[currentAiMessage]}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const RoadmapSection = () => {
     const roadmapPhases = [
       {
