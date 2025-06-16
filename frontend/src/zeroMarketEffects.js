@@ -98,6 +98,11 @@ export const createDigitalRain = (container) => {
 
 // Scanning Line Effect
 export const createScanningLine = (container) => {
+  if (!container) {
+    console.warn('createScanningLine: container is null or undefined');
+    return null;
+  }
+
   const scanLine = document.createElement('div');
   scanLine.className = 'scan-line';
   scanLine.style.cssText = `
