@@ -738,6 +738,7 @@
   .zm-main {
     grid-template-columns: 280px 1fr;
     gap: 2rem;
+    padding: 0 3rem;
   }
   
   .zm-filters {
