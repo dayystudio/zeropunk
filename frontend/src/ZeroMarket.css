@@ -1,4 +1,4 @@
-/* ZEROMARKET V2 - Modern Cyberpunk Marketplace */
+/* ZEROMARKET V2 - Modern Cyberpunk Marketplace - Fixed Sizing */
 
 .zeromarket-v2 {
   min-height: 100vh;
@@ -7,6 +7,7 @@
   font-family: 'Inter', 'Orbitron', monospace;
   overflow-x: hidden;
   position: relative;
+  padding: 1rem 0;
 }
 
 /* Background Effects */
@@ -27,40 +28,43 @@
 
 /* Header */
 .zm-header {
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   text-align: center;
   position: relative;
   z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .zm-header-content {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
 .zm-title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 900;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   position: relative;
+  line-height: 1.1;
 }
 
 .zm-title-main {
   color: #00ffff;
-  text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
   animation: neonGlow 2s ease-in-out infinite alternate;
 }
 
 .zm-title-accent {
   color: #ff00ff;
-  text-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
   animation: neonGlow 2s ease-in-out infinite alternate-reverse;
 }
 
 .zm-subtitle {
-  font-size: clamp(0.8rem, 2vw, 1.1rem);
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
   color: #888888;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -68,26 +72,27 @@
 /* Search Bar */
 .zm-search {
   position: relative;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
 .zm-search-input {
   width: 100%;
-  padding: 1rem 3rem 1rem 1.5rem;
+  padding: 0.8rem 2.5rem 0.8rem 1.2rem;
   background: rgba(0, 0, 0, 0.7);
   border: 2px solid rgba(0, 255, 255, 0.3);
-  border-radius: 50px;
+  border-radius: 25px;
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   outline: none;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  box-sizing: border-box;
 }
 
 .zm-search-input:focus {
   border-color: rgba(0, 255, 255, 0.8);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
 }
 
 .zm-search-input::placeholder {
@@ -96,10 +101,10 @@
 
 .zm-search-icon {
   position: absolute;
-  right: 1.5rem;
+  right: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #00ffff;
 }
 
@@ -107,29 +112,33 @@
 .zm-categories {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  margin-bottom: 2rem;
+  gap: 0.4rem;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.5rem;
   flex-wrap: wrap;
   position: relative;
   z-index: 2;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .zm-category-btn {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 25px;
+  border-radius: 20px;
   color: #cccccc;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+  min-width: fit-content;
 }
 
 .zm-category-btn::before {
@@ -152,20 +161,24 @@
 .zm-category-btn.active {
   border-color: rgba(0, 255, 255, 0.5);
   color: #00ffff;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 255, 255, 0.2);
 }
 
 .zm-category-icon {
-  font-size: 1.1rem;
+  font-size: 1rem;
+}
+
+.zm-category-name {
+  white-space: nowrap;
 }
 
 /* Main Layout */
 .zm-main {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 2rem;
-  max-width: 1400px;
+  grid-template-columns: 250px 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
   position: relative;
@@ -177,31 +190,31 @@
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 1.2rem;
   height: fit-content;
   position: sticky;
-  top: 2rem;
+  top: 1rem;
 }
 
 .zm-filter-title {
   color: #00ffff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
 .zm-filter-group {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .zm-filter-label {
   color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -209,11 +222,11 @@
 .zm-filter-option {
   display: flex;
   align-items: center;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  padding: 0.5rem;
-  border-radius: 8px;
+  padding: 0.4rem;
+  border-radius: 6px;
 }
 
 .zm-filter-option:hover {
@@ -225,38 +238,39 @@
 }
 
 .zm-checkbox-custom {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border: 2px solid;
   border-radius: 3px;
-  margin-right: 0.8rem;
+  margin-right: 0.6rem;
   position: relative;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .zm-checkbox:checked + .zm-checkbox-custom::after {
   content: '✓';
   position: absolute;
   top: -3px;
-  left: 1px;
+  left: 0px;
   color: inherit;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
 }
 
 .zm-filter-text {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
 .zm-select {
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.6rem;
   background: rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(0, 255, 255, 0.3);
-  border-radius: 8px;
+  border-radius: 6px;
   color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   outline: none;
 }
 
@@ -268,24 +282,24 @@
 .zm-cart-summary {
   background: rgba(0, 255, 255, 0.05);
   border: 1px solid rgba(0, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: 1.5rem;
+  border-radius: 10px;
+  padding: 1rem;
   margin-top: 1rem;
 }
 
 .zm-cart-title {
   color: #00ffff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   text-transform: uppercase;
 }
 
 .zm-cart-info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .zm-cart-count {
@@ -299,21 +313,21 @@
 
 .zm-checkout-btn {
   width: 100%;
-  padding: 1rem;
+  padding: 0.8rem;
   background: linear-gradient(45deg, #00ff88, #00ffff);
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   color: #000000;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .zm-checkout-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 255, 255, 0.3);
 }
 
 .zm-checkout-btn:disabled {
@@ -324,32 +338,32 @@
 
 /* Products */
 .zm-products {
-  min-height: 70vh;
+  min-height: 60vh;
 }
 
 .zm-products-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .zm-results-count {
   color: #cccccc;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .zm-sort {
   color: #888888;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
 }
 
 .zm-products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
 }
 
 /* Product Card */
@@ -357,12 +371,15 @@
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 1.2rem;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
 }
 
 .zm-product-card::before {
@@ -382,8 +399,8 @@
 
 .zm-product-card:hover {
   border-color: rgba(0, 255, 255, 0.4);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 255, 255, 0.1);
 }
 
 .zm-product-card.locked {
@@ -399,13 +416,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.3rem;
 }
 
 .zm-rarity {
-  font-size: 0.7rem;
-  padding: 0.3rem 0.8rem;
-  border-radius: 12px;
+  font-size: 0.6rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -420,29 +439,29 @@
 .zm-sale-badge {
   background: #ff3333;
   color: #ffffff;
-  font-size: 0.6rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 8px;
+  font-size: 0.55rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
   font-weight: 700;
   animation: pulse 2s infinite;
 }
 
 .zm-product-image {
   width: 100%;
-  height: 150px;
+  height: 120px;
   background: rgba(0, 255, 255, 0.05);
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   position: relative;
   overflow: hidden;
 }
 
 .zm-product-icon {
-  font-size: 3rem;
-  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.3));
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.3));
 }
 
 .zm-lock-overlay,
@@ -453,10 +472,10 @@
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.9);
   color: #ffffff;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   backdrop-filter: blur(10px);
 }
@@ -474,22 +493,22 @@
 .zm-product-info {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex: 1;
 }
 
 .zm-product-name {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   line-height: 1.2;
 }
 
 .zm-product-description {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #aaaaaa;
-  line-height: 1.4;
-  margin-bottom: 1rem;
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
   flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -500,57 +519,57 @@
 .zm-product-specs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 0.3rem;
+  margin-bottom: 0.8rem;
 }
 
 .zm-spec-tag {
   background: rgba(0, 255, 255, 0.1);
   color: #00ffff;
-  font-size: 0.7rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 12px;
+  font-size: 0.6rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
   border: 1px solid rgba(0, 255, 255, 0.2);
 }
 
 .zm-product-price {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 0.5rem;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
 }
 
 .zm-price-current {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #00ff88;
 }
 
 .zm-price-original {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #888888;
   text-decoration: line-through;
 }
 
 .zm-product-stock {
-  margin-bottom: 1rem;
-  min-height: 1.2rem;
+  margin-bottom: 0.8rem;
+  min-height: 1rem;
 }
 
 .zm-stock-count {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #00ff88;
 }
 
 .zm-add-to-cart {
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.7rem;
   background: linear-gradient(45deg, #00ffff, #00bfff);
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   color: #000000;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -559,8 +578,8 @@
 
 .zm-add-to-cart:hover:not(:disabled) {
   background: linear-gradient(45deg, #00bfff, #0080ff);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 255, 255, 0.3);
 }
 
 .zm-add-to-cart:disabled {
@@ -583,21 +602,21 @@
 
 .zm-quick-cart-btn {
   width: 100%;
-  padding: 1rem;
+  padding: 0.8rem;
   background: linear-gradient(45deg, #00ff88, #00ffff);
   border: none;
-  border-radius: 25px;
+  border-radius: 20px;
   color: #000000;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+  box-shadow: 0 3px 15px rgba(0, 255, 255, 0.3);
 }
 
 .zm-quick-cart-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 20px rgba(0, 255, 255, 0.4);
 }
 
 .zm-quick-cart-btn:disabled {
@@ -609,7 +628,7 @@
 /* Animations */
 @keyframes neonGlow {
   0% { text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor; }
-  100% { text-shadow: 0 0 20px currentColor, 0 0 30px currentColor, 0 0 40px currentColor; }
+  100% { text-shadow: 0 0 15px currentColor, 0 0 25px currentColor, 0 0 35px currentColor; }
 }
 
 @keyframes pulse {
@@ -620,29 +639,47 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .zm-main {
-    grid-template-columns: 250px 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 220px 1fr;
+    gap: 1.2rem;
   }
   
   .zm-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  
+  .zm-filters {
+    padding: 1rem;
   }
 }
 
 @media (max-width: 768px) {
+  .zeromarket-v2 {
+    padding: 0.5rem 0;
+  }
+  
+  .zm-header {
+    padding: 1rem 0.5rem;
+  }
+  
   .zm-main {
     grid-template-columns: 1fr;
     gap: 1rem;
+    padding: 0 0.5rem;
   }
   
   .zm-filters {
     position: static;
     margin-bottom: 1rem;
+    padding: 1rem;
   }
   
   .zm-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1rem;
+  }
+  
+  .zm-product-card {
+    min-height: 350px;
   }
   
   .zm-quick-cart {
@@ -655,22 +692,14 @@
   }
   
   .zm-category-btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.8rem;
-  }
-  
-  .zm-category-name {
-    display: none;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
   }
 }
 
-@media (max-width: 480px) {
-  .zm-header {
-    padding: 1rem 0.5rem;
-  }
-  
-  .zm-main {
-    padding: 0 0.5rem;
+@media (max-width: 640px) {
+  .zm-category-name {
+    display: none;
   }
   
   .zm-products-grid {
@@ -678,6 +707,34 @@
   }
   
   .zm-product-card {
+    min-height: 320px;
     padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .zm-header {
+    padding: 0.8rem 0.5rem;
+  }
+  
+  .zm-main {
+    padding: 0 0.5rem;
+  }
+  
+  .zm-filters {
+    padding: 0.8rem;
+  }
+  
+  .zm-product-card {
+    padding: 0.8rem;
+    min-height: 300px;
+  }
+  
+  .zm-product-image {
+    height: 100px;
+  }
+  
+  .zm-product-icon {
+    font-size: 2rem;
   }
 }
