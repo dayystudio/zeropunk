@@ -459,12 +459,15 @@ test_plan:
     - "Live Player World Activity Dashboard"
     - "ZEROMARKET Backend Integration"
     - "Support Section with Donation and Discord Links"
+    - "JavaScript Icon Errors"
   backend_verified: true
   frontend_issues:
     - "Frontend application not loading properly in browser"
     - "Browser shows 'Not Found' error while curl returns 200 OK"
     - "Likely routing configuration issue in React application"
     - "Server responds but React app is not rendering"
+    - "JavaScript icon errors fixed (Upload, Instagram, Coins)"
+    - "Remaining errors related to Lock component and Illegal constructor"
 
 agent_communication:
   - agent: "main"
