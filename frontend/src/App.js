@@ -167,6 +167,31 @@ const App = () => {
     setIsAuthenticated(false);
   };
 
+  // Reality Management Functions
+  const handleRealityChange = (newReality) => {
+    setCurrentReality(newReality);
+    localStorage.setItem('zeropunk_reality', newReality);
+  };
+
+  const returnToPrimaryReality = () => {
+    setCurrentReality('primary');
+    localStorage.setItem('zeropunk_reality', 'primary');
+  };
+
+  // Check if we should render alternate reality
+  const renderCurrentReality = () => {
+    switch (currentReality) {
+      case 'specter-black':
+        return <SpecterBlackReality onReturnToPrimary={returnToPrimaryReality} />;
+      case 'echoes-future':
+        return <EchoesFutureReality onReturnToPrimary={returnToPrimaryReality} />;
+      case 'zone-delta':
+        return <ZoneDeltaReality onReturnToPrimary={returnToPrimaryReality} />;
+      default:
+        return null; // Return null for primary reality to show main app
+    }
+  };
+
   // Character customization state
   const [characterConfig, setCharacterConfig] = useState({
     gender: 'male',
