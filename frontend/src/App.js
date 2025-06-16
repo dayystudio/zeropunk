@@ -1058,6 +1058,7 @@ const App = () => {
       // Hero Section
       hero_subtitle: 'ZeropunkOS v0.92 | Accès Invité | dayystudio',
       hero_message: 'Vous n\'êtes pas le héros. Vous êtes un citoyen — un autre rouage dans le système fracturé. Mais le système s\'effrite, et vous pourriez être l\'étincelle.',
+      hero_description: 'Zeropunk est un jeu open-world cyberpunk cinématographique où tu n\'es pas le héros — juste un citoyen en survie. Discute avec des IA, pirate, vole et affronte le chaos d\'une ville futuriste en chute libre.',
       enter_beta: 'LISTE DE SOUHAITS STEAM',
       talk_to_alia: 'PARLER À ALIA NOX',
 
