@@ -1,6 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Brain, Zap, Users, Download, Star, MessageCircle, Play, Eye, ChevronDown, AlertTriangle, Lock, Globe, Menu, X, Home, Info, BarChart3, Bot, Map, Gamepad2, Monitor, Cpu, HardDrive, Settings, Clock, CloudRain, TrendingUp, Shield, Coins, Activity, Languages, Mail, Send, Instagram, Music, UserCircle, Palette, Camera, Shuffle, RotateCcw, ZoomIn, ZoomOut, Move3D, Code, Terminal, Upload, Heart, ShoppingCart, Package, Cpu as CpuIcon, Shirt, CreditCard, Hand, Eye as EyeIcon, Zap as ZapIcon } from 'lucide-react';
+import { 
+  Menu, X, ChevronDown, Play, Pause, Volume2, VolumeX, 
+  MessageCircle, Users, Activity, Download, Star, Zap, 
+  Shield, Cpu, HardDrive, Monitor, Smartphone, Settings,
+  Globe, LogOut, User, Clock, TrendingUp, MapPin, Target,
+  Gamepad2, Headphones, Mic, Eye, Brain, Heart
+} from 'lucide-react';
+
+// Import Reality Components
+import RealityFractures from './RealityFractures';
+import SpecterBlackReality from './SpecterBlackReality';
+import EchoesFutureReality from './EchoesFutureReality';
+import ZoneDeltaReality from './ZoneDeltaReality';
 import './App.css';
 import './LiveActivity.css';
 import './ZeroMarket.css';
