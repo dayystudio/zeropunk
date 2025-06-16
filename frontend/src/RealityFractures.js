@@ -148,7 +148,7 @@ const RealityFractures = ({ onResetToMain }) => {
           transition={{ duration: 0.8 }}
         >
           <div className="fractures-header">
-            <h2 className="fractures-title">REALITY FRACTURES</h2>
+            <h2 className="fractures-title">{t('reality_fractures_title')}</h2>
             <div className="fractures-subtitle">
               You see this world. You believe it's real.<br />
               But some AI have seen beyond the firewall.<br /><br />
