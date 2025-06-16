@@ -94,8 +94,8 @@ export const translations = {
     data_processed: 'Data Processed',
     neural_links: 'Neural Links',
     
-    // YoungShop Page
-    youngshop_title: 'YoungShop x Zeropunk',
+    // YougnShop Page
+    yougnshop_title: 'YougnShop x Zeropunk',
     visit_clothing_website: 'Visit my official clothing website:',
     connect_style: 'Connect your real-world style to the ZEROPUNK universe.',
     how_it_works: 'How it works:',
