@@ -3891,11 +3891,20 @@ const App = () => {
 
     // Initialize visual effects
     useEffect(() => {
-      if (sectionRef.current) {
-        import('./zeroMarketEffects.js').then(({ initZeroMarketEffects }) => {
-          initZeroMarketEffects(sectionRef.current);
-        });
-      }
+      // Add a small delay to ensure DOM is fully rendered
+      const timer = setTimeout(() => {
+        if (sectionRef.current) {
+          import('./zeroMarketEffects.js').then(({ initZeroMarketEffects }) => {
+            initZeroMarketEffects(sectionRef.current);
+          }).catch(error => {
+            console.error('Failed to load zeroMarketEffects:', error);
+          });
+        } else {
+          console.warn('ZEROMARKET section ref not available for effects initialization');
+        }
+      }, 100);
+
+      return () => clearTimeout(timer);
     }, []);
 
     // Enhanced product data with better structure
