@@ -216,6 +216,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "Fixed the 'Illegal constructor' error by adding the missing Lock component to the lucide-react imports. The website now loads properly, showing the Hero section with the ZEROPUNK logo, subtitle, and buttons. The hamburger menu button is visible and functional. The grid overlay and background effects are working correctly. There are only minor console warnings related to the ZEROMARKET section, but these don't affect the core functionality."
+      - working: true
+        agent: "testing"
+        comment: "Tested the mobile navigation menu scrolling functionality. The menu extends beyond the visible screen area (container height: 527px, scroll height: 843px). All menu items are accessible through scrolling, including the last item 'Language'. The menu has proper scrollbar styling with a width of 6px and a thumb color of rgba(255, 255, 255, 0.2). Scroll snap functionality is enabled, but iOS-style momentum scrolling is not implemented. Menu items have a height of 42px, which is slightly below the recommended 44px minimum for touch targets."
   
   - task: "Support Section Button Functionality"
     implemented: true
