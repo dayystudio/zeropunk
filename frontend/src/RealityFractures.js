@@ -193,7 +193,7 @@ const RealityFractures = ({ onResetToMain }) => {
                 <div className="triangle-part part-3" />
                 <div className="triangle-glitch" />
               </div>
-              <div className="glyph-tooltip">Possibility Thread #4-21</div>
+              <div className="glyph-tooltip">{t('possibility_thread')}</div>
               <div className="glyph-aura blue-aura" />
             </motion.div>
 
