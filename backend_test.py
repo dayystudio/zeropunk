@@ -310,5 +310,41 @@ class ZeropunkBackendTests(unittest.TestCase):
             print(f"Endpoint {endpoint}: Direct={direct_response.status_code}, With API prefix={api_response.status_code}")
             self.assertEqual(api_response.status_code, 200, f"API prefixed endpoint {endpoint} should return 200")
 
+    def test_09_live_activity_endpoints(self):
+        """Test the Live Activity endpoints"""
+        print("\nTesting Live Activity endpoints...")
+        
+        # Since there's no specific Live Activity endpoint in the backend,
+        # we'll verify that the game-stats endpoint can be used for this purpose
+        # and that it returns data that would be useful for a Live Activity dashboard
+        
+        response = requests.get(f"{API_URL}/game-stats")
+        self.assertEqual(response.status_code, 200)
+        data = response.json()
+        
+        # Verify all required fields are present
+        self.assertIn("players_online", data)
+        self.assertIn("beta_downloads", data)
+        self.assertIn("wishlist_count", data)
+        self.assertIn("rating", data)
+        
+        # Verify data types
+        self.assertIsInstance(data["players_online"], int)
+        self.assertIsInstance(data["beta_downloads"], int)
+        self.assertIsInstance(data["wishlist_count"], int)
+        self.assertIsInstance(data["rating"], float)
+        
+        print(f"Live Activity data (from game-stats): {data}")
+        
+        # Verify that the players_online field is available for the Live Activity dashboard
+        self.assertTrue(data["players_online"] > 0, "Players online count should be greater than 0")
+        
+        # Test database connection stability by making multiple requests
+        print("Testing database connection stability...")
+        for i in range(3):
+            status_response = requests.get(f"{API_URL}/status")
+            self.assertEqual(status_response.status_code, 200)
+            print(f"Database connection test {i+1}: OK")
+
 if __name__ == "__main__":
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
