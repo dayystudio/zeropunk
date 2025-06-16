@@ -17,7 +17,7 @@ import RealityFractures from './RealityFractures';
 import SpecterBlackReality from './SpecterBlackReality';
 import EchoesFutureReality from './EchoesFutureReality';
 import ZoneDeltaReality from './ZoneDeltaReality';
-import YoungShopPage from './YoungShopPage';
+import YougnShopPage from './YougnShopPage';
 import { useTranslation } from './i18n/useTranslation';
 import './App.css';
 import './LiveActivity.css';
