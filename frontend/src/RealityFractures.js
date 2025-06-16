@@ -18,6 +18,7 @@ const playPortalSound = () => {
 };
 
 const RealityFractures = ({ onResetToMain }) => {
+  const { t } = useTranslation();
   const [currentReality, setReality] = useState(getCurrentReality());
   const [showTransition, setShowTransition] = useState(false);
   const [selectedGlyph, setSelectedGlyph] = useState(null);
