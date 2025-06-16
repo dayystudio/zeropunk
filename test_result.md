@@ -416,6 +416,8 @@ test_plan:
     - "Cyberpunk UI Foundation"
     - "Mobile Optimization for One-Page Scroll Layout"
     - "PC Requirements System Analyzer"
+    - "ZEROMARKET Section Visual Effects"
+    - "Support Section Button Functionality"
   stuck_tasks:
     - "Cyberpunk UI Foundation"
     - "Mobile Optimization for One-Page Scroll Layout"
@@ -435,6 +437,7 @@ test_plan:
     - "Navigation System"
     - "Live Player World Activity Dashboard"
     - "ZEROMARKET Backend Integration"
+    - "Support Section with Donation and Discord Links"
   backend_verified: true
   frontend_issues:
     - "Frontend application not loading properly in browser"
