@@ -416,6 +416,7 @@ test_plan:
     - "API Routing and CORS Configuration"
     - "Navigation System"
     - "Live Player World Activity Dashboard"
+    - "ZEROMARKET Backend Integration"
   backend_verified: true
   frontend_issues:
     - "Frontend application not loading properly in browser"
