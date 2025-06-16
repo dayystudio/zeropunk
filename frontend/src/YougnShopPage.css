@@ -1,114 +1,291 @@
-/* YougnShop x Zeropunk Page Styles */
+/* YougnShop x Zeropunk Page Styles - ADVANCED CYBERPUNK */
 .yougnshop-section {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  background: 
+    radial-gradient(ellipse at top, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(255, 0, 128, 0.08) 0%, transparent 50%),
+    linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%);
   color: #ffffff;
   position: relative;
   overflow: hidden;
   padding: 80px 20px;
+  /* Advanced cyberpunk atmosphere */
+  animation: atmosphericPulse 8s ease-in-out infinite;
 }
 
-/* Header */
+@keyframes atmosphericPulse {
+  0%, 100% { 
+    filter: brightness(1) contrast(1.1) saturate(1.2);
+    box-shadow: inset 0 0 200px rgba(0, 255, 255, 0.02);
+  }
+  50% { 
+    filter: brightness(1.05) contrast(1.15) saturate(1.3);
+    box-shadow: inset 0 0 300px rgba(255, 0, 128, 0.03);
+  }
+}
+
+/* Advanced Header */
 .yougnshop-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+  position: relative;
 }
 
 .yougnshop-title {
   font-family: 'Orbitron', monospace;
-  font-size: 3.2rem;
+  font-size: 4rem;
   font-weight: 900;
-  color: #00ffff;
-  text-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.3);
-  margin-bottom: 20px;
-  letter-spacing: 3px;
+  background: linear-gradient(45deg, #00ffff 0%, #0080ff 25%, #ff0080 50%, #00ffff 75%, #ff0040 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleWave 4s ease-in-out infinite, titleGlow 2s ease-in-out infinite alternate;
+  margin-bottom: 30px;
+  letter-spacing: 5px;
+  text-shadow: 
+    0 0 30px rgba(0, 255, 255, 0.5),
+    0 0 60px rgba(255, 0, 128, 0.3),
+    0 0 90px rgba(0, 128, 255, 0.2);
+  position: relative;
+}
+
+@keyframes titleWave {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes titleGlow {
+  0% { filter: brightness(1) drop-shadow(0 0 20px rgba(0, 255, 255, 0.4)); }
+  100% { filter: brightness(1.2) drop-shadow(0 0 40px rgba(255, 0, 128, 0.6)); }
+}
+
+.yougnshop-title::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff0040 0%, transparent 50%, #00ffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.3;
+  animation: glitchShift 3s infinite;
+  z-index: -1;
+}
+
+@keyframes glitchShift {
+  0%, 100% { transform: translate(0, 0); opacity: 0; }
+  5% { transform: translate(2px, 2px); opacity: 0.3; }
+  10% { transform: translate(-1px, 1px); opacity: 0.6; }
+  15% { transform: translate(0, 0); opacity: 0; }
 }
 
 .title-underline {
-  width: 120px;
-  height: 4px;
-  background: linear-gradient(90deg, #00ffff, #ff0080);
+  width: 200px;
+  height: 6px;
+  background: linear-gradient(90deg, #00ffff, #0080ff, #ff0080, #ff0040);
+  background-size: 400% 100%;
   margin: 0 auto;
-  border-radius: 2px;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  border-radius: 3px;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.6),
+    0 0 40px rgba(255, 0, 128, 0.4),
+    0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: underlineFlow 3s linear infinite;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Main Content */
+@keyframes underlineFlow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 400% 0%; }
+}
+
+.title-underline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Advanced Main Content */
 .yougnshop-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  max-width: 1200px;
+  gap: 80px;
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
   z-index: 10;
 }
 
-/* Shop Link Section */
+/* Enhanced Shop Link Section */
 .shop-link-section {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 40px;
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: 
+    linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(0, 128, 255, 0.05) 100%),
+    rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 50px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 60px rgba(0, 255, 255, 0.2);
+  animation: sectionHover 6s ease-in-out infinite;
+}
+
+@keyframes sectionHover {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.shop-link-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #00ffff, #0080ff, #ff0080, #ff0040, #00ffff);
+  background-size: 400% 400%;
+  animation: borderFlow 8s linear infinite;
+  z-index: -1;
+  border-radius: 25px;
+  padding: 2px;
+  margin: -2px;
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .shop-intro {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  position: relative;
 }
 
 .shop-icon {
   color: #00ffff;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+  margin-bottom: 25px;
+  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.7)) drop-shadow(0 0 30px rgba(0, 255, 255, 0.4));
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
 }
 
 .shop-text {
-  font-size: 1.2rem;
-  color: #cccccc;
-  margin-bottom: 25px;
-  line-height: 1.6;
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 35px;
+  line-height: 1.8;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
 .shop-button {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 15px 30px;
-  background: linear-gradient(45deg, #00ffff, #0080ff);
+  gap: 15px;
+  padding: 20px 40px;
+  background: 
+    linear-gradient(45deg, #00ffff 0%, #0080ff 25%, #ff0080 50%, #ff0040 75%, #00ffff 100%);
+  background-size: 300% 300%;
   color: #000000;
   border: none;
-  border-radius: 12px;
+  border-radius: 15px;
   font-family: 'Orbitron', monospace;
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 800;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 8px 25px rgba(0, 255, 255, 0.4),
+    0 0 40px rgba(255, 0, 128, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  animation: buttonPulse 4s ease-in-out infinite;
+}
+
+@keyframes buttonPulse {
+  0%, 100% { background-position: 0% 50%; box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4); }
+  50% { background-position: 100% 50%; box-shadow: 0 12px 35px rgba(255, 0, 128, 0.6); }
+}
+
+.shop-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.shop-button:hover::before {
+  left: 100%;
 }
 
 .shop-button:hover {
-  box-shadow: 0 8px 30px rgba(0, 255, 255, 0.5);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    0 15px 40px rgba(0, 255, 255, 0.6),
+    0 0 60px rgba(255, 0, 128, 0.5);
 }
 
 .button-icon {
   transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
 
 .shop-button:hover .button-icon {
-  transform: translateX(3px);
+  transform: translateX(5px) rotate(15deg);
 }
 
 .connection-text {
-  font-size: 1.1rem;
-  color: #00ffaa;
+  font-size: 1.3rem;
+  background: linear-gradient(45deg, #00ffaa, #00ffff, #0080ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-align: center;
   font-style: italic;
-  margin-top: 30px;
-  text-shadow: 0 0 10px rgba(0, 255, 170, 0.3);
+  margin-top: 40px;
+  text-shadow: 0 0 20px rgba(0, 255, 170, 0.4);
+  animation: textShimmer 3s ease-in-out infinite;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+@keyframes textShimmer {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
 }
 
 /* How It Works Section */
