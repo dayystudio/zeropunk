@@ -4134,38 +4134,41 @@ const App = () => {
             </div>
           </div>
 
-          {/* Checkout Terminal */}
-          <div className="checkout-terminal">
-            <div className="terminal-header">
-              <h3 className="terminal-title">Shopping Cart</h3>
-            </div>
-            <div className="cart-summary">
-              <div className="cart-items">
-                <span className="cart-count">{cart.length} Items</span>
-                <span className="cart-total">₦{cart.reduce((sum, item) => sum + item.price, 0).toLocaleString()}</span>
+          {/* Mobile Bottom Section */}
+          <div className="mobile-bottom-section">
+            {/* Checkout Terminal */}
+            <div className="checkout-terminal">
+              <div className="terminal-header">
+                <h3 className="terminal-title">Shopping Cart</h3>
               </div>
-              <button 
-                className="checkout-button"
-                onClick={() => {
-                  if (cart.length > 0) {
-                    alert(`Purchase confirmed! ${cart.length} items for ₦${cart.reduce((sum, item) => sum + item.price, 0).toLocaleString()}`);
-                    setCart([]);
-                  }
-                }}
-                disabled={cart.length === 0}
-              >
-                PURCHASE NOW
-              </button>
+              <div className="cart-summary">
+                <div className="cart-items">
+                  <span className="cart-count">{cart.length} Items</span>
+                  <span className="cart-total">₦{cart.reduce((sum, item) => sum + item.price, 0).toLocaleString()}</span>
+                </div>
+                <button 
+                  className="checkout-button"
+                  onClick={() => {
+                    if (cart.length > 0) {
+                      alert(`Purchase confirmed! ${cart.length} items for ₦${cart.reduce((sum, item) => sum + item.price, 0).toLocaleString()}`);
+                      setCart([]);
+                    }
+                  }}
+                  disabled={cart.length === 0}
+                >
+                  PURCHASE NOW
+                </button>
+              </div>
             </div>
-          </div>
 
-          {/* AI Assistant */}
-          <div className="ai-assistant">
-            <div className="ai-avatar">
-              <ZapIcon size={24} color="#ff00ff" />
-            </div>
-            <div className="ai-message">
-              {aiMessages[currentAiMessage]}
+            {/* AI Assistant */}
+            <div className="ai-assistant">
+              <div className="ai-avatar">
+                <ZapIcon size={20} color="#ff00ff" />
+              </div>
+              <div className="ai-message">
+                {aiMessages[currentAiMessage]}
+              </div>
             </div>
           </div>
         </div>
