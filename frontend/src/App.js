@@ -2524,8 +2524,7 @@ const App = () => {
                 <motion.button
                   className="support-btn donation-btn"
                   onClick={() => {
-                    // Placeholder for donation platform redirect
-                    alert('Donation platform coming soon! Thank you for your support.');
+                    window.open('https://buymeacoffee.com/zeropunk', '_blank');
                   }}
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
