@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from './i18n/useTranslation';
 import { ExternalLink, ShoppingBag, Mail, Clock } from 'lucide-react';
-import './YoungShopPage.css';
+import './YougnShopPage.css';
 
-const YoungShopPage = () => {
+const YougnShopPage = () => {
   const { t } = useTranslation();
 
   const handleVisitShop = () => {
@@ -16,21 +16,21 @@ const YoungShopPage = () => {
   };
 
   return (
-    <div className="section-container youngshop-section">
+    <div className="section-container yougnshop-section">
       <div className="section-content">
         {/* Header */}
         <motion.div
-          className="youngshop-header"
+          className="yougnshop-header"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="youngshop-title">{t('youngshop_title')}</h1>
+          <h1 className="yougnshop-title">{t('yougnshop_title')}</h1>
           <div className="title-underline"></div>
         </motion.div>
 
         {/* Main Content */}
-        <div className="youngshop-content">
+        <div className="yougnshop-content">
           {/* Shop Link Section */}
           <motion.div
             className="shop-link-section"
@@ -145,7 +145,7 @@ const YoungShopPage = () => {
         </motion.div>
 
         {/* Background Effects */}
-        <div className="youngshop-background">
+        <div className="yougnshop-background">
           <div className="cyber-grid"></div>
           <div className="floating-particles">
             {[...Array(15)].map((_, i) => (
@@ -167,4 +167,4 @@ const YoungShopPage = () => {
   );
 };
 
-export default YoungShopPage;
+export default YougnShopPage;
