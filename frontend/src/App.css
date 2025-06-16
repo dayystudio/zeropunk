@@ -308,18 +308,21 @@ img, video, iframe, canvas, svg {
 }
 
 .stat-label {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #00ffff;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   margin-bottom: 0.25rem;
+  line-height: 1.1;
+  word-wrap: break-word;
 }
 
 .stat-sublabel {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #888888;
   font-style: italic;
+  line-height: 1.2;
 }
 
 /* System Monitoring Dashboard */
