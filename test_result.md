@@ -217,7 +217,7 @@ frontend:
         agent: "testing"
         comment: "Fixed the 'Illegal constructor' error by adding the missing Lock component to the lucide-react imports. The website now loads properly, showing the Hero section with the ZEROPUNK logo, subtitle, and buttons. The hamburger menu button is visible and functional. The grid overlay and background effects are working correctly. There are only minor console warnings related to the ZEROMARKET section, but these don't affect the core functionality."
   
-  - task: "Support Section with Donation and Discord Links"
+  - task: "Support Section Button Functionality"
     implemented: true
     working: true
     file: "/app/frontend/src/App.js"
@@ -231,6 +231,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "Verified that the Support section is properly implemented in the code. The 'Make a Donation' button correctly links to https://buymeacoffee.com/zeropunk and the 'Join Discord Server' button correctly links to https://discord.gg/cGWWV2TF2C. The website is now loading properly after fixing the Lock component import issue."
+      - working: true
+        agent: "testing"
+        comment: "Confirmed that the Support section button functionality is working correctly. The 'Make a Donation' button correctly links to https://buymeacoffee.com/zeropunk and the 'Join Discord Server' button correctly links to https://discord.gg/cGWWV2TF2C. Both buttons are properly styled with hover effects and animations."
 
   - task: "Interactive Alia Nox Chat Interface"
     implemented: true
