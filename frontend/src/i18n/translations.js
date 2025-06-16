@@ -14,7 +14,7 @@ export const translations = {
     // Hero Section
     hero_title: 'ZEROPUNK',
     hero_subtitle: 'Immersive Cyberpunk Gaming Experience',
-    hero_description: 'Step into a neon-lit dystopian future where technology and humanity collide. Experience the ultimate cyberpunk adventure.',
+    hero_description: 'Zeropunk is a cinematic cyberpunk open-world game where you\'re not the hero — you\'re just trying to survive.\nTalk to AI-powered NPCs, hack, fly, and fight your way through a collapsing futuristic city.',
     steam_wishlist: 'Wishlist on Steam',
     join_discord: 'Join Discord',
     
