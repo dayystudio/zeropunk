@@ -7,7 +7,8 @@ import {
   Globe, LogOut, User, Clock, TrendingUp, MapPin, Target,
   Gamepad2, Headphones, Mic, Eye, Brain, Heart, Home, Info,
   BarChart3, Bot, Map, Camera, UserCircle, ShoppingCart, 
-  Code, Mail, Languages
+  Code, Mail, Languages, Terminal, ZoomIn, Palette, 
+  AlertTriangle, CloudRain, Music, Send
 } from 'lucide-react';
 
 // Import Reality Components
