@@ -168,6 +168,11 @@ export const createDataStream = (container) => {
 
 // Circuit Board Background Pattern
 export const createCircuitPattern = (container) => {
+  if (!container) {
+    console.warn('createCircuitPattern: container is null or undefined');
+    return null;
+  }
+
   const circuit = document.createElement('div');
   circuit.className = 'circuit-pattern';
   circuit.style.cssText = `
