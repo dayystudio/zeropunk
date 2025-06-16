@@ -3849,7 +3849,7 @@ const App = () => {
     );
   };
 
-  const RoadmapSection = () => {
+  const LiveActivitySection = () => {
     const roadmapPhases = [
       {
         year: "2025 Q1",
