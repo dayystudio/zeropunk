@@ -247,8 +247,8 @@ img, video, iframe, canvas, svg {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
   margin-bottom: 3rem;
 }
 
@@ -257,11 +257,15 @@ img, video, iframe, canvas, svg {
   backdrop-filter: blur(15px);
   border: 2px solid rgba(0, 255, 255, 0.3);
   border-radius: 15px;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .stat-card.primary-stat {
