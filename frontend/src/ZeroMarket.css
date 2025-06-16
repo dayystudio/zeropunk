@@ -620,8 +620,8 @@
   box-shadow: none;
 }
 
-/* Quick Cart (Mobile) */
-.zm-quick-cart {
+/* Mobile Specific */
+@media (max-width: 767px) {
   display: none;
   position: fixed;
   bottom: 1rem;
