@@ -175,7 +175,7 @@ const RealityFractures = ({ onResetToMain }) => {
                 <div className="eye-inner" />
                 <div className="eye-pupil" />
               </div>
-              <div className="glyph-tooltip">Forbidden Sight</div>
+              <div className="glyph-tooltip">{t('forbidden_sight')}</div>
               <div className="glyph-aura red-aura" />
             </motion.div>
 
