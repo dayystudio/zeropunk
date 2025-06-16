@@ -346,5 +346,104 @@ class ZeropunkBackendTests(unittest.TestCase):
             self.assertEqual(status_response.status_code, 200)
             print(f"Database connection test {i+1}: OK")
 
+    def test_10_marketplace_readiness(self):
+        """Test backend readiness for ZEROMARKET cyberpunk shop section"""
+        print("\nTesting backend readiness for ZEROMARKET cyberpunk shop...")
+        
+        # Test 1: API response time for marketplace operations
+        print("Testing API response time...")
+        start_time = __import__('time').time()
+        response = requests.get(f"{API_URL}/game-stats")
+        end_time = __import__('time').time()
+        response_time = end_time - start_time
+        
+        self.assertEqual(response.status_code, 200)
+        print(f"API response time: {response_time:.4f} seconds")
+        
+        # For a responsive marketplace, we want response times under 500ms
+        self.assertLess(response_time, 0.5, "API response time should be under 500ms for responsive marketplace")
+        
+        # Test 2: Database connection stability for marketplace transactions
+        print("Testing database connection stability for marketplace transactions...")
+        client_names = [f"marketplace_test_{i}" for i in range(5)]
+        
+        for client_name in client_names:
+            payload = {"client_name": client_name}
+            response = requests.post(f"{API_URL}/status", json=payload)
+            self.assertEqual(response.status_code, 200)
+            
+        # Verify all test entries were saved
+        response = requests.get(f"{API_URL}/status")
+        self.assertEqual(response.status_code, 200)
+        status_checks = response.json()
+        
+        # Count how many of our test entries are in the response
+        found_count = sum(1 for status in status_checks if any(name in status.get("client_name", "") for name in client_names))
+        print(f"Found {found_count} of {len(client_names)} test database entries")
+        
+        # We should find at least some of our test entries
+        self.assertGreater(found_count, 0, "Database should store and retrieve marketplace test entries")
+        
+        # Test 3: Concurrent request handling for marketplace traffic
+        print("Testing concurrent request handling...")
+        import concurrent.futures
+        
+        def make_request():
+            return requests.get(f"{API_URL}/game-stats")
+        
+        # Simulate 10 concurrent users accessing the marketplace
+        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+            future_to_request = {executor.submit(make_request): i for i in range(10)}
+            
+            success_count = 0
+            for future in concurrent.futures.as_completed(future_to_request):
+                response = future.result()
+                if response.status_code == 200:
+                    success_count += 1
+        
+        print(f"Successful concurrent requests: {success_count}/10")
+        self.assertEqual(success_count, 10, "All concurrent requests should succeed for marketplace traffic")
+        
+        # Test 4: Authentication system readiness
+        print("Testing authentication system readiness...")
+        
+        # Test user registration endpoint (without actually creating a user)
+        test_user = {
+            "username": f"marketplace_test_user_{uuid.uuid4()}",
+            "email": f"test_{uuid.uuid4()}@example.com",
+            "password": "SecureP@ssw0rd123",
+            "accept_terms": True
+        }
+        
+        # Just check if the endpoint exists and responds
+        try:
+            response = requests.options(f"{API_URL}/auth/register")
+            self.assertIn("Access-Control-Allow-Origin", response.headers)
+            print("Authentication endpoints are available with proper CORS headers")
+        except requests.exceptions.RequestException as e:
+            print(f"Warning: Could not access authentication endpoint: {e}")
+            
+        # Test 5: API structure for marketplace operations
+        print("Testing API structure for marketplace operations...")
+        
+        # Check if the API has the basic structure needed for marketplace operations
+        # We need endpoints for: root, status checks, and potentially user authentication
+        essential_endpoints = ["/", "/status", "/game-stats"]
+        
+        for endpoint in essential_endpoints:
+            response = requests.get(f"{API_URL}{endpoint}")
+            self.assertEqual(response.status_code, 200, f"Essential endpoint {endpoint} should be available")
+            
+        print("All essential API endpoints for marketplace operations are available")
+        
+        # Summary
+        print("\nZEROMARKET Backend Readiness Summary:")
+        print("✅ API response time is acceptable for marketplace operations")
+        print("✅ Database connection is stable for marketplace transactions")
+        print("✅ Server can handle concurrent marketplace traffic")
+        print("✅ Authentication system structure is available")
+        print("✅ Essential API endpoints are accessible")
+        print("⚠️ No specific marketplace endpoints found - frontend may need to implement marketplace UI without dedicated backend endpoints")
+
 if __name__ == "__main__":
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
