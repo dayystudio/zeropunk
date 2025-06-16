@@ -937,6 +937,7 @@ const App = () => {
       // Hero Section
       hero_subtitle: 'ZeropunkOS v0.92 | 访客模式 | dayystudio',
       hero_message: '你不是英雄。你是一个公民——破碎系统中的又一个齿轮。但系统正在崩溃，而你可能就是那个火花。',
+      hero_description: 'Zeropunk是一个电影级的赛博朋克开放世界游戏，在这里你不是英雄——你只是在努力生存。与AI驱动的NPC交谈，黑客入侵，飞行，战斗，穿越一个崩溃中的未来城市。',
       enter_beta: 'STEAM 愿望清单',
       talk_to_alia: '与 ALIA NOX 对话',
 
