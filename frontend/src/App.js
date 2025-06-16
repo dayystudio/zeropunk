@@ -1077,7 +1077,7 @@ const App = () => {
       open_world_details: 'La ville s\'étend sur 12 districts distincts, chacun avec des systèmes de gouvernance IA uniques. Des tours corporatives imprégnées de néon au sous-sol de minage de données, chaque lieu présente des événements générés procéduralement alimentés par les actions collectives de tous les joueurs.',
 
       // Beta Section
-      beta_title: 'LISTE DE SOUHAITS STEAM',
+      beta_title: 'Bêta bientôt disponible',
       beta_warning: 'LANCEMENT : Liste de Souhaits Steam Maintenant Disponible',
       beta_description: 'Ajoutez ZEROPUNK à votre liste de souhaits Steam et soyez parmi les premiers à découvrir l\'avenir du jeu alimenté par IA lors de notre lancement.',
       system_requirements: 'Configuration Requise',
