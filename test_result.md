@@ -479,14 +479,7 @@ test_plan:
     - "ZEROMARKET Section Visual Effects"
     - "Support Section Button Functionality"
   stuck_tasks:
-    - "Cyberpunk UI Foundation"
-    - "Mobile Optimization for One-Page Scroll Layout"
-    - "Interactive Alia Nox Chat Interface"
-    - "Hero Section"
-    - "Game Stats Display"
-    - "About Section"
-    - "Alia Nox Preview Section"
-    - "PC Requirements System Analyzer"
+    - "Reality Fractures Implementation"
   test_all: false
   test_priority: "high_first"
   completed_tests:
@@ -499,14 +492,18 @@ test_plan:
     - "ZEROMARKET Backend Integration"
     - "Support Section with Donation and Discord Links"
     - "JavaScript Icon Errors"
+    - "Cyberpunk UI Foundation"
+    - "Hero Section"
+    - "Interactive Alia Nox Chat Interface"
+    - "Game Stats Display"
+    - "About Section"
+    - "Alia Nox Preview Section"
+    - "Mobile Optimization for One-Page Scroll Layout"
+    - "PC Requirements System Analyzer"
   backend_verified: true
   frontend_issues:
-    - "Frontend application not loading properly in browser"
-    - "Browser shows 'Not Found' error while curl returns 200 OK"
-    - "Likely routing configuration issue in React application"
-    - "Server responds but React app is not rendering"
-    - "JavaScript icon errors fixed (Upload, Instagram, Coins)"
-    - "Remaining errors related to Lock component and Illegal constructor"
+    - "Reality Fractures section is temporarily commented out for debugging"
+    - "Minor console warnings related to ZEROMARKET section"
 
 agent_communication:
   - agent: "main"
