@@ -4273,13 +4273,6 @@ const App = () => {
             </div>
           </div>
         </div>
-
-        {/* Quick Cart (Mobile) */}
-        <div className="zm-quick-cart">
-          <button className="zm-quick-cart-btn" onClick={handleCheckout} disabled={cart.length === 0}>
-            🛒 {cart.length} • ₦{getTotalPrice().toLocaleString()}
-          </button>
-        </div>
       </div>
     );
   };
