@@ -3586,7 +3586,7 @@ const App = () => {
     </div>
   );
 
-  const RoadmapSection = () => {
+  const LiveActivitySection = () => {
     const [liveData, setLiveData] = useState({
       playerCount: 2847,
       currentTime: { hour: 14, minute: 23, period: 'Day Cycle' },
