@@ -4103,8 +4103,8 @@ const App = () => {
           </div>
         </div>
       </div>
-    </div>
-  
+    );
+  };
 
   const RoadmapSection = () => {
     const roadmapPhases = [
