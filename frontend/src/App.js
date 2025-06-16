@@ -1685,7 +1685,7 @@ const App = () => {
           transition={{ delay: 0.8, duration: 1 }}
         >
           <p className="dystopian-text">
-            {t('hero_message')}
+            {t('hero_description')}
           </p>
         </motion.div>
 
