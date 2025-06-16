@@ -121,7 +121,7 @@
   flex-wrap: wrap;
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
