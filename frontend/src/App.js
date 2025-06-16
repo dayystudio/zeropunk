@@ -1113,6 +1113,7 @@ const App = () => {
     { id: 'pc_requirements', label: t('pc_requirements'), icon: <Monitor size={16} /> },
     { id: 'stats', label: 'GameStat', icon: <BarChart3 size={16} /> },
     { id: 'live_activity', label: 'Live World Activity', icon: <Globe size={16} /> },
+    { id: 'zeromarket', label: 'ZEROMARKET', icon: <ShoppingCart size={16} /> },
     { id: 'roadmap', label: t('roadmap'), icon: <Map size={16} /> },
     { id: 'modding', label: 'Modding Hub', icon: <Code size={16} /> },
     { id: 'contact', label: t('contact'), icon: <Mail size={16} /> },
