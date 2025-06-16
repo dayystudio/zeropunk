@@ -72,6 +72,8 @@ export const translations = {
     play_now: 'Play Now',
     make_donation: 'Make a Donation',
     join_discord_server: 'Join the Discord Server',
+    enter_beta: 'Enter Beta',
+    talk_to_alia: 'Talk to ALIA',
     
     // Footer
     copyright: '© 2024 ZEROPUNK. All rights reserved.',
