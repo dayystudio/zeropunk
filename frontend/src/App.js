@@ -5,7 +5,9 @@ import {
   MessageCircle, Users, Activity, Download, Star, Zap, 
   Shield, Cpu, HardDrive, Monitor, Smartphone, Settings,
   Globe, LogOut, User, Clock, TrendingUp, MapPin, Target,
-  Gamepad2, Headphones, Mic, Eye, Brain, Heart
+  Gamepad2, Headphones, Mic, Eye, Brain, Heart, Home, Info,
+  BarChart3, Bot, Map, Camera, UserCircle, ShoppingCart, 
+  Code, Mail, Languages
 } from 'lucide-react';
 
 // Import Reality Components
