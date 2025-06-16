@@ -4063,7 +4063,7 @@ const App = () => {
     };
 
     return (
-      <div className="zeromarket-section">
+      <div className="zeromarket-section" ref={sectionRef}>
         <div className="zeromarket-content">
           {/* Header */}
           <div className="zeromarket-header">
