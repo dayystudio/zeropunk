@@ -8,7 +8,8 @@ import {
   Gamepad2, Headphones, Mic, Eye, Brain, Heart, Home, Info,
   BarChart3, Bot, Map, Camera, UserCircle, ShoppingCart, 
   Code, Mail, Languages, Terminal, ZoomIn, Palette, 
-  AlertTriangle, CloudRain, Music, Send, Upload, Instagram, Coins
+  AlertTriangle, CloudRain, Music, Send, Upload, Instagram, Coins,
+  Lock
 } from 'lucide-react';
 
 // Import Reality Components
