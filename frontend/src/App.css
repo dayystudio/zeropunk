@@ -1705,6 +1705,47 @@ section {
   max-height: calc(100vh - 160px);
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  /* Enhanced scrollbar for better UX */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* Custom Scrollbar for Webkit browsers */
+.menu-items::-webkit-scrollbar {
+  width: 6px;
+}
+
+.menu-items::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.menu-items::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.menu-items::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Mobile scroll improvements */
+@media (max-width: 768px) {
+  .menu-items {
+    max-height: calc(100vh - 120px);
+    padding: 0 0.5rem;
+    /* Enable momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Improve scroll snap behavior */
+    scroll-snap-type: y proximity;
+  }
+  
+  .menu-item {
+    min-height: 44px; /* Better mobile touch targets */
+    padding: 0.75rem 1rem;
+    scroll-snap-align: start;
+  }
 }
 
 /* Clean Menu Items */
