@@ -4966,7 +4966,6 @@ const App = () => {
       <AnimatePresence>
         {showAuthModal && <AuthModal />}
       </AnimatePresence>
-        </>
       )}
     </div>
   );
