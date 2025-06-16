@@ -1,0 +1,578 @@
+/* ZEROMARKET - Cyberpunk Underground Shop Interface */
+
+/* Main Container */
+.zeromarket-section {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1613046883984-dcf0c289b896') center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: 'Orbitron', monospace;
+}
+
+/* Atmospheric Effects */
+.zeromarket-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 48%, rgba(0, 255, 255, 0.03) 49%, rgba(0, 255, 255, 0.03) 51%, transparent 52%);
+  animation: atmosphericGlow 8s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.zeromarket-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+  animation: gridShift 20s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Content Container */
+.zeromarket-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Header Section */
+.zeromarket-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.zeromarket-logo {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ff88, #ff6b35);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: logoGlitch 3s ease-in-out infinite, gradientShift 8s ease-in-out infinite;
+  text-shadow: 
+    0 0 10px rgba(0, 255, 255, 0.5),
+    0 0 20px rgba(0, 255, 255, 0.3),
+    0 0 40px rgba(0, 255, 255, 0.2);
+  position: relative;
+}
+
+.zeromarket-logo::before {
+  content: 'ZEROMARKET';
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ff0040;
+  z-index: -1;
+  animation: glitchOffset 0.1s infinite linear alternate-reverse;
+}
+
+.zeromarket-subtitle {
+  font-size: 1rem;
+  color: #00ffff;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-top: 1rem;
+  opacity: 0.8;
+  animation: textFlicker 2s infinite;
+}
+
+/* Main Layout */
+.zeromarket-main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Filters Sidebar */
+.zeromarket-filters {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.filter-section {
+  margin-bottom: 2rem;
+}
+
+.filter-title {
+  color: #00ffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.filter-option:hover {
+  background: rgba(0, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.filter-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #00ffff;
+  border-radius: 3px;
+  margin-right: 0.8rem;
+  position: relative;
+  background: transparent;
+}
+
+.filter-checkbox.checked::after {
+  content: '✓';
+  position: absolute;
+  top: -2px;
+  left: 1px;
+  color: #00ffff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.filter-label {
+  font-size: 0.85rem;
+  color: #cccccc;
+  flex: 1;
+}
+
+/* Product Grid */
+.zeromarket-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Product Card */
+.product-card {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.product-card:hover::before {
+  left: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 255, 255, 0.5);
+  box-shadow: 
+    0 10px 30px rgba(0, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.product-category {
+  font-size: 0.7rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.category-physical {
+  background: rgba(0, 255, 136, 0.2);
+  color: #00ff88;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.category-ingame {
+  background: rgba(255, 107, 53, 0.2);
+  color: #ff6b35;
+  border: 1px solid rgba(255, 107, 53, 0.3);
+}
+
+.category-secret {
+  background: rgba(255, 0, 255, 0.2);
+  color: #ff00ff;
+  border: 1px solid rgba(255, 0, 255, 0.3);
+}
+
+.product-rarity {
+  font-size: 0.7rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.rarity-common { color: #cccccc; border: 1px solid #666666; }
+.rarity-rare { color: #00ffff; border: 1px solid #00ffff; }
+.rarity-epic { color: #ff00ff; border: 1px solid #ff00ff; }
+.rarity-classified { color: #ff6b35; border: 1px solid #ff6b35; }
+
+.product-image {
+  width: 100%;
+  height: 180px;
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 48%, rgba(0, 255, 255, 0.1) 49%, rgba(0, 255, 255, 0.1) 51%, transparent 52%);
+  animation: scanLines 2s linear infinite;
+}
+
+.product-icon {
+  font-size: 3rem;
+  color: #00ffff;
+  opacity: 0.7;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.product-description {
+  font-size: 0.85rem;
+  color: #aaaaaa;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.product-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  color: #00ffff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.stat-label {
+  color: #888888;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #00ff88;
+}
+
+.currency-symbol {
+  font-size: 0.9rem;
+  color: #00ffff;
+}
+
+.product-button {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(45deg, #00ffff, #00bfff);
+  border: none;
+  border-radius: 8px;
+  color: #000000;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Orbitron', monospace;
+  letter-spacing: 0.05em;
+}
+
+.product-button:hover {
+  background: linear-gradient(45deg, #00bfff, #0080ff);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+}
+
+.locked-item {
+  filter: blur(2px);
+  opacity: 0.5;
+  position: relative;
+}
+
+.locked-item::after {
+  content: 'LOCKED';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 0, 64, 0.9);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.2rem;
+  border: 2px solid #ff0040;
+  backdrop-filter: blur(10px);
+}
+
+/* Checkout Section */
+.checkout-terminal {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 1.5rem;
+  z-index: 1000;
+}
+
+.terminal-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.terminal-title {
+  color: #00ffff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.biometric-scanner {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #00ffff;
+  border-radius: 50%;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.biometric-scanner:hover {
+  border-color: #00ff88;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.scanner-icon {
+  font-size: 2rem;
+  color: #00ffff;
+}
+
+.scanning-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 3px solid #00ff88;
+  animation: scanPulse 2s ease-in-out infinite;
+}
+
+/* AI Assistant */
+.ai-assistant {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 250px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 0, 255, 0.3);
+  border-radius: 10px;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.ai-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff00ff, #8800ff);
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: aiPulse 3s ease-in-out infinite;
+}
+
+.ai-message {
+  font-size: 0.8rem;
+  color: #ff00ff;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Animations */
+@keyframes atmosphericGlow {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
+
+@keyframes gridShift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(10px, 10px); }
+}
+
+@keyframes logoGlitch {
+  0%, 90%, 100% {
+    transform: translateX(0);
+  }
+  92% {
+    transform: translateX(-2px);
+  }
+  94% {
+    transform: translateX(2px);
+  }
+  96% {
+    transform: translateX(-1px);
+  }
+  98% {
+    transform: translateX(1px);
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glitchOffset {
+  0% { transform: translate(1px, 1px); }
+  100% { transform: translate(-1px, -1px); }
+}
+
+@keyframes textFlicker {
+  0%, 95%, 100% { opacity: 0.8; }
+  96%, 99% { opacity: 0.3; }
+}
+
+@keyframes scanLines {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes scanPulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes aiPulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(255, 0, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 0, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.6); }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .zeromarket-main {
+    grid-template-columns: 1fr;
+  }
+  
+  .zeromarket-filters {
+    position: static;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .zeromarket-logo {
+    font-size: 2.5rem;
+  }
+  
+  .zeromarket-products {
+    grid-template-columns: 1fr;
+  }
+  
+  .checkout-terminal,
+  .ai-assistant {
+    position: static;
+    margin: 1rem 0;
+    width: 100%;
+  }
+}
