@@ -3889,7 +3889,6 @@ const App = () => {
     
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [cart, setCart] = useState([]);
-    const [isScanning, setIsScanning] = useState(false);
     const sectionRef = useRef(null);
 
     // Initialize visual effects
