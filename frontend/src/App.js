@@ -3880,297 +3880,348 @@ const App = () => {
   };
 
   const ZeroMarketSection = () => {
+    const [activeCategory, setActiveCategory] = useState('all');
     const [selectedFilters, setSelectedFilters] = useState({
-      faction: [],
       rarity: [],
-      type: [],
-      availability: []
+      price: 'all'
     });
-    
-    const [selectedProduct, setSelectedProduct] = useState(null);
     const [cart, setCart] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
     const sectionRef = useRef(null);
 
     // Initialize visual effects
     useEffect(() => {
       if (sectionRef.current) {
-        // Import and initialize effects
         import('./zeroMarketEffects.js').then(({ initZeroMarketEffects }) => {
           initZeroMarketEffects(sectionRef.current);
         });
       }
     }, []);
 
-    // Sample product data
+    // Enhanced product data with better structure
     const products = [
       {
         id: 1,
-        name: "Neural Interface Mk-VII",
-        category: "ingame",
-        rarity: "epic",
-        type: "functional",
-        faction: "corpo",
-        availability: "in_stock",
-        price: 2847,
-        description: "Military-grade neural interface with enhanced data processing capabilities. Direct cortex connection for lightning-fast reaction times.",
-        stats: { power: 95, rarity: 89, demand: 72 },
-        icon: "🧠",
-        buttonText: "INJECT"
+        name: "Neural Chip MK-VII",
+        category: "cybernetics",
+        rarity: "legendary",
+        price: 4500,
+        originalPrice: 6000,
+        description: "Military-grade neural enhancement chip. Direct cortex interface with 99.7% compatibility rate.",
+        image: "🧠",
+        stock: 3,
+        tags: ["neural", "military", "enhancement"],
+        specs: ["7nm architecture", "Quantum encryption", "Bio-compatible"],
+        popularity: 95
       },
       {
         id: 2,
-        name: "Holographic T-Shirt",
-        category: "physical",
+        name: "Holo T-Shirt",
+        category: "apparel",
         rarity: "rare",
-        type: "cosmetic",
-        faction: "hacker",
-        availability: "limited",
-        price: 67,
-        description: "Limited edition holographic fabric that shifts between neon patterns. Collectors item from the underground scene.",
-        stats: { style: 88, rarity: 76, comfort: 85 },
-        icon: "👕",
-        buttonText: "TRANSFER"
+        price: 89,
+        originalPrice: 120,
+        description: "Smart fabric with programmable holographic patterns. Street fashion meets cutting-edge tech.",
+        image: "👕",
+        stock: 12,
+        tags: ["fashion", "holo", "smart"],
+        specs: ["Smart fiber", "RGB adaptive", "Machine washable"],
+        popularity: 78
       },
       {
         id: 3,
-        name: "Quantum Encryption Core",
-        category: "secret",
-        rarity: "classified",
-        type: "functional",
-        faction: "rebel",
-        availability: "preorder",
-        price: 15420,
-        description: "[REDACTED] - Access Level 7 Required. Quantum-entangled security protocol for ultimate data protection.",
-        stats: { security: 99, rarity: 95, power: 87 },
-        icon: "🔐",
-        buttonText: "DEPLOY",
-        locked: true
+        name: "Data Blade",
+        category: "weapons",
+        rarity: "epic",
+        price: 2300,
+        originalPrice: 2300,
+        description: "Monofilament edge with integrated data storage. Cuts through steel and encrypts data simultaneously.",
+        image: "⚔️",
+        stock: 5,
+        tags: ["blade", "data", "weapon"],
+        specs: ["Monofilament edge", "1TB storage", "Biometric lock"],
+        popularity: 88
       },
       {
         id: 4,
-        name: "Neon Weapon Skin Pack",
-        category: "ingame",
-        rarity: "rare",
-        type: "cosmetic",
-        faction: "mercenary",
-        availability: "in_stock",
-        price: 156,
-        description: "Complete weapon skin collection with animated neon effects. Transform your arsenal into works of art.",
-        stats: { style: 91, rarity: 68, glow: 94 },
-        icon: "⚡",
-        buttonText: "DOWNLOAD"
+        name: "Quantum Deck",
+        category: "tech",
+        rarity: "legendary",
+        price: 8900,
+        originalPrice: 12000,
+        description: "Portable quantum computing deck. Process impossible calculations in your backpack.",
+        image: "💻",
+        stock: 1,
+        tags: ["quantum", "computing", "portable"],
+        specs: ["Quantum processor", "Portable design", "AI assistant"],
+        popularity: 92
       },
       {
         id: 5,
-        name: "Data Crystal Archive",
-        category: "physical",
-        rarity: "common",
-        type: "functional",
-        faction: "hacker",
-        availability: "in_stock",
-        price: 89,
-        description: "Crystalline storage device containing archived data streams from the old net. USB-C compatible.",
-        stats: { storage: 78, rarity: 45, durability: 92 },
-        icon: "💎",
-        buttonText: "TRANSFER"
+        name: "Stealth Cloak",
+        category: "gear",
+        rarity: "epic",
+        price: 3400,
+        originalPrice: 4200,
+        description: "Adaptive camouflage cloak with optical bending technology. Nearly invisible to most sensors.",
+        image: "🥷",
+        stock: 7,
+        tags: ["stealth", "cloak", "optical"],
+        specs: ["Optical bending", "8hr battery", "Silent operation"],
+        popularity: 85
       },
       {
         id: 6,
-        name: "Cybernetic Arm Enhancement",
-        category: "ingame",
-        rarity: "epic",
-        type: "functional",
-        faction: "corpo",
-        availability: "limited",
-        price: 8945,
-        description: "State-of-the-art prosthetic enhancement with built-in weaponry and tool integration.",
-        stats: { power: 96, tech: 89, combat: 94 },
-        icon: "🦾",
-        buttonText: "INJECT"
+        name: "Void Grenade",
+        category: "weapons",
+        rarity: "classified",
+        price: 15000,
+        originalPrice: 15000,
+        description: "[CLASSIFIED] Experimental void-tech ordnance. Reality distortion effects. Handle with extreme caution.",
+        image: "💣",
+        stock: 0,
+        tags: ["void", "experimental", "classified"],
+        specs: ["Void technology", "Reality distortion", "Single use"],
+        popularity: 99,
+        locked: true
       }
     ];
 
-    const filterOptions = {
-      faction: [
-        { id: 'corpo', label: 'Corporate' },
-        { id: 'hacker', label: 'Hacker Collective' },
-        { id: 'mercenary', label: 'Mercenary Guild' },
-        { id: 'rebel', label: 'Rebel Alliance' }
-      ],
-      rarity: [
-        { id: 'common', label: 'Common' },
-        { id: 'rare', label: 'Rare' },
-        { id: 'epic', label: 'Epic' },
-        { id: 'classified', label: 'Classified' }
-      ],
-      type: [
-        { id: 'physical', label: 'Physical Goods' },
-        { id: 'cosmetic', label: 'Cosmetic Items' },
-        { id: 'functional', label: 'Functional Gear' }
-      ],
-      availability: [
-        { id: 'in_stock', label: 'In Stock' },
-        { id: 'limited', label: 'Limited Edition' },
-        { id: 'preorder', label: 'Pre-Order' }
-      ]
-    };
-
-    const aiMessages = [
-      "Welcome to ZEROMARKET, choom. What's your poison today?",
-      "Careful with those classified items... they bite back.",
-      "That neural interface is hot property. Moving fast.",
-      "Remember, all sales are final in the underground.",
-      "Need something untraceable? You've come to the right place."
+    const categories = [
+      { id: 'all', name: 'All Items', icon: '🌐' },
+      { id: 'cybernetics', name: 'Cybernetics', icon: '🧠' },
+      { id: 'weapons', name: 'Weapons', icon: '⚔️' },
+      { id: 'apparel', name: 'Apparel', icon: '👕' },
+      { id: 'tech', name: 'Tech', icon: '💻' },
+      { id: 'gear', name: 'Gear', icon: '🎒' }
     ];
 
-    const [currentAiMessage, setCurrentAiMessage] = useState(0);
+    const rarities = [
+      { id: 'common', name: 'Common', color: '#888888' },
+      { id: 'rare', name: 'Rare', color: '#00aaff' },
+      { id: 'epic', name: 'Epic', color: '#aa00ff' },
+      { id: 'legendary', name: 'Legendary', color: '#ff6600' },
+      { id: 'classified', name: 'Classified', color: '#ff0040' }
+    ];
 
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentAiMessage((prev) => (prev + 1) % aiMessages.length);
-      }, 8000);
-      return () => clearInterval(interval);
-    }, []);
-
-    const toggleFilter = (category, value) => {
-      setSelectedFilters(prev => ({
-        ...prev,
-        [category]: prev[category].includes(value)
-          ? prev[category].filter(item => item !== value)
-          : [...prev[category], value]
-      }));
-    };
-
+    // Filter products
     const filteredProducts = products.filter(product => {
-      return Object.keys(selectedFilters).every(category => {
-        if (selectedFilters[category].length === 0) return true;
-        return selectedFilters[category].includes(product[category]);
-      });
+      const matchesCategory = activeCategory === 'all' || product.category === activeCategory;
+      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          product.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+      const matchesRarity = selectedFilters.rarity.length === 0 || selectedFilters.rarity.includes(product.rarity);
+      
+      let matchesPrice = true;
+      if (selectedFilters.price === 'low') matchesPrice = product.price < 1000;
+      else if (selectedFilters.price === 'mid') matchesPrice = product.price >= 1000 && product.price < 5000;
+      else if (selectedFilters.price === 'high') matchesPrice = product.price >= 5000;
+
+      return matchesCategory && matchesSearch && matchesRarity && matchesPrice;
     });
 
     const addToCart = (product) => {
-      if (product.locked) return;
+      if (product.locked || product.stock === 0) return;
       setCart(prev => [...prev, product]);
     };
 
-    return (
-      <div className="zeromarket-section" ref={sectionRef}>
-        <div className="zeromarket-content">
-          {/* Header */}
-          <div className="zeromarket-header">
-            <h1 className="zeromarket-logo">ZEROMARKET</h1>
-            <p className="zeromarket-subtitle">Underground Tech Bazaar • Level 7 Access Required</p>
-          </div>
+    const removeFromCart = (productId) => {
+      setCart(prev => prev.filter((item, index) => index !== productId));
+    };
 
-          {/* Main Layout */}
-          <div className="zeromarket-main">
-            {/* Filters Sidebar */}
-            <div className="zeromarket-filters">
-              {Object.entries(filterOptions).map(([category, options]) => (
-                <div key={category} className="filter-section">
-                  <h3 className="filter-title">{category.replace('_', ' ')}</h3>
-                  {options.map(option => (
-                    <div 
-                      key={option.id} 
-                      className="filter-option"
-                      onClick={() => toggleFilter(category, option.id)}
-                    >
-                      <div className={`filter-checkbox ${selectedFilters[category].includes(option.id) ? 'checked' : ''}`}></div>
-                      <span className="filter-label">{option.label}</span>
-                    </div>
-                  ))}
-                </div>
+    const getTotalPrice = () => {
+      return cart.reduce((sum, item) => sum + item.price, 0);
+    };
+
+    const handleCheckout = () => {
+      if (cart.length > 0) {
+        alert(`Order confirmed! ${cart.length} items - ₦${getTotalPrice().toLocaleString()}\n\nItems will be delivered to your neural mailbox within 24 hours.`);
+        setCart([]);
+      }
+    };
+
+    const toggleRarityFilter = (rarity) => {
+      setSelectedFilters(prev => ({
+        ...prev,
+        rarity: prev.rarity.includes(rarity) 
+          ? prev.rarity.filter(r => r !== rarity)
+          : [...prev.rarity, rarity]
+      }));
+    };
+
+    return (
+      <div className="zeromarket-v2" ref={sectionRef}>
+        {/* Header */}
+        <div className="zm-header">
+          <div className="zm-header-content">
+            <h1 className="zm-title">
+              <span className="zm-title-main">ZERO</span>
+              <span className="zm-title-accent">MARKET</span>
+            </h1>
+            <p className="zm-subtitle">Underground Tech Exchange • Neural Commerce Authorized</p>
+            
+            {/* Search Bar */}
+            <div className="zm-search">
+              <input
+                type="text"
+                placeholder="Search neural tech..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="zm-search-input"
+              />
+              <span className="zm-search-icon">🔍</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Categories */}
+        <div className="zm-categories">
+          {categories.map(category => (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`zm-category-btn ${activeCategory === category.id ? 'active' : ''}`}
+            >
+              <span className="zm-category-icon">{category.icon}</span>
+              <span className="zm-category-name">{category.name}</span>
+            </button>
+          ))}
+        </div>
+
+        <div className="zm-main">
+          {/* Filters Sidebar */}
+          <div className="zm-filters">
+            <h3 className="zm-filter-title">Filters</h3>
+            
+            {/* Rarity Filter */}
+            <div className="zm-filter-group">
+              <h4 className="zm-filter-label">Rarity</h4>
+              {rarities.map(rarity => (
+                <label key={rarity.id} className="zm-filter-option">
+                  <input
+                    type="checkbox"
+                    checked={selectedFilters.rarity.includes(rarity.id)}
+                    onChange={() => toggleRarityFilter(rarity.id)}
+                    className="zm-checkbox"
+                  />
+                  <span className="zm-checkbox-custom" style={{ borderColor: rarity.color }}></span>
+                  <span className="zm-filter-text" style={{ color: rarity.color }}>{rarity.name}</span>
+                </label>
               ))}
             </div>
 
-            {/* Product Grid */}
-            <div className="zeromarket-products">
+            {/* Price Filter */}
+            <div className="zm-filter-group">
+              <h4 className="zm-filter-label">Price Range</h4>
+              <select 
+                value={selectedFilters.price} 
+                onChange={(e) => setSelectedFilters(prev => ({...prev, price: e.target.value}))}
+                className="zm-select"
+              >
+                <option value="all">All Prices</option>
+                <option value="low">Under ₦1,000</option>
+                <option value="mid">₦1,000 - ₦5,000</option>
+                <option value="high">Over ₦5,000</option>
+              </select>
+            </div>
+
+            {/* Cart Summary */}
+            <div className="zm-cart-summary">
+              <h4 className="zm-cart-title">Neural Cart</h4>
+              <div className="zm-cart-info">
+                <span className="zm-cart-count">{cart.length} items</span>
+                <span className="zm-cart-total">₦{getTotalPrice().toLocaleString()}</span>
+              </div>
+              <button 
+                onClick={handleCheckout}
+                disabled={cart.length === 0}
+                className="zm-checkout-btn"
+              >
+                {cart.length === 0 ? 'Cart Empty' : 'Neural Transfer'}
+              </button>
+            </div>
+          </div>
+
+          {/* Products Grid */}
+          <div className="zm-products">
+            <div className="zm-products-header">
+              <span className="zm-results-count">{filteredProducts.length} items found</span>
+              <span className="zm-sort">Sort: Popularity ↓</span>
+            </div>
+            
+            <div className="zm-products-grid">
               {filteredProducts.map(product => (
-                <motion.div 
-                  key={product.id} 
-                  className={`product-card ${product.locked ? 'locked-item' : ''}`}
-                  whileHover={{ scale: product.locked ? 1 : 1.02 }}
+                <motion.div
+                  key={product.id}
+                  className={`zm-product-card ${product.locked ? 'locked' : ''} ${product.stock === 0 ? 'out-of-stock' : ''}`}
+                  whileHover={{ y: -5, scale: 1.02 }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  <div className="product-header">
-                    <span className={`product-category category-${product.category}`}>
-                      {product.category.replace('_', ' ')}
+                  {/* Product Header */}
+                  <div className="zm-product-header">
+                    <span className={`zm-rarity rarity-${product.rarity}`}>
+                      {product.rarity.toUpperCase()}
                     </span>
-                    <span className={`product-rarity rarity-${product.rarity}`}>
-                      {product.rarity}
-                    </span>
+                    {product.originalPrice > product.price && (
+                      <span className="zm-sale-badge">SALE</span>
+                    )}
                   </div>
 
-                  <div className="product-image">
-                    <span className="product-icon">{product.icon}</span>
+                  {/* Product Image */}
+                  <div className="zm-product-image">
+                    <span className="zm-product-icon">{product.image}</span>
+                    {product.locked && <div className="zm-lock-overlay">🔒</div>}
+                    {product.stock === 0 && !product.locked && <div className="zm-stock-overlay">OUT OF STOCK</div>}
                   </div>
 
-                  <h3 className="product-name">{product.name}</h3>
-                  <p className="product-description">{product.description}</p>
-
-                  <div className="product-stats">
-                    {Object.entries(product.stats).map(([stat, value]) => (
-                      <div key={stat} className="stat-item">
-                        <span className="stat-value">{value}</span>
-                        <span className="stat-label">{stat}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="product-footer">
-                    <div className="product-price">
-                      <span className="currency-symbol">₦</span>{product.price.toLocaleString()}
+                  {/* Product Info */}
+                  <div className="zm-product-info">
+                    <h3 className="zm-product-name">{product.name}</h3>
+                    <p className="zm-product-description">{product.description}</p>
+                    
+                    {/* Specs */}
+                    <div className="zm-product-specs">
+                      {product.specs.slice(0, 2).map((spec, index) => (
+                        <span key={index} className="zm-spec-tag">{spec}</span>
+                      ))}
                     </div>
-                    <button 
-                      className="product-button"
+
+                    {/* Price */}
+                    <div className="zm-product-price">
+                      <span className="zm-price-current">₦{product.price.toLocaleString()}</span>
+                      {product.originalPrice > product.price && (
+                        <span className="zm-price-original">₦{product.originalPrice.toLocaleString()}</span>
+                      )}
+                    </div>
+
+                    {/* Stock Info */}
+                    <div className="zm-product-stock">
+                      {product.stock > 0 && !product.locked && (
+                        <span className="zm-stock-count">{product.stock} in stock</span>
+                      )}
+                    </div>
+
+                    {/* Add to Cart Button */}
+                    <button
                       onClick={() => addToCart(product)}
-                      disabled={product.locked}
+                      disabled={product.locked || product.stock === 0}
+                      className="zm-add-to-cart"
                     >
-                      {product.buttonText}
+                      {product.locked ? 'CLASSIFIED' : 
+                       product.stock === 0 ? 'OUT OF STOCK' : 
+                       'Add to Cart'}
                     </button>
                   </div>
                 </motion.div>
               ))}
             </div>
           </div>
+        </div>
 
-          {/* Mobile Bottom Section */}
-          <div className="mobile-bottom-section">
-            {/* Checkout Terminal */}
-            <div className="checkout-terminal">
-              <div className="terminal-header">
-                <h3 className="terminal-title">Shopping Cart</h3>
-              </div>
-              <div className="cart-summary">
-                <div className="cart-items">
-                  <span className="cart-count">{cart.length} Items</span>
-                  <span className="cart-total">₦{cart.reduce((sum, item) => sum + item.price, 0).toLocaleString()}</span>
-                </div>
-                <button 
-                  className="checkout-button"
-                  onClick={() => {
-                    if (cart.length > 0) {
-                      alert(`Purchase confirmed! ${cart.length} items for ₦${cart.reduce((sum, item) => sum + item.price, 0).toLocaleString()}`);
-                      setCart([]);
-                    }
-                  }}
-                  disabled={cart.length === 0}
-                >
-                  PURCHASE NOW
-                </button>
-              </div>
-            </div>
-
-            {/* AI Assistant */}
-            <div className="ai-assistant">
-              <div className="ai-avatar">
-                <ZapIcon size={20} color="#ff00ff" />
-              </div>
-              <div className="ai-message">
-                {aiMessages[currentAiMessage]}
-              </div>
-            </div>
-          </div>
+        {/* Quick Cart (Mobile) */}
+        <div className="zm-quick-cart">
+          <button className="zm-quick-cart-btn" onClick={handleCheckout} disabled={cart.length === 0}>
+            🛒 {cart.length} • ₦{getTotalPrice().toLocaleString()}
+          </button>
         </div>
       </div>
     );
