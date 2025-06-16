@@ -7,33 +7,14 @@
   padding: 0;
 }
 
-/* Global scrollbar styles - remove default white scrollbars */
+/* Hide all scrollbars completely */
 * {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 255, 255, 0.3) transparent;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
 *::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-*::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-*::-webkit-scrollbar-thumb {
-  background: rgba(0, 255, 255, 0.3);
-  border-radius: 3px;
-  transition: background 0.3s ease;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 255, 255, 0.5);
-}
-
-*::-webkit-scrollbar-corner {
-  background: transparent;
+  display: none; /* Chrome, Safari and Opera */
 }
 
 html {
