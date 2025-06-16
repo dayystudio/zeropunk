@@ -200,7 +200,7 @@ export const translations = {
     // Hero Section
     hero_title: 'ZEROPUNK',
     hero_subtitle: '沉浸式赛博朋克游戏体验',
-    hero_description: '步入霓虹照亮的反乌托邦未来，在这里科技与人性相互碰撞。体验终极赛博朋克冒险。',
+    hero_description: 'Zeropunk是一款电影风格的赛博朋克开放世界游戏，你不是英雄——你只是在努力生存。\n与AI驱动的NPC对话，黑客、飞行，在这座崩塌的未来城市中战斗求生。',
     steam_wishlist: 'Steam愿望单',
     join_discord: '加入Discord',
     
