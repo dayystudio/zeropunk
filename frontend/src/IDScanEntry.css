@@ -375,7 +375,7 @@
 /* Skip Button */
 .scan-skip-button {
   position: absolute;
-  bottom: 2rem;
+  top: 2rem;
   right: 2rem;
   background: rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -387,6 +387,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  z-index: 10;
 }
 
 .scan-skip-button:hover {
@@ -394,6 +395,7 @@
   border-color: rgba(59, 130, 246, 0.5);
   color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
 }
 
 /* Glitch Effects */
