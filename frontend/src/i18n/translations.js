@@ -402,7 +402,7 @@ export const translations = {
     how_it_works: '使用方法：',
     step_1: '在 yougnshop.com 购买任何服装商品',
     step_2: '订单完成后，给我们发送邮件',
-    step_3: '使用与下单相同的邮箱地址',
+    step_3: '向我们发送您的订单截图，包含购买的服装商品',
     step_4: '我们将发送给您一个独特代码，解锁游戏内的服装',
     support_email: '邮箱：yougnshop@gmail.com',
     feature_availability: '此功能将在游戏完整版发布后提供。'
