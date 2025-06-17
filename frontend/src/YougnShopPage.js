@@ -12,7 +12,7 @@ const YougnShopPage = () => {
   };
 
   const handleEmailContact = () => {
-    window.open('mailto:support@zeropunk-game.com', '_blank');
+    window.open('mailto:yougnshop@gmail.com', '_blank');
   };
 
   return (
