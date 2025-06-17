@@ -1897,11 +1897,11 @@ section {
 /* Enhanced Mobile Vertical Scrolling */
 @media (max-width: 768px) {
   .navigation-menu {
-    top: 40px; /* Much higher on mobile - only 40px from top */
+    top: 60px;
     right: 10px;
     width: 260px;
-    max-height: calc(100vh - 50px); /* Only 50px total margins - maximum height */
-    overflow: hidden;
+    max-height: calc(100vh - 80px); /* Proper height for mobile */
+    overflow: hidden; /* Let menu-items handle scrolling */
   }
   
   .menu-content {
@@ -1913,17 +1913,16 @@ section {
   }
   
   .menu-header {
-    padding: 0.6rem 1rem 0.2rem 1rem; /* Minimal padding on mobile */
-    margin-bottom: 0.2rem;
+    padding: 0.8rem 1rem 0.3rem 1rem;
+    margin-bottom: 0.3rem;
     flex-shrink: 0;
   }
   
   .menu-items {
     flex: 1;
-    overflow-y: auto;
+    overflow-y: auto; /* Enable scrolling on mobile */
     overflow-x: hidden;
-    padding: 0.2rem 0.5rem 0.5rem 0.5rem; /* Minimal padding to maximize space */
-    height: 100%;
+    padding: 0.5rem 0.5rem 2.5rem 0.5rem; /* Extra bottom padding for mobile */
     min-height: 0;
     /* Enable smooth vertical scrolling on mobile */
     -webkit-overflow-scrolling: touch;
