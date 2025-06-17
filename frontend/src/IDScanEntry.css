@@ -476,7 +476,7 @@
   }
   
   .scan-skip-button {
-    bottom: 1rem;
+    top: 1rem;
     right: 1rem;
     font-size: 0.7rem;
     padding: 0.4rem 0.8rem;
