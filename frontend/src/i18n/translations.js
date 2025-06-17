@@ -130,9 +130,9 @@ export const translations = {
     how_it_works: 'How it works:',
     step_1: 'Purchase any clothing item from yougnshop.com',
     step_2: 'After your order is complete, send us an email',
-    step_3: 'Use the same email you used to place the order',
+    step_3: 'Send us a screenshot of your order with the clothing items you purchased',
     step_4: 'We\'ll send you a unique code to unlock your clothing inside the game',
-    support_email: 'Email: support@zeropunk-game.com',
+    support_email: 'Email: yougnshop@gmail.com',
     feature_availability: 'This feature will be available once the full version of the game is released.'
   },
   
