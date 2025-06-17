@@ -1705,12 +1705,12 @@ section {
 /* Compact Scrollable Menu Items */
 .menu-items {
   flex: 1;
-  overflow-y: auto; /* Ensure scrolling is enabled */
+  overflow-y: auto;
   overflow-x: hidden;
-  padding: 0.5rem 0.75rem 1.5rem 0.75rem;
+  padding: 0.3rem 0.75rem 0.8rem 0.75rem; /* Reduced padding to maximize scroll area */
   height: 100%;
-  min-height: 0; /* Critical for flex scrolling */
-  max-height: none; /* Remove any max-height restrictions */
+  min-height: 0;
+  max-height: none;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   /* Enhanced scrollbar for better UX */
