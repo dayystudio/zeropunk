@@ -1732,6 +1732,31 @@ section {
     scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
   }
   
+  /* Add scroll fade indicators */
+  .menu-items::before {
+    content: '';
+    position: sticky;
+    top: 0;
+    height: 20px;
+    background: linear-gradient(to bottom, 
+      rgba(0, 0, 0, 0.8) 0%, 
+      transparent 100%);
+    z-index: 10;
+    margin-bottom: -20px;
+  }
+  
+  .menu-items::after {
+    content: '';
+    position: sticky;
+    bottom: 0;
+    height: 20px;
+    background: linear-gradient(to top, 
+      rgba(0, 0, 0, 0.8) 0%, 
+      transparent 100%);
+    z-index: 10;
+    margin-top: -20px;
+  }
+  
   /* Make scrollbar more visible on desktop hover */
   .menu-items::-webkit-scrollbar {
     width: 8px;
