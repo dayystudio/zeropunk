@@ -1627,10 +1627,10 @@ section {
 /* Futuristic HUD-Style Menu */
 .navigation-menu {
   position: fixed;
-  top: 80px; /* Reduced from 90px for more height */
+  top: 70px; /* Reduced from 80px for more height */
   right: 15px; 
   width: 280px; 
-  max-height: calc(100vh - 100px); /* Increased height significantly */
+  max-height: calc(100vh - 80px); /* Much taller - only 80px from screen bottom */
   background: 
     linear-gradient(135deg,
       rgba(0, 0, 0, 0.08) 0%,
