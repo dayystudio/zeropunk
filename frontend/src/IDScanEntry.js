@@ -293,20 +293,29 @@ const IDScanEntry = ({ onComplete }) => {
   );
 };
 
-// Typewriter effect component
+// Typewriter effect component (optimized for performance)
 const TypewriterText = ({ text, speed = 50 }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     if (currentIndex < text.length) {
+      // Adaptive speed based on device performance
+      const adaptiveSpeed = /Mobile|Android|iPhone|iPad/.test(navigator.userAgent) ? speed * 1.2 : speed;
+      
       const timeout = setTimeout(() => {
         setDisplayText(prev => prev + text[currentIndex]);
         setCurrentIndex(prev => prev + 1);
-      }, speed);
+      }, adaptiveSpeed);
       return () => clearTimeout(timeout);
     }
   }, [currentIndex, text, speed]);
+
+  useEffect(() => {
+    // Reset when text changes
+    setDisplayText('');
+    setCurrentIndex(0);
+  }, [text]);
 
   return <span>{displayText}</span>;
 };
