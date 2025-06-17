@@ -409,9 +409,36 @@ export const translations = {
     
     // ALIA Chat
     alia_title: 'ALIA NOX - AI助手',
+    alia_chat_title: 'ALIA NOX - 神经接口激活',
     chat_with_alia: '与ALIA对话',
+    chat_welcome: '欢迎连接神经链接。我是Alia Nox。什么问题在您的脑海中燃烧？',
+    chat_placeholder: '传输您的思想...',
     type_message: '输入您的消息...',
     send: '发送',
+    neural_link_disrupted: '神经链接中断。矩阵摇摆...',
+    
+    // Broadcast Section
+    broadcast_title: 'Citycast Live 2137',
+    broadcast_subtitle: '来自霓虹区的直播',
+    broadcast_content: '突发：企业安全部队与第7区地下抵抗运动发生冲突。民用神经植入物出现干扰。请继续关注更新。',
+    
+    // Visual Archive
+    visual_archive_title: '视觉档案',
+    visual_archive_subtitle: '数字前沿的捕获瞬间',
+    
+    // FAQ Section
+    faq_title: '常见问题',
+    
+    // Support Section
+    support_title: '支持项目',
+    support_subtitle: '帮助我们构建赛博朋克游戏的未来',
+    
+    // Live Activity
+    live_world_title: '实时世界活动',
+    live_world_subtitle: '来自神经网络的实时数据',
+    
+    // GameStat Section
+    gamestats_title: '神经网络统计',
     
     // Reality Fractures
     reality_fractures_title: '现实裂隙',
