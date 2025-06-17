@@ -1731,47 +1731,44 @@ section {
   background: rgba(255, 255, 255, 0.4);
 }
 
-/* Mobile scroll improvements - HORIZONTAL SCROLLING */
+/* Enhanced Mobile Vertical Scrolling */
 @media (max-width: 768px) {
   .menu-items {
-    max-height: none;
-    height: auto;
-    padding: 0.5rem;
-    /* Enable horizontal scrolling on mobile */
-    overflow-x: auto;
-    overflow-y: hidden;
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
+    max-height: calc(100vh - 120px);
+    padding: 0 0.5rem;
+    /* Enable smooth vertical scrolling on mobile */
+    overflow-y: auto;
+    overflow-x: hidden;
     /* Enable momentum scrolling on iOS */
     -webkit-overflow-scrolling: touch;
     /* Improve scroll snap behavior */
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: y proximity;
     /* Enhanced mobile scrolling */
-    overscroll-behavior-x: contain;
+    overscroll-behavior-y: contain;
+    /* Keep vertical layout */
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
   
   .menu-item {
-    min-height: 48px; /* Increased from 44px for better touch targets */
-    padding: 0.875rem 1rem; /* Increased padding for better touch area */
+    min-height: 48px; /* Increased for better touch targets */
+    padding: 0.875rem 1rem; /* Better touch area */
     scroll-snap-align: start;
     /* Better mobile touch feedback */
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
-    /* Prevent shrinking and ensure visibility */
+    /* Allow natural width */
     flex-shrink: 0;
-    white-space: nowrap;
-    min-width: 120px;
-    text-align: center;
+    width: 100%;
   }
   
-  /* Enhanced mobile scrollbar for horizontal */
+  /* Enhanced mobile scrollbar for vertical scrolling */
   .menu-items::-webkit-scrollbar {
-    height: 8px; /* Height instead of width for horizontal */
-    width: auto;
+    width: 8px; /* Wider for better visibility on mobile */
   }
   
   .menu-items::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3); /* More visible on mobile */
+    background: rgba(255, 255, 255, 0.4); /* More visible on mobile */
     border-radius: 4px;
   }
   
