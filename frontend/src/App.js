@@ -1158,7 +1158,7 @@ const App = () => {
 
 
   const menuItems = [
-    { id: 'alia', label: 'Alia Nox AI Chat', icon: <Bot size={16} /> }, // Neural Interface moved to TOP
+    { id: 'alia', label: 'Alia Nox AI Chat', icon: <Bot size={16} /> }, // Neural Interface at TOP
     { id: 'hero', label: t('home'), icon: <Home size={16} /> },
     { id: 'broadcast', label: 'Citycast Live 2137', icon: <Monitor size={16} /> },
     { id: 'about', label: t('features'), icon: <Info size={16} /> },
@@ -1175,8 +1175,9 @@ const App = () => {
     { id: 'yougnshop', label: t('yougnshop_title'), icon: <ShoppingBag size={16} /> },
     { id: 'roadmap', label: t('roadmap'), icon: <Map size={16} /> },
     { id: 'modding', label: 'Modding Hub', icon: <Code size={16} /> },
-    { id: 'contact', label: t('contact'), icon: <Mail size={16} /> }
-    // Removed language selector - moved to header
+    { id: 'contact', label: t('contact'), icon: <Mail size={16} /> },
+    { id: 'vip', label: t('vip_section'), icon: <Lock size={16} />, isLocked: true }, // VIP section - locked
+    { id: 'language', label: t('language'), icon: <Languages size={16} />, isLanguageSelector: true } // Language selector back
   ];
 
   const ModdingHubComingSoon = () => {
