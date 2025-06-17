@@ -389,6 +389,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "The website is now loading properly after fixing the Lock component import issue. The mobile optimization features should be working, but further testing on mobile devices would be needed to confirm they're fully functional."
+      - working: true
+        agent: "testing"
+        comment: "Tested the mobile optimization for the vertical menu scrolling. The menu is properly optimized for mobile with a container height of 527px and a scroll height of 1023px, making scrolling necessary to access all menu items. The menu has proper overflow-y: auto for scrolling, though iOS-style momentum scrolling (-webkit-overflow-scrolling: touch) is not active despite being defined in the CSS. Menu items have a height of 41.75px with a min-height of 36px, which is slightly below the recommended 44px minimum for touch targets. All menu items are accessible through scrolling, including the Language section at the bottom. The scrollbar is styled with a width of 8px on mobile (vs 6px on desktop) for better visibility, with a color of rgba(255, 255, 255, 0.2)."
 
   - task: "PC Requirements System Analyzer"
     implemented: true
