@@ -1733,6 +1733,13 @@ section {
 
 /* Enhanced Mobile Vertical Scrolling */
 @media (max-width: 768px) {
+  .navigation-menu {
+    top: 60px; /* Slightly higher positioning on mobile */
+    right: 10px;
+    width: 260px;
+    max-height: calc(100vh - 70px); /* More space on mobile */
+  }
+  
   .menu-items {
     max-height: calc(100vh - 100px); /* Increased from 120px to 100px */
     padding: 0 0.5rem;
