@@ -1734,15 +1734,25 @@ section {
 /* Enhanced Mobile Vertical Scrolling */
 @media (max-width: 768px) {
   .navigation-menu {
-    top: 80px; /* Increased margin from top: 60px -> 80px */
+    top: 80px; /* Proper margin from header on mobile */
     right: 10px;
     width: 260px;
-    max-height: calc(100vh - 110px); /* Leave margin at bottom: 40px -> 110px */
+    max-height: calc(100vh - 120px); /* Better bottom margin to prevent cutoff */
+    /* Ensure proper scrolling container */
+    overflow: hidden;
+  }
+  
+  .menu-content {
+    padding: 1rem 0; /* Adjust padding for mobile */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
   
   .menu-items {
-    max-height: calc(100vh - 140px); /* Adjust for margins: 80px -> 140px */
-    padding: 0 0.5rem;
+    max-height: calc(100vh - 180px); /* Conservative height for mobile */
+    padding: 1rem 0.5rem 1.5rem 0.5rem; /* More generous padding on mobile */
     /* Enable smooth vertical scrolling on mobile */
     overflow-y: auto;
     overflow-x: hidden;
@@ -1756,6 +1766,9 @@ section {
     display: flex;
     flex-direction: column;
     gap: 0;
+    /* Ensure scrolling works */
+    flex: 1;
+    min-height: 0;
   }
   
   .menu-item {
