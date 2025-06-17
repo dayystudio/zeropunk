@@ -1781,10 +1781,10 @@ section {
 /* Enhanced Mobile Vertical Scrolling */
 @media (max-width: 768px) {
   .navigation-menu {
-    top: 60px; /* Much higher position for maximum height */
+    top: 40px; /* Much higher on mobile - only 40px from top */
     right: 10px;
     width: 260px;
-    max-height: calc(100vh - 70px); /* Much taller on mobile - only 70px from bottom */
+    max-height: calc(100vh - 50px); /* Only 50px total margins - maximum height */
     overflow: hidden;
   }
   
@@ -1797,8 +1797,8 @@ section {
   }
   
   .menu-header {
-    padding: 0.8rem 1rem 0.4rem 1rem;
-    margin-bottom: 0.3rem;
+    padding: 0.6rem 1rem 0.2rem 1rem; /* Minimal padding on mobile */
+    margin-bottom: 0.2rem;
     flex-shrink: 0;
   }
   
@@ -1806,7 +1806,7 @@ section {
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 0.5rem 0.5rem 1.5rem 0.5rem; /* Generous padding */
+    padding: 0.2rem 0.5rem 0.5rem 0.5rem; /* Minimal padding to maximize space */
     height: 100%;
     min-height: 0;
     /* Enable smooth vertical scrolling on mobile */
