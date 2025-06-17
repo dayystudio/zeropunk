@@ -14080,30 +14080,35 @@ section {
 /* Small mobile phones optimization */
 @media (max-width: 480px) {
   .navigation-menu {
-    top: 50px;
+    top: 40px; /* Higher position for maximum space */
     right: 5px;
-    width: 250px;
-    max-height: calc(100vh - 70px); /* Proper height for small phones */
+    width: 240px; /* More compact */
+    max-height: calc(100vh - 50px); /* Maximum height possible */
   }
   
   .menu-header {
-    padding: 0.6rem 0.8rem 0.2rem 0.8rem;
-    margin-bottom: 0.2rem;
-  }
-  
-  .menu-items {
-    padding: 0.4rem 0.4rem 2rem 0.4rem; /* Extra bottom padding */
-  }
-  
-  .menu-item {
-    min-height: 42px;
-    padding: 0.6rem 0.8rem;
-    margin-bottom: 0.05rem;
-    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem 0.1rem 0.6rem; /* Very compact */
+    margin-bottom: 0.1rem;
   }
   
   .menu-header h3 {
-    font-size: 0.65rem;
+    font-size: 0.65rem; /* Smaller header */
+  }
+  
+  .menu-items {
+    padding: 0.2rem 0.3rem 3rem 0.3rem; /* Extra bottom padding */
+  }
+  
+  .menu-item {
+    min-height: 35px; /* Very compact height */
+    padding: 0.4rem 0.6rem; /* Minimal padding */
+    margin-bottom: 0.03rem; /* Tiny margin */
+    font-size: 0.8rem; /* Smaller font */
+  }
+  
+  .menu-item-icon {
+    width: 12px; /* Smaller icons */
+    height: 12px;
   }
 }
 
