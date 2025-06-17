@@ -1163,8 +1163,8 @@ const App = () => {
 
 
   const menuItems = [
+    { id: 'alia', label: 'Alia Nox AI Chat', icon: <Bot size={16} /> }, // Neural Interface moved to TOP
     { id: 'hero', label: t('home'), icon: <Home size={16} /> },
-    { id: 'alia', label: 'Alia Nox AI Chat', icon: <Bot size={16} /> }, // Moved Neural Interface higher
     { id: 'broadcast', label: 'Citycast Live 2137', icon: <Monitor size={16} /> },
     { id: 'about', label: t('features'), icon: <Info size={16} /> },
     { id: 'beta', label: t('wishlist_steam'), icon: <Gamepad2 size={16} /> },
