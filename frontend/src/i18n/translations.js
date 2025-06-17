@@ -404,7 +404,7 @@ export const translations = {
     step_2: '订单完成后，给我们发送邮件',
     step_3: '使用与下单相同的邮箱地址',
     step_4: '我们将发送给您一个独特代码，解锁游戏内的服装',
-    support_email: '邮箱：support@zeropunk-game.com',
+    support_email: '邮箱：yougnshop@gmail.com',
     feature_availability: '此功能将在游戏完整版发布后提供。'
   }
 };
