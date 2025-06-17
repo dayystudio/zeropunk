@@ -1769,10 +1769,10 @@ section {
 /* Futuristic HUD-Style Menu */
 .navigation-menu {
   position: fixed;
-  top: 50px; /* Much higher - only 50px from top */
+  top: 40px; /* Even higher for maximum scroll area */
   right: 15px; 
   width: 280px; 
-  max-height: calc(100vh - 60px); /* Only 60px total margins - maximum possible height */
+  max-height: calc(100vh - 50px); /* Maximum possible height */
   background: 
     linear-gradient(135deg,
       rgba(0, 0, 0, 0.08) 0%,
