@@ -1702,8 +1702,8 @@ section {
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 0 0.75rem;
-  max-height: calc(100vh - 150px); /* Adjust for margins: 110px -> 150px */
+  padding: 0.8rem 0.75rem 1.2rem 0.75rem; /* Added top and bottom padding */
+  max-height: calc(100vh - 200px); /* More conservative height to prevent cutoff */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   /* Enhanced scrollbar for better UX */
