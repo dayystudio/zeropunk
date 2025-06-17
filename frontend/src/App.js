@@ -4646,6 +4646,49 @@ const App = () => {
             <span className="brand-text">ZEROPUNK</span>
           </div>
           
+          {/* Language Selector in Header */}
+          <div className="header-language-selector">
+            <div className="language-dropdown-header">
+              <button
+                className="language-btn"
+                onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
+              >
+                <Languages size={14} />
+                <span className="current-lang">{languages.find(lang => lang.code === currentLanguage)?.flag}</span>
+                <ChevronDown 
+                  className={`lang-chevron ${languageMenuOpen ? 'rotated' : ''}`} 
+                  size={12} 
+                />
+              </button>
+              
+              <AnimatePresence>
+                {languageMenuOpen && (
+                  <motion.div
+                    className="header-language-dropdown"
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {languages.map((lang) => (
+                      <div
+                        key={lang.code}
+                        className={`header-language-option ${currentLanguage === lang.code ? 'active' : ''}`}
+                        onClick={() => selectLanguage(lang.code)}
+                      >
+                        <span className="lang-flag">{lang.flag}</span>
+                        <span className="lang-name">{lang.name}</span>
+                        {currentLanguage === lang.code && (
+                          <div className="lang-active-dot"></div>
+                        )}
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+          
           <div className="header-controls">
             {/* Auth Controls */}
             <div className="auth-controls">
