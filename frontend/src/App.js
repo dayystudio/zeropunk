@@ -580,6 +580,17 @@ const App = () => {
   };
 
   const navigateToSection = (section) => {
+    if (section === 'language') {
+      setLanguageMenuOpen(!languageMenuOpen);
+      return;
+    }
+    
+    if (section === 'vip') {
+      // VIP section is locked - show a message or do nothing
+      console.log('VIP section is locked - premium feature');
+      return;
+    }
+    
     // Close menu
     setMenuOpen(false);
     setLanguageMenuOpen(false);
