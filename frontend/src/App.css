@@ -1734,7 +1734,7 @@ section {
 /* Enhanced Mobile Vertical Scrolling */
 @media (max-width: 768px) {
   .menu-items {
-    max-height: calc(100vh - 120px);
+    max-height: calc(100vh - 100px); /* Increased from 120px to 100px */
     padding: 0 0.5rem;
     /* Enable smooth vertical scrolling on mobile */
     overflow-y: auto;
