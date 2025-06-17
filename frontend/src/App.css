@@ -1937,25 +1937,29 @@ section {
   }
   
   .menu-item {
-    min-height: 44px; /* Touch-friendly height */
-    padding: 0.7rem 1rem; /* Comfortable mobile padding */
-    margin-bottom: 0.1rem; /* Minimal margin to fit more items */
+    min-height: 38px; /* More compact height */
+    padding: 0.5rem 0.8rem; /* Compact padding */
+    margin-bottom: 0.05rem; /* Minimal margin */
+    font-size: 0.85rem; /* Smaller font */
     scroll-snap-align: start;
-    /* Better mobile touch feedback */
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
-    /* Allow natural width */
     flex-shrink: 0;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 6px; /* Smaller radius */
+  }
+  
+  .menu-item-icon {
+    width: 14px; /* Smaller icons */
+    height: 14px;
   }
   
   /* Enhanced mobile scrollbar for vertical scrolling */
   .menu-items::-webkit-scrollbar {
-    width: 8px; /* Wider for better visibility on mobile */
+    width: 8px;
   }
   
   .menu-items::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.4); /* More visible on mobile */
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 4px;
   }
   
