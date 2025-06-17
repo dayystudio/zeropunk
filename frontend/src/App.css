@@ -1703,7 +1703,7 @@ section {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 0 0.75rem;
-  max-height: calc(100vh - 110px); /* Agrandir vers le bas : 140px -> 110px */
+  max-height: calc(100vh - 150px); /* Adjust for margins: 110px -> 150px */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   /* Enhanced scrollbar for better UX */
