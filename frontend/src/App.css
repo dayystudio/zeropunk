@@ -14076,30 +14076,30 @@ section {
 /* Small mobile phones optimization */
 @media (max-width: 480px) {
   .navigation-menu {
-    top: 30px; /* Maximum height for small phones - only 30px from top */
+    top: 50px;
     right: 5px;
     width: 250px;
-    max-height: calc(100vh - 40px); /* Only 40px total margins - absolute maximum */
+    max-height: calc(100vh - 70px); /* Proper height for small phones */
   }
   
   .menu-header {
-    padding: 0.5rem 0.8rem 0.2rem 0.8rem; /* Minimal header padding */
-    margin-bottom: 0.1rem;
+    padding: 0.6rem 0.8rem 0.2rem 0.8rem;
+    margin-bottom: 0.2rem;
   }
   
   .menu-items {
-    padding: 0.1rem 0.4rem 0.3rem 0.4rem; /* Absolute minimal padding */
+    padding: 0.4rem 0.4rem 2rem 0.4rem; /* Extra bottom padding */
   }
   
   .menu-item {
-    min-height: 42px; /* Slightly smaller on small phones */
+    min-height: 42px;
     padding: 0.6rem 0.8rem;
-    margin-bottom: 0.05rem; /* Minimal margin */
-    font-size: 0.9rem; /* Slightly smaller font */
+    margin-bottom: 0.05rem;
+    font-size: 0.9rem;
   }
   
   .menu-header h3 {
-    font-size: 0.65rem; /* Smaller header text */
+    font-size: 0.65rem;
   }
 }
 
