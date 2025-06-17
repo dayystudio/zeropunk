@@ -539,7 +539,29 @@ export const translations = {
     step_3: '向我们发送您的订单截图，包含购买的服装商品',
     step_4: '我们将发送给您一个独特代码，解锁游戏内的服装',
     support_email: '邮箱：yougnshop@gmail.com',
-    feature_availability: '此功能将在游戏完整版发布后提供。'
+    feature_availability: '此功能将在游戏完整版发布后提供。',
+    
+    // Additional Sections
+    modding_hub_title: '模组中心',
+    modding_subtitle: '创建和分享自定义内容',
+    zeromarket_title: 'ZEROMARKET',
+    zeromarket_subtitle: '增强体验的数字市场',
+    city_cast_live: 'Citycast Live 2137',
+    faq_general: '常见问题',
+    faq_gameplay: '游戏玩法',
+    faq_technical: '技术支持',
+    
+    // Common UI Elements
+    close: '关闭',
+    open: '打开',
+    save: '保存',
+    cancel: '取消',
+    confirm: '确认',
+    loading: '加载中...',
+    error: '错误',
+    success: '成功',
+    warning: '警告',
+    info: '信息'
   }
 };
 
