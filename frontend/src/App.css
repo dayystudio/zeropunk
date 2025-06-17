@@ -1704,8 +1704,9 @@ section {
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 0.8rem 0.75rem 1.2rem 0.75rem; /* Added top and bottom padding */
-  max-height: calc(100vh - 200px); /* More conservative height to prevent cutoff */
+  padding: 0.5rem 0.75rem 1.5rem 0.75rem; /* Generous top and bottom padding */
+  height: 100%;
+  min-height: 0; /* Allow flex item to shrink */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   /* Enhanced scrollbar for better UX */
