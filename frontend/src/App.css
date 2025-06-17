@@ -13896,15 +13896,18 @@ section {
 /* Small mobile phones optimization */
 @media (max-width: 480px) {
   .navigation-menu {
-    top: 70px;
+    top: 60px; /* Even higher for small phones */
     right: 5px;
     width: 250px;
-    max-height: calc(100vh - 100px); /* More height for small screens */
+    max-height: calc(100vh - 80px); /* Maximum height for small screens */
+  }
+  
+  .menu-header {
+    padding: 0.6rem 0.8rem 0.3rem 0.8rem;
   }
   
   .menu-items {
-    max-height: calc(100vh - 160px);
-    padding: 0.8rem 0.4rem 1.2rem 0.4rem;
+    padding: 0.4rem 0.4rem 1.2rem 0.4rem;
   }
   
   .menu-item {
