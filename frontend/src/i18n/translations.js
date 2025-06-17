@@ -77,9 +77,36 @@ export const translations = {
     
     // ALIA Chat
     alia_title: 'ALIA NOX - AI Assistant',
+    alia_chat_title: 'ALIA NOX - Neural Interface Active',
     chat_with_alia: 'Chat with ALIA',
+    chat_welcome: 'Welcome to the neural link. I am Alia Nox. What questions burn in your mind?',
+    chat_placeholder: 'Transmit your thoughts...',
     type_message: 'Type your message...',
     send: 'Send',
+    neural_link_disrupted: 'Neural link disrupted. The matrix wavers...',
+    
+    // Broadcast Section
+    broadcast_title: 'Citycast Live 2137',
+    broadcast_subtitle: 'Live from the Neon District',
+    broadcast_content: 'Breaking: Corporate security forces clash with underground resistance movements in Sector 7. Civilian neural implants experiencing interference. Stay tuned for updates.',
+    
+    // Visual Archive
+    visual_archive_title: 'Visual Archive',
+    visual_archive_subtitle: 'Captured moments from the digital frontier',
+    
+    // FAQ Section
+    faq_title: 'Frequently Asked Questions',
+    
+    // Support Section
+    support_title: 'Support the Project',
+    support_subtitle: 'Help us build the future of cyberpunk gaming',
+    
+    // Live Activity
+    live_world_title: 'Live World Activity',
+    live_world_subtitle: 'Real-time data from the neural network',
+    
+    // GameStat Section
+    gamestats_title: 'Neural Network Statistics',
     
     // Reality Fractures
     reality_fractures_title: 'REALITY FRACTURES',
