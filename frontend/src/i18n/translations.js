@@ -74,6 +74,9 @@ export const translations = {
     resolution: 'Target Resolution',
     operating_system: 'Operating System',
     analyze_system: 'ANALYZE SYSTEM',
+
+    // Beta section
+    beta_description:'Beta will be available soon',
     
     // ALIA Chat
     alia_title: 'ALIA NOX - AI Assistant',
@@ -262,6 +265,9 @@ export const translations = {
     resolution: 'Résolution Cible',
     operating_system: 'Système d\'Exploitation',
     analyze_system: 'ANALYSER SYSTÈME',
+
+    // Beta section
+    beta_description:'La beta est bientôt disponible',
     
     // ALIA Chat
     alia_title: 'ALIA NOX - Assistante IA',

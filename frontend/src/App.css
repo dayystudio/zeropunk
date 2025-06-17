@@ -4375,6 +4375,7 @@ section {
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  overflow:hidden;
 }
 
 /* Enhanced Alia Nox Preview Section */
@@ -4496,6 +4497,7 @@ section {
   
   .menu-content {
     padding: 1.5rem;
+    padding-bottom:150px;
   }
   
   .section-container {
