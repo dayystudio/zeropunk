@@ -1861,45 +1861,19 @@ section {
 /* Enhanced Desktop Scrolling */
 @media (min-width: 769px) {
   .navigation-menu {
-    max-height: calc(100vh - 60px); /* Maximum possible height on desktop */
-    top: 50px; /* Minimal top margin */
+    max-height: calc(100vh - 80px); /* Proper height for desktop */
+    top: 70px;
   }
   
   .menu-items {
-    /* Ensure scrolling works on desktop */
-    overflow-y: auto;
+    overflow-y: auto; /* Ensure scrolling works on desktop */
     overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
-    padding: 0.3rem 0.75rem 0.5rem 0.75rem; /* Minimal padding for maximum space */
+    padding: 0.5rem 0.75rem 2rem 0.75rem; /* Extra bottom padding */
   }
   
-  /* Add scroll fade indicators */
-  .menu-items::before {
-    content: '';
-    position: sticky;
-    top: 0;
-    height: 15px; /* Reduced height */
-    background: linear-gradient(to bottom, 
-      rgba(0, 0, 0, 0.8) 0%, 
-      transparent 100%);
-    z-index: 10;
-    margin-bottom: -15px;
-  }
-  
-  .menu-items::after {
-    content: '';
-    position: sticky;
-    bottom: 0;
-    height: 15px; /* Reduced height */
-    background: linear-gradient(to top, 
-      rgba(0, 0, 0, 0.8) 0%, 
-      transparent 100%);
-    z-index: 10;
-    margin-top: -15px;
-  }
-  
-  /* Make scrollbar more visible on desktop hover */
+  /* Make scrollbar more visible on desktop */
   .menu-items::-webkit-scrollbar {
     width: 8px;
   }
