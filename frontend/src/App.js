@@ -459,15 +459,20 @@ const App = () => {
   useEffect(() => {
     const handleEscKey = (event) => {
       if (event.key === 'Escape') {
-        setMenuOpen(false);
-        setAliaChatOpen(false);
-        setLanguageMenuOpen(false);
+        if (showIDScan) {
+          // Skip ID scan on ESC
+          handleIDScanComplete();
+        } else {
+          // Normal ESC behavior for menu
+          setMenuOpen(false);
+          setLanguageMenuOpen(false);
+        }
       }
     };
 
     document.addEventListener('keydown', handleEscKey);
     return () => document.removeEventListener('keydown', handleEscKey);
-  }, []);
+  }, [showIDScan]);
 
   // Initialize session
   useEffect(() => {
