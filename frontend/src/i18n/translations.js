@@ -317,6 +317,9 @@ export const translations = {
     scan_threat_level: '威胁等级',
     scan_minimal: '最小',
     
+    // VIP Section
+    vip_section: 'VIP通道',
+    
     // Hero Section
     hero_title: 'ZEROPUNK',
     hero_subtitle: '沉浸式赛博朋克游戏体验',
