@@ -1607,19 +1607,56 @@ section {
 
 /* Mobile Header Adjustments */
 @media (max-width: 768px) {
-  .main-header {
-    height: 60px;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(30px);
-    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
-  }
-  
   .header-content {
     padding: 0 1rem;
   }
   
   .brand-text {
     font-size: 1.2rem;
+  }
+  
+  .header-language-selector {
+    margin: 0 1rem;
+  }
+  
+  .language-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+  
+  .current-lang {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 0 0.5rem;
+  }
+  
+  .brand-text {
+    font-size: 1rem;
+  }
+  
+  .header-language-selector {
+    margin: 0 0.5rem;
+  }
+  
+  .language-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+  }
+  
+  .current-lang {
+    font-size: 0.8rem;
+  }
+  
+  .header-language-dropdown {
+    min-width: 100px;
+  }
+  
+  .lang-name {
+    font-size: 0.75rem;
   }
 }
 
