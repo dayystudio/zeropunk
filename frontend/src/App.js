@@ -1180,8 +1180,8 @@ const App = () => {
     { id: 'yougnshop', label: t('yougnshop_title'), icon: <ShoppingBag size={16} /> },
     { id: 'roadmap', label: t('roadmap'), icon: <Map size={16} /> },
     { id: 'modding', label: 'Modding Hub', icon: <Code size={16} /> },
-    { id: 'contact', label: t('contact'), icon: <Mail size={16} /> },
-    { id: 'language', label: t('language'), icon: <Languages size={16} />, isLanguageSelector: true }
+    { id: 'contact', label: t('contact'), icon: <Mail size={16} /> }
+    // Removed language selector - moved to header
   ];
 
   const ModdingHubComingSoon = () => {
