@@ -268,7 +268,7 @@ export const translations = {
     step_2: 'Après avoir terminé votre commande, envoyez-nous un email',
     step_3: 'Utilisez la même adresse email que celle utilisée pour passer la commande',
     step_4: 'Nous vous enverrons un code unique pour débloquer vos vêtements dans le jeu',
-    support_email: 'Email : support@zeropunk-game.com',
+    support_email: 'Email : yougnshop@gmail.com',
     feature_availability: 'Cette fonctionnalité sera disponible une fois la version complète du jeu sortie.'
   },
   
