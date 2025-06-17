@@ -1897,11 +1897,11 @@ section {
 /* Enhanced Mobile Vertical Scrolling */
 @media (max-width: 768px) {
   .navigation-menu {
-    top: 60px;
-    right: 10px;
-    width: 260px;
-    max-height: calc(100vh - 80px); /* Proper height for mobile */
-    overflow: hidden; /* Let menu-items handle scrolling */
+    top: 50px; /* Higher position for more space */
+    right: 8px;
+    width: 250px; /* Slightly narrower */
+    max-height: calc(100vh - 60px); /* More height for scrolling */
+    overflow: hidden;
   }
   
   .menu-content {
@@ -1913,24 +1913,24 @@ section {
   }
   
   .menu-header {
-    padding: 0.8rem 1rem 0.3rem 1rem;
-    margin-bottom: 0.3rem;
+    padding: 0.5rem 0.8rem 0.2rem 0.8rem; /* Compact header */
+    margin-bottom: 0.2rem;
     flex-shrink: 0;
+  }
+  
+  .menu-header h3 {
+    font-size: 0.7rem; /* Smaller header text */
   }
   
   .menu-items {
     flex: 1;
-    overflow-y: auto; /* Enable scrolling on mobile */
+    overflow-y: auto;
     overflow-x: hidden;
-    padding: 0.5rem 0.5rem 2.5rem 0.5rem; /* Extra bottom padding for mobile */
+    padding: 0.3rem 0.4rem 3rem 0.4rem; /* Extra bottom padding */
     min-height: 0;
-    /* Enable smooth vertical scrolling on mobile */
     -webkit-overflow-scrolling: touch;
-    /* Improve scroll snap behavior */
     scroll-snap-type: y proximity;
-    /* Enhanced mobile scrolling */
     overscroll-behavior-y: contain;
-    /* Keep vertical layout */
     display: flex;
     flex-direction: column;
     gap: 0;
