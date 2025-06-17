@@ -290,6 +290,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "Verified that the hamburger menu button is visible in the top-right corner of the page after fixing the Lock component import issue. The website is now loading properly and the navigation system appears to be working correctly."
+      - working: true
+        agent: "testing"
+        comment: "Tested vertical menu scrolling functionality on both desktop and mobile. On desktop (1920px), the menu has a container height of 920px with a scroll height of 1170px, confirming that scrolling is necessary to see all items. The scrollbar is visible with a width of 6px and a color of rgba(255, 255, 255, 0.2). Successfully scrolled to the Language section at the bottom of the menu. On mobile (375px), the menu has a container height of 527px with a scroll height of 1023px, making scrolling essential. Menu items have a height of 41.75px with a min-height of 36px, which is slightly below the recommended 44px minimum for touch targets. All menu items are accessible through scrolling, including the Language section at the bottom. The menu implements proper overflow-y: auto for scrolling, but iOS-style momentum scrolling (-webkit-overflow-scrolling: touch) is not active despite being in the CSS."
 
   - task: "Hero Section"
     implemented: true
