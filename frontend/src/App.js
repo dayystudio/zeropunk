@@ -4616,11 +4616,16 @@ const App = () => {
 
   return (
     <div className="app">
-      {/* Render alternate reality if not primary */}
-      {currentReality !== 'primary' && renderCurrentReality()}
+      {/* ID Scan Entry - Shows first, then main app */}
+      {showIDScan && (
+        <IDScanEntry onComplete={handleIDScanComplete} />
+      )}
       
-      {/* Only render main app content if in primary reality */}
-      {currentReality === 'primary' && (
+      {/* Render alternate reality if not primary and main app is visible */}
+      {mainAppVisible && currentReality !== 'primary' && renderCurrentReality()}
+      
+      {/* Only render main app content if in primary reality and main app is visible */}
+      {mainAppVisible && currentReality === 'primary' && (
         <>
           {/* Background Effects */}
           <div className="cyberpunk-bg">
