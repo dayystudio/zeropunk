@@ -1627,10 +1627,10 @@ section {
 /* Futuristic HUD-Style Menu */
 .navigation-menu {
   position: fixed;
-  top: 70px; /* Reduced from 80px for more height */
+  top: 60px; /* Even higher for maximum height */
   right: 15px; 
   width: 280px; 
-  max-height: calc(100vh - 80px); /* Much taller - only 80px from screen bottom */
+  max-height: calc(100vh - 70px); /* Much taller - only 70px total margins */
   background: 
     linear-gradient(135deg,
       rgba(0, 0, 0, 0.08) 0%,
@@ -1646,8 +1646,10 @@ section {
     0 0 0 1px rgba(255, 255, 255, 0.03),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
   z-index: 999;
-  overflow: hidden;
+  overflow: hidden; /* Keep this to let menu-items handle overflow */
   transform-origin: top right;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Subtle Neon Accent */
