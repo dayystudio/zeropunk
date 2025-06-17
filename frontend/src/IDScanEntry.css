@@ -375,10 +375,8 @@
 /* Skip Button */
 .scan-skip-button {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: -180px; /* Adjust to position between neural interface and progress bar */
+  top: 2rem;
+  right: 2rem;
   background: rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.7);
@@ -397,7 +395,7 @@
   background: rgba(59, 130, 246, 0.2);
   border-color: rgba(59, 130, 246, 0.5);
   color: #ffffff;
-  transform: translate(-50%, -50%) translateY(-2px);
+  transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
 }
 
