@@ -13896,10 +13896,10 @@ section {
 /* Small mobile phones optimization */
 @media (max-width: 480px) {
   .navigation-menu {
-    top: 60px; /* Even higher for small phones */
+    top: 50px; /* Maximum height for small phones */
     right: 5px;
     width: 250px;
-    max-height: calc(100vh - 80px); /* Maximum height for small screens */
+    max-height: calc(100vh - 60px); /* Only 60px from bottom - maximum possible height */
   }
   
   .menu-header {
