@@ -580,11 +580,6 @@ const App = () => {
   };
 
   const navigateToSection = (section) => {
-    if (section === 'language') {
-      setLanguageMenuOpen(!languageMenuOpen);
-      return;
-    }
-    
     // Close menu
     setMenuOpen(false);
     setLanguageMenuOpen(false);
