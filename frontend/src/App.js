@@ -51,6 +51,10 @@ const App = () => {
     localStorage.getItem('zeropunk_reality') || 'primary'
   );
   
+  // ID Scan Entry State
+  const [showIDScan, setShowIDScan] = useState(true);
+  const [mainAppVisible, setMainAppVisible] = useState(false);
+  
   // Contact form state
   const [contactForm, setContactForm] = useState({
     name: '',
