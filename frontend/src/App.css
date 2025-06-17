@@ -1716,22 +1716,22 @@ section {
 
 /* Custom Scrollbar for Webkit browsers */
 .menu-items::-webkit-scrollbar {
-  width: 6px;
+  width: 8px; /* Made wider for better visibility */
 }
 
 .menu-items::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
 }
 
 .menu-items::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.3); /* More visible scrollbar */
+  border-radius: 4px;
   transition: background 0.3s ease;
 }
 
 .menu-items::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5); /* Even more visible on hover */
 }
 
 /* Enhanced Mobile Vertical Scrolling */
