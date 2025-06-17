@@ -13459,6 +13459,147 @@ section {
   opacity: 1;
 }
 
+/* ==================== FOOTER STYLES ==================== */
+.site-footer {
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(15, 15, 25, 0.95) 100%);
+  border-top: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 2rem 0;
+  margin-top: 4rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 100%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-text {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  position: relative;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+  
+  /* Subtle glow effect */
+  box-shadow: 
+    0 0 20px rgba(59, 130, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  
+  /* Animated text glow */
+  text-shadow: 
+    0 0 10px rgba(59, 130, 246, 0.5),
+    0 0 20px rgba(236, 72, 153, 0.3),
+    0 0 30px rgba(34, 197, 94, 0.2);
+    
+  transition: all 0.3s ease;
+}
+
+.footer-text:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 5px 25px rgba(59, 130, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  
+  text-shadow: 
+    0 0 15px rgba(59, 130, 246, 0.7),
+    0 0 25px rgba(236, 72, 153, 0.5),
+    0 0 35px rgba(34, 197, 94, 0.3);
+}
+
+.footer-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(59, 130, 246, 0.6) 20%, 
+    rgba(236, 72, 153, 0.8) 50%, 
+    rgba(34, 197, 94, 0.6) 80%, 
+    transparent 100%);
+  filter: blur(1px);
+  opacity: 0.7;
+  animation: footerPulse 3s ease-in-out infinite;
+}
+
+@keyframes footerPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scaleX(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scaleX(1.2);
+  }
+}
+
+/* Mobile responsiveness for footer */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+  }
+  
+  .footer-text {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+    letter-spacing: 0.1em;
+  }
+  
+  .footer-glow {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+  
+  .footer-content {
+    padding: 0 1rem;
+  }
+  
+  .footer-text {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    letter-spacing: 0.08em;
+  }
+  
+  .footer-glow {
+    width: 120px;
+  }
+}
+
 .image-info {
   padding: 1.5rem;
   background: rgba(0, 0, 0, 0.4);
