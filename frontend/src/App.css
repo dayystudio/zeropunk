@@ -13940,29 +13940,30 @@ section {
 /* Small mobile phones optimization */
 @media (max-width: 480px) {
   .navigation-menu {
-    top: 50px; /* Maximum height for small phones */
+    top: 30px; /* Maximum height for small phones - only 30px from top */
     right: 5px;
     width: 250px;
-    max-height: calc(100vh - 60px); /* Only 60px from bottom - maximum possible height */
+    max-height: calc(100vh - 40px); /* Only 40px total margins - absolute maximum */
   }
   
   .menu-header {
-    padding: 0.6rem 0.8rem 0.3rem 0.8rem;
+    padding: 0.5rem 0.8rem 0.2rem 0.8rem; /* Minimal header padding */
+    margin-bottom: 0.1rem;
   }
   
   .menu-items {
-    padding: 0.4rem 0.4rem 1.2rem 0.4rem;
+    padding: 0.1rem 0.4rem 0.3rem 0.4rem; /* Absolute minimal padding */
   }
   
   .menu-item {
-    min-height: 48px;
-    padding: 0.8rem 0.8rem;
-    margin-bottom: 0.3rem;
-    font-size: 0.95rem;
+    min-height: 42px; /* Slightly smaller on small phones */
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 0.05rem; /* Minimal margin */
+    font-size: 0.9rem; /* Slightly smaller font */
   }
   
   .menu-header h3 {
-    font-size: 0.7rem;
+    font-size: 0.65rem; /* Smaller header text */
   }
 }
 
