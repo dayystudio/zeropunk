@@ -351,7 +351,29 @@ export const translations = {
     step_3: 'Envoyez-nous une capture d\'écran de votre commande avec les vêtements achetés',
     step_4: 'Nous vous enverrons un code unique pour débloquer vos vêtements dans le jeu',
     support_email: 'Email : yougnshop@gmail.com',
-    feature_availability: 'Cette fonctionnalité sera disponible une fois la version complète du jeu sortie.'
+    feature_availability: 'Cette fonctionnalité sera disponible une fois la version complète du jeu sortie.',
+    
+    // Additional Sections
+    modding_hub_title: 'Hub de Modding',
+    modding_subtitle: 'Créez et partagez du contenu personnalisé',
+    zeromarket_title: 'ZEROMARKET',
+    zeromarket_subtitle: 'Marché numérique pour des expériences améliorées',
+    city_cast_live: 'Citycast Live 2137',
+    faq_general: 'Questions Générales',
+    faq_gameplay: 'Gameplay',
+    faq_technical: 'Support Technique',
+    
+    // Common UI Elements
+    close: 'Fermer',
+    open: 'Ouvrir',
+    save: 'Sauvegarder',
+    cancel: 'Annuler',
+    confirm: 'Confirmer',
+    loading: 'Chargement...',
+    error: 'Erreur',
+    success: 'Succès',
+    warning: 'Avertissement',
+    info: 'Information'
   },
   
   zh: {
