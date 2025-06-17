@@ -1737,11 +1737,11 @@ section {
     top: 60px; /* Slightly higher positioning on mobile */
     right: 10px;
     width: 260px;
-    max-height: calc(100vh - 70px); /* More space on mobile */
+    max-height: calc(100vh - 40px); /* Agrandir vers le bas : 70px -> 40px */
   }
   
   .menu-items {
-    max-height: calc(100vh - 100px); /* Increased from 120px to 100px */
+    max-height: calc(100vh - 80px); /* Agrandir vers le bas : 100px -> 80px */
     padding: 0 0.5rem;
     /* Enable smooth vertical scrolling on mobile */
     overflow-y: auto;
