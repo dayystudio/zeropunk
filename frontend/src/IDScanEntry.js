@@ -163,8 +163,8 @@ const IDScanEntry = ({ onComplete }) => {
         {/* Background Effects */}
         <div className="scan-background">
           <div className="scan-grid"></div>
-          <div className="scan-particles"></div>
-          <div className="scan-noise"></div>
+          {!isMobile && <div className="scan-particles"></div>} {/* Reduced particles on mobile */}
+          {!isMobile && <div className="scan-noise"></div>} {/* No noise on mobile for performance */}
         </div>
 
         {/* Laser Scan Line */}
@@ -176,7 +176,7 @@ const IDScanEntry = ({ onComplete }) => {
               opacity: [0, 1, 1, 0]
             }}
             transition={{ 
-              duration: 3,
+              duration: isMobile ? 4 : 3, // Slower on mobile
               repeat: Infinity,
               ease: "linear"
             }}
