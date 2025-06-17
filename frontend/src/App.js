@@ -191,6 +191,12 @@ const App = () => {
     localStorage.setItem('zeropunk_reality', 'primary');
   };
 
+  // ID Scan Entry Functions
+  const handleIDScanComplete = () => {
+    setShowIDScan(false);
+    setMainAppVisible(true);
+  };
+
   // Check if we should render alternate reality
   const renderCurrentReality = () => {
     switch (currentReality) {
