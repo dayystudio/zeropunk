@@ -4857,6 +4857,16 @@ const App = () => {
         <div id="contact">
           <ContactSection />
         </div>
+
+        {/* Footer Copyright */}
+        <footer className="site-footer">
+          <div className="footer-content">
+            <div className="footer-text">
+              Zeropunk © 2025
+            </div>
+            <div className="footer-glow"></div>
+          </div>
+        </footer>
       </main>
 
       {/* Alia Nox Chat Interface */}
