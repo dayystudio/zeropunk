@@ -11,7 +11,20 @@ const IDScanEntry = ({ onComplete }) => {
   const [isReturningUser, setIsReturningUser] = useState(false);
   const [userID, setUserID] = useState(null);
   const [glitchActive, setGlitchActive] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const audioRef = useRef(null);
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsMobile(mobile);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Check if user is returning
   useEffect(() => {
@@ -41,30 +54,32 @@ const IDScanEntry = ({ onComplete }) => {
     return `${prefix}-${numbers}`;
   };
 
-  // Get scan sequence based on user type
+  // Get scan sequence based on user type (optimized for mobile)
   const getScanSequence = () => {
-    if (isReturningUser) {
-      return [
-        { text: t('scan_initializing'), duration: 800 },
-        { text: t('scan_detecting'), duration: 700 },
-        { text: t('scan_returning_user'), duration: 900 },
-        { text: t('scan_memory_traces'), duration: 800 },
-        { text: `${t('scan_user_id')}: ${userID}`, duration: 900 },
-        { text: t('scan_access_granted'), duration: 600 },
-        { text: t('scan_welcome_back'), duration: 800 }
-      ];
-    } else {
-      return [
-        { text: t('scan_initializing'), duration: 800 },
-        { text: t('scan_detecting'), duration: 700 },
-        { text: t('scan_unregistered'), duration: 900 },
-        { text: t('scan_mind_pattern'), duration: 800 },
-        { text: t('scan_access_temp'), duration: 900 },
-        { text: `${t('scan_assigned_id')}: ${userID}`, duration: 800 },
-        { text: t('scan_protocol_override'), duration: 600 },
-        { text: t('scan_welcome'), duration: 800 }
-      ];
-    }
+    const baseDuration = isMobile ? 600 : 800; // Faster on mobile
+    const sequences = {
+      returning: [
+        { text: t('scan_initializing'), duration: baseDuration },
+        { text: t('scan_detecting'), duration: baseDuration * 0.8 },
+        { text: t('scan_returning_user'), duration: baseDuration * 1.1 },
+        { text: t('scan_memory_traces'), duration: baseDuration },
+        { text: `${t('scan_user_id')}: ${userID}`, duration: baseDuration * 1.1 },
+        { text: t('scan_access_granted'), duration: baseDuration * 0.7 },
+        { text: t('scan_welcome_back'), duration: baseDuration }
+      ],
+      new: [
+        { text: t('scan_initializing'), duration: baseDuration },
+        { text: t('scan_detecting'), duration: baseDuration * 0.8 },
+        { text: t('scan_unregistered'), duration: baseDuration * 1.1 },
+        { text: t('scan_mind_pattern'), duration: baseDuration },
+        { text: t('scan_access_temp'), duration: baseDuration * 1.1 },
+        { text: `${t('scan_assigned_id')}: ${userID}`, duration: baseDuration },
+        { text: t('scan_protocol_override'), duration: baseDuration * 0.7 },
+        { text: t('scan_welcome'), duration: baseDuration }
+      ]
+    };
+    
+    return isReturningUser ? sequences.returning : sequences.new;
   };
 
   const scanSequence = getScanSequence();
