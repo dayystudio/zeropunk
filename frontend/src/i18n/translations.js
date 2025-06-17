@@ -178,6 +178,9 @@ export const translations = {
     scan_threat_level: 'Niveau de menace',
     scan_minimal: 'Minimal',
     
+    // VIP Section
+    vip_section: 'Accès VIP',
+    
     // Hero Section
     hero_title: 'ZEROPUNK',
     hero_subtitle: 'Expérience de Jeu Cyberpunk Immersive',
