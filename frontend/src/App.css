@@ -1685,10 +1685,10 @@ section {
 
 /* Minimal Menu Header */
 .menu-header {
-  padding: 1rem 1rem 0.5rem 1rem; /* Add top padding */
+  padding: 0.8rem 1rem 0.3rem 1rem; /* Reduced padding to save space */
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 0.5rem;
-  flex-shrink: 0; /* Prevent header from shrinking */
+  margin-bottom: 0.3rem; /* Reduced margin */
+  flex-shrink: 0;
 }
 
 .menu-header h3 {
