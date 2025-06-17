@@ -1630,7 +1630,7 @@ section {
   top: 70px; /* Below header */
   right: 15px; /* Side-attached, not centered */
   width: 280px; /* Compact width */
-  max-height: calc(100vh - 90px);
+  max-height: calc(100vh - 80px); /* Increased from 90px to 80px */
   background: 
     linear-gradient(135deg,
       rgba(0, 0, 0, 0.08) 0%,
