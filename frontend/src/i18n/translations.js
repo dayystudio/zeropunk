@@ -163,7 +163,29 @@ export const translations = {
     step_3: 'Send us a screenshot of your order with the clothing items you purchased',
     step_4: 'We\'ll send you a unique code to unlock your clothing inside the game',
     support_email: 'Email: yougnshop@gmail.com',
-    feature_availability: 'This feature will be available once the full version of the game is released.'
+    feature_availability: 'This feature will be available once the full version of the game is released.',
+    
+    // Additional Sections
+    modding_hub_title: 'Modding Hub',
+    modding_subtitle: 'Create and share custom content',
+    zeromarket_title: 'ZEROMARKET',
+    zeromarket_subtitle: 'Digital marketplace for enhanced experiences',
+    city_cast_live: 'Citycast Live 2137',
+    faq_general: 'General Questions',
+    faq_gameplay: 'Gameplay',
+    faq_technical: 'Technical Support',
+    
+    // Common UI Elements
+    close: 'Close',
+    open: 'Open',
+    save: 'Save',
+    cancel: 'Cancel',
+    confirm: 'Confirm',
+    loading: 'Loading...',
+    error: 'Error',
+    success: 'Success',
+    warning: 'Warning',
+    info: 'Information'
   },
   
   fr: {
