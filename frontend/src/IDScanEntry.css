@@ -644,7 +644,8 @@
   }
   
   .scan-skip-button {
-    margin-top: -200px; /* Adjust for large desktop layout */
+    top: 2.5rem;
+    right: 2.5rem;
     font-size: 0.9rem;
     padding: 0.6rem 1.2rem;
   }
