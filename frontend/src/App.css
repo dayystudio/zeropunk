@@ -1718,24 +1718,39 @@ section {
   scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
 }
 
-/* Custom Scrollbar for Webkit browsers */
-.menu-items::-webkit-scrollbar {
-  width: 8px; /* Made wider for better visibility */
-}
-
-.menu-items::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
-}
-
-.menu-items::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3); /* More visible scrollbar */
-  border-radius: 4px;
-  transition: background 0.3s ease;
-}
-
-.menu-items::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5); /* Even more visible on hover */
+/* Enhanced Desktop Scrolling */
+@media (min-width: 769px) {
+  .navigation-menu {
+    max-height: calc(100vh - 70px); /* Maximum height on desktop */
+  }
+  
+  .menu-items {
+    /* Ensure scrolling works on desktop */
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Make scrollbar more visible on desktop hover */
+  .menu-items::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .menu-items::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+  }
+  
+  .menu-items::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  
+  .menu-items::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
 }
 
 /* Enhanced Mobile Vertical Scrolling */
