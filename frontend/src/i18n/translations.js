@@ -243,9 +243,36 @@ export const translations = {
     
     // ALIA Chat
     alia_title: 'ALIA NOX - Assistante IA',
+    alia_chat_title: 'ALIA NOX - Interface Neuronale Active',
     chat_with_alia: 'Discuter avec ALIA',
+    chat_welcome: 'Bienvenue dans le lien neural. Je suis Alia Nox. Quelles questions brûlent dans votre esprit ?',
+    chat_placeholder: 'Transmettez vos pensées...',
     type_message: 'Tapez votre message...',
     send: 'Envoyer',
+    neural_link_disrupted: 'Lien neural perturbé. La matrice vacille...',
+    
+    // Broadcast Section
+    broadcast_title: 'Citycast Live 2137',
+    broadcast_subtitle: 'En direct du District Néon',
+    broadcast_content: 'Breaking : Les forces de sécurité corporatives s\'affrontent avec les mouvements de résistance souterrains dans le Secteur 7. Les implants neuraux civils subissent des interférences. Restez connectés pour les mises à jour.',
+    
+    // Visual Archive
+    visual_archive_title: 'Archives Visuelles',
+    visual_archive_subtitle: 'Moments capturés de la frontière numérique',
+    
+    // FAQ Section
+    faq_title: 'Questions Fréquemment Posées',
+    
+    // Support Section
+    support_title: 'Soutenir le Projet',
+    support_subtitle: 'Aidez-nous à construire l\'avenir du jeu cyberpunk',
+    
+    // Live Activity
+    live_world_title: 'Activité Mondiale en Temps Réel',
+    live_world_subtitle: 'Données en temps réel du réseau neural',
+    
+    // GameStat Section
+    gamestats_title: 'Statistiques du Réseau Neural',
     
     // Reality Fractures
     reality_fractures_title: 'FRACTURES DE RÉALITÉ',
