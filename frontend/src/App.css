@@ -1705,16 +1705,17 @@ section {
 /* Compact Scrollable Menu Items */
 .menu-items {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: auto; /* Ensure scrolling is enabled */
   overflow-x: hidden;
-  padding: 0.5rem 0.75rem 1.5rem 0.75rem; /* Generous top and bottom padding */
+  padding: 0.5rem 0.75rem 1.5rem 0.75rem;
   height: 100%;
-  min-height: 0; /* Allow flex item to shrink */
+  min-height: 0; /* Critical for flex scrolling */
+  max-height: none; /* Remove any max-height restrictions */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   /* Enhanced scrollbar for better UX */
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
 }
 
 /* Custom Scrollbar for Webkit browsers */
