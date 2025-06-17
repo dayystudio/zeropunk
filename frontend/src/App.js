@@ -4772,17 +4772,69 @@ const App = () => {
                 {/* Smooth Dropdown Panel */}
                 <div className="menu-items">
                   {menuItems.map((item, index) => (
-                    <motion.button
-                      key={item.id}
-                      className={`menu-item ${currentSection === item.id ? 'active' : ''}`}
-                      onClick={() => navigateToSection(item.id)}
-                      initial={{ opacity: 0, x: 15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.04, duration: 0.25 }}
-                    >
-                      <div className="menu-item-icon">{item.icon}</div>
-                      <span>{item.label}</span>
-                    </motion.button>
+                    <div key={item.id}>
+                      {item.isLanguageSelector ? (
+                        <div className="language-dropdown">
+                          <motion.button
+                            className={`menu-item ${languageMenuOpen ? 'active' : ''}`}
+                            onClick={() => navigateToSection('language')}
+                            initial={{ opacity: 0, x: 15 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.04, duration: 0.25 }}
+                          >
+                            <div className="menu-item-icon">{item.icon}</div>
+                            <span>{item.label}</span>
+                            <ChevronDown 
+                              className={`item-chevron ${languageMenuOpen ? 'rotated' : ''}`} 
+                              size={14} 
+                            />
+                          </motion.button>
+                          
+                          <AnimatePresence>
+                            {languageMenuOpen && (
+                              <motion.div
+                                className="language-dropdown-menu"
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.25 }}
+                              >
+                                {languages.map((lang) => (
+                                  <div
+                                    key={lang.code}
+                                    className={`language-option ${currentLanguage === lang.code ? 'active' : ''}`}
+                                    onClick={() => selectLanguage(lang.code)}
+                                  >
+                                    <span className="language-flag">{lang.flag}</span>
+                                    <span className="language-name">{lang.name}</span>
+                                    {currentLanguage === lang.code && (
+                                      <div className="active-indicator"></div>
+                                    )}
+                                  </div>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                        <motion.button
+                          className={`menu-item ${currentSection === item.id ? 'active' : ''} ${item.isLocked ? 'locked' : ''}`}
+                          onClick={() => navigateToSection(item.id)}
+                          disabled={item.isLocked}
+                          initial={{ opacity: 0, x: 15 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.04, duration: 0.25 }}
+                        >
+                          <div className="menu-item-icon">{item.icon}</div>
+                          <span>{item.label}</span>
+                          {item.isLocked && (
+                            <div className="lock-indicator">
+                              <Lock size={12} />
+                            </div>
+                          )}
+                        </motion.button>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>
