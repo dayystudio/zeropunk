@@ -402,6 +402,7 @@ export const translations = {
     style: 'Style',
     subtitle: 'Subtitle',
     hero_message: 'Hero Message',
+    yougnshop_email: 'yougnshop@gmail.com',
     
     // ================================================================
     // SHOP & MARKETPLACE
