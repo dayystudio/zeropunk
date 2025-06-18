@@ -1423,7 +1423,7 @@ const App = () => {
                 </div>
                 <div className="message-content">
                   <p>{t('neural_interface_calibration')}</p>
-                  <p>Advanced avatar customization system under development</p>
+                  <p>{t('advanced_avatar_customization')}</p>
                 </div>
               </motion.div>
               
