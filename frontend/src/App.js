@@ -2239,7 +2239,7 @@ const App = () => {
         type: "media"
       },
       {
-        quote: "The neural dialogue system is revolutionary.",
+        quote: t('testimonial_4_text'),
         author: t('testimonial_author_4'),
         type: "player"
       }
