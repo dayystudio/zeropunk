@@ -441,7 +441,7 @@ const ModdingHub = ({ currentLanguage = 'en' }) => {
           </div>
 
           <div className="form-group full-width">
-            <label>Description</label>
+            <label>{t('mod_description_label')}</label>
             <textarea 
               placeholder={t('mod_description_placeholder')} 
               className="form-textarea"
