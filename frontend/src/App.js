@@ -1454,7 +1454,7 @@ const App = () => {
                   <div className="progress-bar">
                     <div className="progress-fill" style={{ width: '90%' }}></div>
                   </div>
-                  <span className="progress-label">Neural Pattern Mapping</span>
+                  <span className="progress-label">{t('neural_pattern_mapping')}</span>
                   <span className="progress-value">90%</span>
                 </div>
               </motion.div>
