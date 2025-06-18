@@ -1470,7 +1470,7 @@ const App = () => {
                 <div className="feature-grid">
                   <div className="feature-item">
                     <UserCircle size={20} />
-                    <span>Facial Reconstruction</span>
+                    <span>{t('facial_reconstruction')}</span>
                   </div>
                   <div className="feature-item">
                     <Eye size={20} />
