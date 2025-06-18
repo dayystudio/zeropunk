@@ -1141,7 +1141,59 @@ export const translations = {
     permission_error: '权限错误',
     file_not_found: '文件未找到',
     invalid_input: '输入无效',
-    operation_failed: '操作失败'
+    operation_failed: '操作失败',
+    
+    // Account & Header
+    account: '账户',
+    
+    // Hero Section (Extended)
+    hero_title: 'ZEROPUNK',
+    hero_subtitle: '沉浸式赛博朋克游戏体验',
+    hero_description: 'Zeropunk是一款电影化的开放世界赛博朋克游戏，你不是英雄——只是一个求生的市民。\n与AI聊天、黑客入侵、偷窃，面对未来城市崩塌的混乱。',
+    enter_beta: '进入测试版',
+    talk_to_alia: '与ALIA对话',
+    
+    // Citycast Live
+    citycast_title: 'CITYCAST LIVE 2137',
+    citycast_subtitle: 'Neural Network Broadcasting • Live from Neon District 7',
+    citycast_live: 'LIVE',
+    citycast_date: '2137.03.15 | 23:47:33',
+    
+    // Beta Access
+    beta_access_title: 'ZEROPUNK BETA ACCESS',
+    beta_slots: 'LIMITED SLOTS AVAILABLE',
+    beta_launch_text: 'Early access program launches for neural compatibility testing...',
+    
+    // Gameplay Preview
+    gameplay_preview: 'ZEROPUNK GAMEPLAY PREVIEW',
+    breaking_news: 'BREAKING: Neural implant compatibility tests show 94% success rate • ZEROPUNK beta signups exceed 10,000 registrations • City Council debates AI rights legislation • Neon Corp stock rises 15% after quantum breakthrough •',
+    
+    // System Status
+    neural_core: 'NEURAL_CORE',
+    memory_bank: 'MEMORY_BANK',
+    ai_matrix: 'AI_MATRIX',
+    system_load: 'SYSTEM_LOAD',
+    uptime: 'UPTIME',
+    version: 'VERSION',
+    online: 'ONLINE',
+    active: 'ACTIVE',
+    synced: 'SYNCED',
+    
+    // Neural Interface
+    neural_interface_title: '神经接口',
+    core_systems: 'CORE_SYSTEMS',
+    advanced_ai_tech: 'Advanced AI Technology Suite',
+    feature_modules: 'FEATURE_MODULES',
+    
+    // Support Section
+    support_project_title: 'SUPPORT THE PROJECT',
+    support_description: 'Support the future of ZEROPUNK. Join the community. Help shape the game.',
+    make_donation: 'Make a Donation',
+    join_discord: 'Join the Discord Server',
+    support_benefits: 'By supporting the project and joining Discord, you\'ll gain access to an exclusive developer-only channel, where you can:',
+    share_ideas: 'Share your ideas directly with the dev',
+    behind_scenes: 'See exclusive behind-the-scenes content',
+    early_previews: 'Get early previews, polls, and rewards'
   }
 };
 
