@@ -356,6 +356,61 @@ export const translations = {
     response_accuracy: 'Response Accuracy',
     system_overview: 'SYSTEM_OVERVIEW',
     ai_npcs_desc: 'Advanced AI-powered NPCs with persistent memory, emotional intelligence, and dynamic personality adaptation.',
+    
+    // Core Capabilities
+    core_capabilities: 'CORE_CAPABILITIES',
+    dynamic_personality: 'Dynamic personality adaptation',
+    cross_session_memory: 'Cross-session memory retention',
+    emotional_intelligence: 'Emotional intelligence processing',
+    contextual_relationships: 'Contextual relationship building',
+    initialize_module: 'INITIALIZE_MODULE',
+    access_docs: 'ACCESS_DOCS',
+    
+    // Tech Specs
+    tech_specs: 'TECH_SPECS',
+    neural_pathways: 'Neural Pathways',
+    memory_capacity: 'Memory Capacity',
+    response_time: 'Response Time',
+    learning_rate: 'Learning Rate',
+    adaptive: 'Adaptive',
+    
+    // Live Monitor
+    live_monitor: 'LIVE_MONITOR',
+    neural_activity: 'Neural Activity',
+    data_flow: 'Data Flow',
+    system_load_monitor: 'System Load',
+    alerts: 'ALERTS',
+    neural_sync_complete: 'Neural sync complete',
+    cache_optimization: 'Cache optimization needed',
+    
+    // Security
+    quantum_encryption: 'QUANTUM_ENCRYPTION_ACTIVE',
+    neural_firewall: 'NEURAL_FIREWALL_ENABLED',
+    global_neural_network: 'GLOBAL_NEURAL_NETWORK',
+    
+    // Beta Warning
+    beta_available_soon: 'Beta available soon',
+    beta_warning: 'The beta is available soon',
+    request_beta_access: 'Request Beta Access',
+    
+    // Early Access Reactions
+    early_access_reactions: 'Early Access Reactions',
+    techcrunch_quote: '"A glimpse into the future of gaming. Every NPC feels alive."',
+    techcrunch_source: '— TechCrunch',
+    alpha_tester_quote: '"I\'ve never experienced AI this immersive in a game before."',
+    alpha_tester_source: '— Alpha Tester',
+    gamedev_quote: '"ZEROPUNK redefines what\'s possible in interactive storytelling."',
+    gamedev_source: '— GameDev Insider',
+    beta_player_quote: '"The neural dialogue system is revolutionary."',
+    beta_player_source: '— Beta Player',
+    
+    // System Requirements
+    system_requirements: 'System Requirements',
+    view_system_specs: 'View System Specs',
+    neural_compatibility: 'Neural Compatibility',
+    consciousness_stability: 'Consciousness Stability',
+    memory_fragmentation: 'Memory Fragmentation',
+    quantum_processing: 'Quantum Processing',
   },
   
   fr: {
