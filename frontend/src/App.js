@@ -1486,7 +1486,7 @@ const App = () => {
                   </div>
                   <div className="feature-item">
                     <Palette size={20} />
-                    <span>Bio-luminescent Hair</span>
+                    <span>{t('bio_luminescent_hair')}</span>
                   </div>
                   <div className="feature-item">
                     <Shield size={20} />
