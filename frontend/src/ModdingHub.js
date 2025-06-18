@@ -469,7 +469,7 @@ const ModdingHub = ({ currentLanguage = 'en' }) => {
           </div>
 
           <div className="form-group full-width">
-            <label>Tags</label>
+            <label>{t('mod_tags_label')}</label>
             <input 
               type="text" 
               placeholder={t('mod_tags_placeholder')}
