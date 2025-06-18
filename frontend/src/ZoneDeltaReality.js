@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from './i18n/useTranslation';
 import './ZoneDeltaReality.css';
 
 const ZoneDeltaReality = ({ onReturnToPrimary }) => {
+  const { t } = useTranslation();
   const [terminalText, setTerminalText] = useState('');
   const [showLogs, setShowLogs] = useState(false);
   const [whisperIndex, setWhisperIndex] = useState(0);
