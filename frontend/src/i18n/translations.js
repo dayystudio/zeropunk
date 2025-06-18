@@ -418,9 +418,41 @@ export const translations = {
     title: 'Title',
     
     // ================================================================
-    // YOUGNSHOP INTEGRATION
+    // ECHOES FUTURE REALITY - ALIA MESSAGES
     // ================================================================
-    visit_clothing_website: 'Visit Clothing Website',
+    alia_future_msg_1: "You're early. I hoped we'd have more time to talk.",
+    alia_future_msg_2: "What if... you're the anomaly?",
+    alia_future_msg_3: "In my timeline, you made a different choice.",
+    alia_future_msg_4: "The future remembers what the past forgot.",
+    alia_future_msg_5: "I've seen how this story ends. You might not like it.",
+    alia_future_msg_6: "Time is a flat circle, but consciousness is a spiral.",
+    alia_future_msg_7: "Every decision echoes across infinite possibilities.",
+    
+    // ================================================================
+    // FUTURE ROADMAP
+    // ================================================================
+    future_roadmap_2025_title: 'Neural Bridge Technology',
+    future_roadmap_2025_desc: 'Direct brain-computer interfaces become mainstream. Reality and digital merge.',
+    future_roadmap_2030_title: 'AI-Human Symbiosis',
+    future_roadmap_2030_desc: 'Permanent merger of human and artificial intelligence achieved.',
+    future_roadmap_2035_title: 'Post-Human Era',
+    future_roadmap_2035_desc: 'Homo sapiens extinct. Homo digitalis rises.',
+    
+    // ================================================================
+    // FUTURE CONTENT & MEDIA
+    // ================================================================
+    temporal_thread: 'TEMPORAL THREAD #4-21',
+    future_title_echoes: 'ECHOES OF FUTURE',
+    unreleased_timeline: 'UNRELEASED TIMELINE',
+    exclusive_content: 'EXCLUSIVE CONTENT',
+    content_count: 'ITEMS',
+    neural_bridge_tech: 'Neural Bridge Technology',
+    ai_human_symbiosis: 'AI-Human Symbiosis',
+    post_human_era: 'Post-Human Era',
+    digital_phantoms: 'Digital Phantoms',
+    ghost_in_code: 'Ghost in the Code',
+    ethereal_preview: '🎵 Ethereal synthwave with neural interference patterns...',
+    neo_tokyo_preview: '🎵 Neo-Tokyo nights with digital rain soundscapes...',
     
     // ================================================================
     // AUTHENTICATION SYSTEM
