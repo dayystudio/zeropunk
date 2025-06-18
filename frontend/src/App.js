@@ -1515,7 +1515,7 @@ const App = () => {
                   </button>
                 </div>
                 <p className="notify-disclaimer">
-                  Join the neural network for early access to avatar customization
+                  {t('join_neural_network')}
                 </p>
               </motion.div>
             </div>
