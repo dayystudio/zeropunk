@@ -771,7 +771,63 @@ export const translations = {
     permission_error: 'Erreur de Permission',
     file_not_found: 'Fichier Non Trouvé',
     invalid_input: 'Entrée Invalide',
-    operation_failed: 'Opération Échouée'
+    operation_failed: 'Opération Échouée',
+    
+    // Account & Header
+    account: 'COMPTE',
+    
+    // Hero Section (Extended)
+    hero_title: 'ZEROPUNK',
+    hero_subtitle: 'Expérience de Jeu Cyberpunk Immersive',
+    hero_description: 'Zeropunk est un jeu open-world cyberpunk cinématographique où tu n\'es pas le héros — juste un citoyen en survie.\nDiscute avec des IA, pirate, vole et affronte le chaos d\'une ville futuriste en chute libre.',
+    enter_beta: 'Entrer en Bêta',
+    talk_to_alia: 'Parler à ALIA',
+    
+    // Citycast Live
+    citycast_title: 'CITYCAST LIVE 2137',
+    citycast_subtitle: 'Neural Network Broadcasting • Live from Neon District 7',
+    citycast_live: 'LIVE',
+    citycast_date: '2137.03.15 | 23:47:33',
+    
+    // Beta Access
+    beta_access_title: 'ZEROPUNK BETA ACCESS',
+    beta_slots: 'LIMITED SLOTS AVAILABLE',
+    beta_launch_text: 'Early access program launches for neural compatibility testing...',
+    
+    // Gameplay Preview
+    gameplay_preview: 'ZEROPUNK GAMEPLAY PREVIEW',
+    breaking_news: 'BREAKING: Neural implant compatibility tests show 94% success rate • ZEROPUNK beta signups exceed 10,000 registrations • City Council debates AI rights legislation • Neon Corp stock rises 15% after quantum breakthrough •',
+    
+    // System Status
+    neural_core: 'NEURAL_CORE',
+    memory_bank: 'MEMORY_BANK',
+    ai_matrix: 'AI_MATRIX',
+    system_load: 'SYSTEM_LOAD',
+    uptime: 'UPTIME',
+    version: 'VERSION',
+    online: 'ONLINE',
+    active: 'ACTIVE',
+    synced: 'SYNCED',
+    
+    // Neural Interface
+    neural_interface_title: 'Interface Neuronale',
+    core_systems: 'CORE_SYSTEMS',
+    advanced_ai_tech: 'Advanced AI Technology Suite',
+    feature_modules: 'FEATURE_MODULES',
+    
+    // Support Section
+    support_project_title: 'SUPPORT THE PROJECT',
+    support_description: 'Support the future of ZEROPUNK. Join the community. Help shape the game.',
+    make_donation: 'Make a Donation',
+    join_discord: 'Join the Discord Server',
+    support_benefits: 'By supporting the project and joining Discord, you\'ll gain access to an exclusive developer-only channel, where you can:',
+    share_ideas: 'Share your ideas directly with the dev',
+    behind_scenes: 'See exclusive behind-the-scenes content',
+    early_previews: 'Get early previews, polls, and rewards',
+    
+    // Visual Archive
+    visual_archive_full_title: 'ZEROPUNK VISUAL ARCHIVE',
+    visual_archive_description: 'Immerse yourself in the cyberpunk world of District 7',
   },
   
   zh: {
