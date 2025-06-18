@@ -1071,7 +1071,7 @@ export const translations = {
     // ================================================================
     how_it_works: 'Comment Ça Marche',
     step_1: 'Achetez n\'importe quel vêtement sur yougnshop.com',
-    step_2: 'Envoyez votre reçu de commande à support@zeropunk-game.com',
+    step_2: 'Envoyez votre reçu de commande à yougnshop@gmail.com',
     step_3: 'Incluez votre nom d\'utilisateur Steam',
     step_4: 'Recevez des objets cosmétiques exclusifs ZEROPUNK dans le jeu',
     style: 'Style',
