@@ -1373,7 +1373,7 @@ export const translations = {
     info: 'Information',
     
     // System Messages
-    description_unavailable: 'Description indisponible. En attente de synchronisation neurale...',
+    description_unavailable: 'Données indisponibles. Synchronisation neurale en cours...',
     system_offline: 'Système temporairement hors ligne',
     connection_lost: 'Connexion neurale perdue',
     reconnecting: 'Tentative de reconnexion...',
