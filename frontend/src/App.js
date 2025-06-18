@@ -3306,7 +3306,7 @@ const App = () => {
                     <div className="image-container">
                       <img 
                         src={`${image.url}?w=600&h=400&fit=crop&auto=format&q=80`}
-                        alt={image.title}
+                        alt={t('image_alt_gameplay')}
                         className="gameplay-image"
                         loading="lazy"
                       />
