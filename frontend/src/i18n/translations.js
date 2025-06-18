@@ -1078,6 +1078,7 @@ export const translations = {
     style: 'Style',
     subtitle: 'Sous-titre',
     hero_message: 'Message Héros',
+    yougnshop_email: 'yougnshop@gmail.com',
     
     // ================================================================
     // SHOP & MARKETPLACE
