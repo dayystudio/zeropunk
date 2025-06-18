@@ -2678,9 +2678,9 @@ const App = () => {
         content: t('unknown_hackers_content')
       },
       {
-        title: "ZEROPUNK BETA ACCESS",
-        subtitle: "LIMITED SLOTS AVAILABLE",
-        content: "Early access program launches for neural compatibility testing..."
+        title: t('beta_access_title'),
+        subtitle: t('beta_slots'),
+        content: t('beta_launch_text')
       }
     ];
 
