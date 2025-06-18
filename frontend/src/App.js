@@ -1396,8 +1396,8 @@ const App = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
-                CHARACTER FORGE
-                <span className="title-glitch" data-text="CHARACTER FORGE">CHARACTER FORGE</span>
+                {t('character_forge')}
+                <span className="title-glitch" data-text={t('character_forge')}>{t('character_forge')}</span>
               </motion.h1>
               
               {/* Subtitle */}
