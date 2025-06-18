@@ -308,7 +308,7 @@ const EchoesFutureReality = ({ onReturnToPrimary }) => {
             <textarea
               value={futureMessage}
               onChange={(e) => setFutureMessage(e.target.value)}
-              placeholder="Write a message to your future self... It will be delivered when the timeline converges."
+              placeholder={t('future_message_placeholder')}
               className="future-textarea"
               rows={4}
             />
