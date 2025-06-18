@@ -967,12 +967,16 @@ export const translations = {
     alia_future_msg_7: "Chaque décision résonne à travers d'infinies possibilités.",
     
     // ================================================================
-    // FUTURE ROADMAP
+    // FUTURE ROADMAP EXTENDED
     // ================================================================
     future_roadmap_2025_title: 'Technologie de Pont Neural',
     future_roadmap_2025_desc: 'Les interfaces cerveau-ordinateur directes deviennent mainstream. La réalité et le numérique fusionnent.',
+    consciousness_transfer_protocols: 'Protocoles de Transfert de Conscience',
+    consciousness_transfer_desc: 'Premier transfert réussi de conscience humaine vers le domaine numérique.',
     future_roadmap_2030_title: 'Symbiose IA-Humain',
     future_roadmap_2030_desc: 'Fusion permanente de l\'intelligence humaine et artificielle réalisée.',
+    digital_immortality: 'Immortalité Numérique',
+    digital_immortality_desc: 'La mort devient optionnelle. Les corps physiques deviennent obsolètes.',
     future_roadmap_2035_title: 'Ère Post-Humaine',
     future_roadmap_2035_desc: 'Homo sapiens éteint. Homo digitalis se lève.',
     
