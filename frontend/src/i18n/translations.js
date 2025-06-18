@@ -1301,9 +1301,32 @@ export const translations = {
     
     // Neural Interface
     neural_interface_title: 'Interface Neuronale',
-    core_systems: 'CORE_SYSTEMS',
-    advanced_ai_tech: 'Advanced AI Technology Suite',
-    feature_modules: 'FEATURE_MODULES',
+    core_systems: 'SYSTÈMES_CENTRAUX',
+    advanced_ai_tech: 'Suite Technologique IA Avancée',
+    feature_modules: 'MODULES_FONCTIONNELS',
+    
+    // Neural Network Statistics
+    neural_stats_title: 'STATISTIQUES DU RÉSEAU NEURAL',
+    neural_links: 'LIENS NEURAUX',
+    active_connections: 'Connexions actives',
+    downloads: 'TÉLÉCHARGEMENTS',
+    beta_installs: 'Installations bêta',
+    wishlist: 'LISTE DE SOUHAITS',
+    queue_pending: 'File d\'attente en cours',
+    rating: 'ÉVALUATION',
+    sync_score: 'Score de synchronisation',
+    system_monitoring: 'SURVEILLANCE SYSTÈME',
+    network_load: 'Charge Réseau',
+    security_level: 'Niveau de Sécurité',
+    data_flow_stats: 'Flux de Données',
+    packets_sec: 'paquets/sec',
+    active_sessions: 'Sessions Actives',
+    concurrent_users: 'utilisateurs simultanés',
+    threat_level: 'Niveau de Menace',
+    system_status_full: 'État du Système',
+    neural_core_status: 'Noyau Neural : EN LIGNE',
+    data_matrix_status: 'Matrice de Données : STABLE',
+    firewall_status: 'Pare-feu : ÉLEVÉ',
     
     // Support Section
     support_project_title: 'SUPPORT THE PROJECT',
