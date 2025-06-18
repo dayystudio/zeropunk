@@ -2051,7 +2051,7 @@ export const getTranslation = (currentLanguage, key) => {
   const translation = translations[currentLanguage]?.[key] || translations.en[key];
   if (!translation) {
     console.warn(`Translation missing for key: ${key} in language: ${currentLanguage}`);
-    return translations.en.description_unavailable || 'Content unavailable. Awaiting neural synchronization...';
+    return translations.en.description_unavailable || 'Data unavailable. Awaiting neural synchronization...';
   }
   return translation;
 };
