@@ -950,6 +950,11 @@ export const translations = {
     faction_free_runners: 'Coureurs Libres',
     faction_neural_collective: 'Collectif Neural',
     
+    // Faction Trends
+    trend_rising: 'En Hausse',
+    trend_stable: 'Stable',
+    trend_falling: 'En Baisse',
+    
     // Resource Names
     resource_neural_chips: 'Puces Neurales',
     resource_data_cores: 'Noyaux de Données',
