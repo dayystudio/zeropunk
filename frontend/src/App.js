@@ -1438,7 +1438,7 @@ const App = () => {
                   <div className="progress-bar">
                     <div className="progress-fill" style={{ width: '75%' }}></div>
                   </div>
-                  <span className="progress-label">Facial Recognition System</span>
+                  <span className="progress-label">{t('facial_recognition_system')}</span>
                   <span className="progress-value">75%</span>
                 </div>
                 
