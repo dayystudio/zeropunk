@@ -497,9 +497,9 @@ frontend:
 
   - task: "Multilingual Translation System"
     implemented: true
-    working: true
+    working: false
     file: "/app/frontend/src/i18n/useTranslation.js, /app/frontend/src/i18n/translations.js, /app/frontend/src/App.js"
-    stuck_count: 0
+    stuck_count: 1
     priority: "high"
     needs_retesting: false
     status_history:
@@ -509,6 +509,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "Successfully tested the language translation functionality. The system correctly translates content between English, French, and Chinese. When switching to French, the hero section displays 'Expérience de Jeu Cyberpunk Immersive' and buttons change to 'ENTRER EN BÊTA' and 'PARLER À ALIA'. When switching to Chinese, the hero section displays '沉浸式赛博朋克游戏体验' with buttons '进入测试版' and '与ALIA对话'. The menu items are also properly translated in both languages, including 'Accueil/主页', 'Fonctionnalités/功能', 'Soutenir le Projet/支持项目', 'Archives Visuelles/视觉档案', 'F.A.Q/常见问题', etc. The translation system is comprehensive and covers all key sections of the website."
+      - working: false
+        agent: "testing"
+        comment: "Found the issue with translations not working. There's a hardcoded translations object in App.js (lines 711-1167) that's overriding the global translation system from the i18n directory. Attempted to comment out the local translations object, but the French translations are still not being applied correctly. The hero subtitle still shows 'Immersive Cyberpunk Gaming Experience' in English instead of 'Expérience de Jeu Cyberpunk Immersive' in French. There are also multiple translation warnings in the console for missing keys."
 
 metadata:
   created_by: "main_agent"
