@@ -1131,6 +1131,12 @@ export const translations = {
     copyright: 'Zeropunk © 2025',
     
     // ================================================================
+    // MISSING KEYS - FINAL COMPLETION
+    // ================================================================
+    scan_skip: 'PASSER',
+    visit_clothing_website: 'Visiter le Site de Vêtements',
+    
+    // ================================================================
     // ACCESSIBILITY
     // ================================================================
     image_alt_gameplay: 'Capture d\'écran du gameplay ZEROPUNK',
