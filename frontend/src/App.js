@@ -3227,7 +3227,7 @@ const App = () => {
         id: 2,
         url: "https://images.unsplash.com/photo-1512364615838-8088a04a778b",
         title: t('image_title_downtown_sector'),
-        subtitle: "Street-level urban exploration",
+        subtitle: t('image_subtitle_downtown'),
         description: t('image_desc_downtown_sector')
       },
       {
