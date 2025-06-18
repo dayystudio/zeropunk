@@ -3673,12 +3673,12 @@ const App = () => {
         changePercent: 12.7
       },
       zones: [
-        { name: 'Downtown Core', players: 847, activity: 'High', threat: 3, status: 'stable' },
-        { name: 'Underground', players: 634, activity: 'Very High', threat: 8, status: 'caution' },
-        { name: 'Corporate Sector', players: 512, activity: 'Medium', threat: 2, status: 'secure' },
-        { name: 'Neon District', players: 389, activity: 'High', threat: 5, status: 'active' },
-        { name: 'Industrial Zone', players: 287, activity: 'Low', threat: 4, status: 'quiet' },
-        { name: 'Skyline Towers', players: 178, activity: 'Medium', threat: 1, status: 'elite' }
+        { name: t('location_downtown_core'), players: 847, activity: t('activity_high'), threat: 3, status: 'stable' },
+        { name: t('location_underground'), players: 634, activity: t('activity_very_high'), threat: 8, status: 'caution' },
+        { name: t('location_corporate_sector'), players: 512, activity: t('activity_medium'), threat: 2, status: 'secure' },
+        { name: t('location_neon_district'), players: 389, activity: t('activity_high'), threat: 5, status: 'active' },
+        { name: t('location_industrial_zone'), players: 287, activity: t('activity_low'), threat: 4, status: 'quiet' },
+        { name: t('location_skyline_towers'), players: 178, activity: t('activity_medium'), threat: 1, status: 'elite' }
       ],
       factions: [
         { name: 'Neon Syndicate', control: 38, trend: 'rising', color: '#00FFFF' },
