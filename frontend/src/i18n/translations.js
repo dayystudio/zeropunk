@@ -336,6 +336,9 @@ export const translations = {
     sector_7_uprising: 'SOULÈVEMENT SECTEUR 7',
     corporate_forces_mobilizing: 'FORCES CORPORATIVES SE MOBILISENT',
     neural_chip_shortage: 'La pénurie de puces neurales déclenche des émeutes dans le district du centre-ville...',
+    ai_consciousness_debate: 'DÉBAT SUR LA CONSCIENCE IA',
+    ethics_committee_hearing: 'AUDITION COMITÉ D\'ÉTHIQUE',
+    artificial_sentience_threat: 'La sensibilité artificielle est-elle une menace pour l\'autonomie humaine ?',
     
     // System Status
     neural_core: 'NEURAL_CORE',
