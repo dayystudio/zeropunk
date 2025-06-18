@@ -3375,7 +3375,7 @@ const App = () => {
                 <div className="lightbox-image-container">
                   <img 
                     src={`${selectedImage.url}?w=1200&h=800&fit=crop&auto=format&q=90`}
-                    alt={selectedImage.title}
+                    alt={t('image_alt_gameplay')}
                     className="lightbox-image"
                   />
                   
