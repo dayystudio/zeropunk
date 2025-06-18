@@ -2504,10 +2504,10 @@ const App = () => {
             >
               <h2 className="faq-title">
                 <span className="faq-icon">📘</span>
-                F.A.Q – FREQUENTLY ASKED QUESTIONS
+                {t('faq_full_title')}
               </h2>
               <p className="faq-subtitle">
-                Everything you need to know about ZEROPUNK
+                {t('faq_subtitle')}
               </p>
             </motion.div>
 
