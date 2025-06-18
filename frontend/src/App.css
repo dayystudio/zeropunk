@@ -9395,8 +9395,10 @@ section {
   border: 1px solid rgba(0, 255, 255, 0.4);
   color: #00FFFF;
   font-weight: 700;
+  font-size: 0.8rem;
   text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
   box-shadow: 0 2px 10px rgba(0, 255, 255, 0.2);
+  letter-spacing: 0.5px;
 }
 
 .nav-item-v2:nth-child(1).active .nav-item-content {
