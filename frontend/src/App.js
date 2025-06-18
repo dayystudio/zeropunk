@@ -708,6 +708,8 @@ const App = () => {
   };
 
   // Using global translation system from useTranslation hook
+  // Commented out local translations to use the global system
+  /*
   const localTranslations = {
     en: {
       // Navigation
