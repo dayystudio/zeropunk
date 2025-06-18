@@ -526,7 +526,9 @@ test_plan:
     - "PC Requirements System Analyzer"
     - "ZEROMARKET Section Visual Effects"
     - "Support Section Button Functionality"
-  stuck_tasks: []
+    - "Multilingual Translation System"
+  stuck_tasks: 
+    - "Multilingual Translation System"
   test_all: false
   test_priority: "high_first"
   completed_tests:
