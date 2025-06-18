@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './EchoesFutureReality.css';
 
 const EchoesFutureReality = ({ onReturnToPrimary }) => {
