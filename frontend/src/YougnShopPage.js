@@ -119,7 +119,7 @@ const YougnShopPage = () => {
               transition={{ delay: 1.2, duration: 0.5 }}
             >
               <Mail className="email-icon" size={24} />
-              <span className="email-text">{t('support_email')}</span>
+              <span className="email-text">{t('yougnshop_email')}</span>
               <motion.button
                 className="email-button"
                 onClick={handleEmailContact}
