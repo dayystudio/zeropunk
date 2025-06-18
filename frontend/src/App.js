@@ -3138,7 +3138,7 @@ const App = () => {
                     value={formData.password}
                     onChange={handleInputChange}
                     className={`auth-input ${errors.password ? 'error' : ''}`}
-                    placeholder="Enter your password"
+                    placeholder={t('login_password_placeholder')}
                   />
                   {errors.password && <div className="auth-error">{errors.password}</div>}
                 </div>
