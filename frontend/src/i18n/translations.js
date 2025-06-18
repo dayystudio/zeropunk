@@ -886,11 +886,55 @@ export const translations = {
     possibility_thread: 'Fil de Possibilité',
     
     // ================================================================
-    // LIVE EVENTS & ACTIVITIES
+    // LIVE EVENTS & ACTIVITIES EXTENDED
     // ================================================================
     ongoing_events: 'Événements en Cours',
     participants: 'Participants',
     feature_availability: 'Disponibilité Fonctionnalité',
+    
+    // Event Types & Titles
+    event_corporate_raid: 'Raid Corporatif',
+    event_resource_surge: 'Poussée de Ressources',
+    event_territory_dispute: 'Dispute Territoriale',
+    event_acid_storm_warning: 'Alerte Tempête Acide',
+    
+    // Event Locations
+    location_sector_7_alpha: 'Secteur 7-Alpha',
+    location_underground_market: 'Marché Souterrain',
+    location_neon_district: 'District Néon',
+    location_industrial_zone: 'Zone Industrielle',
+    location_downtown_core: 'Centre-Ville',
+    location_underground: 'Souterrain',
+    location_corporate_sector: 'Secteur Corporatif',
+    location_skyline_towers: 'Tours Horizon',
+    
+    // Event Status
+    status_active: 'actif',
+    status_trending: 'tendance',
+    status_escalating: 'en escalade',
+    status_incoming: 'imminent',
+    status_stable: 'stable',
+    status_caution: 'prudence',
+    status_secure: 'sécurisé',
+    status_quiet: 'calme',
+    status_elite: 'élite',
+    
+    // Activity Levels
+    activity_high: 'Élevée',
+    activity_very_high: 'Très Élevée',
+    activity_medium: 'Moyenne',
+    activity_low: 'Faible',
+    
+    // Faction Names
+    faction_neon_syndicate: 'Syndicat Néon',
+    faction_shadow_corp: 'Shadow Corp',
+    faction_free_runners: 'Coureurs Libres',
+    faction_neural_collective: 'Collectif Neural',
+    
+    // Resource Names
+    resource_neural_chips: 'Puces Neurales',
+    resource_data_cores: 'Noyaux de Données',
+    resource_quantum_bits: 'Bits Quantiques',
     
     // ================================================================
     // YOUGNSHOP INTEGRATION
