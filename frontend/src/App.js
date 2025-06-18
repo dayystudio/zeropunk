@@ -1490,7 +1490,7 @@ const App = () => {
                   </div>
                   <div className="feature-item">
                     <Shield size={20} />
-                    <span>Tactical Gear Systems</span>
+                    <span>{t('tactical_gear_systems')}</span>
                   </div>
                 </div>
               </motion.div>
