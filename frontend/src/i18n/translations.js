@@ -689,7 +689,68 @@ export const translations = {
     error: '错误',
     success: '成功',
     warning: '警告',
-    info: '信息'
+    info: '信息',
+    
+    // Menu Items (ensure all are translated)
+    citycast_live: 'Citycast Live 2137',
+    support_project: '支持项目',
+    visual_archive: '视觉档案',
+    faq: '常见问题',
+    gamestats: '游戏统计',
+    live_world_activity: '实时世界活动',
+    zeromarket: 'ZEROMARKET',
+    reality_fractures: '现实裂隙',
+    modding_hub: '模组中心',
+    
+    // Page Titles and Headers
+    page_title: 'ZEROPUNK - 沉浸式赛博朋克游戏体验',
+    loading_title: '正在加载 ZEROPUNK...',
+    error_404: '错误 404 - 页面未找到',
+    error_500: '错误 500 - 服务器错误',
+    maintenance: '维护中',
+    
+    // Form Elements
+    placeholder_name: '请输入您的姓名',
+    placeholder_email: '请输入您的邮箱',
+    placeholder_subject: '请输入主题',
+    placeholder_message: '请输入您的消息',
+    required_field: '此字段为必填项',
+    invalid_email: '邮箱格式无效',
+    form_submitted: '表单提交成功',
+    form_error: '表单提交错误',
+    
+    // Navigation States
+    menu_open: '菜单已打开',
+    menu_closed: '菜单已关闭',
+    scroll_to_top: '回到顶部',
+    back_to_home: '返回首页',
+    
+    // Status Messages
+    online: '在线',
+    offline: '离线',
+    connecting: '连接中...',
+    connected: '已连接',
+    disconnected: '已断开',
+    pending: '等待中...',
+    processing: '处理中...',
+    completed: '已完成',
+    failed: '失败',
+    
+    // Time and Date
+    just_now: '刚刚',
+    minutes_ago: '分钟前',
+    hours_ago: '小时前',
+    days_ago: '天前',
+    
+    // Media Controls
+    play: '播放',
+    pause: '暂停',
+    stop: '停止',
+    volume: '音量',
+    mute: '静音',
+    unmute: '取消静音',
+    fullscreen: '全屏',
+    exit_fullscreen: '退出全屏'
   }
 };
 
