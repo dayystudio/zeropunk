@@ -12,13 +12,13 @@ const EchoesFutureReality = ({ onReturnToPrimary }) => {
 
   // ALIA Future messages
   const aliaFutureMessages = [
-    "You're early. I hoped we'd have more time to talk.",
-    "What if... you're the anomaly?",
-    "In my timeline, you made a different choice.",
-    "The future remembers what the past forgot.",
-    "I've seen how this story ends. You might not like it.",
-    "Time is a flat circle, but consciousness is a spiral.",
-    "Every decision echoes across infinite possibilities."
+    t('alia_future_msg_1'),
+    t('alia_future_msg_2'),
+    t('alia_future_msg_3'),
+    t('alia_future_msg_4'),
+    t('alia_future_msg_5'),
+    t('alia_future_msg_6'),
+    t('alia_future_msg_7')
   ];
 
   // Initialize floating particles
