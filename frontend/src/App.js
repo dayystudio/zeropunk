@@ -2224,7 +2224,7 @@ const App = () => {
   const BetaSection = () => {
     const testimonials = [
       {
-        quote: "A glimpse into the future of gaming. Every NPC feels alive.",
+        quote: t('testimonial_1_text'),
         author: t('testimonial_author_1'),
         type: "media"
       },
