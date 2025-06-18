@@ -586,6 +586,44 @@ export const translations = {
     filter_apparel: 'Vêtements',
     filter_gear: 'Équipement',
     
+    // Shop Items & Stats
+    compatibility_verdict: 'Évaluation de Compatibilité',
+    connect_style: 'Style de Connexion',
+    download_center: 'Centre de Téléchargement',
+    downloads_count: 'Téléchargements',
+    enhancement_name: 'Nom d\'Amélioration',
+    enhancement_desc: 'Description d\'Amélioration',
+    game_info: 'Informations du Jeu',
+    game_overview: 'Aperçu du Jeu',
+    installation_guide: 'Guide d\'Installation',
+    live_stats: 'Statistiques en Direct',
+    neural_enhancement: 'Amélioration Neuronale',
+    neural_interface: 'Interface Neuronale',
+    price_credits: 'Prix (Crédits)',
+    purchase_now: 'Acheter Maintenant',
+    system_compatibility: 'Compatibilité Système',
+    tech_specs: 'Spécifications Techniques',
+    user_rating: 'Note Utilisateur',
+    
+    // ================================================================
+    // FEATURES & DESCRIPTIONS
+    // ================================================================
+    feature_ai_npcs: 'PNJ alimentés par IA',
+    feature_open_world: 'Environnement Monde Ouvert',
+    feature_neural_interface: 'Technologie d\'Interface Neuronale',
+    feature_customization: 'Personnalisation Profonde de Personnage',
+    feature_multiplayer: 'Réseaux Neuraux Multijoueur',
+    feature_modding: 'Support de Modding Avancé',
+    
+    open_world_desc: 'Explorez une vaste métropole cyberpunk en toute liberté',
+    open_world_details: 'Naviguez à travers des districts éclairés au néon, des réseaux souterrains et des mégastructures imposantes dans une ville vivante et respirante.',
+    
+    neural_interface_desc: 'Interactions de personnages révolutionnaires alimentées par IA',
+    neural_interface_details: 'Découvrez une profondeur sans précédent dans les conversations et relations PNJ grâce à la technologie de réseau neural avancée.',
+    
+    customization_desc: 'Créez votre identité cyberpunk unique',
+    customization_details: 'Création de personnage étendue avec augmentations cybernétiques, vêtements et modifications neurales.',
+    
     // ================================================================
     // MODDING HUB
     // ================================================================
