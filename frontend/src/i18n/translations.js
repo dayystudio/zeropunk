@@ -94,12 +94,59 @@ export const translations = {
     // ALIA NOX AI INTERFACE
     // ================================================================
     alia_title: 'ALIA NOX - AI Assistant',
+    alia_description: 'Advanced AI companion for neural interface interaction',
     alia_chat_title: 'ALIA NOX - Neural Interface Active',
+    alia_contact_message: 'Neural link established. I am here to assist you.',
     chat_welcome: 'Welcome to the neural link. I am Alia Nox. What questions burn in your mind?',
     chat_placeholder: 'Transmit your thoughts...',
     send: 'Send',
     initiate_neural_link: 'Initiate Neural Link',
     close_chat: 'Close chat',
+    ai_chat: 'AI Chat',
+    
+    // ================================================================
+    // ABOUT & FEATURES SECTION
+    // ================================================================
+    about_description: 'Experience the next generation of cyberpunk gaming with ZEROPUNK.',
+    ai_npcs_title: 'AI-Powered NPCs',
+    ai_npcs_desc: 'Interact with intelligent characters powered by advanced AI technology.',
+    ai_npcs_details: 'Deep learning algorithms create realistic conversations and dynamic relationships.',
+    advanced_memory: 'Advanced Memory System',
+    
+    // ================================================================
+    // BETA & TESTING
+    // ================================================================
+    beta_title: 'Beta Access Program',
+    beta_description: 'Join the exclusive beta testing program for early access to ZEROPUNK.',
+    beta_warning: 'Warning: Beta access requires neural compatibility testing.',
+    analyze_system: 'Analyze System',
+    benchmark_preview: 'Benchmark Preview',
+    
+    // PC Requirements
+    ultra_ready: 'ULTRA READY - Maximum performance',
+    high_performance: 'HIGH PERFORMANCE - Excellent experience',
+    medium_settings: 'MEDIUM SETTINGS - Good performance',
+    low_settings: 'LOW SETTINGS - Basic compatibility',
+    not_compatible: 'NOT COMPATIBLE - Upgrade required',
+    
+    // ================================================================
+    // LIVE ACTIVITY & STATS
+    // ================================================================
+    live_activity: 'Live Activity',
+    game_stats: 'Game Statistics',
+    activeCreators: 'Active Creators',
+    totalMods: 'Total Mods',
+    communityRating: 'Community Rating',
+    
+    // ================================================================
+    // AI ASSISTANT & TOOLS
+    // ================================================================
+    aiAssistant: 'AI Assistant',
+    
+    // ================================================================
+    // NEURAL SYSTEM MESSAGES
+    // ================================================================
+    neural_link_disrupted: 'Neural link disrupted. Attempting reconnection...',
     
     // ================================================================
     // GAME STATISTICS & MONITORING
