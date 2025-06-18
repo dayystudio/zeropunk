@@ -676,7 +676,7 @@ export const translations = {
     user_rating: 'Note Utilisateur',
     
     // ================================================================
-    // FEATURES & DESCRIPTIONS
+    // FEATURES & DESCRIPTIONS EXTENDED
     // ================================================================
     feature_ai_npcs: 'PNJ alimentés par IA',
     feature_open_world: 'Environnement Monde Ouvert',
@@ -685,14 +685,26 @@ export const translations = {
     feature_multiplayer: 'Réseaux Neuraux Multijoueur',
     feature_modding: 'Support de Modding Avancé',
     
-    open_world_desc: 'Explorez une vaste métropole cyberpunk en toute liberté',
-    open_world_details: 'Naviguez à travers des districts éclairés au néon, des réseaux souterrains et des mégastructures imposantes dans une ville vivante et respirante.',
+    // AI NPCs Feature
+    ai_npcs_title: 'PNJ alimentés par IA',
+    ai_npcs_desc: 'Interagissez avec des personnages intelligents alimentés par une technologie IA avancée.',
+    ai_npcs_details: 'Les algorithmes d\'apprentissage profond créent des conversations réalistes et des relations dynamiques avec une mémoire persistante à travers les sessions de jeu.',
     
-    neural_interface_desc: 'Interactions de personnages révolutionnaires alimentées par IA',
-    neural_interface_details: 'Découvrez une profondeur sans précédent dans les conversations et relations PNJ grâce à la technologie de réseau neural avancée.',
+    // Neural Dialogue System
+    neural_dialogue_title: 'Système de Dialogue Neural',
+    neural_dialogue_desc: 'Moteur de conversation révolutionnaire qui s\'adapte à vos choix.',
+    neural_dialogue_details: 'Découvrez une profondeur sans précédent dans les interactions de personnages grâce au traitement de réseau neural avancé et à l\'intelligence émotionnelle.',
+    
+    // Open World Environment
+    open_world_title: 'Environnement Monde Ouvert',
+    open_world_desc: 'Explorez une vaste métropole cyberpunk en toute liberté.',
+    open_world_details: 'Naviguez à travers des districts éclairés au néon, des réseaux souterrains et des mégastructures imposantes dans une ville vivante et respirante qui répond à vos actions.',
     
     customization_desc: 'Créez votre identité cyberpunk unique',
     customization_details: 'Création de personnage étendue avec augmentations cybernétiques, vêtements et modifications neurales.',
+    
+    // Contact & Support
+    contact_title: 'Nous Contacter',
     
     // ================================================================
     // MODDING HUB
