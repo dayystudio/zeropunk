@@ -1503,7 +1503,7 @@ const App = () => {
                 <div className="notify-input-group">
                   <input 
                     type="email" 
-                    placeholder="neural.link@zeropunk.net"
+                    placeholder={t('email_placeholder_neural')}
                     className="notify-input"
                   />
                   <button className="notify-btn">
