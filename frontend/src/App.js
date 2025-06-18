@@ -4141,7 +4141,7 @@ const App = () => {
             <div className="zm-search">
               <input
                 type="text"
-                placeholder="Search neural tech..."
+                placeholder={t('search_neural_tech')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="zm-search-input"
