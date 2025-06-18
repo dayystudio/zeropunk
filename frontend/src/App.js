@@ -1407,7 +1407,7 @@ const App = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.8 }}
               >
-                NEURAL AVATAR CUSTOMIZATION
+                {t('neural_avatar_customization')}
               </motion.h2>
               
               {/* Status message */}
