@@ -304,17 +304,58 @@ export const translations = {
     backup_complete: 'Backup Complete',
     sync_complete: 'Sync Complete',
     
-    // Error Types
-    connection_error: 'Connection Error',
-    timeout_error: 'Timeout Error',
-    server_error: 'Server Error',
-    client_error: 'Client Error',
-    network_error: 'Network Error',
-    authentication_error: 'Authentication Error',
-    permission_error: 'Permission Error',
-    file_not_found: 'File Not Found',
-    invalid_input: 'Invalid Input',
-    operation_failed: 'Operation Failed'
+    // Account & Header
+    account: 'ACCOUNT',
+    
+    // Hero Section (Extended)
+    hero_title: 'ZEROPUNK',
+    hero_subtitle: 'Immersive Cyberpunk Gaming Experience',
+    hero_description: 'Zeropunk is a cinematic open-world cyberpunk game where you\'re not the hero — just a surviving citizen.\nChat with AIs, hack, steal, and face the chaos of a crumbling futuristic city.',
+    enter_beta: 'Enter Beta',
+    talk_to_alia: 'Talk to ALIA',
+    
+    // Citycast Live
+    citycast_title: 'CITYCAST LIVE 2137',
+    citycast_subtitle: 'Neural Network Broadcasting • Live from Neon District 7',
+    citycast_live: 'LIVE',
+    citycast_date: '2137.03.15 | 23:47:33',
+    
+    // Beta Access
+    beta_access_title: 'ZEROPUNK BETA ACCESS',
+    beta_slots: 'LIMITED SLOTS AVAILABLE',
+    beta_launch_text: 'Early access program launches for neural compatibility testing...',
+    
+    // Gameplay Preview
+    gameplay_preview: 'ZEROPUNK GAMEPLAY PREVIEW',
+    breaking_news: 'BREAKING: Neural implant compatibility tests show 94% success rate • ZEROPUNK beta signups exceed 10,000 registrations • City Council debates AI rights legislation • Neon Corp stock rises 15% after quantum breakthrough •',
+    
+    // System Status
+    neural_core: 'NEURAL_CORE',
+    memory_bank: 'MEMORY_BANK',
+    ai_matrix: 'AI_MATRIX',
+    system_load: 'SYSTEM_LOAD',
+    uptime: 'UPTIME',
+    version: 'VERSION',
+    online: 'ONLINE',
+    active: 'ACTIVE',
+    synced: 'SYNCED',
+    
+    // Neural Interface
+    neural_interface_title: 'Neural Interface',
+    core_systems: 'CORE_SYSTEMS',
+    advanced_ai_tech: 'Advanced AI Technology Suite',
+    feature_modules: 'FEATURE_MODULES',
+    
+    // AI NPCs Section
+    ai_npcs_title: 'AI NPCs',
+    neural_dialogue_title: 'Neural Dialogue',
+    open_world_title: 'Open World',
+    neural_technology_suite: 'NEURAL_TECHNOLOGY_SUITE',
+    neural_memory: 'Neural Memory',
+    daily_interactions: 'Daily Interactions',
+    response_accuracy: 'Response Accuracy',
+    system_overview: 'SYSTEM_OVERVIEW',
+    ai_npcs_desc: 'Advanced AI-powered NPCs with persistent memory, emotional intelligence, and dynamic personality adaptation.',
   },
   
   fr: {
