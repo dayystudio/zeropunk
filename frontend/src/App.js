@@ -3027,7 +3027,7 @@ const App = () => {
                       value={formData.username}
                       onChange={handleInputChange}
                       className={`auth-input ${errors.username ? 'error' : ''} ${usernameAvailable?.available === true ? 'success' : ''}`}
-                      placeholder="Enter your desired username"
+                      placeholder={t('username_placeholder')}
                     />
                     {usernameAvailable && (
                       <div className={`field-status ${usernameAvailable.available ? 'success' : 'error'}`}>
