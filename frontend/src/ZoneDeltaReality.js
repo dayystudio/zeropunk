@@ -240,7 +240,7 @@ RETURNING TO PRIMARY REALITY...
           <input
             type="text"
             className="command-input"
-            placeholder="Enter command..."
+            placeholder={t('terminal_placeholder')}
             onKeyPress={(e) => {
               if (e.key === 'Enter') {
                 handleTerminalCommand(e.target.value);
