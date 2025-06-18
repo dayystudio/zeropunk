@@ -1466,7 +1466,7 @@ const App = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.8 }}
               >
-                <h3>INCOMING FEATURES</h3>
+                <h3>{t('incoming_features')}</h3>
                 <div className="feature-grid">
                   <div className="feature-item">
                     <UserCircle size={20} />
