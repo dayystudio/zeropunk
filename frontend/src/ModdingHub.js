@@ -514,7 +514,7 @@ const ModdingHub = ({ currentLanguage = 'en' }) => {
             <label>Tags</label>
             <input 
               type="text" 
-              placeholder="cyberpunk, neon, graphics, enhancement"
+              placeholder={t('mod_tags_placeholder')}
               className="form-input"
             />
           </div>
