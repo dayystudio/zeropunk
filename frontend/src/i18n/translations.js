@@ -198,11 +198,101 @@ export const translations = {
     quantum_processing: 'Quantum Processing',
     
     // ================================================================
-    // SCAN & ID SYSTEM
+    // ID SCAN & NEURAL INTERFACE SYSTEM
     // ================================================================
-    scan_skip: 'SKIP',
+    scan_neural_interface: 'NEURAL INTERFACE',
+    scan_complete: 'COMPLETE',
+    scan_neural_scanner: 'NEURAL SCANNER v2.1',
+    scan_active: 'ACTIVE',
     scan_initializing: 'Initializing Neural Scan...',
     scan_detecting: 'User detected...',
+    scan_unregistered: 'Status: Unregistered Entity',
+    scan_mind_pattern: 'Mind Pattern: Stable',
+    scan_access_temp: 'Access Level: Temporary',
+    scan_protocol_override: 'Protocol Override: ACCEPTED',
+    scan_welcome: 'Welcome to ZEROPUNK...',
+    scan_returning_user: 'Returning user detected',
+    scan_memory_traces: 'Memory traces found',
+    scan_access_granted: 'Access: GRANTED',
+    scan_welcome_back: 'Welcome back, operative',
+    scan_user_id: 'User ID',
+    scan_assigned_id: 'Assigned ID',
+    scan_user_profile: 'USER PROFILE',
+    scan_id: 'ID',
+    scan_class: 'Class',
+    scan_civilian: 'Civilian',
+    scan_affiliation: 'Affiliation',
+    scan_unknown: 'Unknown',
+    scan_threat_level: 'Threat Level',
+    scan_minimal: 'Minimal',
+    
+    // ================================================================
+    // CONTACT FORM SYSTEM
+    // ================================================================
+    contact_intro: 'Get in touch with the ZEROPUNK development team',
+    contact_name: 'Your Name',
+    contact_email: 'Your Email',
+    contact_subject: 'Subject',
+    contact_message: 'Your Message',
+    contact_send: 'Send Message',
+    contact_success: 'Message sent successfully!',
+    support_email: 'support@zeropunk.net',
+    
+    // ================================================================
+    // SYSTEM PERFORMANCE & ANALYSIS
+    // ================================================================
+    performance_analysis: 'Performance Analysis',
+    estimated_fps: 'Estimated FPS',
+    graphics_card: 'Graphics Card',
+    processor: 'Processor',
+    memory: 'Memory',
+    operating_system: 'Operating System',
+    memory_fragmentation: 'Memory Fragmentation',
+    neural_compatibility: 'Neural Compatibility',
+    
+    // ================================================================
+    // MODDING & CREATION TOOLS
+    // ================================================================
+    documentation: 'Documentation',
+    overview: 'Overview',
+    skinCreator: 'Skin Creator',
+    featuredMods: 'Featured Mods',
+    moddingFeed: 'Modding Feed',
+    
+    // ================================================================
+    // AI & NEURAL FEATURES
+    // ================================================================
+    emotional_intelligence: 'Emotional Intelligence',
+    natural_language: 'Natural Language Processing',
+    consciousness_stability: 'Consciousness Stability',
+    neural_interface_menu: 'Neural Interface Menu',
+    
+    // ================================================================
+    // REALITY FRACTURES & DELTA ACCESS
+    // ================================================================
+    delta_access: 'Delta Access',
+    reality_warning: 'Reality Warning',
+    forbidden_sight: 'Forbidden Sight',
+    possibility_thread: 'Possibility Thread',
+    
+    // ================================================================
+    // LIVE EVENTS & ACTIVITIES
+    // ================================================================
+    ongoing_events: 'Ongoing Events',
+    participants: 'Participants',
+    feature_availability: 'Feature Availability',
+    
+    // ================================================================
+    // YOUGNSHOP INTEGRATION
+    // ================================================================
+    how_it_works: 'How It Works',
+    step_1: 'Step 1',
+    step_2: 'Step 2', 
+    step_3: 'Step 3',
+    step_4: 'Step 4',
+    style: 'Style',
+    subtitle: 'Subtitle',
+    hero_message: 'Hero Message',
     
     // ================================================================
     // SHOP & MARKETPLACE
