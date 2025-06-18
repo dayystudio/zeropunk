@@ -198,10 +198,10 @@ const SurveillanceSection = () => {
                 </span>
               </div>
               <div className="threat-status">
-                {surveillanceData.globalThreatLevel >= 80 && <span className="status-critical">CRITICAL - MARTIAL LAW</span>}
-                {surveillanceData.globalThreatLevel >= 60 && surveillanceData.globalThreatLevel < 80 && <span className="status-high">HIGH - INCREASED PATROLS</span>}
-                {surveillanceData.globalThreatLevel >= 40 && surveillanceData.globalThreatLevel < 60 && <span className="status-elevated">ELEVATED - ENHANCED MONITORING</span>}
-                {surveillanceData.globalThreatLevel < 40 && <span className="status-normal">NORMAL - ROUTINE SURVEILLANCE</span>}
+                {surveillanceData.globalThreatLevel >= 80 && <span className="status-critical">{t('threat_critical')}</span>}
+                {surveillanceData.globalThreatLevel >= 60 && surveillanceData.globalThreatLevel < 80 && <span className="status-high">{t('threat_high')}</span>}
+                {surveillanceData.globalThreatLevel >= 40 && surveillanceData.globalThreatLevel < 60 && <span className="status-elevated">{t('threat_elevated')}</span>}
+                {surveillanceData.globalThreatLevel < 40 && <span className="status-normal">{t('threat_normal')}</span>}
               </div>
             </motion.div>
           </div>
