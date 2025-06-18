@@ -136,33 +136,25 @@ const ZoneDeltaReality = ({ onReturnToPrimary }) => {
     const cmd = command.toLowerCase().trim();
     let response = '';
 
-    switch (cmd) {
-      case 'help':
-        response = `
-AVAILABLE COMMANDS:
-- LOGS: View classified Diamond member entries
-- STATUS: Check system status
-- TRACE: View neural trace data
-- ARCHIVE: Access memory fragments
-- ERASE: Clear all traces (WARNING: IRREVERSIBLE)
-- EXIT: Return to primary reality
-        `;
+    switch (command.toUpperCase()) {
+      case 'HELP':
+        response = t('command_help');
         break;
-      case 'logs':
-        setShowLogs(true);
-        response = "Loading classified logs...";
+      case 'STATUS':
+        response = t('command_status');
         break;
-      case 'status':
-        response = `
-SYSTEM STATUS:
-- Diamond Members Active: 6/7
-- Consciousness Fragments: 2,847
-- Neural Trace Recording: ACTIVE
-- Archive Integrity: 94.7%
-- Deep Memory Access: RESTRICTED
-- Time Distortion Detected: YES
-        `;
+      case 'LOGS':
+        response = t('command_logs');
         break;
+      case 'WHISPERS':
+        response = t('command_whispers');
+        break;
+      case 'EXIT':
+        response = t('command_exit');
+        setTimeout(() => onReturnToPrimary(), 2000);
+        break;
+      default:
+        response = `${t('unknown_command')}: ${command}\n${t('type_help')}`;
       case 'trace':
         response = `
 NEURAL TRACE LOG:
