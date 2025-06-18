@@ -2229,7 +2229,7 @@ const App = () => {
         type: "media"
       },
       {
-        quote: "I've never experienced AI this immersive in a game before.",
+        quote: t('testimonial_2_text'),
         author: t('testimonial_author_2'),
         type: "player"
       },
