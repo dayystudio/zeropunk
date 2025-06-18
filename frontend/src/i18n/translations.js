@@ -700,11 +700,101 @@ export const translations = {
     quantum_processing: 'Traitement Quantique',
     
     // ================================================================
-    // SCAN & ID SYSTEM
+    // ID SCAN & NEURAL INTERFACE SYSTEM
     // ================================================================
-    scan_skip: 'PASSER',
+    scan_neural_interface: 'INTERFACE NEURALE',
+    scan_complete: 'TERMINÉ',
+    scan_neural_scanner: 'SCANNER NEURAL v2.1',
+    scan_active: 'ACTIF',
     scan_initializing: 'Initialisation Scan Neural...',
     scan_detecting: 'Utilisateur détecté...',
+    scan_unregistered: 'Statut : Entité Non Enregistrée',
+    scan_mind_pattern: 'Modèle Mental : Stable',
+    scan_access_temp: 'Niveau d\'Accès : Temporaire',
+    scan_protocol_override: 'Contournement Protocole : ACCEPTÉ',
+    scan_welcome: 'Bienvenue dans ZEROPUNK...',
+    scan_returning_user: 'Utilisateur de retour détecté',
+    scan_memory_traces: 'Traces mémoire trouvées',
+    scan_access_granted: 'Accès : ACCORDÉ',
+    scan_welcome_back: 'Bon retour, opérateur',
+    scan_user_id: 'ID Utilisateur',
+    scan_assigned_id: 'ID Assigné',
+    scan_user_profile: 'PROFIL UTILISATEUR',
+    scan_id: 'ID',
+    scan_class: 'Classe',
+    scan_civilian: 'Civil',
+    scan_affiliation: 'Affiliation',
+    scan_unknown: 'Inconnu',
+    scan_threat_level: 'Niveau de Menace',
+    scan_minimal: 'Minimal',
+    
+    // ================================================================
+    // CONTACT FORM SYSTEM
+    // ================================================================
+    contact_intro: 'Contactez l\'équipe de développement ZEROPUNK',
+    contact_name: 'Votre Nom',
+    contact_email: 'Votre Email',
+    contact_subject: 'Sujet',
+    contact_message: 'Votre Message',
+    contact_send: 'Envoyer Message',
+    contact_success: 'Message envoyé avec succès !',
+    support_email: 'support@zeropunk.net',
+    
+    // ================================================================
+    // SYSTEM PERFORMANCE & ANALYSIS
+    // ================================================================
+    performance_analysis: 'Analyse de Performance',
+    estimated_fps: 'FPS Estimés',
+    graphics_card: 'Carte Graphique',
+    processor: 'Processeur',
+    memory: 'Mémoire',
+    operating_system: 'Système d\'Exploitation',
+    memory_fragmentation: 'Fragmentation Mémoire',
+    neural_compatibility: 'Compatibilité Neurale',
+    
+    // ================================================================
+    // MODDING & CREATION TOOLS
+    // ================================================================
+    documentation: 'Documentation',
+    overview: 'Aperçu',
+    skinCreator: 'Créateur de Skins',
+    featuredMods: 'Mods en Vedette',
+    moddingFeed: 'Fil de Modding',
+    
+    // ================================================================
+    // AI & NEURAL FEATURES
+    // ================================================================
+    emotional_intelligence: 'Intelligence Émotionnelle',
+    natural_language: 'Traitement du Langage Naturel',
+    consciousness_stability: 'Stabilité de Conscience',
+    neural_interface_menu: 'Menu Interface Neurale',
+    
+    // ================================================================
+    // REALITY FRACTURES & DELTA ACCESS
+    // ================================================================
+    delta_access: 'Accès Delta',
+    reality_warning: 'Avertissement Réalité',
+    forbidden_sight: 'Vue Interdite',
+    possibility_thread: 'Fil de Possibilité',
+    
+    // ================================================================
+    // LIVE EVENTS & ACTIVITIES
+    // ================================================================
+    ongoing_events: 'Événements en Cours',
+    participants: 'Participants',
+    feature_availability: 'Disponibilité Fonctionnalité',
+    
+    // ================================================================
+    // YOUGNSHOP INTEGRATION
+    // ================================================================
+    how_it_works: 'Comment Ça Marche',
+    step_1: 'Étape 1',
+    step_2: 'Étape 2',
+    step_3: 'Étape 3',
+    step_4: 'Étape 4',
+    style: 'Style',
+    subtitle: 'Sous-titre',
+    hero_message: 'Message Héros',
     
     // ================================================================
     // SHOP & MARKETPLACE
