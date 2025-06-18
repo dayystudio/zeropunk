@@ -274,7 +274,7 @@ export const translations = {
     user_rating: 'User Rating',
     
     // ================================================================
-    // FEATURES & DESCRIPTIONS
+    // FEATURES & DESCRIPTIONS EXTENDED
     // ================================================================
     feature_ai_npcs: 'AI-Powered NPCs',
     feature_open_world: 'Open World Environment',
@@ -283,14 +283,26 @@ export const translations = {
     feature_multiplayer: 'Multiplayer Neural Networks',
     feature_modding: 'Advanced Modding Support',
     
-    open_world_desc: 'Explore a vast cyberpunk metropolis with complete freedom',
-    open_world_details: 'Navigate through neon-lit districts, underground networks, and towering megastructures in a living, breathing city.',
+    // AI NPCs Feature
+    ai_npcs_title: 'AI-Powered NPCs',
+    ai_npcs_desc: 'Interact with intelligent characters powered by advanced AI technology.',
+    ai_npcs_details: 'Deep learning algorithms create realistic conversations and dynamic relationships with persistent memory across gameplay sessions.',
     
-    neural_interface_desc: 'Revolutionary AI-powered character interactions',
-    neural_interface_details: 'Experience unprecedented depth in NPC conversations and relationships through advanced neural network technology.',
+    // Neural Dialogue System
+    neural_dialogue_title: 'Neural Dialogue System',
+    neural_dialogue_desc: 'Revolutionary conversation engine that adapts to your choices.',
+    neural_dialogue_details: 'Experience unprecedented depth in character interactions through advanced neural network processing and emotional intelligence.',
+    
+    // Open World Environment
+    open_world_title: 'Open World Environment',
+    open_world_desc: 'Explore a vast cyberpunk metropolis with complete freedom.',
+    open_world_details: 'Navigate through neon-lit districts, underground networks, and towering megastructures in a living, breathing city that responds to your actions.',
     
     customization_desc: 'Create your unique cyberpunk identity',
     customization_details: 'Extensive character creation with cybernetic augmentations, clothing, and neural modifications.',
+    
+    // Contact & Support
+    contact_title: 'Contact Us',
     
     // ================================================================
     // MODDING HUB
