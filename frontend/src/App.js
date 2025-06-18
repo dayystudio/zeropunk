@@ -1422,7 +1422,7 @@ const App = () => {
                   <span>{t('system_status')}</span>
                 </div>
                 <div className="message-content">
-                  <p>Neural interface calibration in progress...</p>
+                  <p>{t('neural_interface_calibration')}</p>
                   <p>Advanced avatar customization system under development</p>
                 </div>
               </motion.div>
