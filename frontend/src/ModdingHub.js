@@ -428,7 +428,7 @@ const ModdingHub = ({ currentLanguage = 'en' }) => {
           </div>
 
           <div className="form-group">
-            <label>Category</label>
+            <label>{t('mod_category_label')}</label>
             <select className="form-select">
               <option>Select category</option>
               <option>Skins</option>
