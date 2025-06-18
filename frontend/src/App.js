@@ -2579,10 +2579,10 @@ const App = () => {
             >
               <h2 className="support-title">
                 <span className="support-icon">💜</span>
-                SUPPORT THE PROJECT
+                {t('support_project_title')}
               </h2>
               <p className="support-intro">
-                Support the future of ZEROPUNK. Join the community. Help shape the game.
+                {t('support_description')}
               </p>
             </motion.div>
 
