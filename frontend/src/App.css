@@ -9546,8 +9546,10 @@ section {
   border: 1px solid rgba(255, 0, 128, 0.4);
   color: #FF0080;
   font-weight: 700;
+  font-size: 0.8rem;
   text-shadow: 0 0 5px rgba(255, 0, 128, 0.4);
   box-shadow: 0 2px 10px rgba(255, 0, 128, 0.2);
+  letter-spacing: 0.5px;
 }
 
 .nav-item-v2:nth-child(2).active .nav-item-content {
