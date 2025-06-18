@@ -2232,7 +2232,7 @@ const App = () => {
       },
       {
         quote: "ZEROPUNK redefines what's possible in interactive storytelling.",
-        author: "GameDev Insider",
+        author: t('testimonial_author_3'),
         type: "media"
       },
       {
