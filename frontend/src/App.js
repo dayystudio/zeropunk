@@ -3231,7 +3231,7 @@ const App = () => {
         id: 3,
         url: "https://images.pexels.com/photos/4090093/pexels-photo-4090093.jpeg",
         title: "PLAYER APARTMENT",
-        subtitle: "Your personal neural sanctuary",
+        subtitle: t('image_subtitle_sanctuary'),
         description: "Customize your living space with futuristic amenities and advanced neural interface technology."
       },
       {
