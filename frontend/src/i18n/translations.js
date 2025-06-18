@@ -328,6 +328,11 @@ export const translations = {
     faction_free_runners: 'Free Runners',
     faction_neural_collective: 'Neural Collective',
     
+    // Faction Trends
+    trend_rising: 'Rising',
+    trend_stable: 'Stable', 
+    trend_falling: 'Falling',
+    
     // Resource Names
     resource_neural_chips: 'Neural Chips',
     resource_data_cores: 'Data Cores',
