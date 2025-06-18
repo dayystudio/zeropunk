@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import './EchoesFutureReality.css';
 
 const EchoesFutureReality = ({ onReturnToPrimary }) => {
+  const { t } = useTranslation();
   const [currentMessage, setCurrentMessage] = useState(0);
   const [futureMessage, setFutureMessage] = useState('');
   const [showRoadmap, setShowRoadmap] = useState(false);
