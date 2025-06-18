@@ -466,7 +466,7 @@ const ModdingHub = ({ currentLanguage = 'en' }) => {
         <div className="form-grid">
           <div className="form-group">
             <label>Mod Name</label>
-            <input type="text" placeholder="Enter mod name" className="form-input" />
+            <input type="text" placeholder={t('mod_name_placeholder')} className="form-input" />
           </div>
 
           <div className="form-group">
