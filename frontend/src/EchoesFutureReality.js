@@ -46,36 +46,36 @@ const EchoesFutureReality = ({ onReturnToPrimary }) => {
   const futureRoadmap = [
     {
       year: "2025-2027",
-      title: "Neural Bridge Technology",
-      description: "Direct brain-computer interfaces become mainstream. Reality and digital merge.",
+      title: t('future_roadmap_2025_title'),
+      description: t('future_roadmap_2025_desc'),
       status: "incoming",
       probability: 89
     },
     {
       year: "2028-2030", 
-      title: "Consciousness Transfer Protocols",
-      description: "First successful human consciousness uploaded to digital realm.",
+      title: t('consciousness_transfer_protocols'),
+      description: t('consciousness_transfer_desc'),
       status: "developing",
       probability: 67
     },
     {
       year: "2031-2035",
-      title: "AI-Human Symbiosis",
-      description: "Permanent merger of human and artificial intelligence achieved.",
+      title: t('future_roadmap_2030_title'),
+      description: t('future_roadmap_2030_desc'),
       status: "experimental",
       probability: 45
     },
     {
       year: "2036-2040",
-      title: "Digital Immortality",
-      description: "Death becomes optional. Physical bodies obsolete.",
+      title: t('digital_immortality'),
+      description: t('digital_immortality_desc'),
       status: "theoretical",
       probability: 23
     },
     {
       year: "2041+",
-      title: "Post-Human Era",
-      description: "Homo sapiens extinct. Homo digitalis rises.",
+      title: t('future_roadmap_2035_title'),
+      description: t('future_roadmap_2035_desc'),
       status: "uncertain",
       probability: 12
     }
