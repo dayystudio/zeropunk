@@ -1829,14 +1829,51 @@ export const translations = {
     firewall_status: '防火墙：高级',
     
     // Support Section
-    support_project_title: 'SUPPORT THE PROJECT',
-    support_description: 'Support the future of ZEROPUNK. Join the community. Help shape the game.',
-    make_donation: 'Make a Donation',
-    join_discord: 'Join the Discord Server',
-    support_benefits: 'By supporting the project and joining Discord, you\'ll gain access to an exclusive developer-only channel, where you can:',
-    share_ideas: 'Share your ideas directly with the dev',
-    behind_scenes: 'See exclusive behind-the-scenes content',
-    early_previews: 'Get early previews, polls, and rewards'
+    support_project_title: '支持项目',
+    support_description: '支持ZEROPUNK的未来。加入社区。帮助塑造游戏。',
+    make_donation: '进行捐赠',
+    join_discord: '加入Discord服务器',
+    support_benefits: '通过支持项目并加入Discord，您将获得专属开发者频道的访问权限，您可以：',
+    share_ideas: '直接与开发者分享您的想法',
+    behind_scenes: '查看独家幕后内容',
+    early_previews: '获得早期预览、投票和奖励',
+    
+    // Visual Archive
+    visual_archive_full_title: 'ZEROPUNK 视觉档案',
+    visual_archive_description: '沉浸在第7区的赛博朋克世界中',
+    
+    // Additional Sections
+    modding_hub_title: '模组中心',
+    modding_subtitle: '创建和分享自定义内容',
+    zeromarket_title: 'ZEROMARKET',
+    zeromarket_subtitle: '增强体验的数字市场',
+    city_cast_live: 'Citycast Live 2137',
+    faq_general: '常见问题',
+    faq_gameplay: '游戏玩法',
+    faq_technical: '技术支持',
+    
+    // Common UI Elements
+    close: '关闭',
+    open: '打开',
+    save: '保存',
+    cancel: '取消',
+    confirm: '确认',
+    loading: '加载中...',
+    error: '错误',
+    success: '成功',
+    warning: '警告',
+    info: '信息',
+    
+    // Menu Items (ensure all are translated)
+    citycast_live: 'Citycast Live 2137',
+    support_project: '支持项目',
+    visual_archive: '视觉档案',
+    faq: '常见问题',
+    gamestats: '游戏统计',
+    live_world_activity: '实时世界活动',
+    zeromarket: 'ZEROMARKET',
+    reality_fractures: '现实裂隙',
+    modding_hub: '模组中心',
   }
 };
 
