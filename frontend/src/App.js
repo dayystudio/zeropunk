@@ -2712,10 +2712,10 @@ const App = () => {
             >
               <h2 className="broadcast-title">
                 <span className="broadcast-icon">📡</span>
-                CITYCAST LIVE 2137
+                {t('citycast_title')}
               </h2>
               <p className="broadcast-subtitle">
-                Neural Network Broadcasting • Live from Neon District 7
+                {t('citycast_subtitle')}
               </p>
             </motion.div>
 
