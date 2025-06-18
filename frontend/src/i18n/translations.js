@@ -1129,7 +1129,7 @@ export const translations = {
     contact_title: '联系我们',
     
     // ================================================================
-    // MODDING HUB
+    // MODDING HUB EXTENDED
     // ================================================================
     modding_hub_title: '模组中心',
     modding_hub_subtitle: '创建和分享自定义内容',
@@ -1145,6 +1145,16 @@ export const translations = {
     upload_mod: '上传模组',
     initialize_module: '初始化模块',
     access_docs: '访问文档',
+    
+    // Modding Hub Sections
+    toolbox: '官方工具箱',
+    uploadCenter: '上传中心',
+    title: '标题',
+    
+    // ================================================================
+    // YOUGNSHOP INTEGRATION
+    // ================================================================
+    visit_clothing_website: '访问服装网站',
     
     // ================================================================
     // AUTHENTICATION SYSTEM
