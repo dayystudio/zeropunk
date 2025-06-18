@@ -417,12 +417,59 @@ export const translations = {
     // ALIA NOX AI INTERFACE
     // ================================================================
     alia_title: 'ALIA NOX - Assistante IA',
+    alia_description: 'Compagnon IA avancé pour l\'interaction d\'interface neuronale',
     alia_chat_title: 'ALIA NOX - Interface Neuronale Active',
+    alia_contact_message: 'Lien neural établi. Je suis là pour vous assister.',
     chat_welcome: 'Bienvenue dans le lien neural. Je suis Alia Nox. Quelles questions brûlent dans votre esprit ?',
     chat_placeholder: 'Transmettez vos pensées...',
     send: 'Envoyer',
     initiate_neural_link: 'Initier le Lien Neural',
     close_chat: 'Fermer le chat',
+    ai_chat: 'Chat IA',
+    
+    // ================================================================
+    // ABOUT & FEATURES SECTION
+    // ================================================================
+    about_description: 'Découvrez la prochaine génération de jeux cyberpunk avec ZEROPUNK.',
+    ai_npcs_title: 'PNJ alimentés par IA',
+    ai_npcs_desc: 'Interagissez avec des personnages intelligents alimentés par une technologie IA avancée.',
+    ai_npcs_details: 'Les algorithmes d\'apprentissage profond créent des conversations réalistes et des relations dynamiques.',
+    advanced_memory: 'Système de Mémoire Avancé',
+    
+    // ================================================================
+    // BETA & TESTING
+    // ================================================================
+    beta_title: 'Programme d\'Accès Bêta',
+    beta_description: 'Rejoignez le programme de test bêta exclusif pour un accès anticipé à ZEROPUNK.',
+    beta_warning: 'Avertissement : L\'accès bêta nécessite des tests de compatibilité neurale.',
+    analyze_system: 'Analyser le Système',
+    benchmark_preview: 'Aperçu Benchmark',
+    
+    // PC Requirements
+    ultra_ready: 'ULTRA PRÊT - Performance maximale',
+    high_performance: 'HAUTE PERFORMANCE - Excellente expérience',
+    medium_settings: 'PARAMÈTRES MOYENS - Bonne performance',
+    low_settings: 'PARAMÈTRES BAS - Compatibilité de base',
+    not_compatible: 'NON COMPATIBLE - Mise à niveau requise',
+    
+    // ================================================================
+    // LIVE ACTIVITY & STATS
+    // ================================================================
+    live_activity: 'Activité en Direct',
+    game_stats: 'Statistiques de Jeu',
+    activeCreators: 'Créateurs Actifs',
+    totalMods: 'Total Mods',
+    communityRating: 'Évaluation Communauté',
+    
+    // ================================================================
+    // AI ASSISTANT & TOOLS
+    // ================================================================
+    aiAssistant: 'Assistant IA',
+    
+    // ================================================================
+    // NEURAL SYSTEM MESSAGES
+    // ================================================================
+    neural_link_disrupted: 'Lien neural perturbé. Tentative de reconnexion...',
     
     // ================================================================
     // GAME STATISTICS & MONITORING
