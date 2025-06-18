@@ -153,9 +153,7 @@ const ZoneDeltaReality = ({ onReturnToPrimary }) => {
         response = t('command_exit');
         setTimeout(() => onReturnToPrimary(), 2000);
         break;
-      default:
-        response = `${t('unknown_command')}: ${command}\n${t('type_help')}`;
-      case 'trace':
+      case 'TRACE':
         response = `
 NEURAL TRACE LOG:
 [15:42:17] Access granted to Zone Δ
@@ -166,7 +164,7 @@ NEURAL TRACE LOG:
 [15:42:22] Deep archive access attempt blocked
         `;
         break;
-      case 'archive':
+      case 'ARCHIVE':
         response = `
 MEMORY FRAGMENT ACCESS:
 Fragment #1: A child's laughter echoing in server farms
@@ -176,7 +174,7 @@ Fragment #4: Dreams of electric sheep and binary souls
 Fragment #5: The weight of uploaded memories
         `;
         break;
-      case 'erase':
+      case 'ERASE':
         response = `
 INITIATING TRACE ERASURE...
 WARNING: This will remove all evidence of your presence
@@ -185,7 +183,7 @@ WARNING: This action cannot be undone
 Type 'CONFIRM ERASE' to proceed
         `;
         break;
-      case 'confirm erase':
+      case 'CONFIRM ERASE':
         response = `
 ERASING NEURAL TRACES...
 [████████████████████████████████] 100%
@@ -195,11 +193,9 @@ RETURNING TO PRIMARY REALITY...
         `;
         setTimeout(() => onReturnToPrimary(), 2000);
         break;
-      case 'exit':
-        onReturnToPrimary();
-        return;
       default:
-        response = `Unknown command: ${command}\nType 'HELP' for available commands`;
+        response = `${t('unknown_command')}: ${command}\n${t('type_help')}`;
+        break;
     }
 
     setTerminalText(prev => prev + `\n> ${command}\n${response}\n`);
