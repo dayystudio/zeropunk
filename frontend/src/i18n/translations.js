@@ -717,7 +717,7 @@ export const translations = {
     contact_title: 'Nous Contacter',
     
     // ================================================================
-    // MODDING HUB
+    // MODDING HUB EXTENDED
     // ================================================================
     modding_hub_title: 'HUB DE MODDING',
     modding_hub_subtitle: 'Créez et partagez du contenu personnalisé',
@@ -733,6 +733,16 @@ export const translations = {
     upload_mod: 'Télécharger Mod',
     initialize_module: 'INITIALISER MODULE',
     access_docs: 'ACCÉDER DOCS',
+    
+    // Modding Hub Sections
+    toolbox: 'Boîte à Outils Officielle',
+    uploadCenter: 'Centre de Téléchargement',
+    title: 'Titre',
+    
+    // ================================================================
+    // YOUGNSHOP INTEGRATION
+    // ================================================================
+    visit_clothing_website: 'Visiter le Site de Vêtements',
     
     // ================================================================
     // AUTHENTICATION SYSTEM
