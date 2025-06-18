@@ -316,29 +316,29 @@ export const translations = {
     
     // Citycast Live
     citycast_title: 'CITYCAST LIVE 2137',
-    citycast_subtitle: 'Diffusion Réseau Neural • En direct du District Néon 7',
-    citycast_live: 'EN DIRECT',
+    citycast_subtitle: '神经网络广播 • 霓虹区7号现场直播',
+    citycast_live: '直播',
     citycast_date: '2137.03.15 | 23:47:33',
     
     // Beta Access
-    beta_access_title: 'ACCÈS BÊTA ZEROPUNK',
-    beta_slots: 'PLACES LIMITÉES DISPONIBLES',
-    beta_launch_text: 'Le programme d\'accès anticipé se lance pour les tests de compatibilité neurale...',
+    beta_access_title: 'ZEROPUNK 测试版准入',
+    beta_slots: '限量名额开放',
+    beta_launch_text: '早期访问程序启动，进行神经兼容性测试...',
     
     // Gameplay Preview
-    gameplay_preview: 'APERÇU GAMEPLAY ZEROPUNK',
-    breaking_news: 'URGENT : Les tests de compatibilité d\'implants neuraux montrent un taux de succès de 94% • Les inscriptions bêta ZEROPUNK dépassent 10 000 enregistrements • Le Conseil Municipal débat de la législation sur les droits IA • Les actions Neon Corp augmentent de 15% après une percée quantique •',
+    gameplay_preview: 'ZEROPUNK 游戏预览',
+    breaking_news: '突发新闻：神经植入物兼容性测试显示94%成功率 • ZEROPUNK测试版注册超过10,000人 • 市议会辩论AI权利立法 • Neon Corp股价在量子突破后上涨15% •',
     
     // News Feed Items
-    neon_district_lockdown: 'CONFINEMENT DISTRICT NÉON',
-    security_breach_detected: 'VIOLATION DE SÉCURITÉ DÉTECTÉE',
-    unknown_hackers_content: 'Des pirates inconnus infiltrent le réseau de surveillance de la ville...',
-    sector_7_uprising: 'SOULÈVEMENT SECTEUR 7',
-    corporate_forces_mobilizing: 'FORCES CORPORATIVES SE MOBILISENT',
-    neural_chip_shortage: 'La pénurie de puces neurales déclenche des émeutes dans le district du centre-ville...',
-    ai_consciousness_debate: 'DÉBAT SUR LA CONSCIENCE IA',
-    ethics_committee_hearing: 'AUDITION COMITÉ D\'ÉTHIQUE',
-    artificial_sentience_threat: 'La sensibilité artificielle est-elle une menace pour l\'autonomie humaine ?',
+    neon_district_lockdown: '霓虹区封锁',
+    security_breach_detected: '检测到安全漏洞',
+    unknown_hackers_content: '未知黑客渗透城市监控网络...',
+    sector_7_uprising: '7号扇区起义',
+    corporate_forces_mobilizing: '企业军队正在集结',
+    neural_chip_shortage: '神经芯片短缺引发市中心区域暴乱...',
+    ai_consciousness_debate: 'AI意识辩论',
+    ethics_committee_hearing: '伦理委员会听证会',
+    artificial_sentience_threat: '人工智能意识是否对人类自主权构成威胁？',
     
     // System Status
     neural_core: 'NEURAL_CORE',
