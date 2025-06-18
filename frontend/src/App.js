@@ -3536,7 +3536,7 @@ const App = () => {
                   <option value="Windows 11">Windows 11</option>
                   <option value="Windows 10">Windows 10</option>
                   <option value="macOS">macOS</option>
-                  <option value="Linux">Linux</option>
+                  <option value="Linux">{t('os_linux')}</option>
                 </select>
               </div>
 
