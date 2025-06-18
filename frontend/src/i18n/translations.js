@@ -929,6 +929,9 @@ export const translations = {
     skinCreator: 'Créateur de Skins',
     featuredMods: 'Mods en Vedette',
     moddingFeed: 'Fil de Modding',
+    development_in_progress: 'Développement en Cours',
+    creator_tools_coming_soon: 'Outils de création avancés et fonctionnalités communautaires bientôt disponibles...',
+    incoming_features: 'Fonctionnalités à Venir',
     
     // ================================================================
     // AI & NEURAL FEATURES
