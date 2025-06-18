@@ -1394,7 +1394,32 @@ export const translations = {
     // ================================================================
     image_alt_gameplay: 'Capture d\'écran du gameplay ZEROPUNK',
     image_alt_character: 'Interface de personnalisation de personnage',
-    image_alt_environment: 'Environnement de ville cyberpunk'
+    image_alt_environment: 'Environnement de ville cyberpunk',
+    
+    // ================================================================
+    // TEXTES HARDCODÉS SUPPLÉMENTAIRES
+    // ================================================================
+    modding_interface: 'INTERFACE DE MODDING',
+    creator_central_station: 'Station Centrale des Créateurs',
+    development_progress: 'Progression du Développement',
+    get_notified_creator_hub: 'Soyez notifié quand le Hub Créateur sera en ligne',
+    neural_interface: 'INTERFACE NEURALE',
+    character_forge: 'FORGE DE PERSONNAGE',
+    neural_avatar_customization: 'PERSONNALISATION D\'AVATAR NEURAL',
+    system_status: 'ÉTAT DU SYSTÈME',
+    neural_interface_calibration: 'Calibration de l\'interface neurale en cours...',
+    advanced_avatar_customization: 'Système de personnalisation d\'avatar avancé en développement',
+    facial_recognition_system: 'Système de Reconnaissance Faciale',
+    cybernetic_implant_database: 'Base de Données d\'Implants Cybernétiques',
+    neural_pattern_mapping: 'Cartographie des Motifs Neuraux',
+    facial_reconstruction: 'Reconstruction Faciale',
+    augmented_reality_eyes: 'Yeux de Réalité Augmentée',
+    neural_implants: 'Implants Neuraux',
+    cybernetic_limbs: 'Membres Cybernétiques',
+    bio_luminescent_hair: 'Cheveux Bio-luminescents',
+    tactical_gear_systems: 'Systèmes d\'Équipement Tactique',
+    get_notified_when_ready: 'ÊTRE NOTIFIÉ QUAND PRÊT',
+    join_neural_network: 'Rejoignez le réseau neural pour un accès anticipé à la personnalisation d\'avatar',
   },
 
   zh: {
