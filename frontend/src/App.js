@@ -1278,7 +1278,7 @@ const App = () => {
               <div className="features-grid">
                 <div className="feature-item">
                   <Terminal size={20} />
-                  <span>Modding Documentation</span>
+                  <span>{t('modding_documentation')}</span>
                 </div>
                 <div className="feature-item">
                   <Palette size={20} />
