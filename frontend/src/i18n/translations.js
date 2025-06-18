@@ -276,11 +276,55 @@ export const translations = {
     possibility_thread: 'Possibility Thread',
     
     // ================================================================
-    // LIVE EVENTS & ACTIVITIES
+    // LIVE EVENTS & ACTIVITIES EXTENDED
     // ================================================================
     ongoing_events: 'Ongoing Events',
     participants: 'Participants',
     feature_availability: 'Feature Availability',
+    
+    // Event Types & Titles
+    event_corporate_raid: 'Corporate Raid',
+    event_resource_surge: 'Resource Surge',
+    event_territory_dispute: 'Territory Dispute',
+    event_acid_storm_warning: 'Acid Storm Warning',
+    
+    // Event Locations
+    location_sector_7_alpha: 'Sector 7-Alpha',
+    location_underground_market: 'Underground Market',
+    location_neon_district: 'Neon District',
+    location_industrial_zone: 'Industrial Zone',
+    location_downtown_core: 'Downtown Core',
+    location_underground: 'Underground',
+    location_corporate_sector: 'Corporate Sector',
+    location_skyline_towers: 'Skyline Towers',
+    
+    // Event Status
+    status_active: 'active',
+    status_trending: 'trending',
+    status_escalating: 'escalating',
+    status_incoming: 'incoming',
+    status_stable: 'stable',
+    status_caution: 'caution',
+    status_secure: 'secure',
+    status_quiet: 'quiet',
+    status_elite: 'elite',
+    
+    // Activity Levels
+    activity_high: 'High',
+    activity_very_high: 'Very High',
+    activity_medium: 'Medium',
+    activity_low: 'Low',
+    
+    // Faction Names
+    faction_neon_syndicate: 'Neon Syndicate',
+    faction_shadow_corp: 'Shadow Corp',
+    faction_free_runners: 'Free Runners',
+    faction_neural_collective: 'Neural Collective',
+    
+    // Resource Names
+    resource_neural_chips: 'Neural Chips',
+    resource_data_cores: 'Data Cores',
+    resource_quantum_bits: 'Quantum Bits',
     
     // ================================================================
     // YOUGNSHOP INTEGRATION
