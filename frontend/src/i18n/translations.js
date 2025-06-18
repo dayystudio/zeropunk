@@ -1078,7 +1078,7 @@ export const translations = {
     user_rating: '用户评分',
     
     // ================================================================
-    // FEATURES & DESCRIPTIONS
+    // FEATURES & DESCRIPTIONS EXTENDED
     // ================================================================
     feature_ai_npcs: 'AI驱动的NPC',
     feature_open_world: '开放世界环境',
@@ -1087,14 +1087,26 @@ export const translations = {
     feature_multiplayer: '多人神经网络',
     feature_modding: '高级模组支持',
     
-    open_world_desc: '在广阔的赛博朋克大都市中自由探索',
-    open_world_details: '在霓虹灯照亮的街区、地下网络和高耸的巨型建筑中穿行，体验一个生动呼吸的城市。',
+    // AI NPCs Feature
+    ai_npcs_title: 'AI驱动的NPC',
+    ai_npcs_desc: '与由先进AI技术驱动的智能角色互动。',
+    ai_npcs_details: '深度学习算法创造真实对话和动态关系，具有跨游戏会话的持久记忆。',
     
-    neural_interface_desc: '革命性的AI驱动角色互动',
-    neural_interface_details: '通过先进的神经网络技术，体验NPC对话和关系的前所未有的深度。',
+    // Neural Dialogue System
+    neural_dialogue_title: '神经对话系统',
+    neural_dialogue_desc: '适应您选择的革命性对话引擎。',
+    neural_dialogue_details: '通过先进的神经网络处理和情感智能，体验角色互动的前所未有的深度。',
+    
+    // Open World Environment
+    open_world_title: '开放世界环境',
+    open_world_desc: '在广阔的赛博朋克大都市中自由探索。',
+    open_world_details: '在霓虹灯照亮的街区、地下网络和高耸的巨型建筑中穿行，体验一个会响应您行动的生动呼吸的城市。',
     
     customization_desc: '创造你独特的赛博朋克身份',
     customization_details: '广泛的角色创建，包括生化增强、服装和神经改造。',
+    
+    // Contact & Support
+    contact_title: '联系我们',
     
     // ================================================================
     // MODDING HUB
