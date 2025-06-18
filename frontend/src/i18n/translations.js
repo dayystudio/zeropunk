@@ -1305,6 +1305,54 @@ export const translations = {
     advanced_ai_tech: 'Suite Technologique IA Avancée',
     feature_modules: 'MODULES_FONCTIONNELS',
     
+    // AI NPCs Module
+    ai_npcs_module: 'PNJ IA',
+    module_01: 'MODULE_01',
+    neural_dialogue_module: 'Dialogue Neural',
+    module_02: 'MODULE_02',
+    open_world_module: 'Monde Ouvert',
+    module_03: 'MODULE_03',
+    neural_technology_suite: 'SUITE_TECHNOLOGIQUE_NEURALE',
+    ai_npcs_core: 'NOYAU_PNJ_IA',
+    neural_memory: 'Mémoire Neurale',
+    daily_interactions: 'Interactions Quotidiennes',
+    response_accuracy: 'Précision des Réponses',
+    system_overview: 'APERÇU_SYSTÈME',
+    ai_npcs_description: 'PNJ alimentés par IA avancée avec mémoire persistante, intelligence émotionnelle et adaptation dynamique de personnalité.',
+    
+    // Core Capabilities
+    core_capabilities: 'CAPACITÉS_FONDAMENTALES',
+    dynamic_personality: 'Adaptation dynamique de personnalité',
+    cross_session_memory: 'Rétention de mémoire inter-sessions',
+    emotional_intelligence: 'Traitement de l\'intelligence émotionnelle',
+    contextual_relationships: 'Construction de relations contextuelles',
+    initialize_module: 'INITIALISER_MODULE',
+    access_docs: 'ACCÉDER_DOCS',
+    
+    // Tech Specs
+    tech_specs: 'SPÉCIFICATIONS_TECH',
+    neural_pathways: 'Voies Neurales',
+    parameters: 'paramètres',
+    memory_capacity: 'Capacité Mémoire',
+    response_time: 'Temps de Réponse',
+    learning_rate: 'Taux d\'Apprentissage',
+    adaptive: 'Adaptatif',
+    
+    // Live Monitor
+    live_monitor: 'SURVEILLANCE_TEMPS_RÉEL',
+    neural_activity: 'Activité Neurale',
+    data_flow: 'Flux de Données',
+    system_load: 'Charge Système',
+    alerts: 'ALERTES',
+    neural_sync_complete: 'Synchronisation neurale terminée',
+    cache_optimization_needed: 'Optimisation du cache nécessaire',
+    ago: 'il y a',
+    
+    // Security Systems
+    quantum_encryption_active: 'CHIFFREMENT_QUANTIQUE_ACTIF',
+    neural_firewall_enabled: 'PARE-FEU_NEURAL_ACTIVÉ',
+    global_neural_network: 'RÉSEAU_NEURAL_GLOBAL',
+    
     // Neural Network Statistics
     neural_stats_title: 'STATISTIQUES DU RÉSEAU NEURAL',
     neural_links: 'LIENS NEURAUX',
