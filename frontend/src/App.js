@@ -1303,7 +1303,7 @@ const App = () => {
               transition={{ duration: 0.8, delay: 1.1 }}
             >
               <div className="progress-item">
-                <span className="progress-label">Development Progress</span>
+                <span className="progress-label">{t('development_progress')}</span>
                 <div className="progress-bar">
                   <div className="progress-fill" style={{ width: '65%' }}></div>
                 </div>
