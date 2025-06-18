@@ -1482,7 +1482,7 @@ const App = () => {
                   </div>
                   <div className="feature-item">
                     <Cpu size={20} />
-                    <span>Cybernetic Limbs</span>
+                    <span>{t('cybernetic_limbs')}</span>
                   </div>
                   <div className="feature-item">
                     <Palette size={20} />
