@@ -740,12 +740,59 @@ export const translations = {
     // ALIA NOX AI INTERFACE
     // ================================================================
     alia_title: 'ALIA NOX - AI助手',
+    alia_description: '先进的AI伴侣，用于神经接口交互',
     alia_chat_title: 'ALIA NOX - 神经接口激活',
+    alia_contact_message: '神经链接已建立。我在这里协助您。',
     chat_welcome: '欢迎进入神经链接。我是Alia Nox。您心中有什么问题在燃烧？',
     chat_placeholder: '传输您的想法...',
     send: '发送',
     initiate_neural_link: '启动神经链接',
     close_chat: '关闭聊天',
+    ai_chat: 'AI聊天',
+    
+    // ================================================================
+    // ABOUT & FEATURES SECTION
+    // ================================================================
+    about_description: '体验下一代赛博朋克游戏ZEROPUNK。',
+    ai_npcs_title: 'AI驱动的NPC',
+    ai_npcs_desc: '与由先进AI技术驱动的智能角色互动。',
+    ai_npcs_details: '深度学习算法创造真实对话和动态关系。',
+    advanced_memory: '高级记忆系统',
+    
+    // ================================================================
+    // BETA & TESTING
+    // ================================================================
+    beta_title: '测试版访问计划',
+    beta_description: '加入独家测试版测试计划，提前体验ZEROPUNK。',
+    beta_warning: '警告：测试版访问需要神经兼容性测试。',
+    analyze_system: '分析系统',
+    benchmark_preview: '基准预览',
+    
+    // PC Requirements
+    ultra_ready: '超级就绪 - 最大性能',
+    high_performance: '高性能 - 优秀体验',
+    medium_settings: '中等设置 - 良好性能',
+    low_settings: '低设置 - 基本兼容',
+    not_compatible: '不兼容 - 需要升级',
+    
+    // ================================================================
+    // LIVE ACTIVITY & STATS
+    // ================================================================
+    live_activity: '实时活动',
+    game_stats: '游戏统计',
+    activeCreators: '活跃创作者',
+    totalMods: '总模组数',
+    communityRating: '社区评分',
+    
+    // ================================================================
+    // AI ASSISTANT & TOOLS
+    // ================================================================
+    aiAssistant: 'AI助手',
+    
+    // ================================================================
+    // NEURAL SYSTEM MESSAGES
+    // ================================================================
+    neural_link_disrupted: '神经链接中断。尝试重新连接...',
     
     // ================================================================
     // GAME STATISTICS & MONITORING
