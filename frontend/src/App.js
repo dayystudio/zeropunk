@@ -1282,7 +1282,7 @@ const App = () => {
                 </div>
                 <div className="feature-item">
                   <Palette size={20} />
-                  <span>Skin Creator Tools</span>
+                  <span>{t('skin_creator_tools')}</span>
                 </div>
                 <div className="feature-item">
                   <Upload size={20} />
