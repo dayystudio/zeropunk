@@ -413,18 +413,18 @@ export const translations = {
     quantum_processing: 'Quantum Processing',
     
     // Support Section
-    support_project_title: 'SUPPORT THE PROJECT',
-    support_description: 'Support the future of ZEROPUNK. Join the community. Help shape the game.',
-    make_donation: 'Make a Donation',
-    join_discord: 'Join the Discord Server',
-    support_benefits: 'By supporting the project and joining Discord, you\'ll gain access to an exclusive developer-only channel, where you can:',
-    share_ideas: 'Share your ideas directly with the dev',
-    behind_scenes: 'See exclusive behind-the-scenes content',
-    early_previews: 'Get early previews, polls, and rewards',
+    support_project_title: 'SOUTENIR LE PROJET',
+    support_description: 'Soutenez l\'avenir de ZEROPUNK. Rejoignez la communauté. Aidez à façonner le jeu.',
+    make_donation: 'Faire un Don',
+    join_discord: 'Rejoindre le Serveur Discord',
+    support_benefits: 'En soutenant le projet et en rejoignant Discord, vous aurez accès à un canal exclusif réservé aux développeurs, où vous pourrez :',
+    share_ideas: 'Partager vos idées directement avec le développeur',
+    behind_scenes: 'Voir du contenu exclusif en coulisses',
+    early_previews: 'Obtenir des aperçus anticipés, des sondages et des récompenses',
     
     // Visual Archive
-    visual_archive_full_title: 'ZEROPUNK VISUAL ARCHIVE',
-    visual_archive_description: 'Immerse yourself in the cyberpunk world of District 7',
+    visual_archive_full_title: 'ARCHIVES VISUELLES ZEROPUNK',
+    visual_archive_description: 'Plongez-vous dans le monde cyberpunk du District 7',
     
     // FAQ French (Complete)
     faq_full_title: 'F.A.Q – QUESTIONS FRÉQUEMMENT POSÉES',
