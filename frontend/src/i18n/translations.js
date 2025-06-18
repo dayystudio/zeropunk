@@ -1010,20 +1010,49 @@ export const translations = {
     future_roadmap_2035_desc: 'Homo sapiens éteint. Homo digitalis se lève.',
     
     // ================================================================
-    // FUTURE CONTENT & MEDIA
+    // TESTIMONIALS & REVIEWS
     // ================================================================
-    temporal_thread: 'FIL TEMPOREL #4-21',
-    future_title_echoes: 'ÉCHOS DU FUTUR',
-    unreleased_timeline: 'CHRONOLOGIE NON PUBLIÉE',
-    exclusive_content: 'CONTENU EXCLUSIF',
-    content_count: 'ÉLÉMENTS',
-    neural_bridge_tech: 'Technologie de Pont Neural',
-    ai_human_symbiosis: 'Symbiose IA-Humain',
-    post_human_era: 'Ère Post-Humaine',
-    digital_phantoms: 'Fantômes Numériques',
-    ghost_in_code: 'Fantôme dans le Code',
-    ethereal_preview: '🎵 Synthwave éthérée avec motifs d\'interférence neurale...',
-    neo_tokyo_preview: '🎵 Nuits de Neo-Tokyo avec paysages sonores de pluie numérique...',
+    testimonial_author_1: 'TechCrunch',
+    testimonial_author_2: 'Testeur Alpha',
+    testimonial_author_3: 'GameDev Insider',
+    testimonial_author_4: 'Joueur Bêta',
+    
+    // ================================================================
+    // VISUAL ARCHIVE IMAGES
+    // ================================================================
+    image_subtitle_megacity: 'Vue aérienne de la mégalopole tentaculaire',
+    image_subtitle_sanctuary: 'Votre sanctuaire neural personnel',
+    image_subtitle_underground: 'Passages cachés des souterrains',
+    
+    // ================================================================
+    // OPERATING SYSTEMS
+    // ================================================================
+    os_windows: 'Windows',
+    os_macos: 'macOS',
+    os_linux: 'Linux',
+    
+    // ================================================================
+    // ZEROMARKET PRODUCTS
+    // ================================================================
+    product_neural_implant: 'Implant Neural X1',
+    product_smart_jacket: 'Veste Intelligente Pro',
+    product_data_blade: 'Lame de Données',
+    product_quantum_deck: 'Deck Quantique',
+    product_stealth_cloak: 'Cape Furtive',
+    
+    // Product Specs
+    spec_7nm_arch: 'Architecture 7nm',
+    spec_quantum_encrypt: 'Chiffrement quantique',
+    spec_bio_compatible: 'Bio-compatible',
+    spec_smart_fiber: 'Fibre intelligente',
+    spec_rgb_adaptive: 'RGB adaptatif',
+    spec_machine_wash: 'Lavable en machine',
+    spec_monofilament: 'Bord monofilament',
+    spec_1tb_storage: 'Stockage 1TB',
+    spec_biometric_lock: 'Verrou biométrique',
+    spec_quantum_processor: 'Processeur quantique',
+    spec_portable_design: 'Design portable',
+    spec_ai_assistant: 'Assistant IA',
     
     // ================================================================
     // AUTHENTICATION SYSTEM
