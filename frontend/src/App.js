@@ -2668,9 +2668,9 @@ const App = () => {
         content: t('neural_chip_shortage')
       },
       {
-        title: "AI CONSCIOUSNESS DEBATE",
-        subtitle: "ETHICS COMMITTEE HEARING",
-        content: "Is artificial sentience a threat to human autonomy?"
+        title: t('ai_consciousness_debate'),
+        subtitle: t('ethics_committee_hearing'),
+        content: t('artificial_sentience_threat')
       },
       {
         title: t('neon_district_lockdown'),
