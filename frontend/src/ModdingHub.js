@@ -565,7 +565,7 @@ const ModdingHub = ({ currentLanguage = 'en' }) => {
             <Search size={16} />
             <input 
               type="text"
-              placeholder="Search mods..."
+              placeholder={t('search_mods_placeholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
