@@ -2636,7 +2636,7 @@ const App = () => {
             >
               <div className="benefits-content">
                 <p className="benefits-intro">
-                  By supporting the project and joining Discord, you'll gain access to an exclusive developer-only channel, where you can:
+                  {t('support_benefits_intro')}
                 </p>
                 <ul className="benefits-list">
                   <li>
