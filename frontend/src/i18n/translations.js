@@ -188,7 +188,68 @@ export const translations = {
     error: 'Error',
     success: 'Success',
     warning: 'Warning',
-    info: 'Information'
+    info: 'Information',
+    
+    // Menu Items (ensure all are translated)
+    citycast_live: 'Citycast Live 2137',
+    support_project: 'Support the Project',
+    visual_archive: 'Visual Archive',
+    faq: 'F.A.Q',
+    gamestats: 'GameStat',
+    live_world_activity: 'Live World Activity',
+    zeromarket: 'ZEROMARKET',
+    reality_fractures: 'Reality Fractures',
+    modding_hub: 'Modding Hub',
+    
+    // Page Titles and Headers
+    page_title: 'ZEROPUNK - Immersive Cyberpunk Gaming',
+    loading_title: 'Loading ZEROPUNK...',
+    error_404: 'Error 404 - Page Not Found',
+    error_500: 'Error 500 - Server Error',
+    maintenance: 'Under Maintenance',
+    
+    // Form Elements
+    placeholder_name: 'Enter your name',
+    placeholder_email: 'Enter your email',
+    placeholder_subject: 'Enter subject',
+    placeholder_message: 'Enter your message',
+    required_field: 'This field is required',
+    invalid_email: 'Invalid email format',
+    form_submitted: 'Form submitted successfully',
+    form_error: 'Error submitting form',
+    
+    // Navigation States
+    menu_open: 'Menu Open',
+    menu_closed: 'Menu Closed',
+    scroll_to_top: 'Scroll to Top',
+    back_to_home: 'Back to Home',
+    
+    // Status Messages
+    online: 'Online',
+    offline: 'Offline',
+    connecting: 'Connecting...',
+    connected: 'Connected',
+    disconnected: 'Disconnected',
+    pending: 'Pending...',
+    processing: 'Processing...',
+    completed: 'Completed',
+    failed: 'Failed',
+    
+    // Time and Date
+    just_now: 'Just now',
+    minutes_ago: 'minutes ago',
+    hours_ago: 'hours ago',
+    days_ago: 'days ago',
+    
+    // Media Controls
+    play: 'Play',
+    pause: 'Pause',
+    stop: 'Stop',
+    volume: 'Volume',
+    mute: 'Mute',
+    unmute: 'Unmute',
+    fullscreen: 'Fullscreen',
+    exit_fullscreen: 'Exit Fullscreen'
   },
   
   fr: {
