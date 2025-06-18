@@ -880,7 +880,72 @@ export const translations = {
     mute: '静音',
     unmute: '取消静音',
     fullscreen: '全屏',
-    exit_fullscreen: '退出全屏'
+    exit_fullscreen: '退出全屏',
+    
+    // Additional Game Content
+    neural_network: '神经网络',
+    data_streams: '数据流',
+    cybernetic_implants: '赛博植入物',
+    street_cred: '街头信誉',
+    reputation: '声誉',
+    skills: '技能',
+    inventory: '库存',
+    equipment: '装备',
+    weapons: '武器',
+    armor: '护甲',
+    
+    // System Messages
+    system_online: '系统在线',
+    system_offline: '系统离线',
+    access_granted: '访问已授权',
+    access_denied: '访问被拒绝',
+    authentication_required: '需要身份验证',
+    session_expired: '会话已过期',
+    data_corrupted: '数据已损坏',
+    signal_lost: '信号丢失',
+    
+    // Interface Elements
+    dashboard: '仪表板',
+    settings: '设置',
+    preferences: '偏好设置',
+    profile: '个人资料',
+    account: '账户',
+    logout: '退出登录',
+    login: '登录',
+    register: '注册',
+    search: '搜索',
+    filter: '筛选',
+    sort: '排序',
+    view: '查看',
+    edit: '编辑',
+    delete: '删除',
+    add: '添加',
+    remove: '移除',
+    update: '更新',
+    refresh: '刷新',
+    
+    // Notification Messages
+    notification: '通知',
+    alert: '警报',
+    message_sent: '消息已发送',
+    message_received: '消息已接收',
+    update_available: '更新可用',
+    download_complete: '下载完成',
+    installation_complete: '安装完成',
+    backup_complete: '备份完成',
+    sync_complete: '同步完成',
+    
+    // Error Types
+    connection_error: '连接错误',
+    timeout_error: '超时错误',
+    server_error: '服务器错误',
+    client_error: '客户端错误',
+    network_error: '网络错误',
+    authentication_error: '身份验证错误',
+    permission_error: '权限错误',
+    file_not_found: '文件未找到',
+    invalid_input: '输入无效',
+    operation_failed: '操作失败'
   }
 };
 
