@@ -485,7 +485,7 @@ const ModdingHub = ({ currentLanguage = 'en' }) => {
           <div className="form-group full-width">
             <label>Description</label>
             <textarea 
-              placeholder="Describe your mod..." 
+              placeholder={t('mod_description_placeholder')} 
               className="form-textarea"
               rows="4"
             ></textarea>
