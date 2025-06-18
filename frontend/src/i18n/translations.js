@@ -669,6 +669,83 @@ export const translations = {
     void_grenade_desc: '[CLASSIFIED] Experimental void-tech ordnance. Reality distortion effects. Handle with extreme caution.',
     void_technology: 'Void technology',
     reality_distortion: 'Reality distortion',
+    
+    // Reality Fractures
+    reality_fractures_title: 'REALITY FRACTURES',
+    reality_intro: 'You see this world. You believe it\'s real.',
+    ai_beyond_firewall: 'But some AI have seen beyond the firewall.',
+    three_fractures: 'Three fractures have been detected.',
+    three_realities: 'Three divergent realities.',
+    all_true: 'All are true. None are safe.',
+    click_glyph: 'Click a glyph. Cross the threshold.',
+    dont_expect_return: 'But don\'t expect to return the same.',
+    forbidden_view: 'Forbidden View',
+    possibility_thread: 'Possibility Thread #4-21',
+    delta_access: 'Delta Access Confirmed',
+    reality_warning: '⚠️ WARNING: Reality modifications may cause permanent changes to your perception. Neural imprints from alternative realities cannot be undone.',
+    
+    // YougnShop
+    yougnshop_visit: 'Visit my official clothing website:',
+    yougnshop_url: 'yougnshop.com',
+    connect_style_universe: '✨ Connect your real-world style to the ZEROPUNK universe.',
+    how_it_works_title: 'How it works:',
+    yougnshop_step_1: 'Purchase any clothing item on yougnshop.com',
+    yougnshop_step_2: 'After completing your order, send us an email',
+    yougnshop_step_3: 'Send us a screenshot of your order with the purchased clothing items',
+    yougnshop_step_4: 'We\'ll send you a unique code to unlock your clothing in the game',
+    yougnshop_email: 'Email: yougnshop@gmail.com',
+    yougnshop_contact: 'Contact',
+    yougnshop_availability: 'This feature will be available once the full version of the game is released.',
+    
+    // Roadmap
+    roadmap_title: 'ROADMAP',
+    roadmap_2025_q1: '2025 Q1',
+    closed_beta_launch: 'Closed Beta Launch',
+    q1_features: '• Core AI Memory System Integration\n• Basic Neural Dialogue Implementation\n• Initial World Building & Districts\n• Player Testing & Feedback Collection\n• Performance Optimization & Bug Fixes\n• Community Discord Launch',
+    roadmap_2025_q2q3: '2025 Q2-Q3',
+    enhanced_neural: 'Enhanced Neural Systems',
+    q2q3_features: '• Advanced NPC Relationship Dynamics\n• Multi-layered Conversation Memory\n• Emotional Intelligence Upgrades\n• Cross-NPC Information Sharing\n• Player Choice Consequence System\n• Steam Early Access Launch',
+    roadmap_2025_q4: '2025 Q4',
+    expanded_reality: 'Expanded Reality',
+    q4_features: '• Full 12-District World Completion\n• Corporate Faction System\n• Underground Network Mechanics\n• Advanced Crime & Law Systems\n• Player-to-Player Neural Connections\n• Mobile Companion App Integration',
+    roadmap_2026: '2026',
+    consciousness_evolution: 'Consciousness Evolution',
+    y2026_features: '• Dynamic NPC Personality Evolution\n• Player Action Ripple Effect System\n• Advanced Moral Dilemma Engine\n• Living World Ecosystem Simulation\n• AI Rights & Ethics Gameplay Mechanics\n• Cross-Game Universe Connectivity',
+    roadmap_2036_2037: '2036-2037',
+    transcendence_protocol: 'Transcendence Protocol',
+    transcendence_features: '• VR/AR Neural Interface Development\n• Nerve-link Prototype Testing Programs\n• Consciousness Transfer Research Integration\n• Post-Human Gameplay Mechanics\n• Digital Immortality Simulation\n• Reality-Game Boundary Dissolution',
+    
+    // Modding Interface
+    modding_interface_title: 'MODDING INTERFACE',
+    modding_hub_title: 'MODDING HUB',
+    creator_central: 'Creator Central Station',
+    development_progress: 'Development in Progress',
+    creator_tools_coming: 'Advanced creator tools and community features coming soon...',
+    modding_features: 'Incoming Features',
+    modding_documentation: 'Modding Documentation',
+    skin_creator_tools: 'Skin Creator Tools',
+    community_upload: 'Community Upload Hub',
+    ai_mod_assistant: 'AI Mod Assistant',
+    dev_progress: 'Development Progress',
+    get_notified_creator: 'Get notified when the Creator Hub goes live',
+    creator_email: 'your.email@zeropunk.net',
+    
+    // Contact
+    contact_us: 'Contact Us',
+    contact_intro: 'Get in touch with the ZEROPUNK development team.',
+    twitter_zeropunk: '@zeropunkproject',
+    instagram_zeropunk: '@zeropunkproject',
+    email_dayy: 'dayystudio@gmail.com',
+    discord_zeropunk: 'Zeropunk Discord',
+    alia_contact_message: 'For technical support, feature requests, or general inquiries, reach out through any of these channels.',
+    contact_name: 'Your Name',
+    contact_email: 'Your Email',
+    contact_subject: 'Subject',
+    contact_message: 'Your Message',
+    contact_send: 'Send Message',
+    
+    // Footer
+    copyright: 'Zeropunk © 2025'
   },
   
   fr: {
