@@ -1577,20 +1577,49 @@ export const translations = {
     future_roadmap_2035_desc: '智人灭绝。数字人类崛起。',
     
     // ================================================================
-    // FUTURE CONTENT & MEDIA
+    // TESTIMONIALS & REVIEWS
     // ================================================================
-    temporal_thread: '时间线程 #4-21',
-    future_title_echoes: '未来回响',
-    unreleased_timeline: '未发布时间线',
-    exclusive_content: '独家内容',
-    content_count: '项目',
-    neural_bridge_tech: '神经桥接技术',
-    ai_human_symbiosis: 'AI-人类共生',
-    post_human_era: '后人类时代',
-    digital_phantoms: '数字幻影',
-    ghost_in_code: '代码中的幽灵',
-    ethereal_preview: '🎵 带有神经干扰模式的空灵合成波...',
-    neo_tokyo_preview: '🎵 带有数字雨声景的新东京夜晚...',
+    testimonial_author_1: 'TechCrunch',
+    testimonial_author_2: 'Alpha测试员',
+    testimonial_author_3: 'GameDev Insider',
+    testimonial_author_4: 'Beta玩家',
+    
+    // ================================================================
+    // VISUAL ARCHIVE IMAGES
+    // ================================================================
+    image_subtitle_megacity: '广阔巨型城市的鸟瞰图',
+    image_subtitle_sanctuary: '您的个人神经圣殿',
+    image_subtitle_underground: '地下隐秘通道',
+    
+    // ================================================================
+    // OPERATING SYSTEMS
+    // ================================================================
+    os_windows: 'Windows',
+    os_macos: 'macOS',
+    os_linux: 'Linux',
+    
+    // ================================================================
+    // ZEROMARKET PRODUCTS
+    // ================================================================
+    product_neural_implant: '神经植入物 X1',
+    product_smart_jacket: '智能夹克 Pro',
+    product_data_blade: '数据刀片',
+    product_quantum_deck: '量子平台',
+    product_stealth_cloak: '隐形斗篷',
+    
+    // Product Specs
+    spec_7nm_arch: '7nm架构',
+    spec_quantum_encrypt: '量子加密',
+    spec_bio_compatible: '生物兼容',
+    spec_smart_fiber: '智能纤维',
+    spec_rgb_adaptive: 'RGB自适应',
+    spec_machine_wash: '机洗',
+    spec_monofilament: '单丝边缘',
+    spec_1tb_storage: '1TB存储',
+    spec_biometric_lock: '生物识别锁',
+    spec_quantum_processor: '量子处理器',
+    spec_portable_design: '便携设计',
+    spec_ai_assistant: 'AI助手',
     
     // ================================================================
     // AUTHENTICATION SYSTEM
