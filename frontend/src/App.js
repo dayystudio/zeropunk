@@ -1262,8 +1262,8 @@ const App = () => {
                 <Code size={32} />
               </div>
               <div className="status-info">
-                <h3>Development in Progress</h3>
-                <p>Advanced creator tools and community features coming soon...</p>
+                <h3>{t('development_in_progress')}</h3>
+                <p>{t('creator_tools_coming_soon')}</p>
               </div>
             </motion.div>
             
