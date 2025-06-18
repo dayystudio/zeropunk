@@ -1286,7 +1286,7 @@ const App = () => {
                 </div>
                 <div className="feature-item">
                   <Upload size={20} />
-                  <span>Community Upload Hub</span>
+                  <span>{t('community_upload_hub')}</span>
                 </div>
                 <div className="feature-item">
                   <Bot size={20} />
