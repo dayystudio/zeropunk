@@ -1474,7 +1474,7 @@ const App = () => {
                   </div>
                   <div className="feature-item">
                     <Eye size={20} />
-                    <span>Augmented Reality Eyes</span>
+                    <span>{t('augmented_reality_eyes')}</span>
                   </div>
                   <div className="feature-item">
                     <Brain size={20} />
