@@ -1503,11 +1503,55 @@ export const translations = {
     possibility_thread: '可能性线程',
     
     // ================================================================
-    // LIVE EVENTS & ACTIVITIES
+    // LIVE EVENTS & ACTIVITIES EXTENDED
     // ================================================================
     ongoing_events: '进行中事件',
     participants: '参与者',
     feature_availability: '功能可用性',
+    
+    // Event Types & Titles
+    event_corporate_raid: '企业突袭',
+    event_resource_surge: '资源激增',
+    event_territory_dispute: '领土争端',
+    event_acid_storm_warning: '酸雨风暴警告',
+    
+    // Event Locations
+    location_sector_7_alpha: '7号扇区-Alpha',
+    location_underground_market: '地下市场',
+    location_neon_district: '霓虹区',
+    location_industrial_zone: '工业区',
+    location_downtown_core: '市中心核心',
+    location_underground: '地下',
+    location_corporate_sector: '企业区',
+    location_skyline_towers: '天际塔楼',
+    
+    // Event Status
+    status_active: '活跃',
+    status_trending: '趋势',
+    status_escalating: '升级中',
+    status_incoming: '即将到来',
+    status_stable: '稳定',
+    status_caution: '谨慎',
+    status_secure: '安全',
+    status_quiet: '安静',
+    status_elite: '精英',
+    
+    // Activity Levels
+    activity_high: '高',
+    activity_very_high: '很高',
+    activity_medium: '中等',
+    activity_low: '低',
+    
+    // Faction Names
+    faction_neon_syndicate: '霓虹集团',
+    faction_shadow_corp: '暗影公司',
+    faction_free_runners: '自由跑者',
+    faction_neural_collective: '神经集体',
+    
+    // Resource Names
+    resource_neural_chips: '神经芯片',
+    resource_data_cores: '数据核心',
+    resource_quantum_bits: '量子位',
     
     // ================================================================
     // YOUGNSHOP INTEGRATION
