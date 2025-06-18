@@ -316,18 +316,23 @@ export const translations = {
     
     // Citycast Live
     citycast_title: 'CITYCAST LIVE 2137',
-    citycast_subtitle: 'Neural Network Broadcasting • Live from Neon District 7',
-    citycast_live: 'LIVE',
+    citycast_subtitle: 'Diffusion Réseau Neural • En direct du District Néon 7',
+    citycast_live: 'EN DIRECT',
     citycast_date: '2137.03.15 | 23:47:33',
     
     // Beta Access
-    beta_access_title: 'ZEROPUNK BETA ACCESS',
-    beta_slots: 'LIMITED SLOTS AVAILABLE',
-    beta_launch_text: 'Early access program launches for neural compatibility testing...',
+    beta_access_title: 'ACCÈS BÊTA ZEROPUNK',
+    beta_slots: 'PLACES LIMITÉES DISPONIBLES',
+    beta_launch_text: 'Le programme d\'accès anticipé se lance pour les tests de compatibilité neurale...',
     
     // Gameplay Preview
-    gameplay_preview: 'ZEROPUNK GAMEPLAY PREVIEW',
-    breaking_news: 'BREAKING: Neural implant compatibility tests show 94% success rate • ZEROPUNK beta signups exceed 10,000 registrations • City Council debates AI rights legislation • Neon Corp stock rises 15% after quantum breakthrough •',
+    gameplay_preview: 'APERÇU GAMEPLAY ZEROPUNK',
+    breaking_news: 'URGENT : Les tests de compatibilité d\'implants neuraux montrent un taux de succès de 94% • Les inscriptions bêta ZEROPUNK dépassent 10 000 enregistrements • Le Conseil Municipal débat de la législation sur les droits IA • Les actions Neon Corp augmentent de 15% après une percée quantique •',
+    
+    // News Feed Items
+    neon_district_lockdown: 'CONFINEMENT DISTRICT NÉON',
+    security_breach_detected: 'VIOLATION DE SÉCURITÉ DÉTECTÉE',
+    unknown_hackers_content: 'Des pirates inconnus infiltrent le réseau de surveillance de la ville...',
     
     // System Status
     neural_core: 'NEURAL_CORE',
