@@ -21,51 +21,7 @@ const ModdingHub = ({ currentLanguage = 'en' }) => {
   const [aiAssistantOpen, setAiAssistantOpen] = useState(false);
   const [glitchEffect, setGlitchEffect] = useState(false);
   
-  // Translations
-  const translations = {
-    en: {
-      title: 'MODDING HUB',
-      subtitle: 'Creator Central • Neural Network Interface',
-      overview: 'Hub Overview',
-      documentation: 'Documentation',
-      skinCreator: 'Skin Creator',
-      uploadCenter: 'Upload Center',
-      toolbox: 'Official Toolbox',
-      featuredMods: 'Featured Mods',
-      moddingFeed: 'Modding Feed',
-      aiAssistant: 'AI Mod Assistant',
-      totalMods: 'Total Mods',
-      activeCreators: 'Active Creators',
-      downloads: 'Downloads',
-      communityRating: 'Community Rating'
-    },
-    fr: {
-      title: 'HUB DE MODDING',
-      subtitle: 'Central Créateur • Interface Réseau Neural',
-      overview: 'Vue d\'ensemble',
-      documentation: 'Documentation',
-      skinCreator: 'Créateur de Skins',
-      uploadCenter: 'Centre de Téléchargement',
-      toolbox: 'Boîte à Outils Officielle',
-      featuredMods: 'Mods en Vedette',
-      moddingFeed: 'Fil de Modding',
-      aiAssistant: 'Assistant IA Mod'
-    },
-    zh: {
-      title: '模组中心',
-      subtitle: '创作者中心 • 神经网络接口',
-      overview: '中心概述',
-      documentation: '文档',
-      skinCreator: '皮肤创建器',
-      uploadCenter: '上传中心',
-      toolbox: '官方工具箱',
-      featuredMods: '精选模组',
-      moddingFeed: '模组动态',
-      aiAssistant: 'AI 模组助手'
-    }
-  };
-
-  const t = (key) => translations[currentLanguage]?.[key] || translations.en[key] || key;
+  // Initialize translations
 
   // Glitch effect trigger
   useEffect(() => {
