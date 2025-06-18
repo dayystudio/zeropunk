@@ -2237,7 +2237,7 @@ const App = () => {
       },
       {
         quote: "The neural dialogue system is revolutionary.",
-        author: "Beta Player",
+        author: t('testimonial_author_4'),
         type: "player"
       }
     ];
