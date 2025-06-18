@@ -1824,7 +1824,7 @@ const App = () => {
       },
       {
         id: 'open_world',
-        icon: <Eye className="feature-icon" />,
+        icon: <Globe className="feature-icon" />,
         title: t('open_world_title'),
         description: t('open_world_desc'),
         details: t('open_world_details'),
