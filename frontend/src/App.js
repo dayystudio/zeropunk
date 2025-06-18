@@ -2234,7 +2234,7 @@ const App = () => {
         type: "player"
       },
       {
-        quote: "ZEROPUNK redefines what's possible in interactive storytelling.",
+        quote: t('testimonial_3_text'),
         author: t('testimonial_author_3'),
         type: "media"
       },
