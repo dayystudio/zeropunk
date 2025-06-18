@@ -565,11 +565,10 @@ export const translations = {
     copyright: 'Zeropunk © 2025',
     
     // ================================================================
-    // ACCESSIBILITY
+    // MISSING KEYS - FINAL COMPLETION
     // ================================================================
-    image_alt_gameplay: 'ZEROPUNK gameplay screenshot',
-    image_alt_character: 'Character customization interface',
-    image_alt_environment: 'Cyberpunk city environment'
+    scan_skip: 'SKIP',
+    visit_clothing_website: 'Visit Clothing Website',
   },
 
   fr: {
