@@ -1248,7 +1248,7 @@ const App = () => {
               transition={{ duration: 1 }}
             >
               MODDING HUB
-              <span className="title-subtitle">Creator Central Station</span>
+              <span className="title-subtitle">{t('creator_central_station')}</span>
             </motion.h1>
             
             {/* Development status */}
