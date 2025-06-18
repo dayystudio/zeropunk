@@ -596,7 +596,7 @@ const ModdingHub = ({ currentLanguage = 'en' }) => {
             onClick={() => setSelectedMod(mod)}
           >
             <div className="mod-thumbnail">
-              <img src={mod.thumbnail} alt={mod.name} />
+              <img src={mod.thumbnail} alt={t('image_alt_character')} />
               <div className="mod-overlay">
                 <Play size={24} />
               </div>
