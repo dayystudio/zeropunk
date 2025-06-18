@@ -3217,7 +3217,7 @@ const App = () => {
         id: 1,
         url: "https://images.unsplash.com/photo-1573767291321-c0af2eaf5266",
         title: "NEON DISTRICT OVERVIEW",
-        subtitle: "Aerial view of the sprawling megacity",
+        subtitle: t('image_subtitle_megacity'),
         description: "Explore the vast cyberpunk metropolis from above, where neon lights pierce through the eternal darkness of District 7."
       },
       {
