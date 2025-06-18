@@ -429,12 +429,16 @@ export const translations = {
     alia_future_msg_7: "Every decision echoes across infinite possibilities.",
     
     // ================================================================
-    // FUTURE ROADMAP
+    // FUTURE ROADMAP EXTENDED
     // ================================================================
     future_roadmap_2025_title: 'Neural Bridge Technology',
     future_roadmap_2025_desc: 'Direct brain-computer interfaces become mainstream. Reality and digital merge.',
+    consciousness_transfer_protocols: 'Consciousness Transfer Protocols',
+    consciousness_transfer_desc: 'First successful human consciousness uploaded to digital realm.',
     future_roadmap_2030_title: 'AI-Human Symbiosis',
     future_roadmap_2030_desc: 'Permanent merger of human and artificial intelligence achieved.',
+    digital_immortality: 'Digital Immortality',
+    digital_immortality_desc: 'Death becomes optional. Physical bodies obsolete.',
     future_roadmap_2035_title: 'Post-Human Era',
     future_roadmap_2035_desc: 'Homo sapiens extinct. Homo digitalis rises.',
     
