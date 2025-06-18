@@ -2673,9 +2673,9 @@ const App = () => {
         content: "Is artificial sentience a threat to human autonomy?"
       },
       {
-        title: "NEON DISTRICT LOCKDOWN",
-        subtitle: "SECURITY BREACH DETECTED",
-        content: "Unknown hackers infiltrate city surveillance network..."
+        title: t('neon_district_lockdown'),
+        subtitle: t('security_breach_detected'),
+        content: t('unknown_hackers_content')
       },
       {
         title: "ZEROPUNK BETA ACCESS",
