@@ -2222,7 +2222,7 @@ const App = () => {
     const testimonials = [
       {
         quote: "A glimpse into the future of gaming. Every NPC feels alive.",
-        author: "TechCrunch",
+        author: t('testimonial_author_1'),
         type: "media"
       },
       {
