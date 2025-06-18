@@ -2885,19 +2885,19 @@ const App = () => {
       const newErrors = {};
 
       if (authMode === 'register') {
-        if (!formData.username) newErrors.username = 'Username is required';
-        if (!formData.email) newErrors.email = 'Email is required';
-        if (!formData.password) newErrors.password = 'Password is required';
-        if (!formData.confirmPassword) newErrors.confirmPassword = 'Confirm password is required';
+        if (!formData.username) newErrors.username = t('username_required');
+        if (!formData.email) newErrors.email = t('email_required');
+        if (!formData.password) newErrors.password = t('password_required');
+        if (!formData.confirmPassword) newErrors.confirmPassword = t('confirm_password_required');
         if (formData.password !== formData.confirmPassword) {
-          newErrors.confirmPassword = 'Passwords do not match';
+          newErrors.confirmPassword = t('passwords_not_match');
         }
-        if (!formData.accept_terms) newErrors.accept_terms = 'You must accept the terms';
+        if (!formData.accept_terms) newErrors.accept_terms = t('accept_terms_required');
         if (usernameAvailable && !usernameAvailable.available) {
-          newErrors.username = 'Username not available';
+          newErrors.username = t('username_not_available');
         }
         if (passwordStrength && !passwordStrength.is_valid) {
-          newErrors.password = 'Password is too weak';
+          newErrors.password = t('password_too_weak');
         }
       } else {
         if (!formData.username_or_email) newErrors.username_or_email = 'Username or email is required';
