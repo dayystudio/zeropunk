@@ -225,6 +225,44 @@ export const translations = {
     filter_apparel: 'Apparel',
     filter_gear: 'Gear',
     
+    // Shop Items & Stats
+    compatibility_verdict: 'Compatibility Assessment',
+    connect_style: 'Connect Style',
+    download_center: 'Download Center',
+    downloads_count: 'Downloads',
+    enhancement_name: 'Enhancement Name',
+    enhancement_desc: 'Enhancement Description',
+    game_info: 'Game Information',
+    game_overview: 'Game Overview',
+    installation_guide: 'Installation Guide',
+    live_stats: 'Live Statistics',
+    neural_enhancement: 'Neural Enhancement',
+    neural_interface: 'Neural Interface',
+    price_credits: 'Price (Credits)',
+    purchase_now: 'Purchase Now',
+    system_compatibility: 'System Compatibility',
+    tech_specs: 'Technical Specifications',
+    user_rating: 'User Rating',
+    
+    // ================================================================
+    // FEATURES & DESCRIPTIONS
+    // ================================================================
+    feature_ai_npcs: 'AI-Powered NPCs',
+    feature_open_world: 'Open World Environment',
+    feature_neural_interface: 'Neural Interface Technology',
+    feature_customization: 'Deep Character Customization',
+    feature_multiplayer: 'Multiplayer Neural Networks',
+    feature_modding: 'Advanced Modding Support',
+    
+    open_world_desc: 'Explore a vast cyberpunk metropolis with complete freedom',
+    open_world_details: 'Navigate through neon-lit districts, underground networks, and towering megastructures in a living, breathing city.',
+    
+    neural_interface_desc: 'Revolutionary AI-powered character interactions',
+    neural_interface_details: 'Experience unprecedented depth in NPC conversations and relationships through advanced neural network technology.',
+    
+    customization_desc: 'Create your unique cyberpunk identity',
+    customization_details: 'Extensive character creation with cybernetic augmentations, clothing, and neural modifications.',
+    
     // ================================================================
     // MODDING HUB
     // ================================================================
