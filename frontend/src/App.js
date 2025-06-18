@@ -1290,7 +1290,7 @@ const App = () => {
                 </div>
                 <div className="feature-item">
                   <Bot size={20} />
-                  <span>AI Mod Assistant</span>
+                  <span>{t('ai_mod_assistant')}</span>
                 </div>
               </div>
             </motion.div>
