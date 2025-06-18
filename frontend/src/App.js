@@ -2227,7 +2227,7 @@ const App = () => {
       },
       {
         quote: "I've never experienced AI this immersive in a game before.",
-        author: "Alpha Tester",
+        author: t('testimonial_author_2'),
         type: "player"
       },
       {
