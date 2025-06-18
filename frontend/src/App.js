@@ -1446,7 +1446,7 @@ const App = () => {
                   <div className="progress-bar">
                     <div className="progress-fill" style={{ width: '60%' }}></div>
                   </div>
-                  <span className="progress-label">Cybernetic Implant Database</span>
+                  <span className="progress-label">{t('cybernetic_implant_database')}</span>
                   <span className="progress-value">60%</span>
                 </div>
                 
