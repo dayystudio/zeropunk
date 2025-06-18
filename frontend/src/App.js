@@ -3124,7 +3124,7 @@ const App = () => {
                     value={formData.username_or_email}
                     onChange={handleInputChange}
                     className={`auth-input ${errors.username_or_email ? 'error' : ''}`}
-                    placeholder="Enter username or email"
+                    placeholder={t('login_username_placeholder')}
                   />
                   {errors.username_or_email && <div className="auth-error">{errors.username_or_email}</div>}
                 </div>
