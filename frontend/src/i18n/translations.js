@@ -249,7 +249,72 @@ export const translations = {
     mute: 'Mute',
     unmute: 'Unmute',
     fullscreen: 'Fullscreen',
-    exit_fullscreen: 'Exit Fullscreen'
+    exit_fullscreen: 'Exit Fullscreen',
+    
+    // Additional Game Content
+    neural_network: 'Neural Network',
+    data_streams: 'Data Streams',
+    cybernetic_implants: 'Cybernetic Implants',
+    street_cred: 'Street Cred',
+    reputation: 'Reputation',
+    skills: 'Skills',
+    inventory: 'Inventory',
+    equipment: 'Equipment',
+    weapons: 'Weapons',
+    armor: 'Armor',
+    
+    // System Messages
+    system_online: 'System Online',
+    system_offline: 'System Offline',
+    access_granted: 'Access Granted',
+    access_denied: 'Access Denied',
+    authentication_required: 'Authentication Required',
+    session_expired: 'Session Expired',
+    data_corrupted: 'Data Corrupted',
+    signal_lost: 'Signal Lost',
+    
+    // Interface Elements
+    dashboard: 'Dashboard',
+    settings: 'Settings',
+    preferences: 'Preferences',
+    profile: 'Profile',
+    account: 'Account',
+    logout: 'Logout',
+    login: 'Login',
+    register: 'Register',
+    search: 'Search',
+    filter: 'Filter',
+    sort: 'Sort',
+    view: 'View',
+    edit: 'Edit',
+    delete: 'Delete',
+    add: 'Add',
+    remove: 'Remove',
+    update: 'Update',
+    refresh: 'Refresh',
+    
+    // Notification Messages
+    notification: 'Notification',
+    alert: 'Alert',
+    message_sent: 'Message Sent',
+    message_received: 'Message Received',
+    update_available: 'Update Available',
+    download_complete: 'Download Complete',
+    installation_complete: 'Installation Complete',
+    backup_complete: 'Backup Complete',
+    sync_complete: 'Sync Complete',
+    
+    // Error Types
+    connection_error: 'Connection Error',
+    timeout_error: 'Timeout Error',
+    server_error: 'Server Error',
+    client_error: 'Client Error',
+    network_error: 'Network Error',
+    authentication_error: 'Authentication Error',
+    permission_error: 'Permission Error',
+    file_not_found: 'File Not Found',
+    invalid_input: 'Invalid Input',
+    operation_failed: 'Operation Failed'
   },
   
   fr: {
