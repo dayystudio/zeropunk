@@ -52,8 +52,8 @@ const App = () => {
   );
   
   // ID Scan Entry State
-  const [showIDScan, setShowIDScan] = useState(true);
-  const [mainAppVisible, setMainAppVisible] = useState(false);
+  const [showIDScan, setShowIDScan] = useState(false);
+  const [mainAppVisible, setMainAppVisible] = useState(true);
   
   // Contact form state
   const [contactForm, setContactForm] = useState({
