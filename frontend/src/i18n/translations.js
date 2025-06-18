@@ -1853,8 +1853,7 @@ export const translations = {
 // Language configuration
 export const languages = [
   { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'zh', name: '简体中文', flag: '🇨🇳' }
+  { code: 'fr', name: 'Français', flag: '🇫🇷' }
 ];
 
 // Get translation function with fallback
