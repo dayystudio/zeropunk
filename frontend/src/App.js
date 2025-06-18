@@ -1318,7 +1318,7 @@ const App = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.4 }}
             >
-              <p>Get notified when the Creator Hub goes live</p>
+              <p>{t('get_notified_creator_hub')}</p>
               <div className="notify-form">
                 <input 
                   type="email" 
