@@ -388,10 +388,10 @@ export const translations = {
     // YOUGNSHOP INTEGRATION
     // ================================================================
     how_it_works: 'How It Works',
-    step_1: 'Step 1',
-    step_2: 'Step 2', 
-    step_3: 'Step 3',
-    step_4: 'Step 4',
+    step_1: 'Purchase any clothing item on yougnshop.com',
+    step_2: 'Send your order receipt to support@zeropunk-game.com', 
+    step_3: 'Include your Steam username',
+    step_4: 'Receive exclusive ZEROPUNK in-game cosmetic items',
     style: 'Style',
     subtitle: 'Subtitle',
     hero_message: 'Hero Message',
