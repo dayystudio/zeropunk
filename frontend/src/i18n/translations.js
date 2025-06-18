@@ -566,7 +566,72 @@ export const translations = {
     mute: 'Muet',
     unmute: 'Son Activé',
     fullscreen: 'Plein Écran',
-    exit_fullscreen: 'Quitter Plein Écran'
+    exit_fullscreen: 'Quitter Plein Écran',
+    
+    // Additional Game Content
+    neural_network: 'Réseau Neural',
+    data_streams: 'Flux de Données',
+    cybernetic_implants: 'Implants Cybernétiques',
+    street_cred: 'Réputation de Rue',
+    reputation: 'Réputation',
+    skills: 'Compétences',
+    inventory: 'Inventaire',
+    equipment: 'Équipement',
+    weapons: 'Armes',
+    armor: 'Armure',
+    
+    // System Messages
+    system_online: 'Système En Ligne',
+    system_offline: 'Système Hors Ligne',
+    access_granted: 'Accès Accordé',
+    access_denied: 'Accès Refusé',
+    authentication_required: 'Authentification Requise',
+    session_expired: 'Session Expirée',
+    data_corrupted: 'Données Corrompues',
+    signal_lost: 'Signal Perdu',
+    
+    // Interface Elements
+    dashboard: 'Tableau de Bord',
+    settings: 'Paramètres',
+    preferences: 'Préférences',
+    profile: 'Profil',
+    account: 'Compte',
+    logout: 'Déconnexion',
+    login: 'Connexion',
+    register: 'S\'inscrire',
+    search: 'Rechercher',
+    filter: 'Filtrer',
+    sort: 'Trier',
+    view: 'Voir',
+    edit: 'Modifier',
+    delete: 'Supprimer',
+    add: 'Ajouter',
+    remove: 'Retirer',
+    update: 'Mettre à Jour',
+    refresh: 'Actualiser',
+    
+    // Notification Messages
+    notification: 'Notification',
+    alert: 'Alerte',
+    message_sent: 'Message Envoyé',
+    message_received: 'Message Reçu',
+    update_available: 'Mise à Jour Disponible',
+    download_complete: 'Téléchargement Terminé',
+    installation_complete: 'Installation Terminée',
+    backup_complete: 'Sauvegarde Terminée',
+    sync_complete: 'Synchronisation Terminée',
+    
+    // Error Types
+    connection_error: 'Erreur de Connexion',
+    timeout_error: 'Erreur de Délai',
+    server_error: 'Erreur Serveur',
+    client_error: 'Erreur Client',
+    network_error: 'Erreur Réseau',
+    authentication_error: 'Erreur d\'Authentification',
+    permission_error: 'Erreur de Permission',
+    file_not_found: 'Fichier Non Trouvé',
+    invalid_input: 'Entrée Invalide',
+    operation_failed: 'Opération Échouée'
   },
   
   zh: {
