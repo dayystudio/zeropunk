@@ -1167,6 +1167,7 @@ const App = () => {
       neural_link_disrupted: 'Liaison neurale interrompue. La matrice vacille...'
     }
   };
+  */
 
 
 
