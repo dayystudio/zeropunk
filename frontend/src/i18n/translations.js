@@ -679,6 +679,39 @@ export const translations = {
     // ================================================================
     scan_skip: 'SKIP',
     visit_clothing_website: 'Visit Clothing Website',
+    
+    // ================================================================
+    // ACCESSIBILITY
+    // ================================================================
+    image_alt_gameplay: 'ZEROPUNK gameplay screenshot',
+    image_alt_character: 'Character customization interface',
+    image_alt_environment: 'Cyberpunk city environment',
+    
+    // ================================================================
+    // ADDITIONAL HARDCODED STRINGS
+    // ================================================================
+    modding_interface: 'MODDING INTERFACE',
+    creator_central_station: 'Creator Central Station',
+    development_progress: 'Development Progress',
+    get_notified_creator_hub: 'Get notified when the Creator Hub goes live',
+    neural_interface: 'NEURAL INTERFACE',
+    character_forge: 'CHARACTER FORGE',
+    neural_avatar_customization: 'NEURAL AVATAR CUSTOMIZATION',
+    system_status: 'SYSTEM STATUS',
+    neural_interface_calibration: 'Neural interface calibration in progress...',
+    advanced_avatar_customization: 'Advanced avatar customization system under development',
+    incoming_features: 'INCOMING FEATURES',
+    facial_recognition_system: 'Facial Recognition System',
+    cybernetic_implant_database: 'Cybernetic Implant Database',
+    neural_pattern_mapping: 'Neural Pattern Mapping',
+    facial_reconstruction: 'Facial Reconstruction',
+    augmented_reality_eyes: 'Augmented Reality Eyes',
+    neural_implants: 'Neural Implants',
+    cybernetic_limbs: 'Cybernetic Limbs',
+    bio_luminescent_hair: 'Bio-luminescent Hair',
+    tactical_gear_systems: 'Tactical Gear Systems',
+    get_notified_when_ready: 'GET NOTIFIED WHEN READY',
+    join_neural_network: 'Join the neural network for early access to avatar customization',
   },
 
   fr: {
