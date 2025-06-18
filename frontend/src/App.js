@@ -707,8 +707,7 @@ const App = () => {
     setShowBenchmark(true);
   };
 
-  // Translations
-  const translations = {
+  // Using global translation system from useTranslation hook
     en: {
       // Navigation
       home: 'Home',
