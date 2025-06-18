@@ -2663,9 +2663,9 @@ const App = () => {
     
     const feedContent = [
       {
-        title: "SECTOR 7 UPRISING",
-        subtitle: "CORPORATE FORCES MOBILIZING",
-        content: "Neural chip shortage sparks riots in downtown district..."
+        title: t('sector_7_uprising'),
+        subtitle: t('corporate_forces_mobilizing'),
+        content: t('neural_chip_shortage')
       },
       {
         title: "AI CONSCIOUSNESS DEBATE",
