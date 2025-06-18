@@ -7,8 +7,10 @@ import {
   Terminal, BookOpen, Wrench, Palette, Camera, Play, Pause, RotateCcw,
   ZoomIn, ZoomOut, Sun, Moon, Layers, Settings, AlertTriangle, CheckCircle
 } from 'lucide-react';
+import { useTranslation } from './i18n/useTranslation';
 
 const ModdingHub = ({ currentLanguage = 'en' }) => {
+  const { t } = useTranslation();
   const [activeSection, setActiveSection] = useState('overview');
   const [uploadProgress, setUploadProgress] = useState(0);
   const [selectedMod, setSelectedMod] = useState(null);
