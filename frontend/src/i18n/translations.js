@@ -440,7 +440,68 @@ export const translations = {
     error: 'Erreur',
     success: 'Succès',
     warning: 'Avertissement',
-    info: 'Information'
+    info: 'Information',
+    
+    // Menu Items (ensure all are translated)
+    citycast_live: 'Citycast Live 2137',
+    support_project: 'Soutenir le Projet',
+    visual_archive: 'Archives Visuelles',
+    faq: 'F.A.Q',
+    gamestats: 'Statistiques de Jeu',
+    live_world_activity: 'Activité Mondiale en Direct',
+    zeromarket: 'ZEROMARKET',
+    reality_fractures: 'Fractures de Réalité',
+    modding_hub: 'Hub de Modding',
+    
+    // Page Titles and Headers
+    page_title: 'ZEROPUNK - Expérience de Jeu Cyberpunk Immersive',
+    loading_title: 'Chargement de ZEROPUNK...',
+    error_404: 'Erreur 404 - Page Non Trouvée',
+    error_500: 'Erreur 500 - Erreur Serveur',
+    maintenance: 'En Maintenance',
+    
+    // Form Elements
+    placeholder_name: 'Entrez votre nom',
+    placeholder_email: 'Entrez votre email',
+    placeholder_subject: 'Entrez le sujet',
+    placeholder_message: 'Entrez votre message',
+    required_field: 'Ce champ est requis',
+    invalid_email: 'Format email invalide',
+    form_submitted: 'Formulaire soumis avec succès',
+    form_error: 'Erreur lors de la soumission',
+    
+    // Navigation States
+    menu_open: 'Menu Ouvert',
+    menu_closed: 'Menu Fermé',
+    scroll_to_top: 'Retour en Haut',
+    back_to_home: 'Retour à l\'Accueil',
+    
+    // Status Messages
+    online: 'En Ligne',
+    offline: 'Hors Ligne',
+    connecting: 'Connexion...',
+    connected: 'Connecté',
+    disconnected: 'Déconnecté',
+    pending: 'En Attente...',
+    processing: 'Traitement...',
+    completed: 'Terminé',
+    failed: 'Échec',
+    
+    // Time and Date
+    just_now: 'À l\'instant',
+    minutes_ago: 'il y a quelques minutes',
+    hours_ago: 'il y a quelques heures',
+    days_ago: 'il y a quelques jours',
+    
+    // Media Controls
+    play: 'Lecture',
+    pause: 'Pause',
+    stop: 'Arrêt',
+    volume: 'Volume',
+    mute: 'Muet',
+    unmute: 'Son Activé',
+    fullscreen: 'Plein Écran',
+    exit_fullscreen: 'Quitter Plein Écran'
   },
   
   zh: {
