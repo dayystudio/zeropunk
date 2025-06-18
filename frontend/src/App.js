@@ -1236,7 +1236,7 @@ const App = () => {
             {/* Status indicator */}
             <div className="status-bar">
               <div className="status-dot"></div>
-              <span className="status-text">MODDING INTERFACE</span>
+              <span className="status-text">{t('modding_interface')}</span>
               <div className="status-dot"></div>
             </div>
             
