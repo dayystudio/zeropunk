@@ -1319,7 +1319,7 @@ const App = () => {
               <div className="notify-form">
                 <input 
                   type="email" 
-                  placeholder="your.email@zeropunk.net"
+                  placeholder={t('email_placeholder_hero')}
                   className="notify-input"
                 />
                 <button className="notify-btn">
