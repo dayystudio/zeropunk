@@ -4927,7 +4927,7 @@ const App = () => {
                 <button 
                   className="chat-close"
                   onClick={() => setAliaChatOpen(false)}
-                  aria-label="Close chat"
+                  aria-label={t('close_chat')}
                 >
                   ×
                 </button>
