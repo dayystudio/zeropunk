@@ -282,7 +282,14 @@ export const translations = {
     participants: 'Participants',
     feature_availability: 'Feature Availability',
     
-    // Event Types & Titles
+    // Event Types (Simple Types for Dynamic Loading)
+    event_raid: 'Corporate Raid',
+    event_market: 'Resource Surge', 
+    event_market_surge: 'Market Surge',
+    event_faction: 'Territory Dispute',
+    event_weather: 'Acid Storm Warning',
+    
+    // Event Types & Titles (Full Names)
     event_corporate_raid: 'Corporate Raid',
     event_resource_surge: 'Resource Surge',
     event_territory_dispute: 'Territory Dispute',
