@@ -1831,7 +1831,7 @@ const App = () => {
         accent: '#80FF00',
         gradient: 'linear-gradient(135deg, #80FF00 0%, #40FF80 100%)',
         stats: { 
-          districts: { value: 12, unit: '', label: 'City Districts' },
+          districts: { value: 12, unit: ' Zones', label: 'City Districts' },
           events: { value: '∞', unit: '', label: 'Dynamic Events' },
           players: { value: 'Live', unit: '', label: 'Player Activity' }
         },
