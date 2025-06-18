@@ -3687,10 +3687,10 @@ const App = () => {
         { name: 'Neural Collective', control: 8, trend: 'falling', color: '#FFD700' }
       ],
       events: [
-        { id: 1, type: 'raid', title: 'Corporate Raid', location: 'Sector 7-Alpha', participants: 89, status: 'active', time: '2m ago' },
-        { id: 2, type: 'market', title: 'Resource Surge', location: 'Underground Market', change: '+24%', status: 'trending', time: '5m ago' },
-        { id: 3, type: 'faction', title: 'Territory Dispute', location: 'Neon District', participants: 67, status: 'escalating', time: '8m ago' },
-        { id: 4, type: 'weather', title: 'Acid Storm Warning', location: 'Industrial Zone', severity: 'moderate', status: 'incoming', time: '12m ago' }
+        { id: 1, type: 'raid', title: t('event_corporate_raid'), location: t('location_sector_7_alpha'), participants: 89, status: 'active', time: '2m ago' },
+        { id: 2, type: 'market', title: t('event_resource_surge'), location: t('location_underground_market'), change: '+24%', status: 'trending', time: '5m ago' },
+        { id: 3, type: 'faction', title: t('event_territory_dispute'), location: t('location_neon_district'), participants: 67, status: 'escalating', time: '8m ago' },
+        { id: 4, type: 'weather', title: t('event_acid_storm_warning'), location: t('location_industrial_zone'), severity: 'moderate', status: 'incoming', time: '12m ago' }
       ],
       resources: [
         { name: 'Neural Chips', price: 2847, change: 18, trend: 'up', volume: '1.2M' },
