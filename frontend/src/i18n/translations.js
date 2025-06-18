@@ -172,13 +172,42 @@ export const translations = {
     threat_normal: 'NORMAL - ROUTINE SURVEILLANCE',
     
     // ================================================================
-    // LIVE WORLD ACTIVITY
+    // LIVE WORLD ACTIVITY EXTENDED
     // ================================================================
     live_world_title: 'Live World Activity',
     players_online: 'Players Online',
     game_time: 'Game Time',
     current_weather: 'Current Weather',
     market_status: 'Market Status',
+    faction_control: 'Faction Control',
+    trading_volume: 'Trading Volume',
+    resource_prices: 'Resource Prices',
+    weather_intensity: 'Weather Intensity',
+    weather_visibility: 'Visibility',
+    
+    // ================================================================
+    // SYSTEM ANALYZER & REQUIREMENTS
+    // ================================================================
+    system_requirements: 'System Requirements',
+    system_analyzer: 'System Analyzer',
+    system_score: 'System Score',
+    view_system_specs: 'View System Specs',
+    select_hardware: 'Select Hardware',
+    recommended_settings: 'Recommended Settings',
+    resolution: 'Resolution',
+    quantum_processing: 'Quantum Processing',
+    
+    // ================================================================
+    // SCAN & ID SYSTEM
+    // ================================================================
+    scan_skip: 'SKIP',
+    scan_initializing: 'Initializing Neural Scan...',
+    scan_detecting: 'User detected...',
+    
+    // ================================================================
+    // SHOP & MARKETPLACE
+    // ================================================================
+    div: 'Section',
     
     // ================================================================
     // ROADMAP SECTION
