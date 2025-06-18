@@ -4686,7 +4686,7 @@ const App = () => {
             <button 
               className={`hamburger-menu ${menuOpen ? 'open' : ''}`}
               onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-label={t('open_menu')}
             >
               {menuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
