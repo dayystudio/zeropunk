@@ -3061,7 +3061,7 @@ const App = () => {
                     value={formData.password}
                     onChange={handleInputChange}
                     className={`auth-input ${errors.password ? 'error' : ''}`}
-                    placeholder="Create a strong password"
+                    placeholder={t('password_placeholder')}
                   />
                   {passwordStrength && (
                     <div className="password-strength">
