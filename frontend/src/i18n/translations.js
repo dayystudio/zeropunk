@@ -455,6 +455,64 @@ export const translations = {
     
     character_customization: 'Can I customize my character?',
     customization_answer: 'Absolutely. You can fully customize your gender, body, voice, clothing, tattoos, cybernetic implants, skills, abilities, and personality. You\'ll be able to make a character that truly feels like your own.',
+    
+    // More FAQ Questions
+    are_there_vehicles: 'Are there vehicles?',
+    vehicles_answer: 'Yes. You can drive cars, ride bikes, and even fly futuristic vehicles. Some are customizable, and vehicles are seamlessly integrated into the open world.',
+    
+    own_apartment: 'Will I have my own apartment?',
+    apartment_answer: 'Yes. You\'ll be able to buy, unlock, or take over apartments in the city. Apartments can be customized and used as your base for sleeping, storing items, upgrading gear, or accessing secret networks.',
+    
+    what_weapons: 'What kinds of weapons are available?',
+    weapons_answer: 'From traditional firearms to futuristic plasma guns, drones, hacking tools, energy blades, and cybernetic melee weapons — the game gives you total freedom to build your own combat style.',
+    
+    stealth_melee: 'Can I play stealth or melee?',
+    stealth_answer: 'Yes. You can play full stealth, hack your way through systems, or beat enemies with fists or augmented strength. The gameplay supports combat, infiltration, tech-based approaches, and social manipulation.',
+    
+    skill_tree: 'Is there a skill tree?',
+    skill_tree_answer: 'Yes, a modular progression system allows you to shape your playstyle. Branches include: Hacking, Combat (ranged/melee), Piloting, Stealth, Social manipulation, and Survival/Analysis.',
+    
+    ai_controlled_npcs: 'Are NPCs controlled by AI?',
+    ai_npcs_answer: 'Yes. All core NPCs are powered by a neural AI system, allowing them to remember previous conversations with you, react to your behavior, history, and decisions, and change attitudes dynamically over time.',
+    
+    talk_like_real_people: 'Can I talk to NPCs like real people?',
+    natural_language_answer: 'Yes. ZEROPUNK integrates natural language AI. You\'ll be able to talk to NPCs freely. They respond with real personality, emotion, and memory. You\'ll build relationships through real interaction — not just dialogue trees.',
+    
+    npcs_remember: 'Do NPCs remember me?',
+    memory_answer: 'Absolutely. NPCs will remember what you say, how you act, and what you\'ve done. They\'ll hold grudges, grow fond of you, betray you — or even become long-term allies.',
+    
+    open_world_explorable: 'Is the city open-world and explorable?',
+    open_world_answer: 'Yes. ZEROPUNK is fully open-world. You can travel on foot, by vehicle, through alleys, rooftops, tunnels, and elevators. Many buildings are enterable and have secrets inside.',
+    
+    go_inside_buildings: 'Can I go inside buildings?',
+    buildings_answer: 'Yes. Stores, apartments, clubs, labs, and secret areas can be accessed. Some require hacking, bribing, or persuading guards. Urban exploration is a big part of the experience.',
+    
+    day_night_cycle: 'Is there a day/night cycle?',
+    day_night_answer: 'Yes, with full dynamic impact: Some quests only appear at night, police are more present during certain hours, stores open and close, and some NPCs only come out after dark.',
+    
+    game_hud: 'Does the game have a HUD?',
+    hud_answer: 'The HUD is minimal and immersive. Most information is shown through your cyber implants, holographic projections, and real-world cues like signs, sounds, and AI voice assistants.',
+    
+    graphic_settings: 'Will there be advanced graphic settings?',
+    graphics_answer: 'Yes — but they\'ll be available once the full settings system is in place. For now, the demo visuals are scaled down for performance. Future phases will increase visual fidelity significantly.',
+    
+    what_engine: 'What engine is ZEROPUNK developed with?',
+    engine_answer: 'ZEROPUNK is developed using Unreal Engine 5.5, with Nanite, Lumen, Virtual Shadow Maps, World Partition, AI-driven NPC systems, and real-time voice dialogue systems.',
+    
+    run_on_pc: 'Will the game run on my PC?',
+    pc_answer: 'The goal is to offer multiple quality presets. ZEROPUNK will support high-end rigs (Ultra Mode) and mid-range setups, with scalable options and automatic performance tuning.',
+    
+    how_support: 'How can I support the project?',
+    support_answer: 'You can support the development by donating via the [Donate] page, joining the Discord server, sharing ZEROPUNK on social media, and wishlisting on Steam. Supporters get early access, rewards, and exclusive community roles.',
+    
+    what_donation_gets: 'What do I get if I donate?',
+    donation_answer: 'Donors get access to a private Discord channel, exclusive in-development previews, in-game rewards, recognition in the game credits, and possibly early access to testing phases.',
+    
+    discord_content: 'What\'s inside the Discord?',
+    discord_answer: 'The Discord server includes devlogs & behind-the-scenes content, community votes for development decisions, exclusive polls, content drops, and bonus rewards, plus live discussions with the dev(s).',
+    
+    is_roadmap: 'Is there a roadmap?',
+    roadmap_answer: 'Yes. A long-term roadmap up to 2037 includes: Beta testing, full NPC AI integration, multiplayer PVE & PVP, player-run factions and economies, dynamic city expansion, advanced housing & base-building, emotional NPC interaction, and console support.',
   },
   
   fr: {
