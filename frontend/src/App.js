@@ -708,6 +708,7 @@ const App = () => {
   };
 
   // Using global translation system from useTranslation hook
+  const localTranslations = {
     en: {
       // Navigation
       home: 'Home',
