@@ -333,10 +333,56 @@ export const translations = {
     trend_stable: 'Stable', 
     trend_falling: 'Falling',
     
-    // Resource Names
-    resource_neural_chips: 'Neural Chips',
-    resource_data_cores: 'Data Cores',
-    resource_quantum_bits: 'Quantum Bits',
+    // ================================================================
+    // MARKET STATUS & TRADING
+    // ================================================================
+    market_status_active: 'ACTIVE',
+    market_status_volatile: 'VOLATILE', 
+    market_status_stable: 'STABLE',
+    market_status_bullish: 'BULLISH',
+    market_status_bearish: 'BEARISH',
+    
+    // ================================================================
+    // FAQ CONTENT
+    // ================================================================
+    faq_q1: 'What is ZEROPUNK?',
+    faq_a1: 'ZEROPUNK is a cyberpunk RPG featuring AI-powered NPCs with persistent memory systems.',
+    faq_q2: 'When will the game be released?',
+    faq_a2: 'We\'re currently in development. Join our Steam wishlist for updates.',
+    faq_q3: 'What platforms will ZEROPUNK support?',
+    faq_a3: 'Initially launching on PC (Windows, macOS, Linux) with console versions planned.',
+    faq_q4: 'How does the AI NPC system work?',
+    faq_a4: 'Every NPC has persistent memory across sessions and can form relationships based on your interactions.',
+    
+    // ================================================================
+    // VISUAL ARCHIVE DETAILED DESCRIPTIONS
+    // ================================================================
+    image_title_neon_district: 'NEON DISTRICT OVERVIEW',
+    image_desc_neon_district: 'Explore the vast cyberpunk metropolis from above, where neon lights pierce through the eternal darkness of District 7.',
+    image_title_downtown_sector: 'DOWNTOWN SECTOR',
+    image_desc_downtown_sector: 'Navigate through the dense urban landscape where corporate towers and underground networks intersect.',
+    image_subtitle_downtown: 'Street-level urban exploration',
+    image_title_player_apartment: 'PLAYER APARTMENT',
+    image_desc_player_apartment: 'Customize your living space with futuristic amenities and advanced neural interface technology.',
+    image_title_shadow_alleys: 'SHADOW ALLEYS',
+    image_desc_shadow_alleys: 'Discover secret routes through the city\'s dark underbelly where resistance movements thrive.',
+    
+    // ================================================================
+    // SUPPORT SECTION DETAILED
+    // ================================================================
+    support_benefits_intro: 'By supporting the project and joining Discord, you\'ll gain access to an exclusive developer-only channel, where you can:',
+    support_benefit_ideas: 'Share your ideas directly with the dev',
+    support_benefit_behind_scenes: 'See exclusive behind-the-scenes content', 
+    support_benefit_previews: 'Get early previews, polls, and rewards',
+    enter_neural_link: 'ENTER NEURAL LINK',
+    
+    // ================================================================
+    // TESTIMONIALS CONTENT
+    // ================================================================
+    testimonial_1_text: 'A glimpse into the future of gaming. Every NPC feels alive.',
+    testimonial_2_text: 'I\'ve never experienced AI this immersive in a game before.',
+    testimonial_3_text: 'ZEROPUNK redefines what\'s possible in interactive storytelling.',
+    testimonial_4_text: 'The neural dialogue system is revolutionary.',
     
     // ================================================================
     // YOUGNSHOP INTEGRATION
