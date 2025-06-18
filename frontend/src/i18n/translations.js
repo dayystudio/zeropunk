@@ -664,7 +664,7 @@ export const translations = {
     info: 'Information',
     
     // System Messages
-    description_unavailable: 'Description unavailable. Awaiting neural synchronization...',
+    description_unavailable: 'Data unavailable. Awaiting neural synchronization...',
     system_offline: 'System temporarily offline',
     connection_lost: 'Neural connection lost',
     reconnecting: 'Attempting to reconnect...',
