@@ -1001,10 +1001,56 @@ export const translations = {
     trend_stable: 'Stable',
     trend_falling: 'En Baisse',
     
-    // Resource Names
-    resource_neural_chips: 'Puces Neurales',
-    resource_data_cores: 'Noyaux de Données',
-    resource_quantum_bits: 'Bits Quantiques',
+    // ================================================================
+    // MARKET STATUS & TRADING
+    // ================================================================
+    market_status_active: 'ACTIF',
+    market_status_volatile: 'VOLATIL',
+    market_status_stable: 'STABLE',
+    market_status_bullish: 'HAUSSIER',
+    market_status_bearish: 'BAISSIER',
+    
+    // ================================================================
+    // FAQ CONTENT
+    // ================================================================
+    faq_q1: 'Qu\'est-ce que ZEROPUNK ?',
+    faq_a1: 'ZEROPUNK est un RPG cyberpunk avec des PNJ alimentés par IA avec systèmes de mémoire persistante.',
+    faq_q2: 'Quand le jeu sera-t-il publié ?',
+    faq_a2: 'Nous sommes actuellement en développement. Rejoignez notre liste de souhaits Steam pour les mises à jour.',
+    faq_q3: 'Quelles plateformes ZEROPUNK supportera-t-il ?',
+    faq_a3: 'Lancement initial sur PC (Windows, macOS, Linux) avec versions console prévues.',
+    faq_q4: 'Comment fonctionne le système de PNJ IA ?',
+    faq_a4: 'Chaque PNJ a une mémoire persistante entre les sessions et peut former des relations basées sur vos interactions.',
+    
+    // ================================================================
+    // VISUAL ARCHIVE DETAILED DESCRIPTIONS
+    // ================================================================
+    image_title_neon_district: 'APERÇU DISTRICT NÉON',
+    image_desc_neon_district: 'Explorez la vaste métropole cyberpunk d\'en haut, où les lumières néon percent l\'obscurité éternelle du District 7.',
+    image_title_downtown_sector: 'SECTEUR CENTRE-VILLE',
+    image_desc_downtown_sector: 'Naviguez dans le paysage urbain dense où les tours corporatives et les réseaux souterrains se croisent.',
+    image_subtitle_downtown: 'Exploration urbaine au niveau de la rue',
+    image_title_player_apartment: 'APPARTEMENT JOUEUR',
+    image_desc_player_apartment: 'Personnalisez votre espace de vie avec des équipements futuristes et une technologie d\'interface neurale avancée.',
+    image_title_shadow_alleys: 'RUELLES SOMBRES',
+    image_desc_shadow_alleys: 'Découvrez des routes secrètes à travers les bas-fonds sombres de la ville où prospèrent les mouvements de résistance.',
+    
+    // ================================================================
+    // SUPPORT SECTION DETAILED
+    // ================================================================
+    support_benefits_intro: 'En soutenant le projet et en rejoignant Discord, vous aurez accès à un canal exclusif réservé aux développeurs, où vous pourrez :',
+    support_benefit_ideas: 'Partager vos idées directement avec le développeur',
+    support_benefit_behind_scenes: 'Voir du contenu exclusif en coulisses',
+    support_benefit_previews: 'Obtenir des aperçus anticipés, des sondages et des récompenses',
+    enter_neural_link: 'ENTRER LIEN NEURAL',
+    
+    // ================================================================
+    // TESTIMONIALS CONTENT
+    // ================================================================
+    testimonial_1_text: 'Un aperçu de l\'avenir du gaming. Chaque PNJ semble vivant.',
+    testimonial_2_text: 'Je n\'ai jamais vécu une IA aussi immersive dans un jeu auparavant.',
+    testimonial_3_text: 'ZEROPUNK redéfinit ce qui est possible dans la narration interactive.',
+    testimonial_4_text: 'Le système de dialogue neural est révolutionnaire.',
     
     // ================================================================
     // YOUGNSHOP INTEGRATION
