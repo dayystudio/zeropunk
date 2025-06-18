@@ -411,6 +411,50 @@ export const translations = {
     consciousness_stability: 'Consciousness Stability',
     memory_fragmentation: 'Memory Fragmentation',
     quantum_processing: 'Quantum Processing',
+    
+    // Support Section
+    support_project_title: 'SUPPORT THE PROJECT',
+    support_description: 'Support the future of ZEROPUNK. Join the community. Help shape the game.',
+    make_donation: 'Make a Donation',
+    join_discord: 'Join the Discord Server',
+    support_benefits: 'By supporting the project and joining Discord, you\'ll gain access to an exclusive developer-only channel, where you can:',
+    share_ideas: 'Share your ideas directly with the dev',
+    behind_scenes: 'See exclusive behind-the-scenes content',
+    early_previews: 'Get early previews, polls, and rewards',
+    
+    // Visual Archive
+    visual_archive_full_title: 'ZEROPUNK VISUAL ARCHIVE',
+    visual_archive_description: 'Immerse yourself in the cyberpunk world of District 7',
+    neon_district_overview: 'NEON DISTRICT OVERVIEW',
+    aerial_view_desc: 'Aerial view of the sprawling megacity',
+    enter_neural_link: 'ENTER NEURAL LINK',
+    neon_district_detail: 'Explore the vast cyberpunk metropolis from above, where neon lights pierce through the eternal darkness of District 7.',
+    downtown_sector: 'DOWNTOWN SECTOR',
+    street_level_desc: 'Street-level urban exploration',
+    downtown_detail: 'Navigate through the dense urban landscape where corporate towers and underground networks intersect.',
+    player_apartment: 'PLAYER APARTMENT',
+    neural_sanctuary_desc: 'Your personal neural sanctuary',
+    apartment_detail: 'Customize your living space with futuristic amenities and advanced neural interface technology.',
+    shadow_alleys: 'SHADOW ALLEYS',
+    hidden_passages_desc: 'Hidden passages of the underground',
+    alleys_detail: 'Discover secret routes through the city\'s dark underbelly where resistance movements thrive.',
+    
+    // FAQ Section
+    faq_full_title: 'F.A.Q – FREQUENTLY ASKED QUESTIONS',
+    faq_subtitle: 'Everything you need to know about ZEROPUNK',
+    
+    // FAQ Questions
+    what_is_zeropunk: 'What is ZEROPUNK?',
+    zeropunk_answer: 'ZEROPUNK is an immersive open-world futuristic RPG, blending deep narrative, AI-driven NPCs, and a cinematic cyberpunk experience. Set in a dystopian megacity fractured by AI control, mega-corporations, underground resistance groups, and forgotten secrets, the game invites you to explore, survive, and make your own story — with no chosen-one, no fixed path, and full freedom.',
+    
+    what_universe: 'What kind of universe does the game take place in?',
+    universe_answer: 'ZEROPUNK is set in Neon District 7, year 2137. A dense and vertical city with rich corporate zones, outlaw sectors, AI-controlled districts, slums, and restricted areas. Augmentations are common, surveillance is constant, and freedom is rare.',
+    
+    main_storyline: 'Is there a main storyline?',
+    storyline_answer: 'Yes — but it\'s fully optional and dynamic. You can follow the main quest or ignore it entirely. The story adapts to your choices, alliances, betrayals, and your unique path.',
+    
+    character_customization: 'Can I customize my character?',
+    customization_answer: 'Absolutely. You can fully customize your gender, body, voice, clothing, tattoos, cybernetic implants, skills, abilities, and personality. You\'ll be able to make a character that truly feels like your own.',
   },
   
   fr: {
