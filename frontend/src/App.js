@@ -4443,7 +4443,7 @@ const App = () => {
     return (
       <div className="section-container stats-section">
         <div className="section-content">
-          <h2 className="section-title">NEURAL NETWORK STATISTICS</h2>
+          <h2 className="section-title">{t('neural_stats_title')}</h2>
           
           {/* Real-time Game Stats */}
           <div className="stats-grid">
