@@ -1502,7 +1502,7 @@ const App = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 2.1 }}
               >
-                <h4>GET NOTIFIED WHEN READY</h4>
+                <h4>{t('get_notified_when_ready')}</h4>
                 <div className="notify-input-group">
                   <input 
                     type="email" 
