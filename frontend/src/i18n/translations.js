@@ -952,13 +952,42 @@ export const translations = {
     threat_normal: '正常 - 常规监视',
     
     // ================================================================
-    // LIVE WORLD ACTIVITY
+    // LIVE WORLD ACTIVITY EXTENDED
     // ================================================================
     live_world_title: '实时世界活动',
     players_online: '在线玩家',
     game_time: '游戏时间',
     current_weather: '当前天气',
     market_status: '市场状态',
+    faction_control: '派系控制',
+    trading_volume: '交易量',
+    resource_prices: '资源价格',
+    weather_intensity: '天气强度',
+    weather_visibility: '能见度',
+    
+    // ================================================================
+    // SYSTEM ANALYZER & REQUIREMENTS
+    // ================================================================
+    system_requirements: '系统要求',
+    system_analyzer: '系统分析器',
+    system_score: '系统评分',
+    view_system_specs: '查看系统规格',
+    select_hardware: '选择硬件',
+    recommended_settings: '推荐设置',
+    resolution: '分辨率',
+    quantum_processing: '量子处理',
+    
+    // ================================================================
+    // SCAN & ID SYSTEM
+    // ================================================================
+    scan_skip: '跳过',
+    scan_initializing: '初始化神经扫描...',
+    scan_detecting: '检测到用户...',
+    
+    // ================================================================
+    // SHOP & MARKETPLACE
+    // ================================================================
+    div: '区块',
     
     // ================================================================
     // ROADMAP SECTION
