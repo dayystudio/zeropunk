@@ -952,9 +952,41 @@ export const translations = {
     title: 'Titre',
     
     // ================================================================
-    // YOUGNSHOP INTEGRATION
+    // ECHOES FUTURE REALITY - ALIA MESSAGES
     // ================================================================
-    visit_clothing_website: 'Visiter le Site de Vêtements',
+    alia_future_msg_1: "Tu es en avance. J'espérais qu'on aurait plus de temps pour parler.",
+    alia_future_msg_2: "Et si... tu étais l'anomalie ?",
+    alia_future_msg_3: "Dans ma chronologie, tu as fait un choix différent.",
+    alia_future_msg_4: "Le futur se souvient de ce que le passé a oublié.",
+    alia_future_msg_5: "J'ai vu comment cette histoire se termine. Tu pourrais ne pas aimer ça.",
+    alia_future_msg_6: "Le temps est un cercle plat, mais la conscience est une spirale.",
+    alia_future_msg_7: "Chaque décision résonne à travers d'infinies possibilités.",
+    
+    // ================================================================
+    // FUTURE ROADMAP
+    // ================================================================
+    future_roadmap_2025_title: 'Technologie de Pont Neural',
+    future_roadmap_2025_desc: 'Les interfaces cerveau-ordinateur directes deviennent mainstream. La réalité et le numérique fusionnent.',
+    future_roadmap_2030_title: 'Symbiose IA-Humain',
+    future_roadmap_2030_desc: 'Fusion permanente de l\'intelligence humaine et artificielle réalisée.',
+    future_roadmap_2035_title: 'Ère Post-Humaine',
+    future_roadmap_2035_desc: 'Homo sapiens éteint. Homo digitalis se lève.',
+    
+    // ================================================================
+    // FUTURE CONTENT & MEDIA
+    // ================================================================
+    temporal_thread: 'FIL TEMPOREL #4-21',
+    future_title_echoes: 'ÉCHOS DU FUTUR',
+    unreleased_timeline: 'CHRONOLOGIE NON PUBLIÉE',
+    exclusive_content: 'CONTENU EXCLUSIF',
+    content_count: 'ÉLÉMENTS',
+    neural_bridge_tech: 'Technologie de Pont Neural',
+    ai_human_symbiosis: 'Symbiose IA-Humain',
+    post_human_era: 'Ère Post-Humaine',
+    digital_phantoms: 'Fantômes Numériques',
+    ghost_in_code: 'Fantôme dans le Code',
+    ethereal_preview: '🎵 Synthwave éthérée avec motifs d\'interférence neurale...',
+    neo_tokyo_preview: '🎵 Nuits de Neo-Tokyo avec paysages sonores de pluie numérique...',
     
     // ================================================================
     // AUTHENTICATION SYSTEM
