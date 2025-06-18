@@ -261,6 +261,10 @@ export const translations = {
     development_in_progress: 'Development in Progress',
     creator_tools_coming_soon: 'Advanced creator tools and community features coming soon...',
     incoming_features: 'Incoming Features',
+    modding_documentation: 'Modding Documentation',
+    skin_creator_tools: 'Skin Creator Tools',
+    community_upload_hub: 'Community Upload Hub',
+    ai_mod_assistant: 'AI Mod Assistant',
     
     // ================================================================
     // AI & NEURAL FEATURES
