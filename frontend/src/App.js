@@ -3090,7 +3090,7 @@ const App = () => {
                     value={formData.confirmPassword}
                     onChange={handleInputChange}
                     className={`auth-input ${errors.confirmPassword ? 'error' : ''}`}
-                    placeholder="Confirm your password"
+                    placeholder={t('confirm_password_placeholder')}
                   />
                   {errors.confirmPassword && <div className="auth-error">{errors.confirmPassword}</div>}
                 </div>
