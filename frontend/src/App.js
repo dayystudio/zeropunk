@@ -3226,7 +3226,7 @@ const App = () => {
       {
         id: 2,
         url: "https://images.unsplash.com/photo-1512364615838-8088a04a778b",
-        title: "DOWNTOWN SECTOR",
+        title: t('image_title_downtown_sector'),
         subtitle: "Street-level urban exploration",
         description: "Navigate through the dense urban landscape where corporate towers and underground networks intersect."
       },
