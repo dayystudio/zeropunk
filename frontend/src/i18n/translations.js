@@ -1505,12 +1505,16 @@ export const translations = {
     alia_future_msg_7: "每个决定都在无限可能性中回响。",
     
     // ================================================================
-    // FUTURE ROADMAP
+    // FUTURE ROADMAP EXTENDED
     // ================================================================
     future_roadmap_2025_title: '神经桥接技术',
     future_roadmap_2025_desc: '直接脑机接口成为主流。现实与数字融合。',
+    consciousness_transfer_protocols: '意识转移协议',
+    consciousness_transfer_desc: '首次成功将人类意识上传至数字领域。',
     future_roadmap_2030_title: 'AI-人类共生',
     future_roadmap_2030_desc: '实现人工智能与人类智能的永久融合。',
+    digital_immortality: '数字永生',
+    digital_immortality_desc: '死亡变为可选。物理身体过时。',
     future_roadmap_2035_title: '后人类时代',
     future_roadmap_2035_desc: '智人灭绝。数字人类崛起。',
     
