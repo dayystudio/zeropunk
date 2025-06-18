@@ -2777,7 +2777,7 @@ const App = () => {
                         {/* Fake gameplay preview */}
                         <div className="gameplay-preview">
                           <div className="preview-placeholder">
-                            <div className="preview-text">ZEROPUNK GAMEPLAY PREVIEW</div>
+                            <div className="preview-text">{t('gameplay_preview')}</div>
                             <div className="preview-bars">
                               <div className="bar bar-1"></div>
                               <div className="bar bar-2"></div>
