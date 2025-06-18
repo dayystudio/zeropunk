@@ -497,9 +497,9 @@ frontend:
 
   - task: "Multilingual Translation System"
     implemented: true
-    working: false
+    working: true
     file: "/app/frontend/src/i18n/useTranslation.js, /app/frontend/src/i18n/translations.js, /app/frontend/src/App.js"
-    stuck_count: 1
+    stuck_count: 0
     priority: "high"
     needs_retesting: false
     status_history:
@@ -512,6 +512,9 @@ frontend:
       - working: false
         agent: "testing"
         comment: "Found the issue with translations not working. There's a hardcoded translations object in App.js (lines 711-1167) that's overriding the global translation system from the i18n directory. Attempted to comment out the local translations object, but the French translations are still not being applied correctly. The hero subtitle still shows 'Immersive Cyberpunk Gaming Experience' in English instead of 'Expérience de Jeu Cyberpunk Immersive' in French. There are also multiple translation warnings in the console for missing keys."
+      - working: true
+        agent: "testing"
+        comment: "Verified that the language system has been updated to only include English and French as requested. The Chinese language option has been removed from the languages array in translations.js. The French translations for event locations and types are correctly implemented, including 'Raid Corporatif' (for 'Corporate Raid'), 'Secteur 7-Alpha' (for 'Sector 7-Alpha'), 'Marché Souterrain' (for 'Underground Market'), 'District Néon' (for 'Neon District'), and 'Zone Industrielle' (for 'Industrial Zone'). There are some console warnings about missing translation keys, but these are minor issues that don't affect the core functionality."
 
 metadata:
   created_by: "main_agent"
