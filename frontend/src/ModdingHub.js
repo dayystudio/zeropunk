@@ -450,7 +450,7 @@ const ModdingHub = ({ currentLanguage = 'en' }) => {
           </div>
 
           <div className="form-group">
-            <label>Game Version</label>
+            <label>{t('mod_version_label')}</label>
             <select className="form-select">
               <option>1.0.x</option>
               <option>0.9.x</option>
