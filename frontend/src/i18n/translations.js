@@ -1202,11 +1202,101 @@ export const translations = {
     quantum_processing: '量子处理',
     
     // ================================================================
-    // SCAN & ID SYSTEM
+    // ID SCAN & NEURAL INTERFACE SYSTEM
     // ================================================================
-    scan_skip: '跳过',
+    scan_neural_interface: '神经接口',
+    scan_complete: '完成',
+    scan_neural_scanner: '神经扫描仪 v2.1',
+    scan_active: '激活',
     scan_initializing: '初始化神经扫描...',
     scan_detecting: '检测到用户...',
+    scan_unregistered: '状态：未注册实体',
+    scan_mind_pattern: '思维模式：稳定',
+    scan_access_temp: '访问级别：临时',
+    scan_protocol_override: '协议覆盖：已接受',
+    scan_welcome: '欢迎来到ZEROPUNK...',
+    scan_returning_user: '检测到返回用户',
+    scan_memory_traces: '发现记忆痕迹',
+    scan_access_granted: '访问：已授予',
+    scan_welcome_back: '欢迎回来，特工',
+    scan_user_id: '用户ID',
+    scan_assigned_id: '分配ID',
+    scan_user_profile: '用户档案',
+    scan_id: 'ID',
+    scan_class: '类别',
+    scan_civilian: '平民',
+    scan_affiliation: '隶属关系',
+    scan_unknown: '未知',
+    scan_threat_level: '威胁级别',
+    scan_minimal: '最小',
+    
+    // ================================================================
+    // CONTACT FORM SYSTEM
+    // ================================================================
+    contact_intro: '联系ZEROPUNK开发团队',
+    contact_name: '您的姓名',
+    contact_email: '您的邮箱',
+    contact_subject: '主题',
+    contact_message: '您的消息',
+    contact_send: '发送消息',
+    contact_success: '消息发送成功！',
+    support_email: 'support@zeropunk.net',
+    
+    // ================================================================
+    // SYSTEM PERFORMANCE & ANALYSIS
+    // ================================================================
+    performance_analysis: '性能分析',
+    estimated_fps: '预估FPS',
+    graphics_card: '显卡',
+    processor: '处理器',
+    memory: '内存',
+    operating_system: '操作系统',
+    memory_fragmentation: '内存碎片',
+    neural_compatibility: '神经兼容性',
+    
+    // ================================================================
+    // MODDING & CREATION TOOLS
+    // ================================================================
+    documentation: '文档',
+    overview: '概览',
+    skinCreator: '皮肤创建器',
+    featuredMods: '精选模组',
+    moddingFeed: '模组动态',
+    
+    // ================================================================
+    // AI & NEURAL FEATURES
+    // ================================================================
+    emotional_intelligence: '情感智能',
+    natural_language: '自然语言处理',
+    consciousness_stability: '意识稳定性',
+    neural_interface_menu: '神经接口菜单',
+    
+    // ================================================================
+    // REALITY FRACTURES & DELTA ACCESS
+    // ================================================================
+    delta_access: 'Delta访问',
+    reality_warning: '现实警告',
+    forbidden_sight: '禁忌视域',
+    possibility_thread: '可能性线程',
+    
+    // ================================================================
+    // LIVE EVENTS & ACTIVITIES
+    // ================================================================
+    ongoing_events: '进行中事件',
+    participants: '参与者',
+    feature_availability: '功能可用性',
+    
+    // ================================================================
+    // YOUGNSHOP INTEGRATION
+    // ================================================================
+    how_it_works: '工作原理',
+    step_1: '步骤1',
+    step_2: '步骤2',
+    step_3: '步骤3',
+    step_4: '步骤4',
+    style: '风格',
+    subtitle: '副标题',
+    hero_message: '主要消息',
     
     // ================================================================
     // SHOP & MARKETPLACE
