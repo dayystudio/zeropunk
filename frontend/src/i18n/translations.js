@@ -333,6 +333,9 @@ export const translations = {
     neon_district_lockdown: 'CONFINEMENT DISTRICT NÉON',
     security_breach_detected: 'VIOLATION DE SÉCURITÉ DÉTECTÉE',
     unknown_hackers_content: 'Des pirates inconnus infiltrent le réseau de surveillance de la ville...',
+    sector_7_uprising: 'SOULÈVEMENT SECTEUR 7',
+    corporate_forces_mobilizing: 'FORCES CORPORATIVES SE MOBILISENT',
+    neural_chip_shortage: 'La pénurie de puces neurales déclenche des émeutes dans le district du centre-ville...',
     
     // System Status
     neural_core: 'NEURAL_CORE',
