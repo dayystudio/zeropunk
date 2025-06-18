@@ -443,20 +443,49 @@ export const translations = {
     future_roadmap_2035_desc: 'Homo sapiens extinct. Homo digitalis rises.',
     
     // ================================================================
-    // FUTURE CONTENT & MEDIA
+    // TESTIMONIALS & REVIEWS
     // ================================================================
-    temporal_thread: 'TEMPORAL THREAD #4-21',
-    future_title_echoes: 'ECHOES OF FUTURE',
-    unreleased_timeline: 'UNRELEASED TIMELINE',
-    exclusive_content: 'EXCLUSIVE CONTENT',
-    content_count: 'ITEMS',
-    neural_bridge_tech: 'Neural Bridge Technology',
-    ai_human_symbiosis: 'AI-Human Symbiosis',
-    post_human_era: 'Post-Human Era',
-    digital_phantoms: 'Digital Phantoms',
-    ghost_in_code: 'Ghost in the Code',
-    ethereal_preview: '🎵 Ethereal synthwave with neural interference patterns...',
-    neo_tokyo_preview: '🎵 Neo-Tokyo nights with digital rain soundscapes...',
+    testimonial_author_1: 'TechCrunch',
+    testimonial_author_2: 'Alpha Tester', 
+    testimonial_author_3: 'GameDev Insider',
+    testimonial_author_4: 'Beta Player',
+    
+    // ================================================================
+    // VISUAL ARCHIVE IMAGES
+    // ================================================================
+    image_subtitle_megacity: 'Aerial view of the sprawling megacity',
+    image_subtitle_sanctuary: 'Your personal neural sanctuary', 
+    image_subtitle_underground: 'Hidden passages of the underground',
+    
+    // ================================================================
+    // OPERATING SYSTEMS
+    // ================================================================
+    os_windows: 'Windows',
+    os_macos: 'macOS',
+    os_linux: 'Linux',
+    
+    // ================================================================
+    // ZEROMARKET PRODUCTS
+    // ================================================================
+    product_neural_implant: 'Neural Implant X1',
+    product_smart_jacket: 'Smart Jacket Pro',
+    product_data_blade: 'Data Blade',
+    product_quantum_deck: 'Quantum Deck',
+    product_stealth_cloak: 'Stealth Cloak',
+    
+    // Product Specs
+    spec_7nm_arch: '7nm architecture',
+    spec_quantum_encrypt: 'Quantum encryption',
+    spec_bio_compatible: 'Bio-compatible',
+    spec_smart_fiber: 'Smart fiber',
+    spec_rgb_adaptive: 'RGB adaptive',
+    spec_machine_wash: 'Machine washable',
+    spec_monofilament: 'Monofilament edge',
+    spec_1tb_storage: '1TB storage',
+    spec_biometric_lock: 'Biometric lock',
+    spec_quantum_processor: 'Quantum processor',
+    spec_portable_design: 'Portable design',
+    spec_ai_assistant: 'AI assistant',
     
     // ================================================================
     // AUTHENTICATION SYSTEM
