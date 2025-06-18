@@ -3238,7 +3238,7 @@ const App = () => {
         id: 4,
         url: "https://images.unsplash.com/photo-1613046883984-dcf0c289b896",
         title: "SHADOW ALLEYS",
-        subtitle: "Hidden passages of the underground",
+        subtitle: t('image_subtitle_underground'),
         description: "Discover secret routes through the city's dark underbelly where resistance movements thrive."
       }
     ];
