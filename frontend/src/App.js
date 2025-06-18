@@ -3047,7 +3047,7 @@ const App = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     className={`auth-input ${errors.email ? 'error' : ''}`}
-                    placeholder="your.email@domain.com"
+                    placeholder={t('email_placeholder')}
                   />
                   {errors.email && <div className="auth-error">{errors.email}</div>}
                 </div>
