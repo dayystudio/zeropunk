@@ -305,7 +305,7 @@ export const translations = {
     contact_title: 'Contact Us',
     
     // ================================================================
-    // MODDING HUB
+    // MODDING HUB EXTENDED
     // ================================================================
     modding_hub_title: 'MODDING HUB',
     modding_hub_subtitle: 'Create and share custom content',
@@ -321,6 +321,16 @@ export const translations = {
     upload_mod: 'Upload Mod',
     initialize_module: 'INITIALIZE MODULE',
     access_docs: 'ACCESS DOCS',
+    
+    // Modding Hub Sections
+    toolbox: 'Official Toolbox',
+    uploadCenter: 'Upload Center',
+    title: 'Title',
+    
+    // ================================================================
+    // YOUGNSHOP INTEGRATION
+    // ================================================================
+    visit_clothing_website: 'Visit Clothing Website',
     
     // ================================================================
     // AUTHENTICATION SYSTEM
