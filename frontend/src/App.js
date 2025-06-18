@@ -1386,7 +1386,7 @@ const App = () => {
               {/* Status indicator */}
               <div className="status-indicator">
                 <div className="status-dot pulsing"></div>
-                <span className="status-text">NEURAL INTERFACE</span>
+                <span className="status-text">{t('neural_interface')}</span>
               </div>
               
               {/* Main title */}
