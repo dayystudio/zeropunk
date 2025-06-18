@@ -947,6 +947,44 @@ export const translations = {
     filter_apparel: '服装',
     filter_gear: '装备',
     
+    // Shop Items & Stats
+    compatibility_verdict: '兼容性评估',
+    connect_style: '连接风格',
+    download_center: '下载中心',
+    downloads_count: '下载次数',
+    enhancement_name: '增强名称',
+    enhancement_desc: '增强描述',
+    game_info: '游戏信息',
+    game_overview: '游戏概览',
+    installation_guide: '安装指南',
+    live_stats: '实时统计',
+    neural_enhancement: '神经增强',
+    neural_interface: '神经接口',
+    price_credits: '价格（积分）',
+    purchase_now: '立即购买',
+    system_compatibility: '系统兼容性',
+    tech_specs: '技术规格',
+    user_rating: '用户评分',
+    
+    // ================================================================
+    // FEATURES & DESCRIPTIONS
+    // ================================================================
+    feature_ai_npcs: 'AI驱动的NPC',
+    feature_open_world: '开放世界环境',
+    feature_neural_interface: '神经接口技术',
+    feature_customization: '深度角色定制',
+    feature_multiplayer: '多人神经网络',
+    feature_modding: '高级模组支持',
+    
+    open_world_desc: '在广阔的赛博朋克大都市中自由探索',
+    open_world_details: '在霓虹灯照亮的街区、地下网络和高耸的巨型建筑中穿行，体验一个生动呼吸的城市。',
+    
+    neural_interface_desc: '革命性的AI驱动角色互动',
+    neural_interface_details: '通过先进的神经网络技术，体验NPC对话和关系的前所未有的深度。',
+    
+    customization_desc: '创造你独特的赛博朋克身份',
+    customization_details: '广泛的角色创建，包括生化增强、服装和神经改造。',
+    
     // ================================================================
     // MODDING HUB
     // ================================================================
