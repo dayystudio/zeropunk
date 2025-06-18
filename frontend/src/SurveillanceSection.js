@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Activity, AlertTriangle, Map, Shield, Bot, Terminal } from 'lucide-react';
+import { useTranslation } from './i18n/useTranslation';
 
 const SurveillanceSection = () => {
+  const { t } = useTranslation();
   const [terminalLogs, setTerminalLogs] = useState([]);
   const [isExpanded, setIsExpanded] = useState(false);
   const [surveillanceData, setSurveillanceData] = useState({
