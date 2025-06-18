@@ -3286,10 +3286,10 @@ const App = () => {
               >
                 <h2 className="visual-title">
                   <span className="visual-icon">📷</span>
-                  ZEROPUNK VISUAL ARCHIVE
+                  {t('visual_archive_full_title')}
                 </h2>
                 <p className="visual-subtitle">
-                  Immerse yourself in the cyberpunk world of District 7
+                  {t('visual_archive_description')}
                 </p>
               </motion.div>
 
