@@ -1753,9 +1753,80 @@ export const translations = {
     
     // Neural Interface
     neural_interface_title: '神经接口',
-    core_systems: 'CORE_SYSTEMS',
-    advanced_ai_tech: 'Advanced AI Technology Suite',
-    feature_modules: 'FEATURE_MODULES',
+    core_systems: '核心系统',
+    advanced_ai_tech: '先进AI技术套件',
+    feature_modules: '功能模块',
+    
+    // AI NPCs Module
+    ai_npcs_module: 'AI NPC',
+    module_01: '模块_01',
+    neural_dialogue_module: '神经对话',
+    module_02: '模块_02',
+    open_world_module: '开放世界',
+    module_03: '模块_03',
+    neural_technology_suite: '神经技术套件',
+    ai_npcs_core: 'AI_NPC_核心',
+    neural_memory: '神经记忆',
+    daily_interactions: '日常互动',
+    response_accuracy: '响应准确度',
+    system_overview: '系统概览',
+    ai_npcs_description: '具有持久记忆、情感智能和动态个性适应的先进AI驱动NPC。',
+    
+    // Core Capabilities
+    core_capabilities: '核心能力',
+    dynamic_personality: '动态个性适应',
+    cross_session_memory: '跨会话记忆保持',
+    emotional_intelligence: '情感智能处理',
+    contextual_relationships: '上下文关系构建',
+    initialize_module: '初始化模块',
+    access_docs: '访问文档',
+    
+    // Tech Specs
+    tech_specs: '技术规格',
+    neural_pathways: '神经通路',
+    parameters: '参数',
+    memory_capacity: '内存容量',
+    response_time: '响应时间',
+    learning_rate: '学习率',
+    adaptive: '自适应',
+    
+    // Live Monitor
+    live_monitor: '实时监控',
+    neural_activity: '神经活动',
+    data_flow: '数据流',
+    system_load: '系统负载',
+    alerts: '警报',
+    neural_sync_complete: '神经同步完成',
+    cache_optimization_needed: '需要缓存优化',
+    ago: '前',
+    
+    // Security Systems
+    quantum_encryption_active: '量子加密激活',
+    neural_firewall_enabled: '神经防火墙启用',
+    global_neural_network: '全球神经网络',
+    
+    // Neural Network Statistics
+    neural_stats_title: '神经网络统计',
+    neural_links: '神经链接',
+    active_connections: '活跃连接',
+    downloads: '下载',
+    beta_installs: '测试版安装',
+    wishlist: '愿望清单',
+    queue_pending: '队列待处理',
+    rating: '评分',
+    sync_score: '同步分数',
+    system_monitoring: '系统监控',
+    network_load: '网络负载',
+    security_level: '安全级别',
+    data_flow_stats: '数据流',
+    packets_sec: '包/秒',
+    active_sessions: '活跃会话',
+    concurrent_users: '并发用户',
+    threat_level: '威胁级别',
+    system_status_full: '系统状态',
+    neural_core_status: '神经核心：在线',
+    data_matrix_status: '数据矩阵：稳定',
+    firewall_status: '防火墙：高级',
     
     // Support Section
     support_project_title: 'SUPPORT THE PROJECT',
