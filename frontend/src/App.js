@@ -1419,7 +1419,7 @@ const App = () => {
               >
                 <div className="message-header">
                   <Cpu className="message-icon" size={24} />
-                  <span>SYSTEM STATUS</span>
+                  <span>{t('system_status')}</span>
                 </div>
                 <div className="message-content">
                   <p>Neural interface calibration in progress...</p>
